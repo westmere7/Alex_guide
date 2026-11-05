@@ -338,16 +338,9 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .place.done { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .place.done .media img { filter: saturate(.6); }
 
-/* ===== Plan ===== */
-.day { gap: 14px; }
-.day-n {
-  width: 36px; height: 36px; border-radius: var(--r-sm); flex: none;
-  display: grid; place-items: center; background: var(--accent-bg); color: var(--accent);
-  font-weight: 700; font-size: var(--fs-sm);
-}
-.tl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 8px 0 0; font-size: var(--fs-sm); }
-.tl dt { color: var(--text-3); font-weight: 500; min-width: 44px; }
-.tl dd { margin: 0; color: var(--text-2); }
+/* ===== Restaurant rows ===== */
+.r-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 4px 0 4px; }
+.r-meta .where { font-size: var(--fs-xs); color: var(--text-3); }
 
 /* ===== Dishes carousel ===== */
 .scroller {

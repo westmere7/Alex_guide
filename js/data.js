@@ -10,8 +10,7 @@ window.SGN_DATA = {
     { id: "old",   label: "Old Saigon",   icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
-    { id: "trips", label: "Day trips",    icon: "i-van" },
-    { id: "plan",  label: "5-day plan",   icon: "i-calendar" }
+    { id: "trips", label: "Day trips",    icon: "i-van" }
   ],
 
   places: [
@@ -232,20 +231,85 @@ window.SGN_DATA = {
     }
   ],
 
-  plan: [
-    { day: "Day 1", title: "Land & settle in",
-      items: [["Arrive", "Grab from the airport, then check in near Bến Thành"], ["PM", "Walk to the market and Mariamman Temple"], ["Eve", "Nguyễn Huệ walking street, then an easy chay dinner"]] },
-    { day: "Day 2", title: "Old Saigon on foot",
-      items: [["AM", "Independence Palace, then the War Remnants Museum"], ["Lunch", "Hum Vegetarian, a few doors away"], ["PM", "Post Office and Book Street, then the Café Apartment"], ["Eve", "Sunset waterbus from Bạch Đằng pier"]] },
-    { day: "Day 3", title: "Temples & Chinatown",
-      items: [["AM", "Jade Emperor Pagoda, then the pink Tân Định Church"], ["Lunch", "Cơm chay: point and pick"], ["PM", "Chợ Lớn: Thiên Hậu Temple and Bình Tây Market"], ["Eve", "Hồ Thị Kỷ night food alley"]] },
-    { day: "Day 4", title: "East by metro",
-      items: [["AM", "Metro to Thảo Điền for cafés and boutiques"], ["Lunch", "A vegan spot in Thảo Điền"], ["PM", "Landmark 81 at sunset"], ["Eve", "A Bùi Viện wander, if you're up for it"]] },
-    { day: "Day 5", title: "Day trip or RMIT",
-      items: [["Option", "Củ Chi (half day) or the Mekong Delta (full day)"], ["Or", "A work day at RMIT Saigon South"], ["Eve", "A farewell dinner at Hoa Đăng"]] }
+  /* ---------- EAT ---------- */
+  /* kind: "vegan" = 100% vegan · "veg" = vegetarian (ask about egg/dairy) · "options" = vegan options */
+  eatAreas: [
+    { id: "home",  label: "Near home",   icon: "i-pin" },
+    { id: "east",  label: "Thảo Điền",   icon: "i-train" },
+    { id: "rmit",  label: "Near RMIT",   icon: "i-grad" },
+    { id: "cheap", label: "Cheap & local", icon: "i-cash" }
   ],
 
-  /* ---------- EAT ---------- */
+  restaurants: [
+    /* Near home — District 1 / 3 */
+    { area: "home", kind: "veg", name: "Hum Vegetarian", where: "D3 · next to War Remnants",
+      desc: "Calm, leafy and a bit upscale. Most of the menu is vegan, and it's ideal after the museum.",
+      q: "Hum Vegetarian Café & Restaurant Võ Văn Tần" },
+    { area: "home", kind: "veg", name: "Hoa Đăng", where: "D1 · Đa Kao",
+      desc: "Elegant Vietnamese vegetarian food with a big menu. Good for a farewell dinner.",
+      q: "Hoa Đăng vegetarian restaurant" },
+    { area: "home", kind: "vegan", name: "Filthy Vegan", where: "D1 · Cô Bắc street",
+      desc: "Indulgent vegan comfort food: burgers, loaded fries, the works. Go for it after a long day.",
+      q: "Filthy Vegan Cô Bắc" },
+    { area: "home", kind: "veg", name: "Tib Vegetarian", where: "D1 / D3",
+      desc: "Imperial Huế-style vegetarian dishes. Try the bún Huế chay.",
+      q: "Tib Vegetarian Saigon" },
+    { area: "home", kind: "veg", name: "Phương Mai Chay", where: "D3 · Võ Thị Sáu",
+      desc: "A popular local vegetarian spot with a long Vietnamese menu.",
+      q: "Phương Mai Chay Võ Thị Sáu" },
+    { area: "home", kind: "vegan", name: "Vegan Delight", where: "Buffet",
+      desc: "An all-you-can-eat plant-based buffet. A great way to try lots of Vietnamese dishes at once.",
+      q: "Vegan Delight buffet chay" },
+
+    /* Thảo Điền — by metro */
+    { area: "east", kind: "vegan", name: "Zeroism Vegan Café", where: "Nguyễn Cừ street",
+      desc: "A fully vegan café and bakery on a quiet lane, with cakes, brunch and good coffee with plant milks.",
+      q: "Zeroism Vegan Cafe Bakery Thảo Điền" },
+    { area: "east", kind: "vegan", name: "Kashew Cheese & Wine", where: "Trần Ngọc Diện street",
+      desc: "Cashew cheese boards, pasta and salads with a glass of wine.",
+      q: "Kashew Cheese Wine Bar Thảo Điền" },
+    { area: "east", kind: "veg", name: "Hum Garden", where: "Villa with garden",
+      desc: "Hum's sister restaurant in a leafy villa, slower and greener than the city branch.",
+      q: "Hum Garden Thảo Điền" },
+    { area: "east", kind: "veg", name: "Chay Garden Thảo Điền", where: "Vietnamese buffet",
+      desc: "An upscale Vietnamese vegetarian buffet, good for sampling.",
+      q: "Chay Garden Thảo Điền" },
+    { area: "east", kind: "options", name: "Tartine Saigon", where: "Street 66",
+      desc: "A sourdough bakery with vegan sandwiches, pizzas and salads. A good lunch stop.",
+      q: "Tartine Saigon Thảo Điền" },
+
+    /* Near RMIT — Phú Mỹ Hưng / old District 7 */
+    { area: "rmit", kind: "vegan", name: "Veganizta", where: "Tôn Dật Tiên · closed Mon",
+      desc: "A fully vegan restaurant near campus, open for lunch and dinner. Good for a work-day lunch.",
+      q: "Veganizta Tôn Dật Tiên" },
+    { area: "rmit", kind: "vegan", name: "Liên Hoa 2", where: "Trần Xuân Soạn",
+      desc: "A clean, open-air, all-vegan Vietnamese canteen. Casual and cheap.",
+      q: "Liên Hoa 2 chay Trần Xuân Soạn" },
+    { area: "rmit", kind: "vegan", name: "Kashew Phú Mỹ Hưng", where: "Phú Mỹ Hưng",
+      desc: "The south-side branch of the plant-based cheese bar. Good for dinner after work.",
+      q: "Kashew Cheese Phú Mỹ Hưng" },
+    { area: "rmit", kind: "veg", name: "Nhà Hàng Chay An", where: "Several D7 branches",
+      desc: "A local vegetarian chain with a few branches around Phú Mỹ Hưng.",
+      q: "Nhà hàng chay An Phú Mỹ Hưng" },
+    { area: "rmit", kind: "veg", name: "Quán Chay Phát Tâm", where: "Budget",
+      desc: "A roomy, inexpensive vegetarian spot for a quick work-day meal.",
+      q: "Quán Chay Phát Tâm quận 7" },
+
+    /* Cheap & local */
+    { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "Branch near Bến Thành",
+      desc: "Fully vegan bánh mì, so there's no need to worry about pâté or butter. A perfect grab-and-go breakfast.",
+      q: "Bánh Mì Xanh vegan" },
+    { area: "cheap", kind: "vegan", name: "Hủ Tiếu Chay Chú Quang", where: "Alley off Lãnh Binh Thăng",
+      desc: "A tiny, much-loved vegan noodle-soup spot. Very local, and worth the short ride.",
+      q: "Hủ Tiếu Chay Chú Quang" },
+    { area: "cheap", kind: "vegan", name: "Loving Hut", where: "Branches citywide",
+      desc: "A vegan chain with Vietnamese and fusion dishes. Reliable and inexpensive.",
+      q: "Loving Hut vegan" },
+    { area: "cheap", kind: "veg", name: "Any \"Quán cơm chay\"", where: "Every neighbourhood",
+      desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate. Busiest on the 1st and 15th of the lunar month.",
+      q: "quán cơm chay near Bến Thành" }
+  ],
+
   dishes: [
     { name: "Phở chay", img: "d-pho", desc: "Vegetable-broth noodle soup with tofu and mushrooms. Add plenty of herbs and lime." },
     { name: "Gỏi cuốn chay", img: "d-goi-cuon", desc: "Fresh rice-paper rolls with tofu and herbs, dipped in peanut sauce." },

@@ -209,14 +209,6 @@
         (p.q ? '<a class="link" data-q="' + esc(p.q) + '" target="_blank" rel="noopener">Open in Maps' + icon("i-arrow") + "</a>" : "") +
       "</div></article>";
   }
-  function planHtml() {
-    return '<div class="group">' + (DATA.plan || []).map(function (d, i) {
-      return '<div class="row day"><span class="day-n">' + (i + 1) + '</span><div class="row-main">' +
-        '<p class="t">' + esc(d.title) + '</p><dl class="tl">' +
-        d.items.map(function (it) { return "<dt>" + esc(it[0]) + "</dt><dd>" + esc(it[1]) + "</dd>"; }).join("") +
-        "</dl></div></div>";
-    }).join("") + '</div><p class="hint">Swap in your RMIT days wherever they fall. Most evening ideas still work after a day on campus.</p>';
-  }
   function renderCats() {
     catEl.innerHTML = cats.map(function (c) {
       return '<button type="button" role="tab" data-cat="' + c.id + '" aria-selected="' + (c.id === activeCat) + '">' +
@@ -225,14 +217,10 @@
   }
   function renderSee() {
     $$("button", catEl).forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.cat === activeCat)); });
-    if (activeCat === "plan") {
-      listEl.innerHTML = planHtml();
-    } else {
-      listEl.innerHTML = '<div class="places">' +
-        places.filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
-      wireImages(listEl);
-      linkMaps(listEl);
-    }
+    listEl.innerHTML = '<div class="places">' +
+      places.filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
+    wireImages(listEl);
+    linkMaps(listEl);
   }
   function updateSeen() {
     var n = places.filter(function (p) { return seen[p.id]; }).length;
@@ -259,6 +247,46 @@
   renderCats();
   renderSee();
   updateSeen();
+
+  /* ---------- where to eat ---------- */
+  var KIND = {
+    vegan:   { label: "100% vegan",    tag: "tag tag-accent", icon: "i-leaf" },
+    veg:     { label: "Vegetarian",    tag: "tag",            icon: "i-bowl" },
+    options: { label: "Vegan options", tag: "tag",            icon: "i-bowl" }
+  };
+  var eatAreas = DATA.eatAreas || [], restaurants = DATA.restaurants || [];
+  var eatAreaEl = $("#eat-areas"), eatListEl = $("#eat-list");
+  var activeArea = store.get("sgn-guide-eat-area", eatAreas[0] && eatAreas[0].id);
+  if (!eatAreas.some(function (a) { return a.id === activeArea; })) activeArea = eatAreas[0] && eatAreas[0].id;
+
+  function restaurantRow(r) {
+    var k = KIND[r.kind] || KIND.veg;
+    return '<div class="row">' +
+      '<span class="tile">' + icon(k.icon) + "</span>" +
+      '<div class="row-main"><p class="t">' + esc(r.name) + "</p>" +
+        '<p class="r-meta"><span class="' + k.tag + '">' + esc(k.label) + "</span>" +
+        (r.where ? '<span class="where">' + esc(r.where) + "</span>" : "") + "</p>" +
+        '<p class="d">' + esc(r.desc) + "</p></div>" +
+      '<a class="icon-btn sm" data-q="' + esc(r.q) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) + ' in Maps">' + icon("i-arrow") + "</a>" +
+      "</div>";
+  }
+  function renderEat() {
+    eatAreaEl.innerHTML = eatAreas.map(function (a) {
+      return '<button type="button" role="tab" data-area="' + a.id + '" aria-selected="' + (a.id === activeArea) + '">' +
+        icon(a.icon) + esc(a.label) + "</button>";
+    }).join("");
+    eatListEl.innerHTML = restaurants.filter(function (r) { return r.area === activeArea; }).map(restaurantRow).join("");
+    $("#eat-count").textContent = restaurants.length + " places";
+    linkMaps(eatListEl);
+  }
+  eatAreaEl.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-area]");
+    if (!b) return;
+    activeArea = b.dataset.area;
+    store.set("sgn-guide-eat-area", activeArea);
+    renderEat();
+  });
+  renderEat();
 
   /* ---------- dishes ---------- */
   var dishEl = $("#dishes");
