@@ -25,6 +25,12 @@
   function mapUrl(q) {
     return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q + ", Ho Chi Minh City, Vietnam");
   }
+  /* Opens the place in Google Maps, where its photo gallery and reviews live */
+  function photosBtn(q, name) {
+    return '<a class="btn btn-secondary btn-sm" data-q="' + esc(q) + '" target="_blank" rel="noopener"' +
+      ' aria-label="Photos and reviews of ' + esc(name) + ' in Google Maps">' +
+      icon("i-photo") + "Photos &amp; reviews" + icon("i-arrow").replace('class="i"', 'class="i i-trail"') + "</a>";
+  }
   function linkMaps(root) {
     $$("[data-q]", root).forEach(function (a) { a.href = mapUrl(a.getAttribute("data-q")); });
   }
@@ -206,7 +212,7 @@
           "<li>" + icon(fromIcon(p.from)) + "<span>" + esc(p.from) + "</span></li>" +
         "</ul>" +
         (p.tip ? '<p class="tip">' + icon("i-info") + "<span>" + esc(p.tip) + "</span></p>" : "") +
-        (p.q ? '<a class="link" data-q="' + esc(p.q) + '" target="_blank" rel="noopener">Open in Maps' + icon("i-arrow") + "</a>" : "") +
+        (p.q ? photosBtn(p.q, p.name) : "") +
       "</div></article>";
   }
   function renderCats() {
@@ -266,8 +272,7 @@
       '<div class="row-main"><p class="t">' + esc(r.name) + "</p>" +
         '<p class="r-meta"><span class="' + k.tag + '">' + esc(k.label) + "</span>" +
         (r.where ? '<span class="where">' + esc(r.where) + "</span>" : "") + "</p>" +
-        '<p class="d">' + esc(r.desc) + "</p></div>" +
-      '<a class="icon-btn sm" data-q="' + esc(r.q) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) + ' in Maps">' + icon("i-arrow") + "</a>" +
+        '<p class="d">' + esc(r.desc) + "</p>" + photosBtn(r.q, r.name) + "</div>" +
       "</div>";
   }
   function renderEat() {
