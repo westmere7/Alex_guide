@@ -334,6 +334,18 @@ window.SGN_DATA = {
     { area: "home", kind: "veg", name: "Chay Tuệ", where: "D1 · Tôn Thất Đạm, ~3 min walk",
       desc: "A well-liked local chay restaurant one street over from the hotel, with a long menu of Vietnamese vegetarian dishes. Other branches are on Trần Hưng Đạo and Mai Thị Lựu.",
       q: "Nhà hàng chay Tuệ 130 Tôn Thất Đạm" },
+    { area: "home", kind: "vegan", name: "Mãn Tự Vegan", where: "D1 · Tôn Thất Đạm, ~3 min walk",
+      desc: "A small vegan buffet down an alley near the hotel. You pay what you like, so it's an easy, no-fuss lunch.",
+      q: "Mãn Tự Vegan 14/2 Tôn Thất Đạm" },
+    { area: "home", kind: "vegan", name: "Bon's Vegan", where: "D1 · Hàm Nghi, ~5 min walk",
+      desc: "A fully vegan spot on the boulevard by the hotel, handy for a quick meal without asking any questions.",
+      q: "Bon's Vegan 127 Hàm Nghi" },
+    { area: "home", kind: "veg", name: "Chay Garden", where: "D3 · Võ Văn Tần · Michelin Bib Gourmand",
+      desc: "Vietnamese vegetarian cooking in a garden house, recognised by the Michelin Guide. Book for dinner, and pair it with the War Remnants Museum nearby.",
+      q: "Chay Garden 52 Võ Văn Tần" },
+    { area: "home", kind: "veg", name: "PI Vegetarian Bistro", where: "D3 · near War Remnants",
+      desc: "A relaxed bistro with rice bowls, tempeh salads and Vietnamese dishes. The menu marks anything with egg or dairy.",
+      q: "PI Vegetarian Bistro Saigon" },
     { area: "home", kind: "veg", name: "Hum Vegetarian", where: "D3 · next to War Remnants",
       desc: "Calm, leafy and a bit upscale. Most of the menu is vegan, and it's ideal after the museum.",
       q: "Hum Vegetarian Café & Restaurant Võ Văn Tần" },
@@ -366,6 +378,9 @@ window.SGN_DATA = {
     { area: "east", kind: "veg", name: "Chay Garden Thảo Điền", where: "Vietnamese buffet",
       desc: "An upscale Vietnamese vegetarian buffet, good for sampling.",
       q: "Chay Garden Thảo Điền" },
+    { area: "east", kind: "options", name: "Baba's Kitchen", where: "Nguyễn Văn Hưởng",
+      desc: "Indian food with plenty of vegetarian dishes. Ask which curries can be made without ghee or cream.",
+      q: "Baba's Kitchen Thảo Điền" },
     { area: "east", kind: "options", name: "Tartine Saigon", where: "Street 66",
       desc: "A sourdough bakery with vegan sandwiches, pizzas and salads. A good lunch stop.",
       q: "Tartine Saigon Thảo Điền" },
@@ -394,12 +409,69 @@ window.SGN_DATA = {
     { area: "cheap", kind: "vegan", name: "Hủ Tiếu Chay Chú Quang", where: "Alley off Lãnh Binh Thăng",
       desc: "A tiny, much-loved vegan noodle-soup spot. Very local, and worth the short ride.",
       q: "Hủ Tiếu Chay Chú Quang" },
+    { area: "cheap", kind: "vegan", name: "SEN Vegan", where: "D1 · Nguyễn Thái Học",
+      desc: "Simple, good-value vegan Vietnamese set meals, around 60–80k ₫ a plate.",
+      q: "SEN Vegan Nguyễn Thái Học" },
     { area: "cheap", kind: "vegan", name: "Loving Hut", where: "Branches citywide",
       desc: "A vegan chain with Vietnamese and fusion dishes. Reliable and inexpensive.",
       q: "Loving Hut vegan" },
     { area: "cheap", kind: "veg", name: "Any \"Quán cơm chay\"", where: "Every neighbourhood",
       desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate. Busiest on the 1st and 15th of the lunar month.",
       q: "quán cơm chay Quận 1" }
+  ],
+
+  /* ---------- DRINKS ---------- */
+  drinkTypes: [
+    { id: "rooftop", label: "Rooftops",   icon: "i-city" },
+    { id: "cocktail", label: "Cocktails", icon: "i-glass" },
+    { id: "beer",    label: "Craft beer", icon: "i-beer" },
+    { id: "coffee",  label: "Coffee",     icon: "i-coffee" }
+  ],
+
+  drinks: [
+    /* Rooftops */
+    { type: "rooftop", name: "EON Heli Bar", tag: "Walk 2 min", where: "Bitexco tower, top floors",
+      desc: "The highest bar you can get to in Saigon, in the tower next to the hotel. Arrive just before sunset to see the city in daylight and lit up.",
+      q: "EON Heli Bar Bitexco" },
+    { type: "rooftop", name: "The Summit, Caravelle", tag: "Walk 7 min", where: "Caravelle Hotel, Lam Sơn Square",
+      desc: "A relaxed hotel rooftop above the Opera House square, with a classic view down Đồng Khởi. Easy to combine with dinner nearby.",
+      q: "The Summit rooftop Caravelle Saigon" },
+    { type: "rooftop", name: "Chill Skybar", tag: "Dress code", where: "AB Tower, Lê Lai · car 5 min",
+      desc: "Saigon's best-known open-air rooftop: loud and glamorous, with DJs later in the night. Smart-casual, so no shorts or flip-flops.",
+      q: "Chill Skybar AB Tower" },
+
+    /* Cocktails */
+    { type: "cocktail", name: "Snuffbox", tag: "Speakeasy", where: "D1 · hidden entrance",
+      desc: "Often named the city's best cocktail bar: a 1920s-style speakeasy tucked into an office building. Tell the bartender what you like and let them improvise.",
+      q: "Snuffbox Saigon" },
+    { type: "cocktail", name: "Firkin Bar", tag: "Cocktails", where: "D1",
+      desc: "A small, highly rated bar for cocktails and whisky. Seats are limited, so go early.",
+      q: "Firkin Bar Saigon" },
+
+    /* Craft beer */
+    { type: "beer", name: "7 Bridges", tag: "Walk 5 min", where: "Đông Du street",
+      desc: "A taproom close to the hotel with a long list of Vietnamese craft beers on tap. Good for a first drink in town.",
+      q: "7 Bridges Saigon Craft Beer Taproom Đông Du" },
+    { type: "beer", name: "Pasteur Street Brewing", tag: "Craft beer", where: "Pasteur street · walk 12 min",
+      desc: "Saigon's best-known craft brewery, using local ingredients like jasmine, passion fruit and coffee. Order a tasting flight.",
+      q: "Pasteur Street Brewing Company Pasteur" },
+    { type: "beer", name: "Heart of Darkness", tag: "Craft beer", where: "Lý Tự Trọng · walk 12 min",
+      desc: "Bold, hoppy beers in a dark, cosy taproom. A favourite with beer fans.",
+      q: "Heart of Darkness Brewery Saigon" },
+    { type: "beer", name: "East West Brewing", tag: "Craft beer", where: "Lý Tự Trọng",
+      desc: "A big, airy beer hall with its own brewery. Good when you want space to sit.",
+      q: "East West Brewing Company Saigon" },
+
+    /* Coffee */
+    { type: "coffee", name: "The Workshop", tag: "Walk 3 min", where: "Ngô Đức Kế street",
+      desc: "A loft-style specialty roastery up a staircase, with filter coffee brewed at the bar. A calm start to the day.",
+      q: "The Workshop Coffee Ngô Đức Kế" },
+    { type: "coffee", name: "Café Apartment", tag: "Walk 3 min", where: "42 Nguyễn Huệ",
+      desc: "An old apartment block filled with tiny cafés on every floor. Pick one with a balcony over the walking street.",
+      q: "42 Nguyễn Huệ Café Apartment" },
+    { type: "coffee", name: "Cộng Cà Phê", tag: "Coffee", where: "Branches across D1",
+      desc: "A retro café chain famous for coconut coffee. It's made with condensed milk, so ask for it without (không sữa đặc).",
+      q: "Cộng Cà Phê Quận 1" }
   ],
 
   dishes: [

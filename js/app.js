@@ -303,13 +303,8 @@
     veg:     { label: "Vegetarian",    tag: "tag",            icon: "i-bowl" },
     options: { label: "Vegan options", tag: "tag",            icon: "i-bowl" }
   };
-  var eatAreas = DATA.eatAreas || [], restaurants = DATA.restaurants || [];
-  var eatAreaEl = $("#eat-areas"), eatListEl = $("#eat-list");
-  var activeArea = store.get("sgn-guide-eat-area", eatAreas[0] && eatAreas[0].id);
-  if (!eatAreas.some(function (a) { return a.id === activeArea; })) activeArea = eatAreas[0] && eatAreas[0].id;
-
   function restaurantRow(r) {
-    var k = KIND[r.kind] || KIND.veg;
+    var k = r.tag ? { label: r.tag, tag: "tag", icon: r.icon || "i-bowl" } : (KIND[r.kind] || KIND.veg);
     var im = r.img && IMAGES[r.img];
     return '<div class="row">' +
       (im ? '<span class="thumb"><img src="' + esc(im.src) + '" alt="' + esc(r.name) + '" loading="lazy" decoding="async"></span>'
@@ -320,23 +315,46 @@
         '<p class="d">' + esc(r.desc) + "</p>" + photosBtn(r.q, r.name) + "</div>" +
       "</div>";
   }
-  function renderEat() {
-    eatAreaEl.innerHTML = eatAreas.map(function (a) {
-      return '<button type="button" role="tab" data-area="' + a.id + '" aria-selected="' + (a.id === activeArea) + '">' +
-        icon(a.icon) + esc(a.label) + "</button>";
-    }).join("");
-    eatListEl.innerHTML = restaurants.filter(function (r) { return r.area === activeArea; }).map(restaurantRow).join("");
-    $("#eat-count").textContent = restaurants.length + " places";
-    linkMaps(eatListEl);
+
+  /* A pill filter over a list of rows (used for food and drinks) */
+  function filteredList(opts) {
+    var groups = opts.groups || [], items = opts.items || [];
+    var segEl = $(opts.seg), listEl = $(opts.list);
+    if (!segEl || !listEl || !groups.length) return;
+    var active = store.get(opts.key, groups[0].id);
+    if (!groups.some(function (g) { return g.id === active; })) active = groups[0].id;
+    function render() {
+      segEl.innerHTML = groups.map(function (g) {
+        return '<button type="button" role="tab" data-g="' + g.id + '" aria-selected="' + (g.id === active) + '">' +
+          icon(g.icon) + esc(g.label) + "</button>";
+      }).join("");
+      listEl.innerHTML = items.filter(function (r) { return r[opts.field] === active; }).map(function (r) {
+        return restaurantRow(opts.decorate ? opts.decorate(r) : r);
+      }).join("");
+      if (opts.count) $(opts.count).textContent = items.length + " places";
+      linkMaps(listEl);
+    }
+    segEl.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-g]");
+      if (!b) return;
+      active = b.dataset.g;
+      store.set(opts.key, active);
+      render();
+    });
+    render();
   }
-  eatAreaEl.addEventListener("click", function (e) {
-    var b = e.target.closest("button[data-area]");
-    if (!b) return;
-    activeArea = b.dataset.area;
-    store.set("sgn-guide-eat-area", activeArea);
-    renderEat();
-  });
-  renderEat();
+
+  filteredList({ groups: DATA.eatAreas, items: DATA.restaurants, field: "area",
+    seg: "#eat-areas", list: "#eat-list", count: "#eat-count", key: "sgn-guide-eat-area" });
+
+  var drinkTypes = {};
+  (DATA.drinkTypes || []).forEach(function (t) { drinkTypes[t.id] = t; });
+  filteredList({ groups: DATA.drinkTypes, items: DATA.drinks, field: "type",
+    seg: "#drink-types", list: "#drink-list", count: "#drink-count", key: "sgn-guide-drink-type",
+    decorate: function (r) {
+      var t = drinkTypes[r.type] || {};
+      return { name: r.name, where: r.where, desc: r.desc, q: r.q, tag: r.tag || t.label, icon: t.icon };
+    } });
 
   /* ---------- dishes ---------- */
   var dishEl = $("#dishes");
