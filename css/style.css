@@ -321,6 +321,9 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .media img.loading { opacity: 0; }
 .media .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-3); }
 .media .ph .i { width: 32px; height: 32px; stroke-width: 1.4; }
+.place .media.empty { aspect-ratio: auto; height: 56px; background: var(--accent-bg); }
+.place .media.empty .ph { color: var(--accent); }
+.place .media.empty .ph .i { width: 24px; height: 24px; stroke-width: 1.75; }
 .credits-group { margin-top: 32px; }
 .credits { list-style: none; display: grid; gap: 6px; font-size: var(--fs-xs); color: var(--text-3); }
 .credits a { color: var(--text-2); font-weight: 600; text-decoration: none; }
@@ -341,7 +344,16 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .place.done { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .place.done .media img { filter: saturate(.6); }
 
+/* ===== Callout (category warnings) ===== */
+.callout {
+  display: flex; gap: 10px; margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md);
+  background: var(--warn-bg); color: var(--text); font-size: var(--fs-sm); line-height: 1.5;
+}
+.callout .i { width: 18px; height: 18px; color: var(--warn); margin-top: 1px; }
+
 /* ===== Restaurant rows ===== */
+.thumb { width: 56px; height: 56px; flex: none; border-radius: var(--r-sm); overflow: hidden; background: var(--sunken); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
 .r-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 4px 0 4px; }
 .r-meta .where { font-size: var(--fs-xs); color: var(--text-3); }
 

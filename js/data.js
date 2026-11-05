@@ -7,6 +7,9 @@ window.SGN_DATA = {
 
   /* ---------- SEE ---------- */
   categories: [
+    { id: "art",   label: "Art",          icon: "i-palette" },
+    { id: "shop",  label: "Shopping",     icon: "i-bag",
+      note: "Skip Bến Thành Market. It's a tourist trap with pushy vendors and prices several times what you'd pay elsewhere. The shops below sell better-made, locally designed things at fair or fixed prices." },
     { id: "old",   label: "Old Saigon",   icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
@@ -15,14 +18,6 @@ window.SGN_DATA = {
 
   places: [
     /* Old Saigon — all walkable from home */
-    {
-      id: "ben-thanh", cat: "old", img: "ben-thanh",
-      name: "Bến Thành Market", vi: "Chợ Bến Thành",
-      desc: "Saigon's best-known market, under the clock tower: coffee beans, lacquerware, silk, dried fruit and a busy food hall.",
-      time: "45–90 min", best: "Morning", cost: "Free", from: "Walk 2 min",
-      tip: "Fixed-price shops line the outside. Inside, haggle with a smile and start at around half.",
-      q: "Bến Thành Market"
-    },
     {
       id: "nguyen-hue", cat: "old", img: "nguyen-hue",
       name: "Nguyễn Huệ & City Hall", vi: "Phố đi bộ Nguyễn Huệ",
@@ -56,15 +51,15 @@ window.SGN_DATA = {
       q: "Ho Chi Minh City Museum Gia Long Palace"
     },
     {
-      id: "fine-arts", cat: "old", img: "fine-arts",
+      id: "fine-arts", cat: "art", img: "fine-arts",
       name: "Museum of Fine Arts", vi: "Bảo tàng Mỹ thuật",
       desc: "Three ochre colonial mansions full of lacquer paintings, Cham sculpture and wartime art, with an old cage lift and patterned tile floors.",
       time: "1 h", best: "Midday, out of the heat", cost: "~30k ₫", from: "Walk 5 min",
-      tip: "It's rarely crowded, and the stairwells are very photogenic.",
+      tip: "It's rarely crowded, and the stairwells are very photogenic. Lê Công Kiều antiques street is right behind it.",
       q: "Ho Chi Minh City Museum of Fine Arts"
     },
     {
-      id: "opera", cat: "old", img: "opera",
+      id: "opera", cat: "art", img: "opera",
       name: "Saigon Opera House", vi: "Nhà hát Thành phố",
       desc: "A 1900 French Belle Époque theatre at the top of Đồng Khởi street. It's lovely from outside and even better with a show.",
       time: "15 min · show 1 h", best: "Evening show", cost: "Shows paid", from: "Walk 10 min",
@@ -78,6 +73,106 @@ window.SGN_DATA = {
       time: "1.5–2 h", best: "Morning", cost: "~40k ₫", from: "Walk 15 min",
       tip: "Some galleries are very graphic. Hum Vegetarian is a few doors away for a calm lunch afterwards.",
       q: "War Remnants Museum"
+    },
+
+    /* Art — Alex's favourite */
+    {
+      id: "galerie-quynh", cat: "art", img: "a-quynh",
+      name: "Galerie Quynh", vi: "Phòng tranh Quỳnh",
+      desc: "One of Saigon's longest-running contemporary galleries, showing leading Vietnamese artists in painting, installation and photography. It puts on several shows a year, plus artist talks.",
+      time: "45 min", best: "Weekday afternoon", cost: "Free", from: "Car 10 min",
+      tip: "Check their website or Instagram for the current show and opening days before you go.",
+      q: "Galerie Quynh"
+    },
+    {
+      id: "craig-thomas", cat: "art", img: null,
+      name: "Craig Thomas Gallery", vi: "Craig Thomas Gallery",
+      desc: "A small gallery known for spotting emerging Vietnamese painters. Every show includes artists having their first exhibition.",
+      time: "30 min", best: "Afternoon", cost: "Free", from: "Car 10 min",
+      tip: "Good for buying an original piece at a fair price. Ask about shipping it home.",
+      q: "Craig Thomas Gallery Saigon"
+    },
+    {
+      id: "green-palm", cat: "art", img: null,
+      name: "Green Palm Gallery", vi: "Green Palm Gallery",
+      desc: "Traditional and modern Vietnamese painting, including lacquer, silk and oils, with a branch in District 1.",
+      time: "30 min", best: "Any day", cost: "Free", from: "Car 5–10 min",
+      tip: "A great place to see lacquer painting up close, and staff are happy to explain how it's made.",
+      q: "Green Palm Gallery District 1"
+    },
+    {
+      id: "le-cong-kieu", cat: "art", img: "a-lck",
+      name: "Lê Công Kiều Antiques Street", vi: "Phố đồ cổ Lê Công Kiều",
+      desc: "A short street of antique and curio shops selling ceramics, bronzes, wood carvings and old propaganda posters, right behind the Fine Arts Museum.",
+      time: "30–45 min", best: "Morning", cost: "Free to browse", from: "Walk 5 min",
+      tip: "Many \"antiques\" are reproductions, so buy because you love it. Genuine antiques need export paperwork.",
+      q: "Lê Công Kiều antique street"
+    },
+    {
+      id: "water-puppets", cat: "art", img: "a-puppet",
+      name: "Water Puppet Show", vi: "Múa rối nước Rồng Vàng",
+      desc: "Vietnam's centuries-old folk art: lacquered wooden puppets glide across a pool to live traditional music. The Golden Dragon theatre runs short evening shows.",
+      time: "45 min show", best: "Evening", cost: "Paid ticket", from: "Car 10 min",
+      tip: "Book a day ahead and sit near the front. The live musicians are half the show.",
+      q: "Golden Dragon Water Puppet Theatre"
+    },
+
+    /* Shopping — local design, fair prices */
+    {
+      id: "ohquao", cat: "shop", img: null,
+      name: "OHQUAO The Local Edit", vi: "Hẻm 58 Phạm Ngọc Thạch",
+      desc: "A concept store in an alley, stocked entirely with things designed and made in Saigon: stationery, homeware, prints and a room of local fashion labels.",
+      time: "45 min", best: "Afternoon", cost: "Fixed prices", from: "Car 10 min",
+      tip: "Their own paper goods and notebooks make light, packable gifts.",
+      q: "OHQUAO The Local Edit Phạm Ngọc Thạch"
+    },
+    {
+      id: "craft-house", cat: "shop", img: null,
+      name: "The Craft House", vi: "The Craft House",
+      desc: "Work from dozens of Vietnamese artisans and small brands under one roof, including ceramics, textiles, lacquer and woven goods.",
+      time: "30–45 min", best: "Any time", cost: "Fixed prices", from: "Car 5–10 min",
+      tip: "Ask staff which makers each piece comes from. Many have a story.",
+      q: "The Craft House Saigon"
+    },
+    {
+      id: "dinh-design", cat: "shop", img: null,
+      name: "Dinh Design Store", vi: "Independence Palace shop",
+      desc: "A well-curated design shop inside the Independence Palace grounds, selling items by local designers with a Saigon twist.",
+      time: "20 min", best: "With the palace", cost: "Fixed prices", from: "Walk 12 min",
+      tip: "Visit it on the way out of the palace, so you don't need a separate trip.",
+      q: "Dinh Design Store Independence Palace"
+    },
+    {
+      id: "ginkgo", cat: "shop", img: "s-ginkgo",
+      name: "Ginkgo Concept Store", vi: "Ginkgo",
+      desc: "Fun Saigon-themed T-shirts, bags and souvenirs from a long-running local brand, a big step up from market tat.",
+      time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Walk / car, D1",
+      tip: "Good for gifts that still look good once you're home.",
+      q: "Ginkgo Concept Store Saigon"
+    },
+    {
+      id: "tia-to", cat: "shop", img: null,
+      name: "Tia To Artbook", vi: "Tía Tô Artbook",
+      desc: "Prints, notebooks and tote bags featuring work by local Saigon illustrators. Perfect for an art lover.",
+      time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Car 10 min",
+      tip: "Prints are flat and light, so they're easy to fly home.",
+      q: "Tia To Artbook Saigon"
+    },
+    {
+      id: "tan-dinh-market", cat: "shop", img: "s-tan-dinh",
+      name: "Tân Định Market", vi: "Chợ Tân Định",
+      desc: "A locals' market famous for fabric. Silk, linen and cotton are sold by the metre, with tailors nearby who can make clothes in a day or two.",
+      time: "1 h", best: "Morning", cost: "Haggle gently", from: "Car 10 min",
+      tip: "Go early in the trip if you want something tailored. It's next to the pink Tân Định Church.",
+      q: "Tân Định Market"
+    },
+    {
+      id: "saigon-centre", cat: "shop", img: null,
+      name: "Saigon Centre & Takashimaya", vi: "65 Lê Lợi",
+      desc: "A big, cool, air-conditioned mall with fixed prices, international and Vietnamese brands, and a food hall downstairs.",
+      time: "1 h", best: "Rainy afternoon", cost: "Fixed prices", from: "Walk 5 min",
+      tip: "Good for a rainy-day escape, or to pick up anything you forgot to pack.",
+      q: "Saigon Centre Takashimaya"
     },
 
     /* Temples & Chinatown */
@@ -118,7 +213,7 @@ window.SGN_DATA = {
       name: "Mariamman Temple", vi: "Đền Mariamman",
       desc: "A small, colourful South Indian Hindu temple, a short walk from home.",
       time: "20 min", best: "Any time", cost: "Free", from: "Walk 5 min",
-      tip: "Take your shoes off at the entrance. It's an easy stop on the way back from the market.",
+      tip: "Take your shoes off at the entrance. It's an easy stop on the way home.",
       q: "Mariamman Temple Ho Chi Minh City"
     },
 
@@ -130,14 +225,6 @@ window.SGN_DATA = {
       time: "45 min", best: "6–8am", cost: "Free", from: "Walk 8 min",
       tip: "Go early. By 9am it's hot and quiet, and the best people-watching is over.",
       q: "Tao Đàn Park"
-    },
-    {
-      id: "night-market", cat: "out", img: "night-market",
-      name: "Bến Thành Night Market", vi: "Chợ đêm Bến Thành",
-      desc: "Stalls set up around the market after dark, selling souvenirs, fruit and juice. Good for people-watching on your doorstep.",
-      time: "45 min", best: "After 7pm", cost: "Free", from: "Walk 2 min",
-      tip: "Fresh fruit and sugarcane juice are easy vegan wins. Prices are aimed at tourists, so haggle.",
-      q: "Ben Thanh Night Market"
     },
     {
       id: "skydeck", cat: "out", img: "skydeck",
@@ -268,7 +355,7 @@ window.SGN_DATA = {
     { area: "east", kind: "vegan", name: "Kashew Cheese & Wine", where: "Trần Ngọc Diện street",
       desc: "Cashew cheese boards, pasta and salads with a glass of wine.",
       q: "Kashew Cheese Wine Bar Thảo Điền" },
-    { area: "east", kind: "veg", name: "Hum Garden", where: "Villa with garden",
+    { area: "east", kind: "veg", name: "Hum Garden", img: "hum-garden", where: "Villa with garden",
       desc: "Hum's sister restaurant in a leafy villa, slower and greener than the city branch.",
       q: "Hum Garden Thảo Điền" },
     { area: "east", kind: "veg", name: "Chay Garden Thảo Điền", where: "Vietnamese buffet",
@@ -319,8 +406,8 @@ window.SGN_DATA = {
     { name: "Chè", img: "d-che", desc: "Sweet soups with beans, jelly, fruit and coconut milk. Usually vegan." },
     { name: "Nước mía", img: "d-nuoc-mia", desc: "Fresh-pressed sugarcane juice with a squeeze of kumquat." },
     { name: "Cà phê đen đá", img: "d-coffee", desc: "Strong iced black coffee from a phin filter. Skip the condensed milk." },
-    { name: "Bánh mì chay", img: null, desc: "Baguette with tofu, mock meat and pickles. Say \"không bơ, không pate\"." },
-    { name: "Bánh xèo chay", img: null, desc: "A crispy turmeric crêpe wrapped in greens. Check the batter has no egg." }
+    { name: "Bánh mì chay", img: "d-banh-mi", desc: "Baguette with tofu, mock meat and pickles. Say \"không bơ, không pate\"." },
+    { name: "Bánh xèo chay", img: "d-banh-xeo", desc: "A crispy turmeric crêpe wrapped in greens. Check the batter has no egg." }
   ],
 
   /* ---------- PREP: packing list ---------- */

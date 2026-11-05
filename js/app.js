@@ -36,7 +36,7 @@
   }
   function media(key, alt, fallbackIcon) {
     var im = key && IMAGES[key];
-    if (!im) return '<div class="media"><span class="ph">' + icon(fallbackIcon || "i-bowl") + "</span></div>";
+    if (!im) return '<div class="media empty"><span class="ph">' + icon(fallbackIcon || "i-bowl") + "</span></div>";
     return '<div class="media">' +
       '<span class="ph">' + icon(fallbackIcon || "i-landmark") + "</span>" +
       '<img class="loading" src="' + esc(im.src) + '" alt="' + esc(alt) + '" loading="lazy" decoding="async">' +
@@ -199,7 +199,7 @@
   function placeCard(p) {
     var done = !!seen[p.id];
     return '<article class="place' + (done ? " done" : "") + '" data-id="' + esc(p.id) + '">' +
-      media(p.img, p.name, "i-landmark") +
+      media(p.img, p.name, (cats.filter(function (c) { return c.id === p.cat; })[0] || {}).icon || "i-landmark") +
       '<div class="place-body">' +
         '<div class="place-head"><div class="row-main"><h3>' + esc(p.name) + '</h3><p class="vi">' + esc(p.vi) + "</p></div>" +
           '<label class="check" title="Mark as visited"><input type="checkbox" aria-label="Visited ' + esc(p.name) + '"' + (done ? " checked" : "") + '><span class="box">' + icon("i-check") + "</span></label>" +
@@ -223,7 +223,9 @@
   }
   function renderSee() {
     $$("button", catEl).forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.cat === activeCat)); });
-    listEl.innerHTML = '<div class="places">' +
+    var cat = cats.filter(function (c) { return c.id === activeCat; })[0] || {};
+    listEl.innerHTML = (cat.note ? '<p class="callout">' + icon("i-info") + "<span>" + esc(cat.note) + "</span></p>" : "") +
+      '<div class="places">' +
       places.filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
     wireImages(listEl);
     linkMaps(listEl);
@@ -267,8 +269,10 @@
 
   function restaurantRow(r) {
     var k = KIND[r.kind] || KIND.veg;
+    var im = r.img && IMAGES[r.img];
     return '<div class="row">' +
-      '<span class="tile">' + icon(k.icon) + "</span>" +
+      (im ? '<span class="thumb"><img src="' + esc(im.src) + '" alt="' + esc(r.name) + '" loading="lazy" decoding="async"></span>'
+          : '<span class="tile">' + icon(k.icon) + "</span>") +
       '<div class="row-main"><p class="t">' + esc(r.name) + "</p>" +
         '<p class="r-meta"><span class="' + k.tag + '">' + esc(k.label) + "</span>" +
         (r.where ? '<span class="where">' + esc(r.where) + "</span>" : "") + "</p>" +
@@ -386,6 +390,7 @@
     var subjects = {};
     places.forEach(function (p) { if (p.img) subjects[p.img] = p.name; });
     (DATA.dishes || []).forEach(function (d) { if (d.img) subjects[d.img] = d.name; });
+    (DATA.restaurants || []).forEach(function (r) { if (r.img) subjects[r.img] = r.name; });
     creditsEl.innerHTML = Object.keys(subjects).filter(function (k) { return IMAGES[k]; }).map(function (k) {
       var im = IMAGES[k];
       return '<li><a href="' + esc(im.page) + '" target="_blank" rel="noopener">' + esc(subjects[k]) + "</a>, " +

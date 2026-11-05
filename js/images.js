@@ -1,11 +1,5 @@
-/* Photos: Wikimedia Commons (free licences). Credits are listed at the bottom of the Help tab. */
+/* Photos: Wikimedia Commons & Flickr (free licences). Credits are listed at the bottom of the Help tab. */
 window.SGN_IMAGES = {
- "ben-thanh": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Ben_Thanh%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_01.JPG/500px-Ben_Thanh%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_01.JPG",
-  "page": "https://commons.wikimedia.org/wiki/File:Ben_Thanh,_Ciudad_Ho_Chi_Minh,_Vietnam,_2013-08-14,_DD_01.JPG",
-  "by": "Diego Delso",
-  "lic": "CC BY-SA 3.0"
- },
  "nguyen-hue": {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Nguyen_Hue_Street_2020.jpg/500px-Nguyen_Hue_Street_2020.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Nguyen_Hue_Street_2020.jpg",
@@ -83,12 +77,6 @@ window.SGN_IMAGES = {
   "page": "https://commons.wikimedia.org/wiki/File:2023-12-10_Tao_%C4%90%C3%A0n_Park,_Saigon_01.jpg",
   "by": "源義信",
   "lic": "CC BY 4.0"
- },
- "night-market": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Ben_Thanh_Night_Market_%2836350096103%29.jpg/500px-Ben_Thanh_Night_Market_%2836350096103%29.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Ben_Thanh_Night_Market_(36350096103).jpg",
-  "by": "Terrazzo from Vernon Hills, IL, USA",
-  "lic": "CC BY 2.0"
  },
  "skydeck": {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Saigon_Skydeck_%2853546400302%29.jpg/500px-Saigon_Skydeck_%2853546400302%29.jpg",
@@ -203,5 +191,53 @@ window.SGN_IMAGES = {
   "page": "https://commons.wikimedia.org/wiki/File:Viet-coffee.jpg",
   "by": "Mike Verdone",
   "lic": "Public domain"
+ },
+ "a-quynh": {
+  "src": "https://live.staticflickr.com/44/171761366_d8acb736b5.jpg",
+  "page": "https://www.flickr.com/photos/96147277@N00/171761366",
+  "by": "remittancegirl",
+  "lic": "CC BY-NC-SA 2.0"
+ },
+ "a-lck": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Duong_le_cong_kieu%2C_quan_1_tphcmvn_-_panoramio.jpg/500px-Duong_le_cong_kieu%2C_quan_1_tphcmvn_-_panoramio.jpg",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=57093698",
+  "by": "trungydang",
+  "lic": "CC BY 3.0"
+ },
+ "a-puppet": {
+  "src": "https://live.staticflickr.com/7033/6545812425_69d97f8f2b.jpg",
+  "page": "https://www.flickr.com/photos/33143388@N04/6545812425",
+  "by": "NH53",
+  "lic": "CC BY 2.0"
+ },
+ "hum-garden": {
+  "src": "https://live.staticflickr.com/65535/53541929602_c0a23e0ebb.jpg",
+  "page": "https://www.flickr.com/photos/109715245@N06/53541929602",
+  "by": "paaddor",
+  "lic": "CC BY-ND 2.0"
+ },
+ "d-banh-mi": {
+  "src": "https://live.staticflickr.com/8754/16472841203_af4b3b1125.jpg",
+  "page": "https://www.flickr.com/photos/41993463@N08/16472841203",
+  "by": "Andrea_Nguyen",
+  "lic": "CC BY 2.0"
+ },
+ "d-banh-xeo": {
+  "src": "https://live.staticflickr.com/3792/12762098273_a4dd7a4135.jpg",
+  "page": "https://www.flickr.com/photos/52488168@N00/12762098273",
+  "by": "h-bomb",
+  "lic": "CC BY-NC-SA 2.0"
+ },
+ "s-tan-dinh": {
+  "src": "https://live.staticflickr.com/65535/51787409711_58f35ef6a1.jpg",
+  "page": "https://www.flickr.com/photos/9501161@N02/51787409711",
+  "by": "S. Ken",
+  "lic": "CC BY-NC-SA 2.0"
+ },
+ "s-ginkgo": {
+  "src": "https://live.staticflickr.com/65535/49273691491_a6821422bb.jpg",
+  "page": "https://www.flickr.com/photos/90955804@N04/49273691491",
+  "by": "Ted's photos - Returns in December",
+  "lic": "CC BY-NC-SA 2.0"
  }
 };
