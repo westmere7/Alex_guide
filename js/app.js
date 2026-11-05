@@ -114,6 +114,47 @@
     })
     .catch(function () {});
 
+  /* ---------- trip forecast (only the trip days inside Open-Meteo's 16-day window) ---------- */
+  (function () {
+    var trip = DATA.trip, el = $("#trip-forecast");
+    if (!trip || !el) return;
+    function d(iso) { var p = iso.split("-"); return new Date(Date.UTC(+p[0], p[1] - 1, +p[2])); }
+    var fmt = function (iso, opts) { return new Intl.DateTimeFormat("en-GB", Object.assign({ timeZone: "UTC" }, opts)).format(d(iso)); };
+    $("#trip-dates").textContent = fmt(trip.start, { day: "numeric", month: "short" }) + " – " + fmt(trip.end, { day: "numeric", month: "short" });
+
+    var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date()); // YYYY-MM-DD
+    if (todayIso > trip.end) return;
+    var DAY = 864e5;
+    var opensIso = new Date(d(trip.start) - 15 * DAY).toISOString().slice(0, 10);
+    function waiting() {
+      el.innerHTML = '<p class="hint wx-wait">' + icon("i-calendar") + "<span>A live forecast for each day of the trip will appear here from " +
+        fmt(opensIso > todayIso ? opensIso : todayIso, { weekday: "short", day: "numeric", month: "short" }) + ", once those dates are within 16 days.</span></p>";
+    }
+    function wxIcon(c) { return c <= 1 ? "i-sun" : c <= 48 ? "i-cloud" : "i-rain"; }
+    waiting();
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=10.7725&longitude=106.698" +
+      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+      "&forecast_days=16&timezone=Asia%2FHo_Chi_Minh")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var dl = data && data.daily;
+        if (!dl || !dl.time) return;
+        var days = dl.time.map(function (t, i) {
+          return { t: t, code: dl.weather_code[i], hi: dl.temperature_2m_max[i], lo: dl.temperature_2m_min[i], rain: dl.precipitation_probability_max[i] };
+        }).filter(function (x) { return x.t >= trip.start && x.t <= trip.end && x.t >= todayIso; });
+        if (!days.length) return;
+        el.innerHTML = '<p class="t wx-live">Live forecast</p><div class="wx-days">' + days.map(function (x) {
+          return '<div class="wx-day"><span class="wd">' + esc(fmt(x.t, { weekday: "short" })) + "</span>" +
+            '<span class="dt">' + esc(fmt(x.t, { day: "numeric", month: "short" })) + "</span>" +
+            icon(wxIcon(x.code)) +
+            '<b>' + Math.round(x.hi) + "°</b><span class=\"lo\">" + Math.round(x.lo) + "°</span>" +
+            '<span class="rp">' + (x.rain == null ? "–" : x.rain + "%") + "</span></div>";
+        }).join("") + "</div>" +
+        '<p class="hint">Max/min temperature and chance of rain. Forecasts more than a week out are rough.</p>';
+      })
+      .catch(function () {});
+  })();
+
   /* ---------- vegan card ---------- */
   var dlg = $("#vegan-card");
   $$("[data-open-card]").forEach(function (b) {

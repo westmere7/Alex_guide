@@ -5,6 +5,9 @@
 
 window.SGN_DATA = {
 
+  /* Trip window — used only for the weather forecast, not for planning */
+  trip: { start: "2026-11-27", end: "2026-12-03" },
+
   /* ---------- SEE ---------- */
   categories: [
     { id: "art",   label: "Art",          icon: "i-palette" },
@@ -422,7 +425,7 @@ window.SGN_DATA = {
     { group: "Clothes", icon: "i-shirt", items: [
       "Light, breathable tops & shorts",
       "Something covering shoulders & knees (temples)",
-      "Compact rain jacket or poncho",
+      "Light rain jacket or poncho, just in case",
       "Sandals that can get wet",
       "Comfy walking shoes",
       "Thin layer for icy air-con",

@@ -344,6 +344,27 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .place.done { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .place.done .media img { filter: saturate(.6); }
 
+/* ===== Trip weather ===== */
+.wx-notes { margin-top: 14px; font-size: var(--fs-sm); color: var(--text-2); }
+.wx-wait { display: flex; gap: 8px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--border); }
+.wx-wait .i { width: 16px; height: 16px; margin-top: 2px; }
+.wx-live { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: var(--fs-sm); }
+.wx-days {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(64px, 1fr); gap: 6px;
+  overflow-x: auto; scrollbar-width: none; margin-top: 10px;
+}
+.wx-days::-webkit-scrollbar { display: none; }
+.wx-day {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 10px 4px; border-radius: var(--r-sm); background: var(--sunken); text-align: center;
+}
+.wx-day .wd { font-size: var(--fs-xs); font-weight: 600; color: var(--text); }
+.wx-day .dt { font-size: 11px; color: var(--text-3); margin-bottom: 4px; }
+.wx-day .i { width: 22px; height: 22px; color: var(--accent); margin-bottom: 4px; }
+.wx-day b { font-size: var(--fs-sm); }
+.wx-day .lo { font-size: var(--fs-xs); color: var(--text-3); }
+.wx-day .rp { font-size: 11px; color: var(--text-2); margin-top: 2px; }
+
 /* ===== Callout (category warnings) ===== */
 .callout {
   display: flex; gap: 10px; margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md);
