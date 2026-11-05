@@ -214,6 +214,13 @@ button { font: inherit; color: inherit; }
 }
 .tile .i { width: 19px; height: 19px; }
 
+.home .addr { margin: 0 16px; padding: 12px 14px; background: var(--sunken); border-radius: var(--r-md); }
+.home .addr .overline { margin-bottom: 4px; }
+.addr-vi { font-size: var(--fs-lg); font-weight: 600; line-height: 1.4; color: var(--text); }
+.home-actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px 0; }
+.home-notes { padding: 14px 16px 16px; font-size: var(--fs-sm); color: var(--text-2); }
+.home-notes b { color: var(--text); font-weight: 600; }
+
 .row.kv { align-items: center; justify-content: space-between; padding: 12px 16px; font-size: var(--fs-sm); }
 .row.kv span { color: var(--text-2); }
 .row.kv b { font-weight: 600; text-align: right; }

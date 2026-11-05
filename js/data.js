@@ -24,7 +24,7 @@ window.SGN_DATA = {
       id: "nguyen-hue", cat: "old", img: "nguyen-hue",
       name: "Nguyễn Huệ & City Hall", vi: "Phố đi bộ Nguyễn Huệ",
       desc: "A pedestrian boulevard running from the French-era City Hall to the river, with the Opera House a block away.",
-      time: "1 h", best: "After sunset", cost: "Free", from: "Walk 8 min",
+      time: "1 h", best: "After sunset", cost: "Free", from: "Walk 3 min",
       tip: "Number 42 is the Café Apartment, a whole block of tiny cafés. Pick one with a balcony over the street.",
       q: "Nguyễn Huệ Walking Street"
     },
@@ -40,7 +40,7 @@ window.SGN_DATA = {
       id: "palace", cat: "old", img: "palace",
       name: "Independence Palace", vi: "Dinh Độc Lập",
       desc: "A 1960s modernist presidential palace preserved as it was in 1975, with reception halls, a rooftop helipad and the tanks that broke through the gates.",
-      time: "1.5 h", best: "Morning", cost: "~65k ₫", from: "Walk 12 min",
+      time: "1.5 h", best: "Morning", cost: "~65k ₫", from: "Walk 18 min",
       tip: "Don't miss the basement war rooms, with their maps, radios and tunnels.",
       q: "Independence Palace Ho Chi Minh"
     },
@@ -56,7 +56,7 @@ window.SGN_DATA = {
       id: "fine-arts", cat: "art", img: "fine-arts",
       name: "Museum of Fine Arts", vi: "Bảo tàng Mỹ thuật",
       desc: "Three ochre colonial mansions full of lacquer paintings, Cham sculpture and wartime art, with an old cage lift and patterned tile floors.",
-      time: "1 h", best: "Midday, out of the heat", cost: "~30k ₫", from: "Walk 5 min",
+      time: "1 h", best: "Midday, out of the heat", cost: "~30k ₫", from: "Walk 8 min",
       tip: "It's rarely crowded, and the stairwells are very photogenic. Lê Công Kiều antiques street is right behind it.",
       q: "Ho Chi Minh City Museum of Fine Arts"
     },
@@ -64,7 +64,7 @@ window.SGN_DATA = {
       id: "opera", cat: "art", img: "opera",
       name: "Saigon Opera House", vi: "Nhà hát Thành phố",
       desc: "A 1900 French Belle Époque theatre at the top of Đồng Khởi street. It's lovely from outside and even better with a show.",
-      time: "15 min · show 1 h", best: "Evening show", cost: "Shows paid", from: "Walk 10 min",
+      time: "15 min · show 1 h", best: "Evening show", cost: "Shows paid", from: "Walk 7 min",
       tip: "Look up the AO Show or Teh Dar, contemporary Vietnamese bamboo-circus performances. Book a day ahead.",
       q: "Saigon Opera House"
     },
@@ -72,7 +72,7 @@ window.SGN_DATA = {
       id: "war-remnants", cat: "old", img: "war-remnants",
       name: "War Remnants Museum", vi: "Bảo tàng Chứng tích Chiến tranh",
       desc: "A powerful, confronting record of the American War, told through photojournalism, with aircraft and tanks in the yard.",
-      time: "1.5–2 h", best: "Morning", cost: "~40k ₫", from: "Walk 15 min",
+      time: "1.5–2 h", best: "Morning", cost: "~40k ₫", from: "Car 10 min",
       tip: "Some galleries are very graphic. Hum Vegetarian is a few doors away for a calm lunch afterwards.",
       q: "War Remnants Museum"
     },
@@ -106,7 +106,7 @@ window.SGN_DATA = {
       id: "le-cong-kieu", cat: "art", img: "a-lck",
       name: "Lê Công Kiều Antiques Street", vi: "Phố đồ cổ Lê Công Kiều",
       desc: "A short street of antique and curio shops selling ceramics, bronzes, wood carvings and old propaganda posters, right behind the Fine Arts Museum.",
-      time: "30–45 min", best: "Morning", cost: "Free to browse", from: "Walk 5 min",
+      time: "30–45 min", best: "Morning", cost: "Free to browse", from: "Walk 8 min",
       tip: "Many \"antiques\" are reproductions, so buy because you love it. Genuine antiques need export paperwork.",
       q: "Lê Công Kiều antique street"
     },
@@ -140,7 +140,7 @@ window.SGN_DATA = {
       id: "dinh-design", cat: "shop", img: null,
       name: "Dinh Design Store", vi: "Independence Palace shop",
       desc: "A well-curated design shop inside the Independence Palace grounds, selling items by local designers with a Saigon twist.",
-      time: "20 min", best: "With the palace", cost: "Fixed prices", from: "Walk 12 min",
+      time: "20 min", best: "With the palace", cost: "Fixed prices", from: "Walk 18 min",
       tip: "Visit it on the way out of the palace, so you don't need a separate trip.",
       q: "Dinh Design Store Independence Palace"
     },
@@ -214,7 +214,7 @@ window.SGN_DATA = {
       id: "mariamman", cat: "spirit", img: "mariamman",
       name: "Mariamman Temple", vi: "Đền Mariamman",
       desc: "A small, colourful South Indian Hindu temple, a short walk from home.",
-      time: "20 min", best: "Any time", cost: "Free", from: "Walk 5 min",
+      time: "20 min", best: "Any time", cost: "Free", from: "Walk 12 min",
       tip: "Take your shoes off at the entrance. It's an easy stop on the way home.",
       q: "Mariamman Temple Ho Chi Minh City"
     },
@@ -224,7 +224,7 @@ window.SGN_DATA = {
       id: "tao-dan", cat: "out", img: "tao-dan",
       name: "Tao Đàn Park", vi: "Công viên Tao Đàn",
       desc: "The leafy park where Saigon wakes up, with tai chi, badminton, joggers and locals bringing caged songbirds for a morning coffee.",
-      time: "45 min", best: "6–8am", cost: "Free", from: "Walk 8 min",
+      time: "45 min", best: "6–8am", cost: "Free", from: "Walk 20 min · car 5",
       tip: "Go early. By 9am it's hot and quiet, and the best people-watching is over.",
       q: "Tao Đàn Park"
     },
@@ -232,7 +232,7 @@ window.SGN_DATA = {
       id: "skydeck", cat: "out", img: "skydeck",
       name: "Saigon Skydeck", vi: "Tháp Bitexco",
       desc: "An observation deck high in the lotus-bud Bitexco tower, right in the centre, with 360° views over the river and old town.",
-      time: "45 min", best: "Sunset", cost: "Paid deck", from: "Walk 8 min",
+      time: "45 min", best: "Sunset", cost: "Paid deck", from: "Walk 2 min",
       tip: "Alternatively, have a drink at the tower's bar a few floors higher for a similar view.",
       q: "Saigon Skydeck Bitexco"
     },
@@ -256,7 +256,7 @@ window.SGN_DATA = {
       id: "waterbus", cat: "out", img: "waterbus",
       name: "Sunset Waterbus", vi: "Buýt đường sông",
       desc: "A cheap river cruise past the skyline from Bạch Đằng pier, with the city lights coming on as you return.",
-      time: "1–1.5 h", best: "Sunset", cost: "Under 50k ₫", from: "Walk 15 min",
+      time: "1–1.5 h", best: "Sunset", cost: "Under 50k ₫", from: "Walk 5 min",
       tip: "Timetables change, so check at the pier earlier in the day.",
       q: "Bach Dang Waterbus Station"
     },
@@ -272,7 +272,7 @@ window.SGN_DATA = {
       id: "bui-vien", cat: "out", img: "bui-vien",
       name: "Bùi Viện Walking Street", vi: "Phố Tây Bùi Viện",
       desc: "A neon backpacker street with loud bars, street performers and plastic stools. It's worth one evening.",
-      time: "1 h", best: "After 9pm", cost: "Free", from: "Walk 10 min",
+      time: "1 h", best: "After 9pm", cost: "Free", from: "Walk 15 min",
       tip: "Keep your phone zipped away; this is pickpocket territory.",
       q: "Bùi Viện Walking Street"
     },
@@ -385,7 +385,7 @@ window.SGN_DATA = {
       q: "Quán Chay Phát Tâm quận 7" },
 
     /* Cheap & local */
-    { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "Branch near Bến Thành",
+    { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "Several D1 branches",
       desc: "Fully vegan bánh mì, so there's no need to worry about pâté or butter. A perfect grab-and-go breakfast.",
       q: "Bánh Mì Xanh vegan" },
     { area: "cheap", kind: "vegan", name: "Hủ Tiếu Chay Chú Quang", where: "Alley off Lãnh Binh Thăng",
@@ -396,7 +396,7 @@ window.SGN_DATA = {
       q: "Loving Hut vegan" },
     { area: "cheap", kind: "veg", name: "Any \"Quán cơm chay\"", where: "Every neighbourhood",
       desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate. Busiest on the 1st and 15th of the lunar month.",
-      q: "quán cơm chay near Bến Thành" }
+      q: "quán cơm chay Quận 1" }
   ],
 
   dishes: [

@@ -43,6 +43,7 @@
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
   <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5L15 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
   <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></symbol>
   <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4ZM14 7v10"/></symbol>
@@ -97,15 +98,36 @@
     <div class="hero">
       <p class="overline">For Alex &amp; Jenna</p>
       <h1>Sài Gòn,<br><span class="accent-text">sorted.</span></h1>
-      <p class="lead">Five plant-based days in Ho Chi Minh City, starting from your door by Bến Thành Market.</p>
+      <p class="lead">Five plant-based days in Ho Chi Minh City, starting from your door on Hồ Tùng Mậu, a block from Nguyễn Huệ and the river.</p>
       <div class="pills" aria-live="polite">
         <span class="pill"><svg class="i"><use href="#i-clock"/></svg><span id="local-time">--:--</span>&nbsp;in Saigon</span>
         <span class="pill" id="weather-now" hidden><svg class="i"><use href="#i-cloud"/></svg><span></span></span>
       </div>
       <div class="actions">
         <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
-        <a class="btn btn-secondary" data-q="Bến Thành Market" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
+        <a class="btn btn-secondary" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
       </div>
+    </div>
+
+    <div class="sec-head"><h2>Home base</h2></div>
+    <div class="group home">
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-pin"/></svg></span>
+        <span class="row-main"><span class="t">Au Lac Charner Hotel</span><span class="d">87-89-91 Hồ Tùng Mậu, District 1. Bitexco tower and Nguyễn Huệ are 2–3 minutes' walk away.</span></span>
+      </div>
+      <div class="addr">
+        <p class="overline">Show a driver</p>
+        <p class="addr-vi" lang="vi">Khách sạn Âu Lạc Charner<br>87-89-91 Hồ Tùng Mậu, Quận 1</p>
+      </div>
+      <div class="home-actions">
+        <a class="btn btn-secondary btn-sm" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-map"/></svg>Open in Maps</a>
+        <a class="btn btn-secondary btn-sm" href="tel:+842839156666"><svg class="i"><use href="#i-phone"/></svg>Call hotel</a>
+      </div>
+      <ul class="list home-notes">
+        <li><b>Breakfast</b> is a buffet. Their website doesn't mention vegan food, so ask at check-in. Fruit is a safe start.</li>
+        <li><b>Rooftop</b> with city views, plus an outdoor pool, gym and spa.</li>
+        <li><b>Airport pickup</b> can be arranged by the hotel if you'd rather not use Grab. Ask for the price first.</li>
+      </ul>
     </div>
 
     <div class="sec-head"><h2>Trip weather</h2><span class="hint-inline" id="trip-dates"></span></div>
@@ -250,7 +272,7 @@
       <details class="row acc">
         <summary>
           <span class="tile"><svg class="i"><use href="#i-train"/></svg></span>
-          <span class="row-main"><span class="t">Metro Line 1</span><span class="d">Starts under Bến Thành Market</span></span>
+          <span class="row-main"><span class="t">Metro Line 1</span><span class="d">Nearest stop: Opera House, ~7 min walk</span></span>
           <svg class="i chev"><use href="#i-chevron"/></svg>
         </summary>
         <div class="acc-body">
@@ -258,7 +280,7 @@
           <ul class="list">
             <li><b>Thảo Điền</b>: cafés and vegan spots, about 15 min.</li>
             <li><b>Tân Cảng</b>: the closest stop for Landmark 81.</li>
-            <li><b>Nhà hát Thành phố</b> (Opera House): one stop, handy in the rain.</li>
+            <li><b>Nhà hát Thành phố</b> (Opera House): your nearest station, about 7 minutes' walk up Nguyễn Huệ.</li>
           </ul>
           <p class="hint">Fares are roughly 7k–20k ₫. Buy at the machines; many gates also take contactless cards. Trains run until about 10pm.</p>
         </div>
@@ -281,13 +303,14 @@
       <details class="row acc">
         <summary>
           <span class="tile"><svg class="i"><use href="#i-plane"/></svg></span>
-          <span class="row-main"><span class="t">Airport ↔ Bến Thành</span><span class="d">Tân Sơn Nhất (SGN), ~7 km</span></span>
+          <span class="row-main"><span class="t">Airport ↔ hotel</span><span class="d">Tân Sơn Nhất (SGN), ~7 km</span></span>
           <svg class="i chev"><use href="#i-chevron"/></svg>
         </summary>
         <div class="acc-body">
           <ul class="list">
             <li><b>Grab / Xanh SM car</b>: follow the app's pickup signs in arrivals. It takes 30–60 min and costs roughly 120–250k ₫.</li>
-            <li><b>Bus 109</b>: the airport bus to the 23/9 Park terminal next to Bến Thành. Cheap and air-conditioned.</li>
+            <li><b>Bus 109</b>: the airport bus to the 23/9 Park terminal by Bến Thành, then a 15-minute walk or a short Grab to the hotel. Cheap and air-conditioned.</li>
+            <li><b>Hotel pickup</b>: the hotel can arrange one. Ask for the price when you book.</li>
             <li>Ignore the touts offering a "taxi" in the arrivals hall.</li>
           </ul>
           <p class="hint">Check which airport is on your ticket. The new Long Thành airport is ~40 km east.</p>
@@ -323,12 +346,13 @@
       </details>
     </div>
 
-    <h3 class="label">From Bến Thành to…</h3>
+    <h3 class="label">From the hotel to…</h3>
     <div class="group">
-      <div class="row kv"><span>Nguyễn Huệ / Opera House</span><b>Walk 5–10 min</b></div>
-      <div class="row kv"><span>Independence Palace</span><b>Walk 12 min</b></div>
-      <div class="row kv"><span>War Remnants Museum</span><b>Walk 15 min</b></div>
-      <div class="row kv"><span>Thảo Điền</span><b>Metro 15 min</b></div>
+      <div class="row kv"><span>Nguyễn Huệ / Bitexco</span><b>Walk 2–3 min</b></div>
+      <div class="row kv"><span>Opera House</span><b>Walk 7 min</b></div>
+      <div class="row kv"><span>Independence Palace</span><b>Walk 18 min</b></div>
+      <div class="row kv"><span>War Remnants Museum</span><b>Car 10 min</b></div>
+      <div class="row kv"><span>Thảo Điền</span><b>Metro 15 min + walk 7</b></div>
       <div class="row kv"><span>Chợ Lớn (Chinatown)</span><b>Car 20–30 min</b></div>
       <div class="row kv"><span>RMIT Saigon South</span><b>Car 30–50 min</b></div>
       <div class="row kv"><span>Airport (SGN)</span><b>Car 30–60 min</b></div>
@@ -469,7 +493,7 @@
           <svg class="i chev"><use href="#i-chevron"/></svg>
         </summary>
         <div class="acc-body">
-          <p>In 2025, HCMC replaced districts with wards, so you may see <i>Phường Bến Thành</i> on new addresses. Locals still say "District 1", and either works. The easiest way to give a driver an address is to send a Google Maps pin.</p>
+          <p>In 2025, HCMC replaced districts with wards, so the hotel's <i>Phường Bến Nghé</i> is now part of <i>Phường Sài Gòn</i>, and you'll see both on maps and receipts. Locals still say "District 1", and either works. The easiest way to give a driver an address is to send a Google Maps pin.</p>
         </div>
       </details>
     </div>
