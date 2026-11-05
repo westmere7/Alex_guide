@@ -4,384 +4,198 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Saigon Pocket Guide</title>
-  <meta name="description" content="A vegan-friendly pocket guide to Ho Chi Minh City for Alex & Jenna: getting around, where to eat, what to see, and useful notes.">
-  <meta name="theme-color" content="#1E6A4E" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101613" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <meta name="description" content="A vegan-friendly pocket guide to Ho Chi Minh City for Alex & Jenna: packing, getting around, where to eat, what to see, and help.">
+  <meta name="theme-color" content="#F7F7F5">
+  <script>
+    /* Apply saved or system theme before first paint */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("sgn-guide-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23157A52'/><path d='M16 25c-5 0-8-3.5-8-8 0-5 4-9 13-10 0 9-1 18-5 18Z' fill='white'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="wrap">
-    <p class="hero-kicker">Xin chào, Alex &amp; Jenna 👋</p>
-    <h1>Sài Gòn,<br>sorted.</h1>
-    <p class="hero-sub">A pocket guide to Ho Chi Minh City — plant-based, walkable, and based right by Bến Thành Market.</p>
+<!-- ============ ICON SYSTEM — 24×24 grid, 1.75 stroke, round caps ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 0 1 0 9Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4ZM14 7v10"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 17h6.5l3-7H14M14 10l-1.5-4H10M5.5 14.5 8 10h5"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14M9 13h.01M15 13h.01M8 16l-2 5M16 16l2 5"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="1.75"/><path d="m9 21 2.5-6.5L14 17v4M11.5 14.5 12.5 9 9 11v3M12.5 9l2.5 3 2.5 1"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></symbol>
+  <symbol id="i-boat" viewBox="0 0 24 24"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0M4 17l-1.5-5h19L20 17M6 12V8h12v4M12 8V4"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 11 1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11M3 11h18v6H3ZM6.5 14h1M16.5 14h1M5 17v2M19 17v2"/></symbol>
+  <symbol id="i-van" viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10ZM4 12h16M8 17v2M16 17v2M8 14.5h.01M16 14.5h.01"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10.2a1.5 1.5 0 0 0 1.5 1.1h8.3a1.5 1.5 0 0 0 1.4-1.1L20 7H6.2"/><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0M12 19.5h.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2ZM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 9 12 4 2 9l10 5 10-5ZM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></symbol>
+  <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-9M9.5 21v-9M14.5 21v-9M19 21v-9M2 10l10-6 10 6Z"/></symbol>
+  <symbol id="i-temple" viewBox="0 0 24 24"><path d="M12 2v3M4 9h16l-3-4H7ZM6 9v3M18 9v3M3 15h18l-2-3H5ZM6 15v6M18 15v6M3 21h18M10 21v-3h4v3"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7ZM19 16c.2 1.6.9 2.3 2.5 2.5-1.6.2-2.3.9-2.5 2.5-.2-1.6-.9-2.3-2.5-2.5 1.6-.2 2.3-.9 2.5-2.5Z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-passport" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 5 2-1v11h10V10l2 1 2-5-5-3a4 4 0 0 1-8 0Z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0ZM12 17v5"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0Z"/><path d="M8 7c0-1.5 1-2 1-3.5M12 7c0-1.5 1-2 1-3.5M16 7c0-1.5 1-2 1-3.5"/></symbol>
+  <!-- tab bar -->
+  <symbol id="t-prep" viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="14" rx="2.5"/><path d="M9 7V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V7M9 11v6M15 11v6"/></symbol>
+  <symbol id="t-move" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+  <symbol id="t-see" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="t-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"/></symbol>
+</svg>
 
-    <div class="live" aria-live="polite">
-      <span class="live-item"><span class="dot"></span><span id="local-time">--:--</span> in Saigon</span>
-      <span class="live-item" id="weather-now" hidden></span>
-    </div>
-
-    <div class="hero-actions">
-      <button class="btn btn-light" type="button" data-open-card>🌱 Show vegan card</button>
-      <a class="btn btn-ghost" data-q="Bến Thành Market" target="_blank" rel="noopener">📍 Home base</a>
-    </div>
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#prep" data-nav="prep">
+      <span class="brand-mark"><svg class="i"><use href="#i-leaf"/></svg></span>
+      <span>Saigon Guide</span>
+    </a>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark theme">
+      <svg class="i only-light"><use href="#i-moon"/></svg>
+      <svg class="i only-dark"><use href="#i-sun"/></svg>
+    </button>
   </div>
 </header>
 
 <main class="wrap">
 
-  <!-- ============ QUICK START ============ -->
-  <section class="quick" aria-label="Before you go">
-    <h2 class="mini-h">Download before you land</h2>
-    <ul class="apps">
-      <li><b>Grab</b><span>Rides &amp; food delivery</span></li>
-      <li><b>Xanh SM</b><span>Electric cars &amp; bikes</span></li>
-      <li><b>Be</b><span>Grab alternative</span></li>
-      <li><b>Google Maps</b><span>Save the offline map</span></li>
-      <li><b>Google Translate</b><span>Download Vietnamese + use camera mode</span></li>
-      <li><b>HappyCow</b><span>Vegan spots near you</span></li>
-    </ul>
-  </section>
+  <!-- =============================== PREP =============================== -->
+  <section class="view" id="prep" data-view>
+    <div class="hero">
+      <p class="overline">For Alex &amp; Jenna</p>
+      <h1>Sài Gòn,<br><span class="accent-text">sorted.</span></h1>
+      <p class="lead">Five plant-based days in Ho Chi Minh City, starting from your door by Bến Thành Market.</p>
+      <div class="pills" aria-live="polite">
+        <span class="pill"><svg class="i"><use href="#i-clock"/></svg><span id="local-time">--:--</span>&nbsp;in Saigon</span>
+        <span class="pill" id="weather-now" hidden><svg class="i"><use href="#i-cloud"/></svg><span></span></span>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
+        <a class="btn btn-secondary" data-q="Bến Thành Market" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
+      </div>
+    </div>
 
-  <!-- ============ MOVE ============ -->
-  <section id="move" class="section">
-    <p class="eyebrow">01 · Getting around</p>
-    <h2>Move</h2>
-    <p class="lead">Bến Thành is the centre of everything. Most of old Saigon is a 5–20 minute walk; for anything further, open an app rather than flagging a street taxi.</p>
+    <div class="sec-head">
+      <h2>Packing list</h2>
+      <button class="text-btn" type="button" id="pack-reset"><svg class="i"><use href="#i-reset"/></svg>Reset</button>
+    </div>
+    <div class="progress">
+      <div class="progress-top"><span>Packed</span><b><span id="pack-count">0</span> / <span id="pack-total">0</span></b></div>
+      <div class="bar"><span id="pack-bar"></span></div>
+    </div>
+    <div id="packing"></div>
 
-    <details class="card" open>
-      <summary><span class="ico">🛵</span><span><b>Ride apps — Grab, Xanh SM, Be</b><small>Your default for anything beyond walking</small></span></summary>
-      <div class="body">
-        <p>Price is fixed up front, so no haggling or meter surprises. Pay cash to the driver or link a card in the app.</p>
-        <ul class="ticks">
-          <li><b>Bike (xe ôm)</b> — fastest through traffic, cheapest. Driver gives you a helmet. Hold on, keep bags in front.</li>
-          <li><b>Car</b> — better in rain, heat, with luggage, or for longer hops like RMIT.</li>
-          <li><b>Xanh SM</b> — the teal/green electric VinFast cars &amp; bikes. Clean, quiet, often the nicest ride.</li>
-          <li>Always <b>check the plate number</b> before you get on. Drop the pickup pin precisely — drivers often can't find hotel lobbies.</li>
-        </ul>
-        <div class="price-row">
-          <span><small>Short hop in D1 (bike)</small><b>15–35k ₫</b></span>
-          <span><small>Across town (car)</small><b>60–150k ₫</b></span>
-          <span><small>To RMIT Saigon South (car)</small><b>120–220k ₫</b></span>
+    <h3 class="label">Install before you fly</h3>
+    <div class="group grid-2">
+      <div class="cell"><p class="t">Grab</p><p class="d">Rides &amp; food delivery</p></div>
+      <div class="cell"><p class="t">Xanh SM</p><p class="d">Electric cars &amp; bikes</p></div>
+      <div class="cell"><p class="t">Google Maps</p><p class="d">Save the offline map</p></div>
+      <div class="cell"><p class="t">Google Translate</p><p class="d">Vietnamese offline + camera</p></div>
+      <div class="cell"><p class="t">HappyCow</p><p class="d">Vegan spots nearby</p></div>
+      <div class="cell"><p class="t">Zalo</p><p class="d">How locals message</p></div>
+    </div>
+
+    <h3 class="label">Before you go</h3>
+    <div class="group">
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-passport"/></svg></span>
+          <span class="row-main"><span class="t">Entry &amp; visa</span><span class="d">Check this first</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Check whether your passport needs an e-visa. If it does, apply only on the official government portal, <b>evisa.gov.vn</b>, and avoid look-alike agency sites.</li>
+            <li>Your passport needs 6+ months of validity and a blank page.</li>
+            <li>Keep a PDF of the e-visa and your booking on your phone, and a printout too.</li>
+          </ul>
         </div>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🚇</span><span><b>Metro Line 1</b><small>Starts under Bến Thành Market — your doorstep</small></span></summary>
-      <div class="body">
-        <p>Saigon's first metro line (opened Dec 2024) runs from <b>Bến Thành</b> east to <b>Suối Tiên</b>. Clean, air-conditioned, and traffic-proof.</p>
-        <ul class="ticks">
-          <li><b>Thảo Điền</b> station — expat cafés, brunch &amp; vegan spots (~15 min).</li>
-          <li><b>Văn Thánh / Tân Cảng</b> — closest stops for Landmark 81.</li>
-          <li><b>Nhà hát Thành phố</b> (Opera House) — one stop, handy in the rain.</li>
-        </ul>
-        <p class="note">Single trips are roughly <b>7k–20k ₫</b> and day passes exist. Buy at the ticket machines or ask at the counter; contactless cards/QR work at many gates. Runs roughly early morning to ~10pm — check at the station.</p>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🚶</span><span><b>Walking &amp; crossing the street</b><small>The one skill you need on day one</small></span></summary>
-      <div class="body">
-        <ol class="steps">
-          <li>Look for a gap — not an empty road, it won't come.</li>
-          <li>Walk at a <b>slow, steady, predictable pace</b>. Bikes flow around you.</li>
-          <li><b>Don't stop suddenly, don't run, don't step back.</b></li>
-          <li>Watch cars and buses — they <i>won't</i> swerve. Raise a hand if it helps you feel seen.</li>
-        </ol>
-        <p class="note">Sidewalks double as motorbike parking and kitchens, so you'll weave a lot. Walk in the morning or after 4pm to dodge the heat.</p>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">✈️</span><span><b>Airport ↔ Bến Thành</b><small>Tân Sơn Nhất (SGN), ~7 km</small></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li><b>Grab / Xanh SM car</b> — follow the app's pickup signs in arrivals. 30–60 min depending on traffic, roughly <b>120–250k ₫</b>.</li>
-          <li><b>Bus 109</b> — yellow airport bus to the 23/9 Park terminal right next to Bến Thành. Cheap and air-conditioned; good if you're travelling light.</li>
-          <li>Ignore touts in the arrivals hall offering "taxi".</li>
-        </ul>
-        <p class="note">Double-check which airport is on your ticket — the new Long Thành airport is ~40 km east and needs 1h+ by car.</p>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">⛴️</span><span><b>Saigon Waterbus</b><small>The city from the river, cheaply</small></span></summary>
-      <div class="body">
-        <p>Leaves from <b>Bạch Đằng pier</b> (end of Nguyễn Huệ, ~15 min walk). Not fast transport — think of it as a cheap river cruise. Go for the late-afternoon run to catch sunset over the skyline.</p>
-        <p class="note">Schedules change; check at the pier or on Google Maps. <a data-q="Bach Dang Waterbus Station" target="_blank" rel="noopener">Map →</a></p>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🚕</span><span><b>Taxis &amp; cyclos</b><small>Fine with care</small></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li>If you must hail one: <b>Vinasun</b> (white) or <b>Mai Linh</b> (green) only, meter on. Watch for look-alike logos.</li>
-          <li><b>Cyclos</b> are a tourist experience, not transport. Agree price <i>and</i> duration first — write it down on your phone and show it.</li>
-        </ul>
-      </div>
-    </details>
-
-    <h3 class="sub-h">From Bến Thành to…</h3>
-    <ul class="dist">
-      <li><span>Nguyễn Huệ / Opera House</span><b>🚶 5–10 min</b></li>
-      <li><span>Independence Palace</span><b>🚶 12 min</b></li>
-      <li><span>Post Office &amp; Cathedral</span><b>🚶 15 min</b></li>
-      <li><span>War Remnants Museum</span><b>🚶 15 min · 🛵 5</b></li>
-      <li><span>Thảo Điền</span><b>🚇 15 min</b></li>
-      <li><span>Landmark 81</span><b>🚇 10 min · 🚗 15–25</b></li>
-      <li><span>Chợ Lớn (Chinatown)</span><b>🚗 20–30 min</b></li>
-      <li><span>RMIT Saigon South</span><b>🚗 30–50 min</b></li>
-      <li><span>Airport (SGN)</span><b>🚗 30–60 min</b></li>
-    </ul>
-    <p class="note">Rush hour (7–9am, 4:30–7pm) can double car times. Bikes barely notice.</p>
-  </section>
-
-  <!-- ============ EAT ============ -->
-  <section id="eat" class="section">
-    <p class="eyebrow">02 · Plant-based in Saigon</p>
-    <h2>Eat</h2>
-    <p class="lead"><b>Chay</b> means vegetarian, <b>thuần chay</b> means vegan. Saigon has a deep Buddhist vegetarian tradition, so meat-free is easy. The traps are hidden fish sauce, egg and condensed milk.</p>
-
-    <button class="btn btn-brand wide" type="button" data-open-card>🌱 Show the vegan card to staff</button>
-
-    <h3 class="sub-h">Words to watch for</h3>
-    <div class="watch">
-      <span><b>nước mắm</b>fish sauce</span>
-      <span><b>mắm tôm</b>shrimp paste</span>
-      <span><b>dầu hào</b>oyster sauce</span>
-      <span><b>trứng</b>egg — common even in chay places</span>
-      <span><b>sữa đặc</b>condensed milk</span>
-      <span><b>bơ / pate</b>butter / pâté (bánh mì)</span>
-      <span><b>mỡ hành</b>scallions in pork fat</span>
-      <span><b>chà bông</b>meat floss (on xôi)</span>
-      <span><b>mật ong</b>honey</span>
-    </div>
-    <p class="note">Safe swap: ask for <b>nước tương</b> (soy sauce) instead of fish sauce. Mushroom "chà bông" in chay shops is fine.</p>
-
-    <h3 class="sub-h">Dishes to hunt down</h3>
-    <div class="dishes">
-      <article><h4>Phở chay</h4><p>Veggie broth noodle soup with tofu &amp; mushrooms. Load up on herbs and lime.</p></article>
-      <article><h4>Bánh mì chay</h4><p>Baguette with tofu, mock meat, pickles, herbs. Say <i>không bơ, không pate</i>.</p></article>
-      <article><h4>Gỏi cuốn chay</h4><p>Fresh rice-paper rolls with a peanut–hoisin dip.</p></article>
-      <article><h4>Bánh xèo chay</h4><p>Crispy turmeric crêpe, wrapped in lettuce &amp; herbs. Check the batter has no egg.</p></article>
-      <article><h4>Bún Huế chay</h4><p>Spicy lemongrass noodle soup, Huế-style.</p></article>
-      <article><h4>Cơm chay</h4><p>Point-and-pick rice plates at <i>quán cơm chay</i> — cheap, fast, tons of choice.</p></article>
-      <article><h4>Rau muống xào tỏi</h4><p>Morning glory stir-fried with garlic. Ask: <i>không nước mắm, không dầu hào</i>.</p></article>
-      <article><h4>Chè</h4><p>Sweet soups with beans, jelly &amp; coconut milk — usually vegan by default.</p></article>
-      <article><h4>Nước mía</h4><p>Fresh sugarcane juice with kumquat. Perfect after a hot walk.</p></article>
-      <article><h4>Coffee</h4><p><i>Cà phê đen đá</i> = iced black. Most milk coffee &amp; coconut coffee uses condensed milk; modern cafés often have oat milk (<i>sữa yến mạch</i>).</p></article>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-cash"/></svg></span>
+          <span class="row-main"><span class="t">Money</span><span class="d">Cash still rules at street level</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Carry cash for street food, markets and small cafés. Cards work in restaurants, malls and hotels.</li>
+            <li><b>The 20k and 500k notes are both blue</b>, so check before you hand one over. The 10k and 200k notes are easy to mix up too.</li>
+            <li>"50k" or just "50" on a price means 50,000 ₫.</li>
+            <li>Use bank ATMs (Vietcombank, Techcombank) and choose to be charged in VND.</li>
+            <li>Tipping isn't expected, but rounding up for great service is appreciated.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-wifi"/></svg></span>
+          <span class="row-main"><span class="t">Phone &amp; data</span><span class="d">eSIM or airport SIM</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Buy an eSIM before you fly, or a tourist SIM in airport arrivals (Viettel has the best coverage). You'll need your passport.</li>
+            <li>Wi-Fi is everywhere, and the password is usually on the wall or your receipt.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-cloud"/></svg></span>
+          <span class="row-main"><span class="t">Weather</span><span class="d">Hot, humid, short showers</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Expect roughly 24–34°C. Early November is the end of the rainy season, so expect a short, heavy afternoon downpour followed by sun.</li>
+            <li>Malls, the metro and offices are cold with air-conditioning, so bring a thin layer.</li>
+            <li>At temples, cover your shoulders and knees.</li>
+          </ul>
+        </div>
+      </details>
     </div>
 
-    <h3 class="sub-h">Where to eat</h3>
-    <p class="note">A starting list — hours and branches change, so tap the map link to check before heading out. HappyCow is great for finding more nearby.</p>
-
-    <ul class="places">
-      <li>
-        <div class="p-head"><h4>Hum Vegetarian</h4><span class="tag t-veg">Vegetarian · lots vegan</span></div>
-        <p>Calm, leafy, upscale-ish. The Võ Văn Tần branch is next door to the War Remnants Museum — perfect lunch after.</p>
-        <a class="map" data-q="Hum Vegetarian Café & Restaurant Võ Văn Tần" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Hoa Đăng</h4><span class="tag t-veg">Vegetarian · lots vegan</span></div>
-        <p>Elegant Vietnamese vegetarian with a big menu; good for a proper dinner.</p>
-        <a class="map" data-q="Hoa Đăng vegetarian restaurant" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Tib Vegetarian</h4><span class="tag t-veg">Vegetarian</span></div>
-        <p>Imperial Huế-style vegetarian dishes — try the bún Huế chay.</p>
-        <a class="map" data-q="Tib Vegetarian Saigon" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Loving Hut</h4><span class="tag t-vegan">100% vegan</span></div>
-        <p>Vegan chain with several branches across the city. Reliable, inexpensive, no questions needed.</p>
-        <a class="map" data-q="Loving Hut vegan" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Kashew Cheese &amp; Wine Bar</h4><span class="tag t-vegan">Plant-based</span></div>
-        <p>Cashew cheese boards and wine in Thảo Điền — pairs nicely with a metro trip east.</p>
-        <a class="map" data-q="Kashew Cheese Wine Bar Thảo Điền" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Any "Cơm chay" / "Quán chay"</h4><span class="tag t-opt">Local &amp; cheap</span></div>
-        <p>Buddhist vegetarian canteens are everywhere; a heaped plate is ~30–50k ₫. Busiest on the 1st &amp; 15th of the lunar month.</p>
-        <a class="map" data-q="quán chay near Bến Thành" target="_blank" rel="noopener">Search nearby →</a>
-      </li>
-      <li>
-        <div class="p-head"><h4>Near RMIT (Phú Mỹ Hưng)</h4><span class="tag t-opt">Work days</span></div>
-        <p>The area around Crescent Mall has plenty of chay places and international chains with vegan options.</p>
-        <a class="map" data-q="nhà hàng chay Phú Mỹ Hưng" target="_blank" rel="noopener">Search nearby →</a>
-      </li>
-    </ul>
-
-    <details class="card">
-      <summary><span class="ico">🛒</span><span><b>Groceries &amp; snacks</b><small>For the room, the desk, the long days</small></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li><b>Fruit</b> — buy from market stalls: mango, dragon fruit, pomelo, rambutan, jackfruit. Ask them to cut it.</li>
-          <li><b>Fresh tofu &amp; soy milk</b> (<i>đậu hũ, sữa đậu nành</i>) — street carts in the morning.</li>
-          <li><b>Supermarkets</b> — Co.opmart, Bách Hóa Xanh, or Annam Gourmet for imported vegan basics.</li>
-          <li><b>Convenience stores</b> — Circle K / GS25 / FamilyMart are everywhere for water and snacks.</li>
-        </ul>
-      </div>
-    </details>
-  </section>
-
-  <!-- ============ SEE ============ -->
-  <section id="see" class="section">
-    <p class="eyebrow">03 · Sightseeing</p>
-    <h2>See</h2>
-    <p class="lead">Tick things off as you go — it saves on this phone.</p>
-    <p class="progress"><span id="seen-count">0</span> of <span id="seen-total">0</span> done</p>
-
-    <h3 class="sub-h">Walk from home</h3>
-    <ul class="sights">
-      <li data-id="ben-thanh">
-        <div class="s-head"><h4>Bến Thành Market</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>The iconic clock-tower market. Great for coffee beans, lacquerware, fabric. Haggle with a smile — start around half.</p>
-        <a class="map" data-q="Bến Thành Market" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="nguyen-hue">
-        <div class="s-head"><h4>Nguyễn Huệ Walking Street</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Pedestrian boulevard from City Hall to the river. Best after sunset when families come out and buildings light up.</p>
-        <a class="map" data-q="Nguyễn Huệ Walking Street" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="cafe-apartment">
-        <div class="s-head"><h4>The Café Apartment</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>42 Nguyễn Huệ — an old apartment block stacked with tiny cafés. Pay the small lift fee, pick a balcony with a view.</p>
-        <a class="map" data-q="42 Nguyễn Huệ Café Apartment" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="post-office">
-        <div class="s-head"><h4>Central Post Office &amp; Book Street</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>French-era post office (still working — send a postcard), then the shady book street right beside it. The cathedral opposite is under long restoration.</p>
-        <a class="map" data-q="Saigon Central Post Office" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="palace">
-        <div class="s-head"><h4>Independence Palace</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>1960s modernist presidential palace, frozen in time — war rooms, bunkers and the tanks that crashed the gates in 1975.</p>
-        <a class="map" data-q="Independence Palace Ho Chi Minh" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="war-remnants">
-        <div class="s-head"><h4>War Remnants Museum</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Powerful and confronting. Give it two hours and something gentle afterwards — Hum is next door.</p>
-        <a class="map" data-q="War Remnants Museum" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="opera">
-        <div class="s-head"><h4>Saigon Opera House</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Beautiful from outside; check for an evening show (the AO Show is a contemporary bamboo-circus piece).</p>
-        <a class="map" data-q="Saigon Opera House" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="bui-vien">
-        <div class="s-head"><h4>Bùi Viện Walking Street</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Loud, neon backpacker street. Worth one evening wander; watch your phone.</p>
-        <a class="map" data-q="Bùi Viện Walking Street" target="_blank" rel="noopener">Map →</a>
-      </li>
-    </ul>
-
-    <h3 class="sub-h">A short ride away</h3>
-    <ul class="sights">
-      <li data-id="jade-emperor">
-        <div class="s-head"><h4>Jade Emperor Pagoda</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Incense-filled Taoist temple with carved deities and a turtle pond. Cover shoulders and knees.</p>
-        <a class="map" data-q="Jade Emperor Pagoda" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="tan-dinh">
-        <div class="s-head"><h4>Tân Định Church</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>The bubblegum-pink church. Pair it with Jade Emperor Pagoda and Tân Định market nearby.</p>
-        <a class="map" data-q="Tân Định Church" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="cholon">
-        <div class="s-head"><h4>Chợ Lớn — Bình Tây Market &amp; Thiên Hậu Temple</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Saigon's Chinatown: wholesale markets, herbal shops and incense coils hanging from temple ceilings. Go in the morning.</p>
-        <a class="map" data-q="Thiên Hậu Temple Chợ Lớn" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="ho-thi-ky">
-        <div class="s-head"><h4>Hồ Thị Kỷ Flower Market &amp; alley</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Flower market by day, street-food alley by night. Lots of snacks — ask "chay?" before buying.</p>
-        <a class="map" data-q="Hồ Thị Kỷ Flower Market" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="thao-dien">
-        <div class="s-head"><h4>Thảo Điền</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Leafy riverside neighbourhood: cafés, boutiques, brunch, yoga. Easy by metro.</p>
-        <a class="map" data-q="Thảo Điền" target="_blank" rel="noopener">Map →</a>
-      </li>
-      <li data-id="landmark">
-        <div class="s-head"><h4>Landmark 81 SkyView</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Vietnam's tallest tower. Go up for sunset, then walk the riverside park below.</p>
-        <a class="map" data-q="Landmark 81 SkyView" target="_blank" rel="noopener">Map →</a>
-      </li>
-    </ul>
-
-    <h3 class="sub-h">Day trips</h3>
-    <ul class="sights">
-      <li data-id="cu-chi">
-        <div class="s-head"><h4>Củ Chi Tunnels</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Wartime tunnel network ~1.5–2h away. Bến Đình is less crowded than Bến Dược. Often combined with the Cao Đài temple in Tây Ninh.</p>
-      </li>
-      <li data-id="mekong">
-        <div class="s-head"><h4>Mekong Delta</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>Boats through coconut-palm canals, fruit orchards, rice-paper workshops (Mỹ Tho / Bến Tre, ~2h).</p>
-      </li>
-      <li data-id="can-gio">
-        <div class="s-head"><h4>Cần Giờ Mangroves</h4><label class="been"><input type="checkbox"><span>Done</span></label></div>
-        <p>UNESCO biosphere reserve with mangrove forest and cheeky monkeys. Quieter, greener alternative.</p>
-      </li>
-    </ul>
-    <p class="note">Book through Klook / GetYourGuide or the hotel. When booking, <b>request a vegan lunch</b> in writing — most tours include a set meal.</p>
-
-    <h3 class="sub-h">If you have three free days</h3>
-    <ol class="itin">
-      <li>
-        <h4>Day 1 · Old Saigon on foot</h4>
-        <p><b>AM</b> Bến Thành coffee → Independence Palace → War Remnants Museum<br>
-           <b>Lunch</b> Hum Vegetarian (next door)<br>
-           <b>PM</b> Post Office &amp; Book Street → Café Apartment at golden hour<br>
-           <b>Eve</b> Nguyễn Huệ walking street</p>
-      </li>
-      <li>
-        <h4>Day 2 · East by metro</h4>
-        <p><b>AM</b> Metro from Bến Thành to Thảo Điền → café-hop &amp; boutiques<br>
-           <b>Lunch</b> Thảo Điền vegan spots<br>
-           <b>PM</b> Metro to Tân Cảng → Landmark 81 for sunset<br>
-           <b>Eve</b> Ben Thanh night market or Bùi Viện</p>
-      </li>
-      <li>
-        <h4>Day 3 · Temples &amp; Chinatown</h4>
-        <p><b>AM</b> Jade Emperor Pagoda → pink Tân Định Church<br>
-           <b>Lunch</b> Quán cơm chay — point and pick<br>
-           <b>PM</b> Grab to Chợ Lớn: Bình Tây Market, Thiên Hậu Temple<br>
-           <b>Eve</b> Waterbus at sunset from Bạch Đằng pier</p>
-      </li>
-    </ol>
-  </section>
-
-  <!-- ============ NOTES ============ -->
-  <section id="notes" class="section">
-    <p class="eyebrow">04 · Practical stuff</p>
-    <h2>Notes</h2>
-
-    <div class="card converter" id="converter">
-      <h3>💱 Money converter</h3>
-      <div class="conv-row">
-        <label>
-          <span>Vietnamese đồng</span>
-          <input id="vnd" type="text" inputmode="numeric" placeholder="100,000" autocomplete="off">
-        </label>
-        <span class="eq">=</span>
-        <label>
-          <span><select id="cur" aria-label="Currency">
+    <h3 class="label">Currency converter</h3>
+    <div class="group pad" id="converter">
+      <div class="conv">
+        <label class="field"><span>VND</span><input id="vnd" type="text" inputmode="numeric" placeholder="100,000" autocomplete="off"></label>
+        <span class="conv-icon"><svg class="i"><use href="#i-swap"/></svg></span>
+        <label class="field">
+          <select id="cur" aria-label="Currency">
             <option value="AUD">AUD</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
-          </select></span>
+          </select>
           <input id="fx" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
         </label>
       </div>
@@ -392,189 +206,351 @@
         <button type="button" data-v="200000">200k</button>
         <button type="button" data-v="500000">500k</button>
       </div>
-      <p class="note" id="rate-note">Rate is approximate.</p>
+      <p class="hint" id="rate-note">Approximate rate.</p>
     </div>
-
-    <details class="card" open>
-      <summary><span class="ico">💵</span><span><b>Money</b><small>Cash still rules at street level</small></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li>Carry cash for street food, markets and small cafés. Cards work in restaurants, malls and hotels.</li>
-          <li><b>The 20k and 500k notes are both blue</b> — check before you hand one over. Same trap with 10k/200k.</li>
-          <li>Prices are often written without zeros: <i>"50k"</i> or <i>"50"</i> means 50,000 ₫.</li>
-          <li>Use bank ATMs (Vietcombank, Techcombank, TPBank) inside malls or banks; choose to be charged in VND.</li>
-          <li>Tipping isn't expected. Rounding up, or 20–50k for great service or a massage, is appreciated.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">📶</span><span><b>Phone &amp; data</b></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li>Get a tourist SIM at airport arrivals (Viettel has the best coverage) or an eSIM before you fly. You'll need your passport.</li>
-          <li>Wi-Fi is everywhere — the password is usually on the wall or the receipt.</li>
-          <li>Locals message on <b>Zalo</b> — handy if a host or driver asks for it.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🌦️</span><span><b>Weather &amp; what to wear</b></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li>Hot and humid year-round, roughly 24–34°C. Early November is the tail of the rainy season — expect a short, heavy afternoon downpour, then sun.</li>
-          <li>Pack: light breathable clothes, a compact rain jacket, sunscreen, mosquito repellent, sandals you can get wet.</li>
-          <li>Temples &amp; pagodas: cover shoulders and knees; remove shoes where you see others do it.</li>
-          <li>Malls, metro and offices are icy with AC — a thin layer helps.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🛡️</span><span><b>Safety &amp; scams</b></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li><b>Phone snatching</b> from passing bikes is the main risk. Use your phone away from the road edge; crossbody bags worn on the inside.</li>
-          <li>Coconut / fruit-pole "photo" vendors and shoe shiners will ask for money after the fact — a firm, friendly <i>không, cảm ơn</i>.</li>
-          <li>Confirm prices before you sit, eat or ride when nothing is written down.</li>
-          <li>Saigon is generally very safe for walking at night in central areas.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">💧</span><span><b>Health</b></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li>Don't drink tap water. Bottled is everywhere; ice in restaurants and cafés is factory-made and fine.</li>
-          <li>Pharmacies (<i>nhà thuốc</i>) are on every block — Long Châu and Pharmacity are reliable chains.</li>
-          <li>International-standard clinics: Family Medical Practice, Raffles Medical, and FV Hospital (near RMIT).</li>
-          <li>Hydrate with electrolytes on big walking days — the heat sneaks up on you.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🗺️</span><span><b>Addresses &amp; "districts"</b></span></summary>
-      <div class="body">
-        <p>Since July 2025, HCMC scrapped its district level and merged with neighbouring provinces, so new addresses use ward names (e.g. <i>Phường Bến Thành</i>). Locals, drivers and most signs still say "District 1", "District 7" etc. — both will get you there.</p>
-        <p class="note">Tip: send drivers a Google Maps pin rather than typing an address.</p>
-      </div>
-    </details>
-
-    <details class="card">
-      <summary><span class="ico">🎓</span><span><b>Work days at RMIT</b></span></summary>
-      <div class="body">
-        <ul class="ticks">
-          <li><b>Saigon South campus</b> — 702 Nguyễn Văn Linh, Phú Mỹ Hưng (old District 7). About 30–50 min from Bến Thành by car.</li>
-          <li>Book a Grab/Xanh SM car 10 min before you need it in peak hours, and leave buffer for afternoon rain.</li>
-          <li>Phú Mỹ Hưng is calm, walkable and full of food options — handy for lunch or a post-work dinner before heading back.</li>
-        </ul>
-        <a class="map" data-q="RMIT University Saigon South Campus" target="_blank" rel="noopener">Map →</a>
-      </div>
-    </details>
-
-    <div class="card sos">
-      <h3>🚨 Emergency</h3>
-      <div class="sos-grid">
-        <a href="tel:113"><b>113</b><span>Police</span></a>
-        <a href="tel:114"><b>114</b><span>Fire</span></a>
-        <a href="tel:115"><b>115</b><span>Ambulance</span></a>
-      </div>
-      <p class="note">Operators may not speak English — for anything non-urgent, ask your accommodation to call for you. Save your embassy's number too.</p>
-    </div>
-
-    <ul class="facts">
-      <li><span>Time zone</span><b>UTC+7, no DST</b></li>
-      <li><span>Power</span><b>220V · plugs A &amp; C</b></li>
-      <li><span>Bring</span><b>Adapter (AU plugs won't fit)</b></li>
-      <li><span>Water</span><b>Bottled only</b></li>
-    </ul>
   </section>
 
-  <!-- ============ SAY ============ -->
-  <section id="say" class="section">
-    <p class="eyebrow">05 · Phrases</p>
-    <h2>Say</h2>
-    <p class="lead">Vietnamese is tonal, so a smile and pointing do a lot of the work. Pronunciations are rough Southern-accent guides.<span class="speak-hint" hidden> Tap 🔊 to hear it.</span></p>
+  <!-- =============================== MOVE =============================== -->
+  <section class="view" id="move" data-view hidden>
+    <header class="view-head">
+      <p class="overline">Getting around</p>
+      <h1>Move</h1>
+      <p class="lead">Old Saigon is a 5–20 minute walk from home. For anything further, open an app rather than hailing a street taxi.</p>
+    </header>
 
-    <ul class="phrases">
-      <li><b>Xin chào</b><i>sin chow</i><span>Hello</span></li>
-      <li><b>Cảm ơn</b><i>gahm un</i><span>Thank you</span></li>
-      <li><b>Không, cảm ơn</b><i>khom, gahm un</i><span>No, thank you</span></li>
-      <li><b>Anh ơi / Chị ơi!</b><i>ahn uh-ee / chee uh-ee</i><span>Excuse me! (to a man / woman)</span></li>
-      <li><b>Bao nhiêu tiền?</b><i>bow nyew tee-en</i><span>How much?</span></li>
-      <li><b>Mắc quá!</b><i>mack kwa</i><span>Too expensive! (Southern)</span></li>
-      <li><b>Tính tiền</b><i>ting tee-en</i><span>The bill, please</span></li>
-      <li><b>Ngon quá!</b><i>ngon kwa</i><span>Delicious!</span></li>
-    </ul>
+    <div class="group">
+      <details class="row acc" open>
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-bike"/></svg></span>
+          <span class="row-main"><span class="t">Ride apps</span><span class="d">Grab, Xanh SM, Be — your default</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>The price is fixed up front, so there's no haggling and no meter. Pay the driver in cash or link a card in the app.</p>
+          <ul class="list">
+            <li><b>Bike (xe ôm)</b>: fastest through traffic and cheapest. The driver gives you a helmet.</li>
+            <li><b>Car</b>: better in rain or heat, or for longer trips like RMIT.</li>
+            <li><b>Xanh SM</b>: the teal electric VinFast fleet, clean and quiet.</li>
+            <li>Always <b>check the plate number</b>, and drop the pickup pin precisely.</li>
+          </ul>
+          <div class="stats">
+            <div class="stat"><span>Short hop, bike</span><b>15–35k ₫</b></div>
+            <div class="stat"><span>Across town, car</span><b>60–150k ₫</b></div>
+            <div class="stat"><span>To RMIT, car</span><b>120–220k ₫</b></div>
+          </div>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-train"/></svg></span>
+          <span class="row-main"><span class="t">Metro Line 1</span><span class="d">Starts under Bến Thành Market</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Saigon's first metro line runs from <b>Bến Thành</b> east to <b>Suối Tiên</b>. It's clean, air-conditioned and avoids the traffic.</p>
+          <ul class="list">
+            <li><b>Thảo Điền</b>: cafés and vegan spots, about 15 min.</li>
+            <li><b>Tân Cảng</b>: the closest stop for Landmark 81.</li>
+            <li><b>Nhà hát Thành phố</b> (Opera House): one stop, handy in the rain.</li>
+          </ul>
+          <p class="hint">Fares are roughly 7k–20k ₫. Buy at the machines; many gates also take contactless cards. Trains run until about 10pm.</p>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-walk"/></svg></span>
+          <span class="row-main"><span class="t">Crossing the street</span><span class="d">The one skill you need on day one</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ol class="list numbered">
+            <li>Wait for a gap, not an empty road. The road won't empty.</li>
+            <li>Walk at a <b>slow, steady, predictable pace</b>. Bikes will flow around you.</li>
+            <li><b>Don't stop suddenly, run, or step back.</b></li>
+            <li>Watch for cars and buses, because they won't swerve.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-plane"/></svg></span>
+          <span class="row-main"><span class="t">Airport ↔ Bến Thành</span><span class="d">Tân Sơn Nhất (SGN), ~7 km</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Grab / Xanh SM car</b>: follow the app's pickup signs in arrivals. It takes 30–60 min and costs roughly 120–250k ₫.</li>
+            <li><b>Bus 109</b>: the airport bus to the 23/9 Park terminal next to Bến Thành. Cheap and air-conditioned.</li>
+            <li>Ignore the touts offering a "taxi" in the arrivals hall.</li>
+          </ul>
+          <p class="hint">Check which airport is on your ticket. The new Long Thành airport is ~40 km east.</p>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-car"/></svg></span>
+          <span class="row-main"><span class="t">Taxis &amp; cyclos</span><span class="d">Fine, with care</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>If you hail one, use only <b>Vinasun</b> (white) or <b>Mai Linh</b> (green) and make sure the meter is on.</li>
+            <li><b>Cyclos</b> are a tourist experience. Agree on the price and how long the ride lasts first, in writing.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-grad"/></svg></span>
+          <span class="row-main"><span class="t">Getting to RMIT</span><span class="d">Saigon South campus</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>The campus is at <b>702 Nguyễn Văn Linh</b>, Phú Mỹ Hưng (formerly District 7), 30–50 min by car.</li>
+            <li>At rush hour (7–9am and 4:30–7pm), book your car 10 minutes before you need it.</li>
+            <li>Phú Mỹ Hưng is calm and walkable, with lots of places for lunch.</li>
+          </ul>
+          <a class="link" data-q="RMIT University Saigon South Campus" target="_blank" rel="noopener">Open in Maps<svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+      </details>
+    </div>
 
-    <h3 class="sub-h">At the table</h3>
-    <ul class="phrases">
-      <li><b>Tôi ăn thuần chay</b><i>toy an twun chai</i><span>I eat vegan</span></li>
-      <li><b>Có món chay không?</b><i>gaw mon chai khom</i><span>Do you have vegetarian food?</span></li>
-      <li><b>Không thịt, không cá</b><i>khom tit, khom gah</i><span>No meat, no fish</span></li>
-      <li><b>Không trứng, không sữa</b><i>khom chung, khom sue-ah</i><span>No egg, no milk</span></li>
-      <li><b>Không nước mắm</b><i>khom nuk mum</i><span>No fish sauce</span></li>
-      <li><b>Không cay</b><i>khom kai</i><span>Not spicy</span></li>
-      <li><b>Cà phê đen đá</b><i>ga feh den dah</i><span>Iced black coffee</span></li>
-    </ul>
-
-    <h3 class="sub-h">Getting around</h3>
-    <ul class="phrases">
-      <li><b>Đi thẳng</b><i>dee tang</i><span>Go straight</span></li>
-      <li><b>Rẽ trái / Rẽ phải</b><i>reh chai / reh fai</i><span>Turn left / right</span></li>
-      <li><b>Dừng ở đây</b><i>yung uh day</i><span>Stop here</span></li>
-      <li><b>Nhà vệ sinh ở đâu?</b><i>nyah vay sing uh dow</i><span>Where is the toilet?</span></li>
-    </ul>
+    <h3 class="label">From Bến Thành to…</h3>
+    <div class="group">
+      <div class="row kv"><span>Nguyễn Huệ / Opera House</span><b>Walk 5–10 min</b></div>
+      <div class="row kv"><span>Independence Palace</span><b>Walk 12 min</b></div>
+      <div class="row kv"><span>War Remnants Museum</span><b>Walk 15 min</b></div>
+      <div class="row kv"><span>Thảo Điền</span><b>Metro 15 min</b></div>
+      <div class="row kv"><span>Chợ Lớn (Chinatown)</span><b>Car 20–30 min</b></div>
+      <div class="row kv"><span>RMIT Saigon South</span><b>Car 30–50 min</b></div>
+      <div class="row kv"><span>Airport (SGN)</span><b>Car 30–60 min</b></div>
+    </div>
   </section>
 
-  <footer class="foot">
-    <p>Made with 🌿 for Alex &amp; Jenna. Prices are rough guides as of late 2026 — places open, close and move, so check the map links before heading out.</p>
-    <p>Chúc vui vẻ! <span class="muted">(Have fun!)</span></p>
-  </footer>
+  <!-- =============================== EAT =============================== -->
+  <section class="view" id="eat" data-view hidden>
+    <header class="view-head">
+      <p class="overline">Plant-based in Saigon</p>
+      <h1>Eat</h1>
+      <p class="lead"><b>Chay</b> means vegetarian and <b>thuần chay</b> means vegan. Meat-free food is easy to find here; the traps are hidden fish sauce, egg and condensed milk.</p>
+    </header>
+
+    <button class="btn btn-primary btn-block" type="button" data-open-card>
+      <svg class="i"><use href="#i-leaf"/></svg>Show the vegan card to staff
+    </button>
+
+    <div class="sec-head"><h2>Dishes to try</h2><span class="hint-inline">Swipe</span></div>
+    <div class="scroller" id="dishes"></div>
+
+    <h3 class="label">Words to watch for</h3>
+    <div class="group grid-2">
+      <div class="cell"><p class="t warn-text">nước mắm</p><p class="d">fish sauce</p></div>
+      <div class="cell"><p class="t warn-text">mắm tôm</p><p class="d">shrimp paste</p></div>
+      <div class="cell"><p class="t warn-text">dầu hào</p><p class="d">oyster sauce</p></div>
+      <div class="cell"><p class="t warn-text">trứng</p><p class="d">egg, even in chay places</p></div>
+      <div class="cell"><p class="t warn-text">sữa đặc</p><p class="d">condensed milk</p></div>
+      <div class="cell"><p class="t warn-text">bơ / pate</p><p class="d">butter / pâté in bánh mì</p></div>
+    </div>
+    <p class="hint">Ask for <b>nước tương</b> (soy sauce) instead of fish sauce.</p>
+
+    <h3 class="label">Where to eat</h3>
+    <div class="group">
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-bowl"/></svg></span>
+        <div class="row-main"><p class="t">Hum Vegetarian <span class="tag">Mostly vegan</span></p><p class="d">Calm and leafy. The Võ Văn Tần branch is next to the War Remnants Museum.</p></div>
+        <a class="icon-btn sm" data-q="Hum Vegetarian Café & Restaurant Võ Văn Tần" target="_blank" rel="noopener" aria-label="Hum Vegetarian in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-bowl"/></svg></span>
+        <div class="row-main"><p class="t">Hoa Đăng <span class="tag">Mostly vegan</span></p><p class="d">Elegant Vietnamese vegetarian food. Good for a proper dinner.</p></div>
+        <a class="icon-btn sm" data-q="Hoa Đăng vegetarian restaurant" target="_blank" rel="noopener" aria-label="Hoa Đăng in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-bowl"/></svg></span>
+        <div class="row-main"><p class="t">Tib Vegetarian <span class="tag">Vegetarian</span></p><p class="d">Imperial Huế-style dishes. Try the bún Huế chay.</p></div>
+        <a class="icon-btn sm" data-q="Tib Vegetarian Saigon" target="_blank" rel="noopener" aria-label="Tib Vegetarian in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-leaf"/></svg></span>
+        <div class="row-main"><p class="t">Loving Hut <span class="tag tag-accent">100% vegan</span></p><p class="d">A vegan chain with branches across the city. Reliable and inexpensive.</p></div>
+        <a class="icon-btn sm" data-q="Loving Hut vegan" target="_blank" rel="noopener" aria-label="Loving Hut in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-leaf"/></svg></span>
+        <div class="row-main"><p class="t">Kashew Cheese &amp; Wine <span class="tag tag-accent">Plant-based</span></p><p class="d">Cashew cheese boards in Thảo Điền. Combine it with the metro day.</p></div>
+        <a class="icon-btn sm" data-q="Kashew Cheese Wine Bar Thảo Điền" target="_blank" rel="noopener" aria-label="Kashew in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-pin"/></svg></span>
+        <div class="row-main"><p class="t">Any "Quán chay" <span class="tag">Local</span></p><p class="d">Buddhist vegetarian canteens are everywhere, at about 30–50k ₫ a plate.</p></div>
+        <a class="icon-btn sm" data-q="quán chay near Bến Thành" target="_blank" rel="noopener" aria-label="Search quán chay in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="row">
+        <span class="tile"><svg class="i"><use href="#i-grad"/></svg></span>
+        <div class="row-main"><p class="t">Near RMIT <span class="tag">Work days</span></p><p class="d">Phú Mỹ Hưng has plenty of chay places and chains with vegan options.</p></div>
+        <a class="icon-btn sm" data-q="nhà hàng chay Phú Mỹ Hưng" target="_blank" rel="noopener" aria-label="Search near RMIT in Maps"><svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <p class="hint">Opening hours change, so check the map before heading out. HappyCow will find more nearby.</p>
+  </section>
+
+  <!-- =============================== SEE =============================== -->
+  <section class="view" id="see" data-view hidden>
+    <header class="view-head">
+      <p class="overline">Five days, well spent</p>
+      <h1>See</h1>
+      <p class="lead">The places worth your time, sorted by type. Tick them off as you go; your ticks are saved on this phone.</p>
+    </header>
+
+    <div class="progress">
+      <div class="progress-top"><span>Explored</span><b><span id="seen-count">0</span> / <span id="seen-total">0</span></b></div>
+      <div class="bar"><span id="seen-bar"></span></div>
+    </div>
+
+    <div class="seg" role="tablist" aria-label="Categories" id="see-cats"></div>
+    <div id="see-list"></div>
+  </section>
+
+  <!-- =============================== HELP =============================== -->
+  <section class="view" id="help" data-view hidden>
+    <header class="view-head">
+      <p class="overline">Phrases &amp; safety</p>
+      <h1>Help</h1>
+      <p class="lead">Vietnamese is tonal, so smiling and pointing do a lot of the work. The pronunciations are rough guides to the Southern accent.<span class="speak-hint" hidden> Tap the speaker icon to hear a phrase.</span></p>
+    </header>
+
+    <div class="seg" role="tablist" aria-label="Phrase topics" id="phrase-tabs">
+      <button type="button" role="tab" data-ph="basics" aria-selected="true">Basics</button>
+      <button type="button" role="tab" data-ph="food" aria-selected="false">At the table</button>
+      <button type="button" role="tab" data-ph="go" aria-selected="false">Getting around</button>
+    </div>
+
+    <div class="group phrases" data-ph-panel="basics">
+      <div class="row"><div class="row-main"><p class="t">Xin chào</p><p class="pr">sin chow</p><p class="d">Hello</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Cảm ơn</p><p class="pr">gahm un</p><p class="d">Thank you</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Không, cảm ơn</p><p class="pr">khom, gahm un</p><p class="d">No, thank you</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Anh ơi / Chị ơi!</p><p class="pr">ahn uh-ee / chee uh-ee</p><p class="d">Excuse me! (to a man / a woman)</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Bao nhiêu tiền?</p><p class="pr">bow nyew tee-en</p><p class="d">How much?</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Mắc quá!</p><p class="pr">mack kwa</p><p class="d">Too expensive!</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Ngon quá!</p><p class="pr">ngon kwa</p><p class="d">Delicious!</p></div></div>
+    </div>
+    <div class="group phrases" data-ph-panel="food" hidden>
+      <div class="row"><div class="row-main"><p class="t">Tôi ăn thuần chay</p><p class="pr">toy an twun chai</p><p class="d">I eat vegan</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Có món chay không?</p><p class="pr">gaw mon chai khom</p><p class="d">Do you have vegetarian food?</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Không thịt, không cá</p><p class="pr">khom tit, khom gah</p><p class="d">No meat, no fish</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Không trứng, không sữa</p><p class="pr">khom chung, khom sue-ah</p><p class="d">No egg, no milk</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Không nước mắm</p><p class="pr">khom nuk mum</p><p class="d">No fish sauce</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Không cay</p><p class="pr">khom kai</p><p class="d">Not spicy</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Tính tiền</p><p class="pr">ting tee-en</p><p class="d">The bill, please</p></div></div>
+    </div>
+    <div class="group phrases" data-ph-panel="go" hidden>
+      <div class="row"><div class="row-main"><p class="t">Đi thẳng</p><p class="pr">dee tang</p><p class="d">Go straight</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Rẽ trái / Rẽ phải</p><p class="pr">reh chai / reh fai</p><p class="d">Turn left / right</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Dừng ở đây</p><p class="pr">yung uh day</p><p class="d">Stop here</p></div></div>
+      <div class="row"><div class="row-main"><p class="t">Nhà vệ sinh ở đâu?</p><p class="pr">nyah vay sing uh dow</p><p class="d">Where's the toilet?</p></div></div>
+    </div>
+
+    <h3 class="label">Emergency</h3>
+    <div class="group grid-3">
+      <a class="cell sos" href="tel:113"><p class="t">113</p><p class="d">Police</p></a>
+      <a class="cell sos" href="tel:114"><p class="t">114</p><p class="d">Fire</p></a>
+      <a class="cell sos" href="tel:115"><p class="t">115</p><p class="d">Ambulance</p></a>
+    </div>
+    <p class="hint">Operators may not speak English. If it isn't urgent, ask your accommodation to call for you.</p>
+
+    <h3 class="label">Stay well</h3>
+    <div class="group">
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-shield"/></svg></span>
+          <span class="row-main"><span class="t">Safety &amp; scams</span><span class="d">Mostly about your phone</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Phone snatching</b> from passing bikes is the main risk. Use your phone away from the kerb.</li>
+            <li>Fruit-pole "photo" vendors and shoe shiners may ask for money afterwards. A friendly <i>không, cảm ơn</i> works.</li>
+            <li>If nothing is written down, confirm the price before you sit, eat or ride.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+          <span class="row-main"><span class="t">Health</span><span class="d">Water, pharmacies, clinics</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Don't drink tap water. Ice in restaurants and cafés is factory-made and fine.</li>
+            <li>There are pharmacies (<i>nhà thuốc</i>) on every block, such as Long Châu and Pharmacity.</li>
+            <li>International clinics include Family Medical Practice, Raffles Medical, and FV Hospital (near RMIT).</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-map"/></svg></span>
+          <span class="row-main"><span class="t">Addresses</span><span class="d">The 2025 renaming</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>In 2025, HCMC replaced districts with wards, so you may see <i>Phường Bến Thành</i> on new addresses. Locals still say "District 1", and either works. The easiest way to give a driver an address is to send a Google Maps pin.</p>
+        </div>
+      </details>
+    </div>
+
+    <h3 class="label">Good to know</h3>
+    <div class="group">
+      <div class="row kv"><span>Time zone</span><b>UTC+7</b></div>
+      <div class="row kv"><span>Power</span><b>220V, plug types A &amp; C</b></div>
+      <div class="row kv"><span>Tap water</span><b>Bottled only</b></div>
+    </div>
+
+    <div class="group credits-group">
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#t-see"/></svg></span>
+          <span class="row-main"><span class="t">Photo credits</span><span class="d">Wikimedia Commons, free licences</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body"><ul class="credits" id="credits"></ul></div>
+      </details>
+    </div>
+
+    <footer class="foot">
+      <p class="foot-sign">Chúc vui vẻ!</p>
+      <p>Made for Alex &amp; Jenna. Prices are rough guides as of late 2026, so check the map before heading out.</p>
+    </footer>
+  </section>
 </main>
 
-<!-- ============ BOTTOM NAV ============ -->
+<!-- ============ TAB BAR ============ -->
 <nav class="tabbar" aria-label="Sections">
-  <a href="#move" data-tab="move">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></svg>
-    <span>Move</span>
-  </a>
-  <a href="#eat" data-tab="eat">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18a9 9 0 0 1-18 0Z"/><path d="M8 7c0-1.5 1-2 1-3.5M12 7c0-1.5 1-2 1-3.5M16 7c0-1.5 1-2 1-3.5"/></svg>
-    <span>Eat</span>
-  </a>
-  <a href="#see" data-tab="see">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.5"/></svg>
-    <span>See</span>
-  </a>
-  <a href="#notes" data-tab="notes">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M9 11h7M9 15h7M9 7h3"/></svg>
-    <span>Notes</span>
-  </a>
-  <a href="#say" data-tab="say">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg>
-    <span>Say</span>
-  </a>
+  <a href="#prep" data-nav="prep"><svg class="i"><use href="#t-prep"/></svg><span>Prep</span></a>
+  <a href="#move" data-nav="move"><svg class="i"><use href="#t-move"/></svg><span>Move</span></a>
+  <a href="#eat" data-nav="eat"><svg class="i"><use href="#i-bowl"/></svg><span>Eat</span></a>
+  <a href="#see" data-nav="see"><svg class="i"><use href="#t-see"/></svg><span>See</span></a>
+  <a href="#help" data-nav="help"><svg class="i"><use href="#t-help"/></svg><span>Help</span></a>
 </nav>
 
 <!-- ============ VEGAN CARD ============ -->
 <dialog id="vegan-card" aria-labelledby="vc-title">
   <div class="vc">
-    <button class="vc-close" type="button" aria-label="Close" data-close-card>✕</button>
-    <p class="vc-badge">🌱 THUẦN CHAY</p>
+    <button class="icon-btn vc-close" type="button" aria-label="Close" data-close-card><svg class="i"><use href="#i-x"/></svg></button>
+    <span class="tag tag-accent vc-badge"><svg class="i"><use href="#i-leaf"/></svg>Thuần chay · Vegan</span>
     <h2 id="vc-title">Chúng tôi ăn thuần chay.</h2>
     <p class="vc-vi">Không thịt, không cá, không hải sản.<br>
       Không trứng, không sữa, không mật ong.<br>
       Không dùng <b>nước mắm</b>, <b>mắm tôm</b>, <b>dầu hào</b> hay nước dùng xương.</p>
-    <p class="vc-vi">Dùng <b>nước tương</b> thì được ạ.<br>Cảm ơn bạn nhiều! 🙏</p>
-    <hr>
+    <p class="vc-vi">Dùng <b class="ok">nước tương</b> thì được ạ.<br>Cảm ơn bạn nhiều!</p>
     <p class="vc-en">We are vegan: no meat, fish, seafood, egg, dairy or honey. No fish sauce, shrimp paste, oyster sauce or bone broth. Soy sauce is fine. Thank you so much!</p>
   </div>
 </dialog>
 
+<script src="js/images.js"></script>
+<script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
