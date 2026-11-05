@@ -331,6 +331,9 @@ window.SGN_DATA = {
 
   restaurants: [
     /* Near home — District 1 / 3 */
+    { area: "home", kind: "veg", name: "Chay Tuệ", where: "D1 · Tôn Thất Đạm, ~3 min walk",
+      desc: "A well-liked local chay restaurant one street over from the hotel, with a long menu of Vietnamese vegetarian dishes. Other branches are on Trần Hưng Đạo and Mai Thị Lựu.",
+      q: "Nhà hàng chay Tuệ 130 Tôn Thất Đạm" },
     { area: "home", kind: "veg", name: "Hum Vegetarian", where: "D3 · next to War Remnants",
       desc: "Calm, leafy and a bit upscale. Most of the menu is vegan, and it's ideal after the museum.",
       q: "Hum Vegetarian Café & Restaurant Võ Văn Tần" },
