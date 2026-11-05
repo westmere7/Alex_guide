@@ -441,6 +441,17 @@ dialog#vegan-card::backdrop { background: var(--overlay); }
 .vc-vi b.ok { color: var(--accent); }
 .vc-en { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); font-size: var(--fs-sm); color: var(--text-3); }
 
+/* ===== Touch: tapping controls must never start text selection ===== */
+summary, label, button, .btn, .icon-btn, .tabbar a, .brand, .seg, .chips, .pack-item, .check {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; /* also removes the double-tap-to-zoom delay */
+}
+/* …but keep typing and selecting inside the converter inputs */
+input, textarea { -webkit-user-select: text; user-select: text; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
