@@ -8,8 +8,7 @@ window.SGN_DATA = {
   /* ---------- SEE ---------- */
   categories: [
     { id: "art",   label: "Art",          icon: "i-palette" },
-    { id: "shop",  label: "Shopping",     icon: "i-bag",
-      note: "Skip Bến Thành Market. It's a tourist trap with pushy vendors and prices several times what you'd pay elsewhere. The shops below sell better-made, locally designed things at fair or fixed prices." },
+    { id: "shop",  label: "Shopping",     icon: "i-bag" },
     { id: "old",   label: "Old Saigon",   icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
