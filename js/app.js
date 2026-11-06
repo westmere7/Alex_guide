@@ -4,7 +4,7 @@
   var DATA = window.SGN_DATA || {};
   var IMAGES = window.SGN_IMAGES || {};
   var TZ = "Asia/Ho_Chi_Minh";
-  var VIEWS = ["prep", "move", "eat", "see", "help"];
+  var VIEWS = ["prep", "move", "eat", "see", "help", "map"];
 
   /* ---------- helpers ---------- */
   var store = {
@@ -59,6 +59,7 @@
     if (metaTheme) metaTheme.setAttribute("content", t === "dark" ? "#0C0D0D" : "#F6F6F3");
     var btn = $("#theme-toggle");
     if (btn) btn.setAttribute("aria-label", t === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    try { document.dispatchEvent(new CustomEvent("sgn-theme")); } catch (e) {}
   }
   applyTheme(root.getAttribute("data-theme") || "light");
   $("#theme-toggle").addEventListener("click", function () {
@@ -78,6 +79,10 @@
     $$(".tabbar a").forEach(function (a) {
       if (a.dataset.nav === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
+    var mb = $("#map-btn");
+    if (mb) { if (view === "map") mb.setAttribute("aria-current", "page"); else mb.removeAttribute("aria-current"); }
+    document.body.classList.toggle("on-map", view === "map");
+    if (view === "map") setTimeout(openMap, 0);
     if (scroll !== false) window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", function () { show(currentView()); });
@@ -377,7 +382,7 @@
           "<li>" + icon(fromIcon(p.from)) + "<span>" + esc(p.from) + "</span></li>" +
         "</ul>" +
         (p.tip ? '<p class="tip">' + icon("i-info") + "<span>" + esc(p.tip) + "</span></p>" : "") +
-        (p.q ? photosBtn(p.q, p.name) : "") +
+        '<div class="btn-row">' + (p.q ? photosBtn(p.q, p.name) : "") + mapBtn(p.id) + "</div>" +
       "</div></article>";
   }
   function renderCats() {
@@ -436,7 +441,7 @@
       '<div class="row-main"><p class="t">' + esc(r.name) + "</p>" +
         '<p class="r-meta"><span class="' + k.tag + '">' + esc(k.label) + "</span>" +
         (r.where ? '<span class="where">' + esc(r.where) + "</span>" : "") + "</p>" +
-        '<p class="d">' + esc(r.desc) + "</p>" + photosBtn(r.q, r.name) + "</div>" +
+        '<p class="d">' + esc(r.desc) + "</p>" + '<div class="btn-row">' + photosBtn(r.q, r.name) + (r.key ? mapBtn(r.key) : "") + "</div></div>" +
       "</div>";
   }
 
@@ -469,7 +474,8 @@
   }
 
   filteredList({ groups: DATA.eatAreas, items: DATA.restaurants, field: "area",
-    seg: "#eat-areas", list: "#eat-list", count: "#eat-count", key: "sgn-guide-eat-area" });
+    seg: "#eat-areas", list: "#eat-list", count: "#eat-count", key: "sgn-guide-eat-area",
+    decorate: function (r) { return Object.assign({ key: "r:" + r.name }, r); } });
 
   var drinkTypes = {};
   (DATA.drinkTypes || []).forEach(function (t) { drinkTypes[t.id] = t; });
@@ -477,7 +483,7 @@
     seg: "#drink-types", list: "#drink-list", count: "#drink-count", key: "sgn-guide-drink-type",
     decorate: function (r) {
       var t = drinkTypes[r.type] || {};
-      return { name: r.name, where: r.where, desc: r.desc, q: r.q, tag: r.tag || t.label, icon: t.icon };
+      return { key: "d:" + r.name, name: r.name, where: r.where, desc: r.desc, q: r.q, tag: r.tag || t.label, icon: t.icon };
     } });
 
   /* ---------- dishes ---------- */
@@ -652,6 +658,253 @@
       return '<li><a href="' + esc(im.page) + '" target="_blank" rel="noopener">' + esc(subjects[k]) + "</a>, " +
         esc(im.by) + " · " + esc(im.lic) + "</li>";
     }).join("");
+  }
+
+
+  /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
+  var COORDS = window.SGN_COORDS || {};
+  var PIN_COLORS = { art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
+    trips: "#5F3DC4", eat: "#2B8A3E", drink: "#E67700", home: "#1F2937" };
+  var mapLayers = (DATA.categories || []).map(function (c) { return { id: c.id, label: c.label, icon: c.icon }; })
+    .concat([{ id: "eat", label: "Eat", icon: "i-bowl" }, { id: "drink", label: "Drinks", icon: "i-glass" }]);
+  var catLabel = {};
+  (DATA.categories || []).forEach(function (c) { catLabel[c.id] = c.label; });
+
+  var mapPoints = [{ key: "home", layer: "home", name: "Au Lac Charner Hotel", sub: "Home base",
+    desc: "87-89-91 Hồ Tùng Mậu, Quận 1", q: "Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu", icon: "i-pin" }];
+  (DATA.places || []).forEach(function (p) {
+    mapPoints.push({ key: p.id, layer: p.cat, name: p.name, sub: catLabel[p.cat] || "", desc: p.desc, q: p.q,
+      icon: (mapLayers.filter(function (l) { return l.id === p.cat; })[0] || {}).icon || "i-landmark" });
+  });
+  (DATA.restaurants || []).forEach(function (r) {
+    mapPoints.push({ key: "r:" + r.name, layer: "eat", name: r.name, sub: (KIND[r.kind] || KIND.veg).label + (r.where ? " · " + r.where : ""),
+      desc: r.desc, q: r.q, icon: r.kind === "vegan" ? "i-leaf" : "i-bowl" });
+  });
+  (DATA.drinks || []).forEach(function (r) {
+    var t = drinkTypes[r.type] || {};
+    mapPoints.push({ key: "d:" + r.name, layer: "drink", name: r.name, sub: (t.label || "Drinks") + (r.where ? " · " + r.where : ""),
+      desc: r.desc, q: r.q, icon: t.icon || "i-glass" });
+  });
+  mapPoints.forEach(function (pt) { var c = COORDS[pt.key]; if (c) { pt.ll = [c[0], c[1]]; pt.approx = !!c[2]; } });
+
+  var layersOn = store.get("sgn-guide-map-layers", mapLayers.filter(function (l) { return l.id !== "trips"; }).map(function (l) { return l.id; }));
+  var hiddenKeys = store.get("sgn-guide-map-hidden", []);
+  var lmap = null, tiles = null, markers = {}, pendingFocus = null, leafletState = 0, leafletWaiters = [];
+  var meMarker = null, meCircle = null, watchId = null, firstFix = true;
+
+  function mapBtn(key) {
+    if (!(window.SGN_COORDS || {})[key]) return "";
+    return '<a class="btn btn-secondary btn-sm" href="#map" data-map-key="' + esc(key) + '">' + icon("i-map") + "Map</a>";
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-map-key]");
+    if (a) pendingFocus = a.getAttribute("data-map-key");
+  });
+
+  function loadLeaflet(cb) {
+    if (leafletState === 2) return cb();
+    leafletWaiters.push(cb);
+    if (leafletState === 1) return;
+    leafletState = 1;
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+    document.head.appendChild(css);
+    var js = document.createElement("script");
+    js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+    js.onload = function () { leafletState = 2; leafletWaiters.splice(0).forEach(function (f) { f(); }); };
+    js.onerror = function () { leafletState = 0; $("#map-loading").textContent = "Couldn't load the map. Check your connection and try again."; };
+    document.head.appendChild(js);
+  }
+
+  function popupHtml(pt) {
+    var dest = pt.approx ? encodeURIComponent(pt.q + ", Ho Chi Minh City") : pt.ll[0] + "," + pt.ll[1];
+    return '<div class="pop">' +
+      '<p class="pop-sub" style="color:' + PIN_COLORS[pt.layer] + '">' + esc(pt.sub) + "</p>" +
+      '<p class="pop-t">' + esc(pt.name) + "</p>" +
+      (pt.desc ? '<p class="pop-d">' + esc(pt.desc) + "</p>" : "") +
+      (pt.approx ? '<p class="pop-a">' + icon("i-info") + "Approximate location</p>" : "") +
+      '<div class="pop-btns">' +
+        '<a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + dest + '">Directions</a>' +
+        '<a class="btn btn-secondary btn-sm" target="_blank" rel="noopener" href="' + esc(mapUrl(pt.q)) + '">' + icon("i-photo") + "Photos</a>" +
+      "</div></div>";
+  }
+  function pinIcon(pt) {
+    var home = pt.layer === "home";
+    return L.divIcon({
+      className: "pin-wrap",
+      html: '<span class="pin' + (home ? " pin-home" : "") + '" style="--c:' + PIN_COLORS[pt.layer] + '">' + icon(pt.icon) + "</span>",
+      iconSize: home ? [38, 38] : [30, 30], iconAnchor: home ? [19, 19] : [15, 15], popupAnchor: [0, -14]
+    });
+  }
+  function isVisible(pt) {
+    return pt.layer === "home" || (layersOn.indexOf(pt.layer) >= 0 && hiddenKeys.indexOf(pt.key) < 0);
+  }
+  function refreshMarkers() {
+    if (!lmap) return;
+    mapPoints.forEach(function (pt) {
+      var m = markers[pt.key];
+      if (!m) return;
+      var want = isVisible(pt), has = lmap.hasLayer(m);
+      if (want && !has) m.addTo(lmap);
+      if (!want && has) lmap.removeLayer(m);
+    });
+  }
+  function fitVisible(includeTrips) {
+    var pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt) && (includeTrips || pt.layer !== "trips"); });
+    if (!pts.length) pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt); });
+    if (pts.length < 2) { lmap.setView(pts[0] ? pts[0].ll : [LAT, LON], 15); return; }
+    lmap.fitBounds(pts.map(function (pt) { return pt.ll; }), { padding: [36, 36], maxZoom: 16 });
+  }
+  function renderLayerChips() {
+    $("#map-layers").innerHTML = mapLayers.map(function (l) {
+      var on = layersOn.indexOf(l.id) >= 0;
+      return '<button type="button" data-layer="' + l.id + '" aria-pressed="' + on + '" style="--c:' + PIN_COLORS[l.id] + '">' +
+        '<span class="dot"></span>' + esc(l.label) + "</button>";
+    }).join("");
+  }
+  function saveMapState() { store.set("sgn-guide-map-layers", layersOn); store.set("sgn-guide-map-hidden", hiddenKeys); }
+
+  var toastTimer;
+  function mapToast(msg) {
+    var t = $("#map-toast");
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 4500);
+  }
+
+  function initMap() {
+    lmap = L.map("map-canvas", { zoomControl: false, tap: true }).setView([LAT, LON], 15);
+    L.control.zoom({ position: "bottomleft" }).addTo(lmap);
+    tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+    }).addTo(lmap);
+    mapPoints.forEach(function (pt) {
+      if (!pt.ll) return;
+      markers[pt.key] = L.marker(pt.ll, { icon: pinIcon(pt), title: pt.name, zIndexOffset: pt.layer === "home" ? 1000 : 0, riseOnHover: true })
+        .bindPopup(popupHtml(pt), { maxWidth: 260, autoPanPadding: [20, 80] });
+    });
+    refreshMarkers();
+    lmap.setView([LAT - 0.0015, LON - 0.004], 15); // the hotel and the old town
+    $("#map-loading").hidden = true;
+
+    renderLayerChips();
+    $("#map-layers").addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-layer]");
+      if (!b) return;
+      var id = b.dataset.layer, i = layersOn.indexOf(id);
+      if (i >= 0) layersOn.splice(i, 1); else layersOn.push(id);
+      saveMapState(); renderLayerChips(); refreshMarkers();
+      if (i < 0 && id === "trips") fitVisible(true);
+    });
+    $("#map-fit").addEventListener("click", function () { fitVisible(layersOn.indexOf("trips") >= 0); });
+    $("#map-locate").addEventListener("click", locateMe);
+    $("#map-places").addEventListener("click", openSheet);
+  }
+
+  function locateMe() {
+    if (!("geolocation" in navigator)) { mapToast("This browser can't share your location."); return; }
+    if (meMarker && watchId !== null) { lmap.setView(meMarker.getLatLng(), Math.max(lmap.getZoom(), 16)); return; }
+    $("#map-locate").classList.add("busy");
+    firstFix = true;
+    watchId = navigator.geolocation.watchPosition(function (pos) {
+      var ll = [pos.coords.latitude, pos.coords.longitude], acc = pos.coords.accuracy || 0;
+      $("#map-locate").classList.remove("busy");
+      $("#map-locate").classList.add("on");
+      if (!meMarker) {
+        meMarker = L.marker(ll, { icon: L.divIcon({ className: "me-wrap", html: '<span class="me-dot"></span>', iconSize: [22, 22], iconAnchor: [11, 11] }), zIndexOffset: 2000, keyboard: false, interactive: false }).addTo(lmap);
+        meCircle = L.circle(ll, { radius: acc, className: "me-acc", weight: 1 }).addTo(lmap);
+      } else { meMarker.setLatLng(ll); meCircle.setLatLng(ll).setRadius(acc); }
+      if (firstFix) {
+        firstFix = false;
+        var far = lmap.distance(ll, [LAT, LON]) > 60000;
+        lmap.setView(ll, far ? 12 : Math.max(lmap.getZoom(), 16));
+        if (far) mapToast("You're a long way from Saigon. The pins will make more sense once you land!");
+      }
+    }, function (err) {
+      $("#map-locate").classList.remove("busy", "on");
+      if (watchId !== null) navigator.geolocation.clearWatch(watchId);
+      watchId = null;
+      mapToast(err.code === 1 ? "Location is blocked. Allow location for this site in your browser settings, then try again."
+        : "Couldn't find your location. Try again outside or with Wi-Fi on.");
+    }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 });
+  }
+
+  function focusKey(key) {
+    var pt = mapPoints.filter(function (p) { return p.key === key; })[0], m = markers[key];
+    if (!pt || !m) return;
+    if (pt.layer !== "home" && layersOn.indexOf(pt.layer) < 0) { layersOn.push(pt.layer); renderLayerChips(); }
+    var hi = hiddenKeys.indexOf(key);
+    if (hi >= 0) hiddenKeys.splice(hi, 1);
+    saveMapState(); refreshMarkers();
+    lmap.setView(pt.ll, Math.max(lmap.getZoom(), 16));
+    m.openPopup();
+  }
+
+  function openMap() {
+    if (currentView() !== "map") return;
+    loadLeaflet(function () {
+      if (!lmap) initMap(); else lmap.invalidateSize();
+      if (pendingFocus) { var k = pendingFocus; pendingFocus = null; setTimeout(function () { lmap.invalidateSize(); focusKey(k); }, 60); }
+    });
+  }
+
+  /* choose individual places */
+  var sheet = $("#map-sheet");
+  function renderSheet() {
+    $("#ms-body").innerHTML = mapLayers.map(function (l) {
+      var pts = mapPoints.filter(function (p) { return p.layer === l.id; });
+      var on = layersOn.indexOf(l.id) >= 0;
+      return '<section class="ms-group" style="--c:' + PIN_COLORS[l.id] + '">' +
+        '<div class="ms-head"><label class="ms-layer"><input type="checkbox" data-ms-layer="' + l.id + '"' + (on ? " checked" : "") + '><span class="dot"></span>' + esc(l.label) + "</label>" +
+        '<span class="ms-acts"><button type="button" class="text-btn" data-ms-all="' + l.id + '">All</button><button type="button" class="text-btn" data-ms-none="' + l.id + '">None</button></span></div>' +
+        '<ul class="ms-list' + (on ? "" : " off") + '">' + pts.map(function (p) {
+          if (!p.ll) return '<li class="ms-row nomap"><span>' + esc(p.name) + '</span><a href="' + esc(mapUrl(p.q)) + '" target="_blank" rel="noopener">Not pinned · open in Maps</a></li>';
+          return '<li class="ms-row"><label><input type="checkbox" data-ms-key="' + esc(p.key) + '"' + (hiddenKeys.indexOf(p.key) < 0 ? " checked" : "") + "><span>" + esc(p.name) + "</span></label></li>";
+        }).join("") + "</ul></section>";
+    }).join("");
+  }
+  function openSheet() {
+    renderSheet();
+    if (sheet.showModal) sheet.showModal(); else sheet.setAttribute("open", "");
+  }
+  function closeSheet() { if (sheet.close) sheet.close(); else sheet.removeAttribute("open"); }
+  if (sheet) {
+    $("#ms-close").addEventListener("click", closeSheet);
+    $("#ms-done").addEventListener("click", closeSheet);
+    sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
+    $("#ms-reset").addEventListener("click", function () {
+      layersOn = mapLayers.map(function (l) { return l.id; }); hiddenKeys = [];
+      saveMapState(); renderSheet(); renderLayerChips(); refreshMarkers();
+    });
+    $("#ms-body").addEventListener("change", function (e) {
+      var t = e.target, k = t.getAttribute("data-ms-key"), lay = t.getAttribute("data-ms-layer");
+      if (k) {
+        var i = hiddenKeys.indexOf(k);
+        if (t.checked && i >= 0) hiddenKeys.splice(i, 1);
+        if (!t.checked && i < 0) hiddenKeys.push(k);
+      }
+      if (lay) {
+        var j = layersOn.indexOf(lay);
+        if (t.checked && j < 0) layersOn.push(lay);
+        if (!t.checked && j >= 0) layersOn.splice(j, 1);
+        t.closest(".ms-group").querySelector(".ms-list").classList.toggle("off", !t.checked);
+      }
+      saveMapState(); renderLayerChips(); refreshMarkers();
+    });
+    $("#ms-body").addEventListener("click", function (e) {
+      var all = e.target.getAttribute("data-ms-all"), none = e.target.getAttribute("data-ms-none"), id = all || none;
+      if (!id) return;
+      mapPoints.forEach(function (p) {
+        if (p.layer !== id || !p.ll) return;
+        var i = hiddenKeys.indexOf(p.key);
+        if (all && i >= 0) hiddenKeys.splice(i, 1);
+        if (none && i < 0) hiddenKeys.push(p.key);
+      });
+      if (all && layersOn.indexOf(id) < 0) layersOn.push(id);
+      saveMapState(); renderSheet(); renderLayerChips(); refreshMarkers();
+    });
   }
 
   linkMaps(document);
