@@ -819,7 +819,7 @@
   var OFM_ATTR = '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> ' + OSM_ATTR;
   function vectorStyle() {
     if (mapStyle === "detailed") return "https://tiles.openfreemap.org/styles/liberty";
-    return "https://tiles.openfreemap.org/styles/" + (root.getAttribute("data-theme") === "dark" ? "dark" : "positron");
+    return "https://tiles.openfreemap.org/styles/" + (root.getAttribute("data-theme") === "dark" ? "fiord" : "positron");
   }
   function tileSpec() {
     if (mapStyle === "detailed") return { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", opts: { maxZoom: 19, attribution: OSM_ATTR } };

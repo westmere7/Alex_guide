@@ -786,3 +786,5 @@ dialog.tr-full::backdrop { background: var(--bg); }
 .tr-check { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; }
 .tr-check .i-trail { width: 13px; height: 13px; }
 .tr-check.warn { color: var(--warn); }
+/* Simple map in dark mode: OpenFreeMap "fiord", toned down to the app's neutral greys */
+:root[data-theme="dark"] .map-canvas:not(.style-detailed) .leaflet-gl-layer { filter: saturate(.35) brightness(1.05); }
