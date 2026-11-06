@@ -664,7 +664,7 @@
   /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
   var COORDS = window.SGN_COORDS || {};
   var PIN_COLORS = { art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
-    trips: "#5F3DC4", eat: "#2B8A3E", drink: "#E67700", home: "#1F2937" };
+    trips: "#5F3DC4", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
   var mapLayers = (DATA.categories || []).map(function (c) { return { id: c.id, label: c.label, icon: c.icon }; })
     .concat([{ id: "eat", label: "Eat", icon: "i-bowl" }, { id: "drink", label: "Drinks", icon: "i-glass" }]);
   var catLabel = {};
@@ -689,6 +689,29 @@
 
   var layersOn = store.get("sgn-guide-map-layers", mapLayers.filter(function (l) { return l.id !== "trips"; }).map(function (l) { return l.id; }));
   var hiddenKeys = store.get("sgn-guide-map-hidden", []);
+  var mapStyle = store.get("sgn-guide-map-style", "simple");
+  var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
+  function tileSpec() {
+    if (mapStyle === "detailed") return { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", opts: { maxZoom: 19, attribution: OSM_ATTR } };
+    var dark = root.getAttribute("data-theme") === "dark";
+    return {
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_" + (dark ? "Dark" : "Light") + "_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+      opts: { maxZoom: 19, maxNativeZoom: 16, attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, " + OSM_ATTR }
+    };
+  }
+  function setTiles() {
+    if (!lmap) return;
+    if (tiles) lmap.removeLayer(tiles);
+    var t = tileSpec();
+    tiles = L.tileLayer(t.url, t.opts).addTo(lmap);
+    $("#map-canvas").classList.toggle("style-detailed", mapStyle === "detailed");
+  }
+  function renderStyleSwitch() {
+    $("#map-style").innerHTML = [["simple", "Simple"], ["detailed", "Detailed"]].map(function (x) {
+      return '<button type="button" data-style="' + x[0] + '" aria-pressed="' + (mapStyle === x[0]) + '">' + x[1] + "</button>";
+    }).join("");
+  }
+  document.addEventListener("sgn-theme", function () { if (mapStyle === "simple") setTiles(); });
   var lmap = null, tiles = null, markers = {}, pendingFocus = null, leafletState = 0, leafletWaiters = [];
   var meMarker = null, meCircle = null, watchId = null, firstFix = true;
 
@@ -776,10 +799,15 @@
   function initMap() {
     lmap = L.map("map-canvas", { zoomControl: false, tap: true }).setView([LAT, LON], 15);
     L.control.zoom({ position: "bottomleft" }).addTo(lmap);
-    tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
-    }).addTo(lmap);
+    setTiles();
+    renderStyleSwitch();
+    $("#map-style").addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-style]");
+      if (!b || b.dataset.style === mapStyle) return;
+      mapStyle = b.dataset.style;
+      store.set("sgn-guide-map-style", mapStyle);
+      renderStyleSwitch(); setTiles();
+    });
     mapPoints.forEach(function (pt) {
       if (!pt.ll) return;
       markers[pt.key] = L.marker(pt.ll, { icon: pinIcon(pt), title: pt.name, zIndexOffset: pt.layer === "home" ? 1000 : 0, riseOnHover: true })
