@@ -52,6 +52,7 @@
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
   <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
   <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></symbol>
   <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4ZM14 7v10"/></symbol>
@@ -436,6 +437,30 @@
 
     <!-- ---------- Tools ---------- -->
     <div data-hp-panel="tools">
+      <div class="sec-head"><h2>Translate</h2><span class="hint-inline">Live, by text or voice</span></div>
+      <div class="group pad tr" id="translate">
+        <div class="tr-dir">
+          <span class="tr-lang" id="tr-from">English</span>
+          <button type="button" class="icon-btn sm" id="tr-swap" aria-label="Swap languages"><svg class="i"><use href="#i-swap"/></svg></button>
+          <span class="tr-lang" id="tr-to">Tiếng Việt</span>
+        </div>
+        <div class="tr-in">
+          <textarea id="tr-text" rows="3" placeholder="Type, or tap the mic and speak" aria-label="Text to translate" autocomplete="off"></textarea>
+          <div class="tr-in-actions">
+            <button type="button" class="tr-mic" id="tr-mic" aria-label="Speak to translate" hidden><svg class="i"><use href="#i-mic"/></svg><span id="tr-mic-label">Speak</span></button>
+            <button type="button" class="text-btn" id="tr-clear" hidden><svg class="i"><use href="#i-x"/></svg>Clear</button>
+          </div>
+        </div>
+        <div class="tr-out" id="tr-out" hidden>
+          <p class="tr-result" id="tr-result"></p>
+          <div class="tr-out-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="tr-say"><svg class="i"><use href="#i-volume"/></svg>Play</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="tr-show"><svg class="i"><use href="#i-expand"/></svg>Show</button>
+          </div>
+        </div>
+      </div>
+      <p class="hint">Rough machine translation by MyMemory: keep sentences short. Text is sent to their service. For menus and signs, use Google Translate's camera.</p>
+
       <div class="sec-head"><h2>Weather now</h2><span class="hint-inline" id="wx-updated"></span></div>
       <div class="group pad">
         <div class="wx-now">
@@ -456,14 +481,6 @@
       <p class="hint">Forecast for the hotel area. % = chance of rain.</p>
 
       <div class="sec-head"><h2>Fair prices</h2><span class="hint-inline">Rough 2026 guide</span></div>
-      <div class="group pad" id="price-check">
-        <p class="t">Is this a fair price?</p>
-        <div class="pc-row">
-          <label class="field"><span>What is it?</span><select class="select" id="pc-item"></select></label>
-          <label class="field"><span>Price asked (₫)</span><input id="pc-price" type="text" inputmode="numeric" placeholder="50,000" autocomplete="off"></label>
-        </div>
-        <p class="pc-verdict" id="pc-verdict" hidden></p>
-      </div>
       <div id="price-list"></div>
       <p class="hint">Stalls = low end, malls and tourist streets = high end. "50" on a sign = 50,000 ₫.</p>
 
@@ -779,6 +796,13 @@
     </div>
   </section>
 </main>
+
+<!-- ============ TRANSLATE: full screen ============ -->
+<dialog id="tr-full" class="tr-full" aria-label="Translation, full screen">
+  <button type="button" class="icon-btn" id="tr-full-close" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+  <p class="tr-full-text" id="tr-full-text"></p>
+  <p class="tr-full-src" id="tr-full-src"></p>
+</dialog>
 
 <!-- ============ MAP: choose places ============ -->
 <dialog id="map-sheet" class="sheet" aria-labelledby="ms-title">

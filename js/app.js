@@ -550,9 +550,7 @@
   /* ---------- fair prices ---------- */
   var SYM = { AUD: "A$", USD: "US$", EUR: "€", GBP: "£" };
   var priceGroups = DATA.prices || [];
-  var priceItems = [];
-  priceGroups.forEach(function (g) { g.items.forEach(function (it) { priceItems.push(it); }); });
-  var priceListEl = $("#price-list"), pcItem = $("#pc-item"), pcPrice = $("#pc-price"), pcVerdict = $("#pc-verdict");
+  var priceListEl = $("#price-list");
 
   function fmtK(n) { return n >= 1000 ? (n / 1000).toLocaleString("en-US", { maximumFractionDigits: 1 }) + "k" : String(n); }
   function fmtMoney(n) { return n < 10 ? n.toFixed(2) : String(Math.round(n)); }
@@ -566,38 +564,119 @@
       }).join("") + "</div>";
     }).join("");
   }
-  function checkPrice() {
-    var it = priceItems[+pcItem.value];
-    var n = parseNum(pcPrice.value);
-    if (!it || isNaN(n) || n <= 0) { pcVerdict.hidden = true; return; }
-    if (n < 1000) n *= 1000; // "50" on a sign means 50,000 ₫
-    var range = fmtK(it.lo) + "–" + fmtK(it.hi) + " ₫";
-    var v;
-    if (n <= it.hi && n >= it.lo * 0.6) v = ["good", "i-check", "Fair. The usual price is " + range + "."];
-    else if (n < it.lo * 0.6) v = ["good", "i-check", "Cheap! The usual price is " + range + ". Check what's included."];
-    else if (n <= it.hi * 1.5) v = ["warn", "i-info", "A bit high. The usual price is " + range + ", but this is normal in malls, hotels and tourist streets."];
-    else v = ["bad", "i-x", "Tourist price. The usual price is " + range + ". Smile, say \"Mắc quá!\" (too expensive) and walk on, or offer the usual price."];
-    pcVerdict.className = "pc-verdict aqi-bg-" + v[0];
-    pcVerdict.innerHTML = icon(v[1]) + "<span>" + esc(v[2]) + "</span>";
-    pcVerdict.hidden = false;
-  }
-  if (pcItem) {
-    pcItem.innerHTML = (function () {
-      var i = 0;
-      return priceGroups.map(function (g) {
-        return '<optgroup label="' + esc(g.group) + '">' + g.items.map(function (it) {
-          return '<option value="' + (i++) + '">' + esc(it.name) + "</option>";
-        }).join("") + "</optgroup>";
-      }).join("");
-    })();
-    pcItem.addEventListener("change", checkPrice);
-    pcPrice.addEventListener("input", function () {
-      var n = parseNum(pcPrice.value);
-      if (!isNaN(n) && n >= 1000) pcPrice.value = fmtVnd(n);
-      checkPrice();
-    });
-  }
   renderPrices();
+
+
+  /* ---------- translate: English <-> Vietnamese, typed or spoken ---------- */
+  (function () {
+    var box = $("#translate");
+    if (!box) return;
+    var LANG = { en: { name: "English", speech: "en-US" }, vi: { name: "Tiếng Việt", speech: "vi-VN" } };
+    var from = store.get("sgn-guide-tr-from", "en");
+    if (!LANG[from]) from = "en";
+    var to = function () { return from === "en" ? "vi" : "en"; };
+    var textEl = $("#tr-text"), outEl = $("#tr-out"), resEl = $("#tr-result"), micBtn = $("#tr-mic"), clearBtn = $("#tr-clear");
+    var timer, req = 0, lastResult = "", lastSource = "";
+
+    function decode(t) { var d = document.createElement("textarea"); d.innerHTML = t; return d.value; }
+    function labels() {
+      $("#tr-from").textContent = LANG[from].name;
+      $("#tr-to").textContent = LANG[to()].name;
+      textEl.placeholder = from === "en" ? "Type, or tap the mic and speak" : "Gõ hoặc bấm micro để nói";
+      textEl.lang = from; resEl.lang = to();
+    }
+    function showResult(t, note) {
+      lastResult = t;
+      resEl.textContent = t;
+      resEl.classList.toggle("muted", !!note);
+      outEl.hidden = !t;
+      $("#tr-say").hidden = !!note || !voiceFor(to());
+      $("#tr-show").hidden = !!note;
+    }
+    function translate() {
+      var q = textEl.value.trim();
+      clearBtn.hidden = !q;
+      if (!q) { showResult(""); return; }
+      if (q === lastSource && lastResult) return;
+      var id = ++req;
+      resEl.classList.add("loading");
+      fetch("https://api.mymemory.translated.net/get?q=" + encodeURIComponent(q.slice(0, 480)) + "&langpair=" + from + "|" + to())
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (j) {
+          if (id !== req) return;
+          resEl.classList.remove("loading");
+          var t = j && j.responseData && j.responseData.translatedText;
+          if (j && j.quotaFinished) { showResult("Today's free translation limit is used up. Try Google Translate.", true); return; }
+          if (!t) throw 0;
+          lastSource = q;
+          showResult(decode(t));
+        })
+        .catch(function () {
+          if (id !== req) return;
+          resEl.classList.remove("loading");
+          showResult("Couldn't translate. Check your connection and try again.", true);
+        });
+    }
+    textEl.addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(translate, 550); clearBtn.hidden = !textEl.value; });
+    clearBtn.addEventListener("click", function () { textEl.value = ""; lastSource = ""; showResult(""); clearBtn.hidden = true; textEl.focus(); });
+    $("#tr-swap").addEventListener("click", function () {
+      from = to(); store.set("sgn-guide-tr-from", from);
+      // put the last translation back in as the new input, like a conversation
+      if (lastResult && !resEl.classList.contains("muted")) textEl.value = lastResult;
+      lastSource = ""; labels(); translate();
+    });
+
+    /* speak the result */
+    function voiceFor(lang) {
+      if (!("speechSynthesis" in window)) return null;
+      return speechSynthesis.getVoices().filter(function (v) { return v.lang.toLowerCase().indexOf(lang) === 0; })[0] || null;
+    }
+    if ("speechSynthesis" in window && speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", function () { if (lastResult) $("#tr-say").hidden = !voiceFor(to()); });
+    $("#tr-say").addEventListener("click", function () {
+      var v = voiceFor(to());
+      if (!v || !lastResult) return;
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(lastResult);
+      u.voice = v; u.lang = v.lang; u.rate = to() === "vi" ? 0.85 : 1;
+      speechSynthesis.speak(u);
+    });
+
+    /* show it big, to hand the phone across */
+    var full = $("#tr-full");
+    $("#tr-show").addEventListener("click", function () {
+      $("#tr-full-text").textContent = lastResult;
+      $("#tr-full-text").lang = to();
+      $("#tr-full-src").textContent = textEl.value.trim();
+      if (full.showModal) full.showModal(); else full.setAttribute("open", "");
+    });
+    function closeFull() { if (full.close) full.close(); else full.removeAttribute("open"); }
+    full.addEventListener("click", closeFull);
+
+    /* speak instead of typing */
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null, listening = false;
+    if (SR) {
+      micBtn.hidden = false;
+      micBtn.addEventListener("click", function () {
+        if (listening) { rec.stop(); return; }
+        rec = new SR();
+        rec.lang = LANG[from].speech; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+        var base = "";
+        rec.onstart = function () { listening = true; micBtn.classList.add("on"); $("#tr-mic-label").textContent = "Listening…"; };
+        rec.onresult = function (e) {
+          var t = "";
+          for (var i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+          textEl.value = (base + " " + t).trim(); clearBtn.hidden = false;
+          clearTimeout(timer); timer = setTimeout(translate, 350);
+        };
+        rec.onerror = function (e) {
+          if (e.error === "not-allowed" || e.error === "service-not-allowed") showResult("Microphone is blocked. Allow it for this site in your browser settings.", true);
+        };
+        rec.onend = function () { listening = false; micBtn.classList.remove("on"); $("#tr-mic-label").textContent = "Speak"; translate(); };
+        try { rec.start(); } catch (err) {}
+      });
+    }
+    labels();
+  })();
 
   /* ---------- Help sections: Tools · Phrases · Safety ---------- */
   var hpTabs = $("#help-tabs");
