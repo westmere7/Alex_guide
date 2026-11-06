@@ -10,6 +10,7 @@ window.SGN_DATA = {
 
   /* ---------- SEE ---------- */
   categories: [
+    { id: "two",   label: "For two",      icon: "i-heart" },
     { id: "art",   label: "Art",          icon: "i-palette" },
     { id: "shop",  label: "Shopping",     icon: "i-bag" },
     { id: "old",   label: "Old Saigon",   icon: "i-landmark" },
@@ -19,6 +20,72 @@ window.SGN_DATA = {
   ],
 
   places: [
+    /* For two — honeymoon picks */
+    {
+      id: "two-cruise", cat: "two", img: null,
+      name: "Sunset dinner cruise", vi: "Du thuyền sông Sài Gòn",
+      desc: "Dinner on the Saigon River, past the lit-up bridges and skyline.",
+      time: "2.5–3 h", best: "Sunset", cost: "~US$70+ each", from: "Near Bạch Đằng pier",
+      tip: "Book a vegetarian set menu ahead, say you're vegan, and ask for no fish sauce, egg or butter.",
+      q: "Saigon River dinner cruise"
+    },
+    {
+      id: "two-hum", cat: "two", img: null,
+      name: "Candlelit dinner at Hum", vi: "Hum Vegetarian",
+      desc: "A calm, leafy dining room with a mostly vegan menu. The go-to for a special night.",
+      time: "1.5 h", best: "Dinner, booked", cost: "Mid-range", from: "Car 10 min",
+      tip: "Book ahead and mention it's your honeymoon.",
+      q: "Hum Vegetarian Café & Restaurant Võ Văn Tần"
+    },
+    {
+      id: "two-rooftop", cat: "two", img: null,
+      name: "Social Club Rooftop", vi: "Hôtel des Arts, 24th floor",
+      desc: "An elegant poolside rooftop bar high above District 3.",
+      time: "1–2 h", best: "Sunset", cost: "Splurge", from: "Car 10 min",
+      tip: "The pool is for hotel guests, but the bar is open to all. Dress smart-casual.",
+      q: "Social Club Rooftop Bar Hotel des Arts Saigon"
+    },
+    {
+      id: "two-spa", cat: "two", img: null,
+      name: "Le Spa des Artistes", vi: "Spa · Hôtel des Arts",
+      desc: "A quiet hotel spa with double rooms for a couples' massage.",
+      time: "1.5–2 h", best: "Late afternoon", cost: "Splurge", from: "Car 10 min",
+      tip: "Book a couples room ahead, then head up to the rooftop for sunset.",
+      q: "Le Spa des Artistes Hotel des Arts Saigon"
+    },
+    {
+      id: "two-miumiu", cat: "two", img: null,
+      name: "Miu Miu Spa", vi: "Miu Miu 4 · Ngô Đức Kế",
+      desc: "A popular, good-value spa chain with couples' rooms. Branch 4 is round the corner from the hotel.",
+      time: "1–2 h", best: "After a long walk", cost: "~350k–1m ₫", from: "Walk 2 min",
+      tip: "Message a day ahead to book the couples' room.",
+      q: "Miu Miu Spa 4 Ngô Đức Kế"
+    },
+    {
+      id: "two-baSon", cat: "two", img: null,
+      name: "Ba Son Bridge at night", vi: "Cầu Ba Son",
+      desc: "Stroll the riverside park and across the cable bridge as the skyline lights up.",
+      time: "45 min", best: "After dark", cost: "Free", from: "Walk 20 min",
+      tip: "Start at Bạch Đằng park and walk north along the river.",
+      q: "Ba Son Bridge"
+    },
+    {
+      id: "two-vespa", cat: "two", img: null,
+      name: "Saigon after dark by Vespa", vi: "Vespa night tour",
+      desc: "Ride pillion on vintage Vespas through backstreets, night markets and live-music bars.",
+      time: "4 h", best: "Evening", cost: "Tour", from: "Hotel pickup",
+      tip: "Book an operator that confirms vegan food in advance.",
+      q: "Vespa Adventures Saigon"
+    },
+    {
+      id: "two-aodai", cat: "two", img: null,
+      name: "Áo dài photo walk", vi: "Chụp ảnh áo dài",
+      desc: "Rent áo dài and take photos at the Post Office, the pink church and Book Street.",
+      time: "2–3 h", best: "Early morning light", cost: "Rental + photographer", from: "Walk 15 min",
+      tip: "Many rentals stock only women's áo dài, so ask for a men's one too.",
+      q: "áo dài rental Quận 1"
+    },
+
     /* Old Saigon — all walkable from home */
     {
       id: "nguyen-hue", cat: "old", img: "nguyen-hue",

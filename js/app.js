@@ -670,7 +670,7 @@
 
   /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
   var COORDS = window.SGN_COORDS || {};
-  var PIN_COLORS = { art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
+  var PIN_COLORS = { two: "#C2255C", art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
     trips: "#5F3DC4", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
   var mapLayers = (DATA.categories || []).map(function (c) { return { id: c.id, label: c.label, icon: c.icon }; })
     .concat([{ id: "eat", label: "Eat", icon: "i-bowl" }, { id: "drink", label: "Drinks", icon: "i-glass" }]);
@@ -696,6 +696,13 @@
 
   var layersOn = store.get("sgn-guide-map-layers", mapLayers.filter(function (l) { return l.id !== "trips"; }).map(function (l) { return l.id; }));
   var hiddenKeys = store.get("sgn-guide-map-hidden", []);
+  // layers added since the last visit start switched on
+  var knownLayers = store.get("sgn-guide-map-known", ["art", "shop", "old", "spirit", "out", "trips", "eat", "drink"]);
+  mapLayers.forEach(function (l) {
+    if (knownLayers && knownLayers.indexOf(l.id) < 0 && layersOn.indexOf(l.id) < 0) layersOn.push(l.id);
+  });
+  store.set("sgn-guide-map-known", mapLayers.map(function (l) { return l.id; }));
+  store.set("sgn-guide-map-layers", layersOn);
   var mapStyle = store.get("sgn-guide-map-style", "simple");
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
   function tileSpec() {
