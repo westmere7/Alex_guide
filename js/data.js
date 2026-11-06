@@ -13,7 +13,7 @@ window.SGN_DATA = {
     { id: "two",   label: "For two",      icon: "i-heart" },
     { id: "art",   label: "Art",          icon: "i-palette" },
     { id: "shop",  label: "Shopping",     icon: "i-bag" },
-    { id: "old",   label: "Old Saigon",   icon: "i-landmark" },
+    { id: "old",   label: "History",      icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
     { id: "trips", label: "Day trips",    icon: "i-van" }
@@ -86,9 +86,9 @@ window.SGN_DATA = {
       q: "áo dài rental Quận 1"
     },
 
-    /* Old Saigon — all walkable from home */
+    /* History — palaces, museums and the French quarter */
     {
-      id: "nguyen-hue", cat: "old", img: "nguyen-hue",
+      id: "nguyen-hue", cat: "out", img: "nguyen-hue",
       name: "Nguyễn Huệ & City Hall", vi: "Phố đi bộ Nguyễn Huệ",
       desc: "A pedestrian boulevard running from the French-era City Hall to the river, with the Opera House a block away.",
       time: "1 h", best: "After sunset", cost: "Free", from: "Walk 3 min",
@@ -142,6 +142,31 @@ window.SGN_DATA = {
       time: "1.5–2 h", best: "Morning", cost: "~40k ₫", from: "Car 10 min",
       tip: "Some galleries are very graphic. Hum Vegetarian is a few doors away for a calm lunch afterwards.",
       q: "War Remnants Museum"
+    },
+
+    {
+      id: "history-museum", cat: "old", img: null,
+      name: "Museum of Vietnamese History", vi: "Bảo tàng Lịch sử Việt Nam",
+      desc: "Thousands of years of Vietnamese history, from bronze drums to Cham sculpture, in a 1920s building at the zoo gates.",
+      time: "1–1.5 h", best: "Morning", cost: "~30k ₫", from: "Car 10 min",
+      tip: "Pair it with the zoo's gardens next door.",
+      q: "Museum of Vietnamese History Nguyễn Bỉnh Khiêm"
+    },
+    {
+      id: "women-museum", cat: "old", img: null,
+      name: "Southern Women's Museum", vi: "Bảo tàng Phụ nữ Nam Bộ",
+      desc: "The stories of Southern Vietnamese women, from wartime roles to áo dài and everyday life.",
+      time: "45 min", best: "Afternoon", cost: "Low", from: "Car 10 min",
+      tip: "The áo dài gallery is a good warm-up for an áo dài photo walk.",
+      q: "Southern Women's Museum Võ Thị Sáu"
+    },
+    {
+      id: "ton-duc-thang", cat: "old", img: null,
+      name: "Tôn Đức Thắng Museum", vi: "Bảo tàng Tôn Đức Thắng",
+      desc: "A small riverside museum on the life of Vietnam's second president, a quick stop near the hotel.",
+      time: "30–45 min", best: "Any time", cost: "Low", from: "Walk 8 min",
+      tip: "Combine it with a riverside walk at Bạch Đằng.",
+      q: "Tôn Đức Thắng Museum"
     },
 
     /* Art — Alex's favourite */
@@ -287,6 +312,14 @@ window.SGN_DATA = {
     },
 
     /* Out & about */
+    {
+      id: "zoo", cat: "out", img: null,
+      name: "Saigon Zoo & Botanical Gardens", vi: "Thảo Cầm Viên",
+      desc: "One of the world's oldest zoos, opened in 1864, with shady botanical gardens, old trees and lily ponds.",
+      time: "1.5–2 h", best: "Early morning", cost: "~60k ₫", from: "Car 10 min",
+      tip: "Go early before the heat. The gardens are the highlight; some enclosures are dated.",
+      q: "Saigon Zoo and Botanical Gardens"
+    },
     {
       id: "tao-dan", cat: "out", img: "tao-dan",
       name: "Tao Đàn Park", vi: "Công viên Tao Đàn",
