@@ -1024,7 +1024,10 @@
     // iOS only allows this from a tap, so it rides on the location / hotel buttons
     if (compassOn || !window.DeviceOrientationEvent) return;
     startCompass(); // events start flowing once the browser allows them
-    if (typeof DeviceOrientationEvent.requestPermission === "function") {
+    // Only iPhone/iPad needs an explicit ask. Android already allows the compass, and a second
+    // prompt alongside the location one can trip Chrome's "can't ask for your permission" guard.
+    var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (isIOS && typeof DeviceOrientationEvent.requestPermission === "function") {
       try { DeviceOrientationEvent.requestPermission().catch(function () {}); } catch (e) {}
     }
   }
