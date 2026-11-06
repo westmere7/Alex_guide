@@ -727,7 +727,7 @@
   }
   document.addEventListener("sgn-theme", function () { if (mapStyle === "simple") setTiles(); });
   var lmap = null, tiles = null, markers = {}, pendingFocus = null, leafletState = 0, leafletWaiters = [];
-  var meMarker = null, meCircle = null, watchId = null, firstFix = true;
+  var meMarker = null, meCircle = null, watchId = null, firstFix = true, wantHomeRoute = false;
 
   function mapBtn(key) {
     if (!(window.SGN_COORDS || {})[key]) return "";
@@ -755,14 +755,13 @@
   }
 
   function popupHtml(pt) {
-    var dest = pt.approx ? encodeURIComponent(pt.q + ", Ho Chi Minh City") : pt.ll[0] + "," + pt.ll[1];
     return '<div class="pop">' +
       '<p class="pop-sub" style="color:' + PIN_COLORS[pt.layer] + '">' + esc(pt.sub) + "</p>" +
       '<p class="pop-t">' + esc(pt.name) + "</p>" +
       (pt.desc ? '<p class="pop-d">' + esc(pt.desc) + "</p>" : "") +
       (pt.approx ? '<p class="pop-a">' + icon("i-info") + "Approximate location</p>" : "") +
       '<div class="pop-btns">' +
-        '<a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + dest + '">Directions</a>' +
+        '<button type="button" class="btn btn-primary btn-sm" data-route="' + esc(pt.key) + '">' + icon("i-walk") + (pt.layer === "home" ? "Route back" : "Route") + "</button>" +
         '<a class="btn btn-secondary btn-sm" target="_blank" rel="noopener" href="' + esc(mapUrl(pt.q)) + '">' + icon("i-photo") + "Photos</a>" +
       "</div></div>";
   }
@@ -842,35 +841,138 @@
     });
     $("#map-fit").addEventListener("click", function () { fitVisible(layersOn.indexOf("trips") >= 0); });
     $("#map-locate").addEventListener("click", locateMe);
+    lmap.on("popupopen", function (e) {
+      var b = e.popup.getElement().querySelector("[data-route]");
+      if (b) b.addEventListener("click", function () { routeTo(b.getAttribute("data-route")); });
+    });
+    $("#rb-close").addEventListener("click", clearRoute);
+    $("#map-home").addEventListener("click", function () {
+      if (meMarker && watchId !== null) { routeTo("home"); return; }
+      wantHomeRoute = true;
+      locateMe();
+    });
     $("#map-places").addEventListener("click", openSheet);
   }
 
   function locateMe() {
     if (!("geolocation" in navigator)) { mapToast("This browser can't share your location."); return; }
+    requestCompass();
     if (meMarker && watchId !== null) { lmap.setView(meMarker.getLatLng(), Math.max(lmap.getZoom(), 16)); return; }
     $("#map-locate").classList.add("busy");
+    if (wantHomeRoute) $("#map-home").classList.add("busy");
     firstFix = true;
     watchId = navigator.geolocation.watchPosition(function (pos) {
       var ll = [pos.coords.latitude, pos.coords.longitude], acc = pos.coords.accuracy || 0;
       $("#map-locate").classList.remove("busy");
       $("#map-locate").classList.add("on");
       if (!meMarker) {
-        meMarker = L.marker(ll, { icon: L.divIcon({ className: "me-wrap", html: '<span class="me-dot"></span>', iconSize: [22, 22], iconAnchor: [11, 11] }), zIndexOffset: 2000, keyboard: false, interactive: false }).addTo(lmap);
+        meMarker = L.marker(ll, { icon: L.divIcon({ className: "me-wrap", html: '<span class="me-cone"></span><span class="me-dot"></span>', iconSize: [80, 80], iconAnchor: [40, 40] }), zIndexOffset: 2000, keyboard: false, interactive: false }).addTo(lmap);
+        if (heading !== null) setHeading(heading);
         meCircle = L.circle(ll, { radius: acc, className: "me-acc", weight: 1 }).addTo(lmap);
       } else { meMarker.setLatLng(ll); meCircle.setLatLng(ll).setRadius(acc); }
       if (firstFix) {
         firstFix = false;
+        if (wantHomeRoute) { wantHomeRoute = false; setTimeout(function () { routeTo("home"); }, 0); return; }
         var far = lmap.distance(ll, [LAT, LON]) > 60000;
         lmap.setView(ll, far ? 12 : Math.max(lmap.getZoom(), 16));
         if (far) mapToast("You're a long way from Saigon. The pins will make more sense once you land!");
       }
     }, function (err) {
+      wantHomeRoute = false;
+      $("#map-home").classList.remove("busy");
       $("#map-locate").classList.remove("busy", "on");
       if (watchId !== null) navigator.geolocation.clearWatch(watchId);
       watchId = null;
       mapToast(err.code === 1 ? "Location is blocked. Allow location for this site in your browser settings, then try again."
         : "Couldn't find your location. Try again outside or with Wi-Fi on.");
     }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 });
+  }
+
+
+  /* ---------- compass: which way you're facing (cone on the blue dot) ---------- */
+  var heading = null, compassOn = false;
+  function setHeading(h) {
+    heading = h;
+    var el = meMarker && meMarker.getElement();
+    if (!el) return;
+    el.classList.add("has-heading");
+    el.querySelector(".me-cone").style.transform = "rotate(" + h + "deg)";
+  }
+  function onOrient(ev) {
+    var h = null;
+    if (typeof ev.webkitCompassHeading === "number") h = ev.webkitCompassHeading;     // iOS
+    else if (ev.absolute && typeof ev.alpha === "number") h = 360 - ev.alpha;       // Android
+    if (h === null || isNaN(h)) return;
+    var so = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+    setHeading(Math.round((h + so + 360) % 360));
+  }
+  function startCompass() {
+    if (compassOn) return;
+    compassOn = true;
+    if ("ondeviceorientationabsolute" in window) window.addEventListener("deviceorientationabsolute", onOrient);
+    else window.addEventListener("deviceorientation", onOrient);
+  }
+  function requestCompass() {
+    // iOS only allows this from a tap, so it rides on the location / hotel buttons
+    if (compassOn || !window.DeviceOrientationEvent) return;
+    startCompass(); // events start flowing once the browser allows them
+    if (typeof DeviceOrientationEvent.requestPermission === "function") {
+      try { DeviceOrientationEvent.requestPermission().catch(function () {}); } catch (e) {}
+    }
+  }
+
+  /* ---------- routes: walking or driving line from you (or the hotel) ---------- */
+  var routeLines = [], routeReq = 0;
+  function fmtDur(m) { return m < 60 ? m + " min" : Math.floor(m / 60) + " h " + (m % 60 ? (m % 60) + " min" : ""); }
+  function fmtDist(d) { return d < 1000 ? Math.round(d / 10) * 10 + " m" : (d / 1000).toFixed(d < 10000 ? 1 : 0) + " km"; }
+  function clearRoute() {
+    routeReq++;
+    routeLines.forEach(function (l) { lmap.removeLayer(l); });
+    routeLines = [];
+    $("#route-bar").hidden = true;
+  }
+  function routeTo(key) {
+    var pt = mapPoints.filter(function (p) { return p.key === key; })[0];
+    if (!pt || !pt.ll) return;
+    var fromMe = !!(meMarker && watchId !== null);
+    if (!fromMe && pt.layer === "home") { mapToast("Turn on your location (the target button) to get a route back to the hotel."); return; }
+    var from = fromMe ? [meMarker.getLatLng().lat, meMarker.getLatLng().lng] : [LAT, LON];
+    var straight = lmap.distance(from, pt.ll);
+    if (straight > 150000) { mapToast("You're too far away for a route. Try again in Saigon!"); return; }
+    var walk = straight < 2500;
+    var mode = walk ? ["routed-foot", "foot", "walking"] : ["routed-car", "driving", "driving"];
+    var url = "https://routing.openstreetmap.de/" + mode[0] + "/route/v1/" + mode[1] + "/" +
+      from[1] + "," + from[0] + ";" + pt.ll[1] + "," + pt.ll[0] + "?overview=full&geometries=geojson";
+    var gmaps = "https://www.google.com/maps/dir/?api=1&origin=" + from[0] + "," + from[1] +
+      "&destination=" + (pt.approx ? encodeURIComponent(pt.q + ", Ho Chi Minh City") : pt.ll[0] + "," + pt.ll[1]) + "&travelmode=" + mode[2];
+    var id = ++routeReq;
+    lmap.closePopup();
+    $("#map-home").classList.remove("busy");
+    var bar = $("#route-bar");
+    $("#rb-icon use").setAttribute("href", walk ? "#i-walk" : "#i-car");
+    $("#rb-time").textContent = "Finding a route…";
+    $("#rb-sub").textContent = "To " + pt.name;
+    $("#rb-gmaps").href = gmaps;
+    bar.hidden = false;
+    fetch(url).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) {
+      if (id !== routeReq) return;
+      var r = j && j.routes && j.routes[0];
+      if (!r) throw 0;
+      routeLines.forEach(function (l) { lmap.removeLayer(l); });
+      var lls = r.geometry.coordinates.map(function (c) { return [c[1], c[0]]; });
+      routeLines = [
+        L.polyline(lls, { className: "route-casing", weight: 9, interactive: false }).addTo(lmap),
+        L.polyline(lls, { className: "route-line", weight: 5, interactive: false }).addTo(lmap)
+      ];
+      lmap.fitBounds(routeLines[1].getBounds(), { padding: [70, 70] });
+      var mins = Math.max(1, Math.round(r.duration / 60 * (walk ? 1 : 1.5))); // Saigon traffic
+      $("#rb-time").textContent = (walk ? "Walk " : "Car ") + fmtDur(mins) + " · " + fmtDist(r.distance);
+      $("#rb-sub").textContent = "To " + pt.name + " from " + (fromMe ? "you" : "the hotel") + (walk ? "" : ", more in rush hour");
+    }).catch(function () {
+      if (id !== routeReq) return;
+      $("#rb-time").textContent = "Couldn't get a route";
+      $("#rb-sub").textContent = "Try Google Maps instead";
+    });
   }
 
   function focusKey(key) {

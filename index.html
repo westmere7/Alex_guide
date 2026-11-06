@@ -765,9 +765,16 @@
       <div class="map-fabs">
         <button class="fab" type="button" id="map-places" aria-label="Choose places"><svg class="i"><use href="#i-list"/></svg></button>
         <button class="fab" type="button" id="map-fit" aria-label="Show all visible places"><svg class="i"><use href="#i-expand"/></svg></button>
+        <button class="fab fab-home" type="button" id="map-home" aria-label="Route back to the hotel"><svg class="i"><use href="#t-home"/></svg><span>Hotel</span></button>
         <button class="fab fab-primary" type="button" id="map-locate" aria-label="Show my location"><svg class="i"><use href="#i-locate"/></svg></button>
       </div>
       <p class="map-toast" id="map-toast" role="status" hidden></p>
+      <div class="route-bar" id="route-bar" role="status" hidden>
+        <span class="rb-icon"><svg class="i" id="rb-icon"><use href="#i-walk"/></svg></span>
+        <div class="rb-main"><b id="rb-time"></b><span id="rb-sub"></span></div>
+        <a class="btn btn-secondary btn-sm" id="rb-gmaps" target="_blank" rel="noopener" aria-label="Open this route in Google Maps">Maps<svg class="i i-trail"><use href="#i-arrow"/></svg></a>
+        <button class="icon-btn sm" type="button" id="rb-close" aria-label="Clear route"><svg class="i"><use href="#i-x"/></svg></button>
+      </div>
       <p class="map-loading" id="map-loading">Loading map…</p>
     </div>
   </section>
