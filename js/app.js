@@ -579,13 +579,39 @@
     var timer, req = 0, lastResult = "", lastSource = "";
 
     function decode(t) { var d = document.createElement("textarea"); d.innerHTML = t; return d.value; }
+    // MyMemory mixes in crowd-saved phrases, some typed without accents ("may gio roi").
+    // Vietnamese without its tone marks is ambiguous, so prefer an accented answer.
+    var VI_MARKS = /[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]/i;
+    // It also stores film-subtitle lines ("Yes, sincerely thank you, Miss"), so among close
+    // matches prefer one whose length is in proportion to what was typed.
+    function words(t) { return (t.match(/\S+/g) || []).length; }
+    function pickBest(j, q) {
+      var main = decode(j.responseData.translatedText || "").trim();
+      var toVi = to() === "vi", want = words(q) * (toVi ? 1.2 : 0.8);
+      var cands = [{ text: main, match: +j.responseData.match || 0.85 }].concat((j.matches || []).map(function (m) {
+        return { text: decode(m.translation || "").trim(), match: +m.match || 0 };
+      })).filter(function (c) {
+        return c.text && c.match >= 0.85 && (!toVi || VI_MARKS.test(c.text) || !/[a-z]{2}/i.test(c.text));
+      });
+      cands.forEach(function (c) { c.score = c.match * 2 - 0.15 * Math.abs(words(c.text) - want); });
+      cands.sort(function (a, b) { return b.score - a.score; });
+      if (cands[0]) return { text: cands[0].text };
+      return { text: main, noMarks: toVi && !VI_MARKS.test(main) };
+    }
+    function googleUrl(q) {
+      return "https://translate.google.com/?sl=" + from + "&tl=" + to() + "&text=" + encodeURIComponent(q) + "&op=translate";
+    }
     function labels() {
       $("#tr-from").textContent = LANG[from].name;
       $("#tr-to").textContent = LANG[to()].name;
       textEl.placeholder = from === "en" ? "Type, or tap the mic and speak" : "Gõ hoặc bấm micro để nói";
       textEl.lang = from; resEl.lang = to();
     }
-    function showResult(t, note) {
+    function showResult(t, note, noMarks) {
+      var g = $("#tr-google");
+      g.href = googleUrl(textEl.value.trim());
+      g.innerHTML = (noMarks ? "Accents missing here, so check it in Google Translate" : "Check in Google Translate") + icon("i-arrow").replace('class="i"', 'class="i i-trail"');
+      g.classList.toggle("warn", !!noMarks);
       lastResult = t;
       resEl.textContent = t;
       resEl.classList.toggle("muted", !!note);
@@ -605,11 +631,11 @@
         .then(function (j) {
           if (id !== req) return;
           resEl.classList.remove("loading");
-          var t = j && j.responseData && j.responseData.translatedText;
           if (j && j.quotaFinished) { showResult("Today's free translation limit is used up. Try Google Translate.", true); return; }
-          if (!t) throw 0;
+          if (!j || !j.responseData || !j.responseData.translatedText) throw 0;
+          var best = pickBest(j, q);
           lastSource = q;
-          showResult(decode(t));
+          showResult(best.text, false, best.noMarks);
         })
         .catch(function () {
           if (id !== req) return;
