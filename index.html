@@ -105,7 +105,7 @@
       <p class="lead">Five plant-based days in Ho Chi Minh City, starting from your door on Hồ Tùng Mậu, a block from Nguyễn Huệ and the river.</p>
       <div class="pills" aria-live="polite">
         <span class="pill"><svg class="i"><use href="#i-clock"/></svg><span id="local-time">--:--</span>&nbsp;in Saigon</span>
-        <span class="pill" id="weather-now" hidden><svg class="i"><use href="#i-cloud"/></svg><span></span></span>
+        <a class="pill" id="weather-now" href="#help" data-hp-go="tools" hidden><svg class="i"><use href="#i-cloud"/></svg><span></span><svg class="i i-trail"><use href="#i-chevron"/></svg></a>
       </div>
       <div class="actions">
         <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
@@ -217,30 +217,6 @@
       </details>
     </div>
 
-    <h3 class="label">Currency converter</h3>
-    <div class="group pad" id="converter">
-      <div class="conv">
-        <label class="field"><span>VND</span><input id="vnd" type="text" inputmode="numeric" placeholder="100,000" autocomplete="off"></label>
-        <span class="conv-icon"><svg class="i"><use href="#i-swap"/></svg></span>
-        <label class="field">
-          <select id="cur" aria-label="Currency">
-            <option value="AUD">AUD</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-          </select>
-          <input id="fx" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
-        </label>
-      </div>
-      <div class="chips" id="quick-vnd">
-        <button type="button" data-v="20000">20k</button>
-        <button type="button" data-v="50000">50k</button>
-        <button type="button" data-v="100000">100k</button>
-        <button type="button" data-v="200000">200k</button>
-        <button type="button" data-v="500000">500k</button>
-      </div>
-      <p class="hint" id="rate-note">Approximate rate.</p>
-    </div>
   </section>
 
   <!-- =============================== MOVE =============================== -->
@@ -421,11 +397,80 @@
   <!-- =============================== HELP =============================== -->
   <section class="view" id="help" data-view hidden>
     <header class="view-head">
-      <p class="overline">Phrases, safety &amp; warnings</p>
+      <p class="overline">Tools, phrases &amp; safety</p>
       <h1>Help</h1>
-      <p class="lead">A few handy phrases, what to watch out for, and what to do if something goes wrong.<span class="speak-hint" hidden> Tap the speaker icon to hear a phrase.</span></p>
+      <p class="lead">Live weather, fair prices and money, plus handy phrases and what to do if something goes wrong.</p>
     </header>
 
+    <div class="seg seg-full" role="tablist" aria-label="Help sections" id="help-tabs">
+      <button type="button" role="tab" data-hp="tools" aria-selected="true"><svg class="i"><use href="#i-sparkle"/></svg>Tools</button>
+      <button type="button" role="tab" data-hp="phrases" aria-selected="false"><svg class="i"><use href="#i-volume"/></svg>Phrases</button>
+      <button type="button" role="tab" data-hp="safety" aria-selected="false"><svg class="i"><use href="#i-shield"/></svg>Safety</button>
+    </div>
+
+
+    <!-- ---------- Tools ---------- -->
+    <div data-hp-panel="tools">
+      <div class="sec-head"><h2>Weather now</h2><span class="hint-inline" id="wx-updated"></span></div>
+      <div class="group pad">
+        <div class="wx-now">
+          <svg class="i wx-big" id="wx-icon"><use href="#i-sun"/></svg>
+          <div class="wx-now-main"><p class="wx-temp"><span id="wx-temp">--</span>°</p><p class="d" id="wx-desc">Loading Saigon weather…</p></div>
+        </div>
+        <div class="stats" id="wx-stats"></div>
+        <div class="stats" id="wx-sun"></div>
+        <p class="wx-aqi-tip" id="wx-aqi-tip" hidden></p>
+      </div>
+
+      <div class="sec-head"><h2>Hour by hour</h2><span class="hint-inline">Next 3 days</span></div>
+      <div class="seg" role="tablist" aria-label="Forecast day" id="wx-daytabs"></div>
+      <div class="group pad">
+        <p class="wx-sum" id="wx-sum"></p>
+        <div class="wx-days wx-hours" id="wx-hours"></div>
+      </div>
+      <p class="hint">Live from Open-Meteo for the hotel's neighbourhood. The % is the chance of rain in that hour. Air quality uses the US AQI scale.</p>
+
+      <div class="sec-head"><h2>Fair prices</h2><span class="hint-inline">Rough 2026 guide</span></div>
+      <div class="group pad" id="price-check">
+        <p class="t">Is this a fair price?</p>
+        <div class="pc-row">
+          <label class="field"><span>What is it?</span><select class="select" id="pc-item"></select></label>
+          <label class="field"><span>Price asked (₫)</span><input id="pc-price" type="text" inputmode="numeric" placeholder="50,000" autocomplete="off"></label>
+        </div>
+        <p class="pc-verdict" id="pc-verdict" hidden></p>
+      </div>
+      <div id="price-list"></div>
+      <p class="hint">Street stalls and local spots sit at the low end; malls, hotels and tourist streets at the high end. "50" or "50k" on a sign means 50,000 ₫.</p>
+
+      <h3 class="label">Currency converter</h3>
+    <div class="group pad" id="converter">
+      <div class="conv">
+        <label class="field"><span>VND</span><input id="vnd" type="text" inputmode="numeric" placeholder="100,000" autocomplete="off"></label>
+        <span class="conv-icon"><svg class="i"><use href="#i-swap"/></svg></span>
+        <label class="field">
+          <select id="cur" aria-label="Currency">
+            <option value="AUD">AUD</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+          <input id="fx" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
+        </label>
+      </div>
+      <div class="chips" id="quick-vnd">
+        <button type="button" data-v="20000">20k</button>
+        <button type="button" data-v="50000">50k</button>
+        <button type="button" data-v="100000">100k</button>
+        <button type="button" data-v="200000">200k</button>
+        <button type="button" data-v="500000">500k</button>
+      </div>
+      <p class="hint" id="rate-note">Approximate rate.</p>
+    </div>
+    </div>
+
+    <!-- ---------- Phrases ---------- -->
+    <div data-hp-panel="phrases" hidden>
+      <p class="hint speak-hint" hidden>Tap the speaker icon to hear a phrase.</p>
     <div class="seg" role="tablist" aria-label="Phrase topics" id="phrase-tabs">
       <button type="button" role="tab" data-ph="basics" aria-selected="true">Basics</button>
       <button type="button" role="tab" data-ph="food" aria-selected="false">At the table</button>
@@ -457,6 +502,10 @@
       <div class="row"><div class="row-main"><p class="t">Nhà vệ sinh ở đâu?</p><p class="d">Where's the toilet?</p></div></div>
     </div>
 
+    </div>
+
+    <!-- ---------- Safety ---------- -->
+    <div data-hp-panel="safety" hidden>
     <h3 class="label">Emergency</h3>
     <div class="group grid-3">
       <a class="cell sos" href="tel:113"><p class="t">113</p><p class="d">Police</p></a>
@@ -661,6 +710,8 @@
       <div class="row kv"><span>Traffic drives on the</span><b>Right</b></div>
       <div class="row kv"><span>Tipping</span><b>Not expected, always welcome</b></div>
       <div class="row kv"><span>Toilets</span><b>Malls &amp; cafés; carry tissues</b></div>
+    </div>
+
     </div>
 
     <div class="group credits-group">

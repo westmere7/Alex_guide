@@ -373,6 +373,56 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .wx-day .lo { font-size: var(--fs-xs); color: var(--text-3); }
 .wx-day .rp { font-size: 11px; color: var(--text-2); margin-top: 2px; }
 
+/* ===== Help › Tools ===== */
+.seg.seg-full {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; overflow: visible;
+  margin: 4px 0 18px; padding: 4px; border-radius: var(--r-full);
+  background: var(--sunken); border: 1px solid var(--border);
+}
+.seg.seg-full button { justify-content: center; border: 0; background: transparent; padding: 0 8px; }
+.seg.seg-full button[aria-selected="true"] { background: var(--surface); color: var(--text); border: 0; box-shadow: var(--shadow); }
+
+.pill .i-trail { width: 14px; height: 14px; color: var(--text-3); transform: rotate(-90deg); margin-left: -2px; }
+a.pill { text-decoration: none; color: inherit; }
+
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-big { width: 52px; height: 52px; color: var(--accent); flex: none; stroke-width: 1.5; }
+.wx-temp { font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -.02em; color: var(--text); }
+.wx-now-main .d { margin-top: 4px; }
+.wx-sum { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.5; }
+.wx-sum b { color: var(--text); font-weight: 600; }
+.wx-hours { grid-auto-columns: 58px; margin-top: 12px; }
+.wx-hour .wd { margin-bottom: 4px; }
+.wx-hour .rp { display: inline-flex; align-items: center; gap: 2px; }
+.wx-hour .rp .i { width: 11px; height: 11px; margin: 0; color: var(--text-3); }
+.wx-hour.wet .rp { color: var(--accent); font-weight: 600; }
+.wx-hour.wet .rp .i { color: var(--accent); }
+.wx-hour .uv { font-size: 10.5px; color: var(--text-3); }
+
+.aqi-good { color: var(--accent); }
+.aqi-ok { color: var(--text); }
+.aqi-warn, .aqi-bad { color: var(--warn); }
+.wx-aqi-tip, .pc-verdict {
+  display: flex; gap: 10px; margin-top: 12px; padding: 12px 14px; border-radius: var(--r-md);
+  font-size: var(--fs-sm); line-height: 1.5; color: var(--text); background: var(--sunken);
+}
+.wx-aqi-tip .i, .pc-verdict .i { flex: none; width: 18px; height: 18px; margin-top: 1px; }
+.aqi-bg-good { background: var(--accent-bg); } .aqi-bg-good .i { color: var(--accent); }
+.aqi-bg-ok .i { color: var(--text-3); }
+.aqi-bg-warn, .aqi-bg-bad { background: var(--warn-bg); } .aqi-bg-warn .i, .aqi-bg-bad .i { color: var(--warn); }
+.pc-verdict[hidden], .wx-aqi-tip[hidden] { display: none; }
+
+.pc-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 8px; margin-top: 12px; }
+.field select.select {
+  align-self: stretch; height: 48px; padding: 0 30px 0 12px; border-radius: var(--r-sm);
+  border: 1px solid var(--border); background-color: var(--sunken); color: var(--text);
+  font-size: var(--fs-sm); font-weight: 600; -webkit-appearance: none; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-3) 50%), linear-gradient(135deg, var(--text-3) 50%, transparent 50%);
+  background-position: calc(100% - 17px) 21px, calc(100% - 12px) 21px; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.price-row b { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; white-space: nowrap; }
+.price-row small { font-size: 11px; font-weight: 500; color: var(--text-3); }
+
 /* ===== Callout (category warnings) ===== */
 .callout {
   display: flex; gap: 10px; margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md);

@@ -420,6 +420,38 @@ window.SGN_DATA = {
       q: "quán cơm chay Quận 1" }
   ],
 
+  /* ---------- FAIR PRICES (VND, rough 2026 ranges) ---------- */
+  prices: [
+    { group: "Food & drink", items: [
+      { name: "Iced coffee, street stall", lo: 15000, hi: 30000 },
+      { name: "Coffee in a café", lo: 40000, hi: 80000 },
+      { name: "Bánh mì chay", lo: 20000, hi: 35000 },
+      { name: "Cơm chay plate", lo: 30000, hi: 55000 },
+      { name: "Noodle soup bowl", lo: 40000, hi: 70000 },
+      { name: "Vegan restaurant main", lo: 80000, hi: 180000 },
+      { name: "Fresh coconut", lo: 25000, hi: 45000 },
+      { name: "Sugarcane juice", lo: 10000, hi: 20000 },
+      { name: "Bottle of water (shop)", lo: 5000, hi: 12000 },
+      { name: "Local beer, street or shop", lo: 20000, hi: 35000 },
+      { name: "Beer in a bar", lo: 50000, hi: 90000 },
+      { name: "Craft beer, pint", lo: 100000, hi: 160000 },
+      { name: "Rooftop cocktail", lo: 200000, hi: 400000 }
+    ] },
+    { group: "Getting around", items: [
+      { name: "Grab bike, short hop", lo: 15000, hi: 35000 },
+      { name: "Grab car across District 1", lo: 40000, hi: 80000 },
+      { name: "Grab car to the airport", lo: 120000, hi: 250000 },
+      { name: "Grab car to RMIT", lo: 120000, hi: 220000 },
+      { name: "Metro ticket", lo: 7000, hi: 20000 },
+      { name: "Cyclo, one hour", lo: 150000, hi: 300000 }
+    ] },
+    { group: "Things to do", items: [
+      { name: "Museum ticket", lo: 30000, hi: 65000 },
+      { name: "Foot massage, 60 min", lo: 200000, hi: 400000 },
+      { name: "Laundry, per kg", lo: 30000, hi: 50000 }
+    ] }
+  ],
+
   /* ---------- DRINKS ---------- */
   drinkTypes: [
     { id: "rooftop", label: "Rooftops",   icon: "i-city" },

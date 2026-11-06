@@ -100,19 +100,121 @@
   tick();
   setInterval(tick, 30000);
 
+  /* ---------- live weather: Prep pill + Help › Tools ---------- */
+  var LAT = 10.7722, LON = 106.7037; // the hotel, Hồ Tùng Mậu
   var WX = { 0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Cloudy", 45: "Hazy", 48: "Hazy",
     51: "Drizzle", 53: "Drizzle", 55: "Drizzle", 61: "Rain", 63: "Rain", 65: "Heavy rain",
     80: "Showers", 81: "Showers", 82: "Downpour", 95: "Storm", 96: "Storm", 99: "Storm" };
-  fetch("https://api.open-meteo.com/v1/forecast?latitude=10.7725&longitude=106.698&current=temperature_2m,weather_code&timezone=Asia%2FHo_Chi_Minh")
+  function wxText(c) {
+    return WX[c] || (c >= 95 ? "Storm" : c >= 80 ? "Showers" : c >= 61 ? "Rain" : c >= 51 ? "Drizzle" : c >= 45 ? "Hazy" : c >= 3 ? "Cloudy" : "Clear");
+  }
+  function wxSymbol(c, isDay) { return c >= 51 ? "i-rain" : c >= 2 ? "i-cloud" : isDay === 0 ? "i-moon" : "i-sun"; }
+  function uvLabel(u) { return u < 3 ? "Low" : u < 6 ? "Moderate" : u < 8 ? "High" : u < 11 ? "Very high" : "Extreme"; }
+  function stat(label, value) { return '<div class="stat"><span>' + esc(label) + "</span><b>" + value + "</b></div>"; }
+  var AQI = [
+    [50, "Good", "good", "Air is clean. Enjoy the walk."],
+    [100, "Moderate", "ok", "Fine for most people. If you're sensitive to pollution, take long walks easy near busy roads."],
+    [150, "Unhealthy for some", "warn", "Consider a KF94 or N95 mask for long walks near traffic. Pharmacies sell them."],
+    [200, "Unhealthy", "bad", "Wear a mask outdoors and keep long walks short. Rooftops and parks won't feel fresh today."],
+    [300, "Very unhealthy", "bad", "Limit time outside and wear a mask when you are."],
+    [Infinity, "Hazardous", "bad", "Stay indoors where you can."]
+  ];
+
+  var wxData = null, wxDay = 0;
+  var dayTabsEl = $("#wx-daytabs"), hoursEl = $("#wx-hours");
+
+  function renderHours() {
+    if (!wxData || !hoursEl) return;
+    var dl = wxData.daily, h = wxData.hourly, day = dl.time[wxDay];
+    var nowHour = wxData.current.time.slice(0, 13);
+    var rows = [];
+    h.time.forEach(function (t, i) {
+      if (t.slice(0, 10) !== day) return;
+      if (wxDay === 0 && t.slice(0, 13) < nowHour) return;
+      rows.push(i);
+    });
+    $("#wx-sum").innerHTML = "High <b>" + Math.round(dl.temperature_2m_max[wxDay]) + "°</b> · Low <b>" +
+      Math.round(dl.temperature_2m_min[wxDay]) + "°</b> · Rain up to <b>" + (dl.precipitation_probability_max[wxDay] || 0) +
+      "%</b> · UV <b>" + Math.round(dl.uv_index_max[wxDay] || 0) + "</b> " + uvLabel(dl.uv_index_max[wxDay] || 0).toLowerCase();
+    hoursEl.innerHTML = rows.map(function (i, n) {
+      var rain = h.precipitation_probability[i];
+      return '<div class="wx-day wx-hour' + (rain >= 40 ? " wet" : "") + '">' +
+        '<span class="wd">' + (wxDay === 0 && n === 0 ? "Now" : esc(h.time[i].slice(11, 16))) + "</span>" +
+        icon(wxSymbol(h.weather_code[i], h.is_day[i])) +
+        "<b>" + Math.round(h.temperature_2m[i]) + "°</b>" +
+        '<span class="rp">' + icon("i-drop") + (rain == null ? "–" : rain + "%") + "</span>" +
+        (h.is_day[i] && h.uv_index[i] >= 3 ? '<span class="uv">UV ' + Math.round(h.uv_index[i]) + "</span>" : '<span class="uv">&nbsp;</span>') +
+        "</div>";
+    }).join("");
+    hoursEl.scrollLeft = 0;
+  }
+  function renderDayTabs() {
+    if (!wxData || !dayTabsEl) return;
+    dayTabsEl.innerHTML = wxData.daily.time.map(function (t, i) {
+      var label = i === 0 ? "Today" : i === 1 ? "Tomorrow" :
+        new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "UTC" }).format(new Date(t + "T00:00:00Z"));
+      return '<button type="button" role="tab" data-day="' + i + '" aria-selected="' + (i === wxDay) + '">' + label + "</button>";
+    }).join("");
+  }
+  if (dayTabsEl) dayTabsEl.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-day]");
+    if (!b) return;
+    wxDay = +b.dataset.day;
+    renderDayTabs(); renderHours();
+  });
+
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=" + LAT + "&longitude=" + LON +
+    "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day" +
+    "&hourly=temperature_2m,precipitation_probability,weather_code,is_day,uv_index" +
+    "&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max" +
+    "&forecast_days=3&timezone=Asia%2FHo_Chi_Minh")
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (d) {
-      if (!d || !d.current) return;
-      var el = $("#weather-now");
-      el.querySelector("span").textContent = (WX[d.current.weather_code] || "Now") + " · " + Math.round(d.current.temperature_2m) + "°C";
-      el.querySelector("use").setAttribute("href", d.current.weather_code <= 1 ? "#i-sun" : "#i-cloud");
-      el.hidden = false;
+      if (!d || !d.current || !d.hourly || !d.daily) return;
+      wxData = d;
+      var c = d.current;
+      // pill on Prep
+      var pill = $("#weather-now");
+      pill.querySelector("span").textContent = wxText(c.weather_code) + " · " + Math.round(c.temperature_2m) + "°C";
+      pill.querySelector("use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
+      pill.hidden = false;
+      // Tools card
+      if (!$("#wx-temp")) return;
+      var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
+      var uvNow = hi >= 0 ? d.hourly.uv_index[hi] : null;
+      $("#wx-temp").textContent = Math.round(c.temperature_2m);
+      $("#wx-desc").textContent = wxText(c.weather_code) + " · high " + Math.round(d.daily.temperature_2m_max[0]) + "°, low " + Math.round(d.daily.temperature_2m_min[0]) + "°";
+      $("#wx-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
+      $("#wx-updated").textContent = "Updated " + c.time.slice(11, 16);
+      $("#wx-stats").innerHTML =
+        stat("Feels like", Math.round(c.apparent_temperature) + "°") +
+        stat("Humidity", Math.round(c.relative_humidity_2m) + "%") +
+        stat("UV now", uvNow == null ? "–" : Math.round(uvNow) + " · " + uvLabel(uvNow));
+      $("#wx-sun").innerHTML =
+        stat("Sunrise", esc(d.daily.sunrise[0].slice(11, 16))) +
+        stat("Sunset", esc(d.daily.sunset[0].slice(11, 16))) +
+        '<div class="stat" id="wx-aqi"><span>Air quality</span><b>…</b></div>';
+      renderDayTabs(); renderHours();
+      return fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + LAT + "&longitude=" + LON +
+        "&current=us_aqi,pm2_5&timezone=Asia%2FHo_Chi_Minh");
     })
-    .catch(function () {});
+    .then(function (r) { return r && r.ok ? r.json() : null; })
+    .then(function (a) {
+      var cell = $("#wx-aqi");
+      if (!cell) return;
+      var v = a && a.current && a.current.us_aqi;
+      if (v == null) { cell.querySelector("b").textContent = "–"; return; }
+      var lvl = AQI.filter(function (x) { return v <= x[0]; })[0];
+      cell.querySelector("b").innerHTML = Math.round(v) + ' · <span class="aqi-' + lvl[2] + '">' + esc(lvl[1]) + "</span>";
+      var tip = $("#wx-aqi-tip");
+      tip.innerHTML = icon("i-info") + "<span>" + esc(lvl[3]) + "</span>";
+      tip.className = "wx-aqi-tip aqi-bg-" + lvl[2];
+      tip.hidden = false;
+    })
+    .catch(function () {
+      var d = $("#wx-desc");
+      if (d && !wxData) d.textContent = "Couldn't load the weather. Check your connection and reopen the page.";
+    });
 
   /* ---------- trip forecast (only the trip days inside Open-Meteo's 16-day window) ---------- */
   (function () {
@@ -132,7 +234,7 @@
     }
     function wxIcon(c) { return c <= 1 ? "i-sun" : c <= 48 ? "i-cloud" : "i-rain"; }
     waiting();
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=10.7725&longitude=106.698" +
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=" + LAT + "&longitude=" + LON +
       "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
       "&forecast_days=16&timezone=Asia%2FHo_Chi_Minh")
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
@@ -375,6 +477,7 @@
   function fmtVnd(n) { return Math.round(n).toLocaleString("en-US"); }
   function fmtFx(n) { return n >= 1000 ? Math.round(n).toLocaleString("en-US") : n.toFixed(2); }
   function showRate() {
+    renderPrices();
     rateNote.textContent = "1 " + curSel.value + " ≈ " + fmtVnd(rates[curSel.value]) + " ₫ · " +
       (live ? "live rate, for guidance only" : "approximate rate");
   }
@@ -408,6 +511,78 @@
       showRate(); fromVnd();
     })
     .catch(function () {});
+
+  /* ---------- fair prices ---------- */
+  var SYM = { AUD: "A$", USD: "US$", EUR: "€", GBP: "£" };
+  var priceGroups = DATA.prices || [];
+  var priceItems = [];
+  priceGroups.forEach(function (g) { g.items.forEach(function (it) { priceItems.push(it); }); });
+  var priceListEl = $("#price-list"), pcItem = $("#pc-item"), pcPrice = $("#pc-price"), pcVerdict = $("#pc-verdict");
+
+  function fmtK(n) { return n >= 1000 ? (n / 1000).toLocaleString("en-US", { maximumFractionDigits: 1 }) + "k" : String(n); }
+  function fmtMoney(n) { return n < 10 ? n.toFixed(2) : String(Math.round(n)); }
+  function renderPrices() {
+    if (!priceListEl || !curSel) return;
+    var cur = curSel.value, r = rates[cur], sym = SYM[cur] || cur + " ";
+    priceListEl.innerHTML = priceGroups.map(function (g) {
+      return '<h3 class="label">' + esc(g.group) + '</h3><div class="group">' + g.items.map(function (it) {
+        return '<div class="row kv price-row"><span>' + esc(it.name) + "</span><b>" + fmtK(it.lo) + "–" + fmtK(it.hi) + " ₫" +
+          '<small>≈ ' + sym + fmtMoney(it.lo / r) + "–" + fmtMoney(it.hi / r) + "</small></b></div>";
+      }).join("") + "</div>";
+    }).join("");
+  }
+  function checkPrice() {
+    var it = priceItems[+pcItem.value];
+    var n = parseNum(pcPrice.value);
+    if (!it || isNaN(n) || n <= 0) { pcVerdict.hidden = true; return; }
+    if (n < 1000) n *= 1000; // "50" on a sign means 50,000 ₫
+    var range = fmtK(it.lo) + "–" + fmtK(it.hi) + " ₫";
+    var v;
+    if (n <= it.hi && n >= it.lo * 0.6) v = ["good", "i-check", "Fair. The usual price is " + range + "."];
+    else if (n < it.lo * 0.6) v = ["good", "i-check", "Cheap! The usual price is " + range + ". Check what's included."];
+    else if (n <= it.hi * 1.5) v = ["warn", "i-info", "A bit high. The usual price is " + range + ", but this is normal in malls, hotels and tourist streets."];
+    else v = ["bad", "i-x", "Tourist price. The usual price is " + range + ". Smile, say \"Mắc quá!\" (too expensive) and walk on, or offer the usual price."];
+    pcVerdict.className = "pc-verdict aqi-bg-" + v[0];
+    pcVerdict.innerHTML = icon(v[1]) + "<span>" + esc(v[2]) + "</span>";
+    pcVerdict.hidden = false;
+  }
+  if (pcItem) {
+    pcItem.innerHTML = (function () {
+      var i = 0;
+      return priceGroups.map(function (g) {
+        return '<optgroup label="' + esc(g.group) + '">' + g.items.map(function (it) {
+          return '<option value="' + (i++) + '">' + esc(it.name) + "</option>";
+        }).join("") + "</optgroup>";
+      }).join("");
+    })();
+    pcItem.addEventListener("change", checkPrice);
+    pcPrice.addEventListener("input", function () {
+      var n = parseNum(pcPrice.value);
+      if (!isNaN(n) && n >= 1000) pcPrice.value = fmtVnd(n);
+      checkPrice();
+    });
+  }
+  renderPrices();
+
+  /* ---------- Help sections: Tools · Phrases · Safety ---------- */
+  var hpTabs = $("#help-tabs");
+  function showHelp(id) {
+    if (!hpTabs) return;
+    if (!$('[data-hp-panel="' + id + '"]')) id = "tools";
+    $$("button", hpTabs).forEach(function (x) { x.setAttribute("aria-selected", String(x.dataset.hp === id)); });
+    $$("[data-hp-panel]").forEach(function (p) { p.hidden = p.dataset.hpPanel !== id; });
+    store.set("sgn-guide-help", id);
+  }
+  if (hpTabs) {
+    showHelp(store.get("sgn-guide-help", "tools"));
+    hpTabs.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-hp]");
+      if (b) showHelp(b.dataset.hp);
+    });
+  }
+  $$("[data-hp-go]").forEach(function (a) {
+    a.addEventListener("click", function () { showHelp(a.dataset.hpGo); });
+  });
 
   /* ---------- phrases ---------- */
   var phTabs = $("#phrase-tabs");
