@@ -654,10 +654,20 @@
 
     /* speak instead of typing */
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null, listening = false;
-    if (SR) {
-      micBtn.hidden = false;
-      micBtn.addEventListener("click", function () {
-        if (listening) { rec.stop(); return; }
+    var tipEl = $("#tr-tip");
+    // fallback that works everywhere: the keyboard's own dictation mic
+    function keyboardTip(msg) {
+      tipEl.innerHTML = icon("i-mic") + "<span>" + esc(msg || "This browser can't listen directly.") +
+        " Tap the <b>microphone on your keyboard</b> to speak instead" +
+        (from === "vi" ? ", with the keyboard set to Vietnamese." : ".") + "</span>";
+      tipEl.hidden = false;
+      textEl.focus();
+    }
+    micBtn.addEventListener("click", function () {
+      tipEl.hidden = true;
+      if (!SR) { keyboardTip(); return; }
+      if (listening) { rec.stop(); return; }
+      {
         rec = new SR();
         rec.lang = LANG[from].speech; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
         var base = "";
@@ -669,12 +679,14 @@
           clearTimeout(timer); timer = setTimeout(translate, 350);
         };
         rec.onerror = function (e) {
-          if (e.error === "not-allowed" || e.error === "service-not-allowed") showResult("Microphone is blocked. Allow it for this site in your browser settings.", true);
+          if (e.error === "not-allowed") keyboardTip("The microphone is blocked for this site (you can allow it in your browser settings).");
+          else if (e.error === "no-speech" || e.error === "aborted") return;
+          else keyboardTip("Voice input isn't working in this browser right now.");
         };
         rec.onend = function () { listening = false; micBtn.classList.remove("on"); $("#tr-mic-label").textContent = "Speak"; translate(); };
-        try { rec.start(); } catch (err) {}
-      });
-    }
+        try { rec.start(); } catch (err) { keyboardTip(); }
+      }
+    });
     labels();
   })();
 

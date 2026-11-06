@@ -448,10 +448,11 @@
         <div class="tr-in">
           <textarea id="tr-text" rows="3" placeholder="Type, or tap the mic and speak" aria-label="Text to translate" autocomplete="off"></textarea>
           <div class="tr-in-actions">
-            <button type="button" class="tr-mic" id="tr-mic" aria-label="Speak to translate" hidden><svg class="i"><use href="#i-mic"/></svg><span id="tr-mic-label">Speak</span></button>
+            <button type="button" class="tr-mic" id="tr-mic" aria-label="Speak to translate"><svg class="i"><use href="#i-mic"/></svg><span id="tr-mic-label">Speak</span></button>
             <button type="button" class="text-btn" id="tr-clear" hidden><svg class="i"><use href="#i-x"/></svg>Clear</button>
           </div>
         </div>
+        <p class="tr-tip" id="tr-tip" role="status" hidden></p>
         <div class="tr-out" id="tr-out" hidden>
           <p class="tr-result" id="tr-result"></p>
           <div class="tr-out-actions">

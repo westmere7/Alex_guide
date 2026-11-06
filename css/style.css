@@ -780,3 +780,6 @@ dialog.tr-full::backdrop { background: var(--bg); }
 .contact .icon-btn { text-decoration: none; }
 .contact .call { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
 .contact .msg { color: var(--text); }
+.tr-tip { display: flex; gap: 8px; margin-top: 10px; padding: 10px 12px; border-radius: var(--r-sm); background: var(--sunken); font-size: var(--fs-sm); line-height: 1.45; color: var(--text); }
+.tr-tip[hidden] { display: none; }
+.tr-tip .i { flex: none; width: 16px; height: 16px; margin-top: 2px; color: var(--accent); }
