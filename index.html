@@ -102,10 +102,10 @@
     <div class="hero">
       <p class="overline">For Alex &amp; Jenna</p>
       <h1>Sài Gòn,<br><span class="accent-text">sorted.</span></h1>
-      <p class="lead">Five plant-based days in Ho Chi Minh City, starting from your door on Hồ Tùng Mậu, a block from Nguyễn Huệ and the river.</p>
+      <p class="lead">Five vegan days in Saigon.</p>
       <div class="pills" aria-live="polite">
-        <span class="pill"><svg class="i"><use href="#i-clock"/></svg><span id="local-time">--:--</span>&nbsp;in Saigon</span>
-        <a class="pill" id="weather-now" href="#help" data-hp-go="tools" hidden><svg class="i"><use href="#i-cloud"/></svg><span></span><svg class="i i-trail"><use href="#i-chevron"/></svg></a>
+        <span class="pill"><svg class="i"><use href="#i-clock"/></svg>Saigon&nbsp;<b id="local-time">--:--</b></span>
+        <span class="pill"><svg class="i"><use href="#i-plane"/></svg>Melbourne&nbsp;<b id="aus-time">--:--</b><span class="pill-sub" id="aus-diff"></span></span>
       </div>
       <div class="actions">
         <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
@@ -113,11 +113,21 @@
       </div>
     </div>
 
+    <a class="group wx-mini" href="#help" data-hp-go="tools" id="wx-mini" aria-label="Weather now, open full forecast">
+      <div class="wx-mini-top">
+        <svg class="i wx-mini-icon"><use href="#i-sun"/></svg>
+        <b class="wx-mini-temp" id="wxm-temp">--°</b>
+        <span class="wx-mini-desc" id="wxm-desc">Saigon weather…</span>
+        <svg class="i chev"><use href="#i-chevron"/></svg>
+      </div>
+      <div class="wx-mini-hours" id="wxm-hours"></div>
+    </a>
+
     <div class="sec-head"><h2>Home base</h2></div>
     <div class="group home">
       <div class="row">
         <span class="tile"><svg class="i"><use href="#i-pin"/></svg></span>
-        <span class="row-main"><span class="t">Au Lac Charner Hotel</span><span class="d">87-89-91 Hồ Tùng Mậu, District 1. Bitexco tower and Nguyễn Huệ are 2–3 minutes' walk away.</span></span>
+        <span class="row-main"><span class="t">Au Lac Charner Hotel</span><span class="d">87-89-91 Hồ Tùng Mậu, D1 · next to Bitexco</span></span>
       </div>
       <div class="addr">
         <p class="overline">Show a driver</p>
@@ -128,9 +138,9 @@
         <a class="btn btn-secondary btn-sm" href="tel:+842839156666"><svg class="i"><use href="#i-phone"/></svg>Call hotel</a>
       </div>
       <ul class="list home-notes">
-        <li><b>Breakfast</b> is a buffet. Their website doesn't mention vegan food, so ask at check-in. Fruit is a safe start.</li>
-        <li><b>Rooftop</b> with city views, plus an outdoor pool, gym and spa.</li>
-        <li><b>Airport pickup</b> can be arranged by the hotel if you'd rather not use Grab. Ask for the price first.</li>
+        <li><b>Breakfast</b> buffet: ask about vegan options.</li>
+        <li><b>Rooftop</b>, pool, gym and spa.</li>
+        <li><b>Airport pickup</b> on request: ask the price.</li>
       </ul>
     </div>
 
@@ -143,9 +153,9 @@
         <div class="stat"><span>Sun</span><b>UV very high</b></div>
       </div>
       <ul class="list wx-notes">
-        <li>The dry season is just starting, so expect mostly sunny days, a little less humidity, and maybe a brief shower or two during the week.</li>
-        <li>It's hottest from 11am to 3pm, so walk in the mornings and evenings. Evenings are warm and pleasant.</li>
-        <li>Malls, the metro and offices are icy with air-con, so bring a thin layer. At temples, cover shoulders and knees.</li>
+        <li>Start of the dry season: sunny, the odd short shower.</li>
+        <li>Hottest 11am–3pm. Walk mornings and evenings.</li>
+        <li>Air-con is icy, so bring a light layer.</li>
       </ul>
       <div id="trip-forecast"></div>
     </div>
@@ -224,7 +234,7 @@
     <header class="view-head">
       <p class="overline">Getting around</p>
       <h1>Move</h1>
-      <p class="lead">Old Saigon is a 5–20 minute walk from home. For anything further, open an app rather than hailing a street taxi.</p>
+      <p class="lead">Walk the old town. Use an app for anything further.</p>
     </header>
 
     <div class="group">
@@ -262,7 +272,7 @@
             <li><b>Tân Cảng</b>: the closest stop for Landmark 81.</li>
             <li><b>Nhà hát Thành phố</b> (Opera House): your nearest station, about 7 minutes' walk up Nguyễn Huệ.</li>
           </ul>
-          <p class="hint">Fares are roughly 7k–20k ₫. Buy at the machines; many gates also take contactless cards. Trains run until about 10pm.</p>
+          <p class="hint">7k–20k ₫ · machines or contactless · until ~10pm.</p>
         </div>
       </details>
       <details class="row acc">
@@ -293,7 +303,7 @@
             <li><b>Hotel pickup</b>: the hotel can arrange one. Ask for the price when you book.</li>
             <li>Ignore the touts offering a "taxi" in the arrivals hall.</li>
           </ul>
-          <p class="hint">Check which airport is on your ticket. The new Long Thành airport is ~40 km east.</p>
+          <p class="hint">Check your ticket: Long Thành airport is ~40 km east.</p>
         </div>
       </details>
       <details class="row acc">
@@ -344,7 +354,7 @@
     <header class="view-head">
       <p class="overline">Plant-based in Saigon</p>
       <h1>Eat</h1>
-      <p class="lead"><b>Chay</b> means vegetarian and <b>thuần chay</b> means vegan. Meat-free food is easy to find here; the traps are hidden fish sauce, egg and condensed milk.</p>
+      <p class="lead"><b>Chay</b> = vegetarian · <b>thuần chay</b> = vegan.</p>
     </header>
 
     <button class="btn btn-primary btn-block" type="button" data-open-card>
@@ -354,12 +364,12 @@
     <div class="sec-head"><h2>Where to eat</h2><span class="hint-inline" id="eat-count"></span></div>
     <div class="seg" role="tablist" aria-label="Areas" id="eat-areas"></div>
     <div class="group" id="eat-list"></div>
-    <p class="hint"><b>100% vegan</b> needs no questions. At <b>Vegetarian</b> places, ask about egg and dairy. Hours change, so check the map first, and use HappyCow to find more nearby.</p>
+    <p class="hint"><b>Vegetarian</b> places: ask about egg and dairy.</p>
 
     <div class="sec-head"><h2>Drinks &amp; bars</h2><span class="hint-inline" id="drink-count"></span></div>
     <div class="seg" role="tablist" aria-label="Drink types" id="drink-types"></div>
     <div class="group" id="drink-list"></div>
-    <p class="hint">Vietnamese coffee comes with condensed milk unless you order <b>cà phê đen</b> (black) or ask for <b>sữa yến mạch</b> (oat milk). Egg coffee and egg-white sours aren't vegan, and some craft beers use lactose or honey, so check the board.</p>
+    <p class="hint">Order <b>cà phê đen</b> (black) or <b>sữa yến mạch</b> (oat milk). Skip egg coffee and egg-white sours.</p>
 
     <div class="sec-head"><h2>Dishes to try</h2><span class="hint-inline">Swipe</span></div>
     <div class="scroller" id="dishes"></div>
@@ -382,7 +392,7 @@
     <header class="view-head">
       <p class="overline">Five days, well spent</p>
       <h1>See</h1>
-      <p class="lead">The places worth your time, sorted by type. Tick them off as you go; your ticks are saved on this phone.</p>
+      <p class="lead">Tick places off as you go.</p>
     </header>
 
     <div class="progress">
@@ -399,7 +409,7 @@
     <header class="view-head">
       <p class="overline">Tools, phrases &amp; safety</p>
       <h1>Help</h1>
-      <p class="lead">Live weather, fair prices and money, plus handy phrases and what to do if something goes wrong.</p>
+      <p class="lead">Weather, prices, phrases and safety.</p>
     </header>
 
     <div class="seg seg-full" role="tablist" aria-label="Help sections" id="help-tabs">
@@ -428,7 +438,7 @@
         <p class="wx-sum" id="wx-sum"></p>
         <div class="wx-days wx-hours" id="wx-hours"></div>
       </div>
-      <p class="hint">Live from Open-Meteo for the hotel's neighbourhood. The % is the chance of rain in that hour. Air quality uses the US AQI scale.</p>
+      <p class="hint">Forecast for the hotel area. % = chance of rain.</p>
 
       <div class="sec-head"><h2>Fair prices</h2><span class="hint-inline">Rough 2026 guide</span></div>
       <div class="group pad" id="price-check">
@@ -440,7 +450,7 @@
         <p class="pc-verdict" id="pc-verdict" hidden></p>
       </div>
       <div id="price-list"></div>
-      <p class="hint">Street stalls and local spots sit at the low end; malls, hotels and tourist streets at the high end. "50" or "50k" on a sign means 50,000 ₫.</p>
+      <p class="hint">Stalls = low end, malls and tourist streets = high end. "50" on a sign = 50,000 ₫.</p>
 
       <h3 class="label">Currency converter</h3>
     <div class="group pad" id="converter">
@@ -512,7 +522,7 @@
       <a class="cell sos" href="tel:114"><p class="t">114</p><p class="d">Fire</p></a>
       <a class="cell sos" href="tel:115"><p class="t">115</p><p class="d">Ambulance</p></a>
     </div>
-    <p class="hint">Operators may not speak English. If it isn't urgent, ask your accommodation to call for you.</p>
+    <p class="hint">Operators may not speak English. The hotel can call for you.</p>
 
     <h3 class="label">Watch out for</h3>
     <p class="callout"><svg class="i"><use href="#i-info"/></svg><span>The big three: keep your phone away from the road, use ride apps instead of street taxis, and drink far more water than you think.</span></p>

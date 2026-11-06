@@ -47,7 +47,7 @@ window.SGN_DATA = {
     {
       id: "hcmc-museum", cat: "old", img: "hcmc-museum",
       name: "Ho Chi Minh City Museum", vi: "Bảo tàng Thành phố Hồ Chí Minh",
-      desc: "A grand neoclassical palace (Gia Long Palace) that tells Saigon's story from trading port to megacity. The gardens are a favourite backdrop for wedding photos.",
+      desc: "A grand neoclassical palace (Gia Long Palace) that tells Saigon's story from trading port to megacity.",
       time: "1 h", best: "Afternoon", cost: "~30k ₫", from: "Walk 10 min",
       tip: "It's 5 minutes from Independence Palace, so you can do both in one morning.",
       q: "Ho Chi Minh City Museum Gia Long Palace"
@@ -63,7 +63,7 @@ window.SGN_DATA = {
     {
       id: "opera", cat: "art", img: "opera",
       name: "Saigon Opera House", vi: "Nhà hát Thành phố",
-      desc: "A 1900 French Belle Époque theatre at the top of Đồng Khởi street. It's lovely from outside and even better with a show.",
+      desc: "A 1900 French Belle Époque theatre at the top of Đồng Khởi street.",
       time: "15 min · show 1 h", best: "Evening show", cost: "Shows paid", from: "Walk 7 min",
       tip: "Look up the AO Show or Teh Dar, contemporary Vietnamese bamboo-circus performances. Book a day ahead.",
       q: "Saigon Opera House"
@@ -81,7 +81,7 @@ window.SGN_DATA = {
     {
       id: "galerie-quynh", cat: "art", img: "a-quynh",
       name: "Galerie Quynh", vi: "Phòng tranh Quỳnh",
-      desc: "One of Saigon's longest-running contemporary galleries, showing leading Vietnamese artists in painting, installation and photography. It puts on several shows a year, plus artist talks.",
+      desc: "One of Saigon's longest-running contemporary galleries, showing leading Vietnamese artists in painting, installation and photography.",
       time: "45 min", best: "Weekday afternoon", cost: "Free", from: "Car 10 min",
       tip: "Check their website or Instagram for the current show and opening days before you go.",
       q: "Galerie Quynh"
@@ -89,7 +89,7 @@ window.SGN_DATA = {
     {
       id: "craig-thomas", cat: "art", img: null,
       name: "Craig Thomas Gallery", vi: "Craig Thomas Gallery",
-      desc: "A small gallery known for spotting emerging Vietnamese painters. Every show includes artists having their first exhibition.",
+      desc: "A small gallery known for spotting emerging Vietnamese painters.",
       time: "30 min", best: "Afternoon", cost: "Free", from: "Car 10 min",
       tip: "Good for buying an original piece at a fair price. Ask about shipping it home.",
       q: "Craig Thomas Gallery Saigon"
@@ -113,7 +113,7 @@ window.SGN_DATA = {
     {
       id: "water-puppets", cat: "art", img: "a-puppet",
       name: "Water Puppet Show", vi: "Múa rối nước Rồng Vàng",
-      desc: "Vietnam's centuries-old folk art: lacquered wooden puppets glide across a pool to live traditional music. The Golden Dragon theatre runs short evening shows.",
+      desc: "Vietnam's centuries-old folk art: lacquered wooden puppets glide across a pool to live traditional music.",
       time: "45 min show", best: "Evening", cost: "Paid ticket", from: "Car 10 min",
       tip: "Book a day ahead and sit near the front. The live musicians are half the show.",
       q: "Golden Dragon Water Puppet Theatre"
@@ -155,7 +155,7 @@ window.SGN_DATA = {
     {
       id: "tia-to", cat: "shop", img: null,
       name: "Tia To Artbook", vi: "Tía Tô Artbook",
-      desc: "Prints, notebooks and tote bags featuring work by local Saigon illustrators. Perfect for an art lover.",
+      desc: "Prints, notebooks and tote bags featuring work by local Saigon illustrators.",
       time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Car 10 min",
       tip: "Prints are flat and light, so they're easy to fly home.",
       q: "Tia To Artbook Saigon"
@@ -163,7 +163,7 @@ window.SGN_DATA = {
     {
       id: "tan-dinh-market", cat: "shop", img: "s-tan-dinh",
       name: "Tân Định Market", vi: "Chợ Tân Định",
-      desc: "A locals' market famous for fabric. Silk, linen and cotton are sold by the metre, with tailors nearby who can make clothes in a day or two.",
+      desc: "A locals' fabric market, with tailors nearby.",
       time: "1 h", best: "Morning", cost: "Haggle gently", from: "Car 10 min",
       tip: "Go early in the trip if you want something tailored. It's next to the pink Tân Định Church.",
       q: "Tân Định Market"
@@ -197,7 +197,7 @@ window.SGN_DATA = {
     {
       id: "cholon", cat: "spirit", img: "thien-hau",
       name: "Chợ Lớn: Thiên Hậu & Bình Tây", vi: "Chùa Bà Thiên Hậu · Chợ Bình Tây",
-      desc: "Saigon's Chinatown. Thiên Hậu Temple has giant incense coils hanging from the ceiling, and Bình Tây is a huge wholesale market nearby.",
+      desc: "Saigon's Chinatown: the incense-filled Thiên Hậu Temple and the huge Bình Tây market.",
       time: "2–3 h", best: "Morning", cost: "Free", from: "Car 20–30 min",
       tip: "Look for dried fruit, tea and spices at Bình Tây. Grab a car between the two if it's hot.",
       q: "Thiên Hậu Temple Chợ Lớn"
@@ -239,7 +239,7 @@ window.SGN_DATA = {
     {
       id: "thao-dien", cat: "out", img: "thao-dien",
       name: "Thảo Điền by metro", vi: "Thảo Điền",
-      desc: "Ride the new metro east to a leafy riverside neighbourhood of cafés, boutiques and brunch spots. It's the most vegan-friendly area in the city.",
+      desc: "Ride the new metro east to a leafy riverside neighbourhood of cafés, boutiques and brunch spots.",
       time: "Half day", best: "Late morning", cost: "Metro ~10k ₫", from: "Metro 15 min",
       tip: "Get off at Thảo Điền station. Kashew Cheese & Wine is here for a plant-based cheese board.",
       q: "Thảo Điền"
@@ -247,7 +247,7 @@ window.SGN_DATA = {
     {
       id: "landmark", cat: "out", img: "landmark",
       name: "Landmark 81", vi: "Landmark 81 SkyView",
-      desc: "Vietnam's tallest tower. Watch the sunset from the observation deck, then walk the riverside park below.",
+      desc: "Vietnam's tallest tower, with a sunset sky deck.",
       time: "1–2 h", best: "Sunset", cost: "Paid deck", from: "Metro 10 min",
       tip: "Combine it with Thảo Điền on the same metro line, getting off at Tân Cảng station on the way back.",
       q: "Landmark 81 SkyView"
@@ -263,7 +263,7 @@ window.SGN_DATA = {
     {
       id: "ho-thi-ky", cat: "out", img: "ho-thi-ky",
       name: "Hồ Thị Kỷ market", vi: "Chợ hoa Hồ Thị Kỷ",
-      desc: "A flower market by day that becomes a buzzing street-food alley at night. Very local and very Saigon.",
+      desc: "A flower market by day that becomes a buzzing street-food alley at night.",
       time: "1 h", best: "Evening", cost: "Free", from: "Car 10 min",
       tip: "Ask \"chay?\" before ordering. Fruit, chè and sugarcane juice are safe bets.",
       q: "Hồ Thị Kỷ Flower Market"
@@ -271,7 +271,7 @@ window.SGN_DATA = {
     {
       id: "bui-vien", cat: "out", img: "bui-vien",
       name: "Bùi Viện Walking Street", vi: "Phố Tây Bùi Viện",
-      desc: "A neon backpacker street with loud bars, street performers and plastic stools. It's worth one evening.",
+      desc: "A neon backpacker street with loud bars, street performers and plastic stools.",
       time: "1 h", best: "After 9pm", cost: "Free", from: "Walk 15 min",
       tip: "Keep your phone zipped away; this is pickpocket territory.",
       q: "Bùi Viện Walking Street"
@@ -332,37 +332,37 @@ window.SGN_DATA = {
   restaurants: [
     /* Near home — District 1 / 3 */
     { area: "home", kind: "veg", name: "Chay Tuệ", where: "D1 · Tôn Thất Đạm, ~3 min walk",
-      desc: "A well-liked local chay restaurant one street over from the hotel, with a long menu of Vietnamese vegetarian dishes. Other branches are on Trần Hưng Đạo and Mai Thị Lựu.",
+      desc: "A well-liked local chay restaurant one street over from the hotel, with a long menu of Vietnamese vegetarian dishes.",
       q: "Nhà hàng chay Tuệ 130 Tôn Thất Đạm" },
     { area: "home", kind: "vegan", name: "Mãn Tự Vegan", where: "D1 · Tôn Thất Đạm, ~3 min walk",
-      desc: "A small vegan buffet down an alley near the hotel. You pay what you like, so it's an easy, no-fuss lunch.",
+      desc: "A small pay-what-you-like vegan buffet near the hotel.",
       q: "Mãn Tự Vegan 14/2 Tôn Thất Đạm" },
     { area: "home", kind: "vegan", name: "Bon's Vegan", where: "D1 · Hàm Nghi, ~5 min walk",
       desc: "A fully vegan spot on the boulevard by the hotel, handy for a quick meal without asking any questions.",
       q: "Bon's Vegan 127 Hàm Nghi" },
     { area: "home", kind: "veg", name: "Chay Garden", where: "D3 · Võ Văn Tần · Michelin Bib Gourmand",
-      desc: "Vietnamese vegetarian cooking in a garden house, recognised by the Michelin Guide. Book for dinner, and pair it with the War Remnants Museum nearby.",
+      desc: "Vietnamese vegetarian cooking in a garden house, recognised by the Michelin Guide.",
       q: "Chay Garden 52 Võ Văn Tần" },
     { area: "home", kind: "veg", name: "PI Vegetarian Bistro", where: "D3 · near War Remnants",
-      desc: "A relaxed bistro with rice bowls, tempeh salads and Vietnamese dishes. The menu marks anything with egg or dairy.",
+      desc: "A relaxed bistro with rice bowls, tempeh salads and Vietnamese dishes.",
       q: "PI Vegetarian Bistro Saigon" },
     { area: "home", kind: "veg", name: "Hum Vegetarian", where: "D3 · next to War Remnants",
-      desc: "Calm, leafy and a bit upscale. Most of the menu is vegan, and it's ideal after the museum.",
+      desc: "Calm, leafy and a bit upscale, with a mostly vegan menu.",
       q: "Hum Vegetarian Café & Restaurant Võ Văn Tần" },
     { area: "home", kind: "veg", name: "Hoa Đăng", where: "D1 · Đa Kao",
-      desc: "Elegant Vietnamese vegetarian food with a big menu. Good for a farewell dinner.",
+      desc: "Elegant Vietnamese vegetarian food with a big menu.",
       q: "Hoa Đăng vegetarian restaurant" },
     { area: "home", kind: "vegan", name: "Filthy Vegan", where: "D1 · Cô Bắc street",
-      desc: "Indulgent vegan comfort food: burgers, loaded fries, the works. Go for it after a long day.",
+      desc: "Indulgent vegan comfort food: burgers, loaded fries, the works.",
       q: "Filthy Vegan Cô Bắc" },
     { area: "home", kind: "veg", name: "Tib Vegetarian", where: "D1 / D3",
-      desc: "Imperial Huế-style vegetarian dishes. Try the bún Huế chay.",
+      desc: "Imperial Huế-style vegetarian dishes.",
       q: "Tib Vegetarian Saigon" },
     { area: "home", kind: "veg", name: "Phương Mai Chay", where: "D3 · Võ Thị Sáu",
       desc: "A popular local vegetarian spot with a long Vietnamese menu.",
       q: "Phương Mai Chay Võ Thị Sáu" },
     { area: "home", kind: "vegan", name: "Vegan Delight", where: "Buffet",
-      desc: "An all-you-can-eat plant-based buffet. A great way to try lots of Vietnamese dishes at once.",
+      desc: "An all-you-can-eat plant-based buffet.",
       q: "Vegan Delight buffet chay" },
 
     /* Thảo Điền — by metro */
@@ -379,21 +379,21 @@ window.SGN_DATA = {
       desc: "An upscale Vietnamese vegetarian buffet, good for sampling.",
       q: "Chay Garden Thảo Điền" },
     { area: "east", kind: "options", name: "Baba's Kitchen", where: "Nguyễn Văn Hưởng",
-      desc: "Indian food with plenty of vegetarian dishes. Ask which curries can be made without ghee or cream.",
+      desc: "Indian food with plenty of vegetarian dishes.",
       q: "Baba's Kitchen Thảo Điền" },
     { area: "east", kind: "options", name: "Tartine Saigon", where: "Street 66",
-      desc: "A sourdough bakery with vegan sandwiches, pizzas and salads. A good lunch stop.",
+      desc: "A sourdough bakery with vegan sandwiches, pizzas and salads.",
       q: "Tartine Saigon Thảo Điền" },
 
     /* Near RMIT — Phú Mỹ Hưng / old District 7 */
     { area: "rmit", kind: "vegan", name: "Veganizta", where: "Tôn Dật Tiên · closed Mon",
-      desc: "A fully vegan restaurant near campus, open for lunch and dinner. Good for a work-day lunch.",
+      desc: "A fully vegan restaurant near campus, open for lunch and dinner.",
       q: "Veganizta Tôn Dật Tiên" },
     { area: "rmit", kind: "vegan", name: "Liên Hoa 2", where: "Trần Xuân Soạn",
-      desc: "A clean, open-air, all-vegan Vietnamese canteen. Casual and cheap.",
+      desc: "A clean, open-air, all-vegan Vietnamese canteen.",
       q: "Liên Hoa 2 chay Trần Xuân Soạn" },
     { area: "rmit", kind: "vegan", name: "Kashew Phú Mỹ Hưng", where: "Phú Mỹ Hưng",
-      desc: "The south-side branch of the plant-based cheese bar. Good for dinner after work.",
+      desc: "The south-side branch of the plant-based cheese bar.",
       q: "Kashew Cheese Phú Mỹ Hưng" },
     { area: "rmit", kind: "veg", name: "Nhà Hàng Chay An", where: "Several D7 branches",
       desc: "A local vegetarian chain with a few branches around Phú Mỹ Hưng.",
@@ -404,19 +404,19 @@ window.SGN_DATA = {
 
     /* Cheap & local */
     { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "Several D1 branches",
-      desc: "Fully vegan bánh mì, so there's no need to worry about pâté or butter. A perfect grab-and-go breakfast.",
+      desc: "Fully vegan bánh mì. No pâté or butter to worry about.",
       q: "Bánh Mì Xanh vegan" },
     { area: "cheap", kind: "vegan", name: "Hủ Tiếu Chay Chú Quang", where: "Alley off Lãnh Binh Thăng",
-      desc: "A tiny, much-loved vegan noodle-soup spot. Very local, and worth the short ride.",
+      desc: "A tiny, much-loved vegan noodle-soup spot.",
       q: "Hủ Tiếu Chay Chú Quang" },
     { area: "cheap", kind: "vegan", name: "SEN Vegan", where: "D1 · Nguyễn Thái Học",
       desc: "Simple, good-value vegan Vietnamese set meals, around 60–80k ₫ a plate.",
       q: "SEN Vegan Nguyễn Thái Học" },
     { area: "cheap", kind: "vegan", name: "Loving Hut", where: "Branches citywide",
-      desc: "A vegan chain with Vietnamese and fusion dishes. Reliable and inexpensive.",
+      desc: "A vegan chain with Vietnamese and fusion dishes.",
       q: "Loving Hut vegan" },
     { area: "cheap", kind: "veg", name: "Any \"Quán cơm chay\"", where: "Every neighbourhood",
-      desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate. Busiest on the 1st and 15th of the lunar month.",
+      desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate.",
       q: "quán cơm chay Quận 1" }
   ],
 
@@ -463,60 +463,60 @@ window.SGN_DATA = {
   drinks: [
     /* Rooftops */
     { type: "rooftop", name: "EON Heli Bar", tag: "Walk 2 min", where: "Bitexco tower, top floors",
-      desc: "The highest bar you can get to in Saigon, in the tower next to the hotel. Arrive just before sunset to see the city in daylight and lit up.",
+      desc: "The highest bar you can get to in Saigon, in the tower next to the hotel.",
       q: "EON Heli Bar Bitexco" },
     { type: "rooftop", name: "The Summit, Caravelle", tag: "Walk 7 min", where: "Caravelle Hotel, Lam Sơn Square",
-      desc: "A relaxed hotel rooftop above the Opera House square, with a classic view down Đồng Khởi. Easy to combine with dinner nearby.",
+      desc: "A relaxed hotel rooftop above the Opera House square, with a classic view down Đồng Khởi.",
       q: "The Summit rooftop Caravelle Saigon" },
     { type: "rooftop", name: "Chill Skybar", tag: "Dress code", where: "AB Tower, Lê Lai · car 5 min",
-      desc: "Saigon's best-known open-air rooftop: loud and glamorous, with DJs later in the night. Smart-casual, so no shorts or flip-flops.",
+      desc: "Saigon's best-known open-air rooftop: loud and glamorous, with DJs later in the night.",
       q: "Chill Skybar AB Tower" },
 
     /* Cocktails */
     { type: "cocktail", name: "Snuffbox", tag: "Speakeasy", where: "D1 · hidden entrance",
-      desc: "Often named the city's best cocktail bar: a 1920s-style speakeasy tucked into an office building. Tell the bartender what you like and let them improvise.",
+      desc: "Often named the city's best cocktail bar: a 1920s-style speakeasy tucked into an office building.",
       q: "Snuffbox Saigon" },
     { type: "cocktail", name: "Firkin Bar", tag: "Cocktails", where: "D1",
-      desc: "A small, highly rated bar for cocktails and whisky. Seats are limited, so go early.",
+      desc: "A small, highly rated bar for cocktails and whisky.",
       q: "Firkin Bar Saigon" },
 
     /* Craft beer */
     { type: "beer", name: "7 Bridges", tag: "Walk 5 min", where: "Đông Du street",
-      desc: "A taproom close to the hotel with a long list of Vietnamese craft beers on tap. Good for a first drink in town.",
+      desc: "A taproom close to the hotel with a long list of Vietnamese craft beers on tap.",
       q: "7 Bridges Saigon Craft Beer Taproom Đông Du" },
     { type: "beer", name: "Pasteur Street Brewing", tag: "Craft beer", where: "Pasteur street · walk 12 min",
-      desc: "Saigon's best-known craft brewery, using local ingredients like jasmine, passion fruit and coffee. Order a tasting flight.",
+      desc: "Saigon's best-known craft brewery, using local ingredients like jasmine, passion fruit and coffee.",
       q: "Pasteur Street Brewing Company Pasteur" },
     { type: "beer", name: "Heart of Darkness", tag: "Craft beer", where: "Lý Tự Trọng · walk 12 min",
-      desc: "Bold, hoppy beers in a dark, cosy taproom. A favourite with beer fans.",
+      desc: "Bold, hoppy beers in a dark, cosy taproom.",
       q: "Heart of Darkness Brewery Saigon" },
     { type: "beer", name: "East West Brewing", tag: "Craft beer", where: "Lý Tự Trọng",
-      desc: "A big, airy beer hall with its own brewery. Good when you want space to sit.",
+      desc: "A big, airy beer hall with its own brewery.",
       q: "East West Brewing Company Saigon" },
 
     /* Coffee */
     { type: "coffee", name: "The Workshop", tag: "Walk 3 min", where: "Ngô Đức Kế street",
-      desc: "A loft-style specialty roastery up a staircase, with filter coffee brewed at the bar. A calm start to the day.",
+      desc: "A loft-style specialty roastery up a staircase, with filter coffee brewed at the bar.",
       q: "The Workshop Coffee Ngô Đức Kế" },
     { type: "coffee", name: "Café Apartment", tag: "Walk 3 min", where: "42 Nguyễn Huệ",
-      desc: "An old apartment block filled with tiny cafés on every floor. Pick one with a balcony over the walking street.",
+      desc: "An old apartment block filled with tiny cafés on every floor.",
       q: "42 Nguyễn Huệ Café Apartment" },
     { type: "coffee", name: "Cộng Cà Phê", tag: "Coffee", where: "Branches across D1",
-      desc: "A retro café chain famous for coconut coffee. It's made with condensed milk, so ask for it without (không sữa đặc).",
+      desc: "Retro café chain. The coconut coffee has condensed milk, so ask for it without.",
       q: "Cộng Cà Phê Quận 1" }
   ],
 
   dishes: [
-    { name: "Phở chay", img: "d-pho", desc: "Vegetable-broth noodle soup with tofu and mushrooms. Add plenty of herbs and lime." },
+    { name: "Phở chay", img: "d-pho", desc: "Vegetable-broth noodle soup with tofu and mushrooms." },
     { name: "Gỏi cuốn chay", img: "d-goi-cuon", desc: "Fresh rice-paper rolls with tofu and herbs, dipped in peanut sauce." },
-    { name: "Cơm chay", img: "d-com-chay", desc: "Point-and-pick vegetarian rice plates. Cheap, quick and varied." },
+    { name: "Cơm chay", img: "d-com-chay", desc: "Point-and-pick vegetarian rice plates." },
     { name: "Hủ tiếu chay", img: "d-hu-tieu", desc: "A clear noodle soup Saigon loves, here made with a vegetable broth." },
-    { name: "Rau muống xào tỏi", img: "d-rau-muong", desc: "Morning glory with garlic. Ask for no fish sauce or oyster sauce." },
-    { name: "Chè", img: "d-che", desc: "Sweet soups with beans, jelly, fruit and coconut milk. Usually vegan." },
+    { name: "Rau muống xào tỏi", img: "d-rau-muong", desc: "Morning glory with garlic." },
+    { name: "Chè", img: "d-che", desc: "Sweet soups with beans, jelly, fruit and coconut milk." },
     { name: "Nước mía", img: "d-nuoc-mia", desc: "Fresh-pressed sugarcane juice with a squeeze of kumquat." },
-    { name: "Cà phê đen đá", img: "d-coffee", desc: "Strong iced black coffee from a phin filter. Skip the condensed milk." },
-    { name: "Bánh mì chay", img: "d-banh-mi", desc: "Baguette with tofu, mock meat and pickles. Say \"không bơ, không pate\"." },
-    { name: "Bánh xèo chay", img: "d-banh-xeo", desc: "A crispy turmeric crêpe wrapped in greens. Check the batter has no egg." }
+    { name: "Cà phê đen đá", img: "d-coffee", desc: "Strong iced black coffee from a phin filter." },
+    { name: "Bánh mì chay", img: "d-banh-mi", desc: "Baguette with tofu, mock meat and pickles." },
+    { name: "Bánh xèo chay", img: "d-banh-xeo", desc: "A crispy turmeric crêpe wrapped in greens." }
   ],
 
   /* ---------- PREP: packing list ---------- */

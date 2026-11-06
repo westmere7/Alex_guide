@@ -89,13 +89,25 @@
   }, { passive: true });
 
   /* ---------- live clock & weather ---------- */
-  var timeEl = $("#local-time");
+  var timeEl = $("#local-time"), ausEl = $("#aus-time"), ausDiff = $("#aus-diff");
+  var AUS_TZ = "Australia/Melbourne";
+  function clock(tz, d) {
+    return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: tz }).format(d);
+  }
+  function tzOffsetMin(tz, d) {
+    var p = {};
+    new Intl.DateTimeFormat("en-US", { timeZone: tz, hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric" })
+      .formatToParts(d).forEach(function (x) { p[x.type] = +x.value; });
+    return (Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute) - Math.floor(d / 6e4) * 6e4) / 6e4;
+  }
   function tick() {
+    var now = new Date();
     try {
-      timeEl.textContent = new Intl.DateTimeFormat("en-GB", {
-        weekday: "short", hour: "2-digit", minute: "2-digit", timeZone: TZ
-      }).format(new Date());
-    } catch (e) { timeEl.parentElement.hidden = true; }
+      timeEl.textContent = clock(TZ, now);
+      ausEl.textContent = clock(AUS_TZ, now);
+      var h = (tzOffsetMin(AUS_TZ, now) - tzOffsetMin(TZ, now)) / 60;
+      ausDiff.textContent = h ? " (" + (h > 0 ? "+" : "") + h + "h)" : "";
+    } catch (e) { ausEl.parentElement.hidden = true; }
   }
   tick();
   setInterval(tick, 30000);
@@ -173,14 +185,22 @@
       if (!d || !d.current || !d.hourly || !d.daily) return;
       wxData = d;
       var c = d.current;
-      // pill on Prep
-      var pill = $("#weather-now");
-      pill.querySelector("span").textContent = wxText(c.weather_code) + " · " + Math.round(c.temperature_2m) + "°C";
-      pill.querySelector("use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
-      pill.hidden = false;
+      var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
+      // compact card on Prep: now + next 6 hours
+      if ($("#wxm-temp")) {
+        $("#wxm-temp").textContent = Math.round(c.temperature_2m) + "°";
+        $("#wxm-desc").textContent = wxText(c.weather_code) + " · feels " + Math.round(c.apparent_temperature) + "°";
+        $("#wx-mini .wx-mini-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
+        var start = hi >= 0 ? hi + 1 : 0, H = d.hourly;
+        $("#wxm-hours").innerHTML = H.time.slice(start, start + 6).map(function (t, n) {
+          var i = start + n, rain = H.precipitation_probability[i];
+          return '<span class="wxm-h' + (rain >= 40 ? " wet" : "") + '"><span>' + esc(t.slice(11, 13)) + "h</span>" +
+            icon(wxSymbol(H.weather_code[i], H.is_day[i])) + "<b>" + Math.round(H.temperature_2m[i]) + "°</b>" +
+            '<span class="rp">' + (rain == null ? "–" : rain + "%") + "</span></span>";
+        }).join("");
+      }
       // Tools card
       if (!$("#wx-temp")) return;
-      var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
       var uvNow = hi >= 0 ? d.hourly.uv_index[hi] : null;
       $("#wx-temp").textContent = Math.round(c.temperature_2m);
       $("#wx-desc").textContent = wxText(c.weather_code) + " · high " + Math.round(d.daily.temperature_2m_max[0]) + "°, low " + Math.round(d.daily.temperature_2m_min[0]) + "°";
@@ -210,6 +230,8 @@
       tip.innerHTML = icon("i-info") + "<span>" + esc(lvl[3]) + "</span>";
       tip.className = "wx-aqi-tip aqi-bg-" + lvl[2];
       tip.hidden = false;
+      var md = $("#wxm-desc");
+      if (md) md.textContent += " · AQI " + Math.round(v);
     })
     .catch(function () {
       var d = $("#wx-desc");
