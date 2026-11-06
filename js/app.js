@@ -4,7 +4,7 @@
   var DATA = window.SGN_DATA || {};
   var IMAGES = window.SGN_IMAGES || {};
   var TZ = "Asia/Ho_Chi_Minh";
-  var VIEWS = ["prep", "move", "eat", "see", "help", "map"];
+  var VIEWS = ["home", "move", "eat", "see", "help", "map"];
 
   /* ---------- helpers ---------- */
   var store = {
@@ -72,7 +72,8 @@
   /* ---------- tabs / routing ---------- */
   function currentView() {
     var h = location.hash.replace("#", "");
-    return VIEWS.indexOf(h) >= 0 ? h : "prep";
+    if (h === "prep") return "home"; // old links
+    return VIEWS.indexOf(h) >= 0 ? h : "home";
   }
   function show(view, scroll) {
     $$("[data-view]").forEach(function (s) { s.hidden = s.id !== view; });
@@ -82,10 +83,16 @@
     var mb = $("#map-btn");
     if (mb) { if (view === "map") mb.setAttribute("aria-current", "page"); else mb.removeAttribute("aria-current"); }
     document.body.classList.toggle("on-map", view === "map");
+    if (view !== "map") lastView = view;
     if (view === "map") setTimeout(openMap, 0);
     if (scroll !== false) window.scrollTo(0, 0);
   }
+  var lastView = "home";
   window.addEventListener("hashchange", function () { show(currentView()); });
+  // the map button toggles: tap again to go back to where you were
+  $("#map-btn").addEventListener("click", function (e) {
+    if (currentView() === "map") { e.preventDefault(); location.hash = "#" + lastView; }
+  });
   show(currentView(), false);
 
   var topbar = $(".topbar");
@@ -117,7 +124,7 @@
   tick();
   setInterval(tick, 30000);
 
-  /* ---------- live weather: Prep pill + Help › Tools ---------- */
+  /* ---------- live weather: Home card + Help › Tools ---------- */
   var LAT = 10.7722, LON = 106.7037; // the hotel, Hồ Tùng Mậu
   var WX = { 0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Cloudy", 45: "Hazy", 48: "Hazy",
     51: "Drizzle", 53: "Drizzle", 55: "Drizzle", 61: "Rain", 63: "Rain", 65: "Heavy rain",
@@ -191,7 +198,7 @@
       wxData = d;
       var c = d.current;
       var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
-      // compact card on Prep: now + next 6 hours
+      // compact card on Home: now + next 6 hours
       if ($("#wxm-temp")) {
         $("#wxm-temp").textContent = Math.round(c.temperature_2m) + "°";
         $("#wxm-desc").textContent = wxText(c.weather_code) + " · feels " + Math.round(c.apparent_temperature) + "°";
