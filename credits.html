@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Photo credits · Saigon Pocket Guide</title>
+  <meta name="theme-color" content="#F7F7F5">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("sgn-guide-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23157A52'/><path d='M16 25c-5 0-8-3.5-8-8 0-5 4-9 13-10 0 9-1 18-5 18Z' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>body { padding-bottom: 40px; }</style>
+</head>
+<body>
+<main class="wrap credits-page">
+  <p style="margin: 16px 0 20px"><a class="back-link" href="index.html#help"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>Back to the guide</a></p>
+  <header class="view-head">
+    <p class="overline">Saigon Pocket Guide</p>
+    <h1>Photo credits</h1>
+    <p class="lead">Photos are used under free licences from Wikimedia Commons and Flickr. Tap a name to see the original.</p>
+  </header>
+  <div class="group"><ul class="credits" id="credits"></ul></div>
+</main>
+<script src="js/images.js"></script>
+<script src="js/data.js"></script>
+<script>
+  (function () {
+    var IMAGES = window.SGN_IMAGES || {}, DATA = window.SGN_DATA || {}, subjects = {};
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+    (DATA.places || []).forEach(function (p) { if (p.img) subjects[p.img] = p.name; });
+    (DATA.dishes || []).forEach(function (d) { if (d.img) subjects[d.img] = d.name; });
+    (DATA.restaurants || []).forEach(function (r) { if (r.img) subjects[r.img] = r.name; });
+    document.getElementById("credits").innerHTML = Object.keys(subjects).filter(function (k) { return IMAGES[k]; }).map(function (k) {
+      var im = IMAGES[k];
+      return '<li><a href="' + esc(im.page) + '" target="_blank" rel="noopener">' + esc(subjects[k]) + "</a> · " + esc(im.by) + " · " + esc(im.lic) + "</li>";
+    }).join("");
+  })();
+</script>
+</body>
+</html>

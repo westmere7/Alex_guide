@@ -698,55 +698,6 @@
     a.addEventListener("click", function () { showHelp(a.dataset.hpGo); });
   });
 
-  /* ---------- phrases ---------- */
-  var phTabs = $("#phrase-tabs");
-  phTabs.addEventListener("click", function (e) {
-    var b = e.target.closest("button[data-ph]");
-    if (!b) return;
-    $$("button", phTabs).forEach(function (x) { x.setAttribute("aria-selected", String(x === b)); });
-    $$("[data-ph-panel]").forEach(function (p) { p.hidden = p.dataset.phPanel !== b.dataset.ph; });
-  });
-
-  if ("speechSynthesis" in window) {
-    var addSpeak = function () {
-      var vi = speechSynthesis.getVoices().filter(function (v) { return /^vi/i.test(v.lang); })[0];
-      if (!vi || $(".say-btn")) return;
-      $(".speak-hint").hidden = false;
-      $$(".phrases .row").forEach(function (row) {
-        var text = $(".t", row).textContent;
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "icon-btn sm say-btn";
-        btn.setAttribute("aria-label", "Hear: " + text);
-        btn.innerHTML = icon("i-volume");
-        btn.addEventListener("click", function () {
-          speechSynthesis.cancel();
-          var u = new SpeechSynthesisUtterance(text);
-          u.voice = vi; u.lang = vi.lang; u.rate = 0.85;
-          speechSynthesis.speak(u);
-        });
-        row.appendChild(btn);
-      });
-    };
-    addSpeak();
-    if (speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", addSpeak);
-  }
-
-  /* ---------- photo credits (required by CC BY / BY-SA licences) ---------- */
-  var creditsEl = $("#credits");
-  if (creditsEl) {
-    var subjects = {};
-    places.forEach(function (p) { if (p.img) subjects[p.img] = p.name; });
-    (DATA.dishes || []).forEach(function (d) { if (d.img) subjects[d.img] = d.name; });
-    (DATA.restaurants || []).forEach(function (r) { if (r.img) subjects[r.img] = r.name; });
-    creditsEl.innerHTML = Object.keys(subjects).filter(function (k) { return IMAGES[k]; }).map(function (k) {
-      var im = IMAGES[k];
-      return '<li><a href="' + esc(im.page) + '" target="_blank" rel="noopener">' + esc(subjects[k]) + "</a>, " +
-        esc(im.by) + " · " + esc(im.lic) + "</li>";
-    }).join("");
-  }
-
-
   /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
   var COORDS = window.SGN_COORDS || {};
   var PIN_COLORS = { two: "#C2255C", art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
