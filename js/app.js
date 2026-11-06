@@ -813,6 +813,14 @@
   store.set("sgn-guide-map-layers", layersOn);
   var mapStyle = store.get("sgn-guide-map-style", "simple");
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
+  // Vector maps (OpenFreeMap via MapLibre) stay sharp at every zoom. Image tiles are the fallback
+  // for phones without WebGL: Esri's grey canvas only has data to zoom 16 in Saigon.
+  var vectorOK = false;
+  var OFM_ATTR = '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> ' + OSM_ATTR;
+  function vectorStyle() {
+    if (mapStyle === "detailed") return "https://tiles.openfreemap.org/styles/liberty";
+    return "https://tiles.openfreemap.org/styles/" + (root.getAttribute("data-theme") === "dark" ? "dark" : "positron");
+  }
   function tileSpec() {
     if (mapStyle === "detailed") return { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", opts: { maxZoom: 19, attribution: OSM_ATTR } };
     var dark = root.getAttribute("data-theme") === "dark";
@@ -824,8 +832,15 @@
   function setTiles() {
     if (!lmap) return;
     if (tiles) lmap.removeLayer(tiles);
-    var t = tileSpec();
-    tiles = L.tileLayer(t.url, t.opts).addTo(lmap);
+    if (vectorOK && L.maplibreGL) {
+      try {
+        tiles = L.maplibreGL({ style: vectorStyle(), attribution: OFM_ATTR, interactive: false }).addTo(lmap);
+      } catch (e) { tiles = null; vectorOK = false; }
+    }
+    if (!tiles || !lmap.hasLayer(tiles)) {
+      var t = tileSpec();
+      tiles = L.tileLayer(t.url, t.opts).addTo(lmap);
+    }
     $("#map-canvas").classList.toggle("style-detailed", mapStyle === "detailed");
   }
   function renderStyleSwitch() {
@@ -834,6 +849,12 @@
     }).join("");
   }
   document.addEventListener("sgn-theme", function () { if (mapStyle === "simple") setTiles(); });
+  function hasWebGL() {
+    try { var c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); } catch (e) { return false; }
+  }
+  function addScript(src, ok, fail) {
+    var el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = fail; document.head.appendChild(el);
+  }
   var lmap = null, tiles = null, markers = {}, pendingFocus = null, leafletState = 0, leafletWaiters = [];
   var meMarker = null, meCircle = null, watchId = null, firstFix = true, wantHomeRoute = false;
 
@@ -857,7 +878,19 @@
     document.head.appendChild(css);
     var js = document.createElement("script");
     js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
-    js.onload = function () { leafletState = 2; leafletWaiters.splice(0).forEach(function (f) { f(); }); };
+    var done = function () { leafletState = 2; leafletWaiters.splice(0).forEach(function (f) { f(); }); };
+    js.onload = function () {
+      if (!hasWebGL()) return done();
+      var mcss = document.createElement("link");
+      mcss.rel = "stylesheet";
+      mcss.href = "https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css";
+      document.head.appendChild(mcss);
+      addScript("https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js", function () {
+        addScript("https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js", function () {
+          vectorOK = !!L.maplibreGL; done();
+        }, done);
+      }, done);
+    };
     js.onerror = function () { leafletState = 0; $("#map-loading").textContent = "Couldn't load the map. Check your connection and try again."; };
     document.head.appendChild(js);
   }
