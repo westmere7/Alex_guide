@@ -761,7 +761,7 @@ dialog.tr-full::backdrop { background: var(--bg); }
 .tr-full-text { font-size: clamp(30px, 9vw, 52px); font-weight: 600; line-height: 1.25; letter-spacing: -.01em; word-break: break-word; }
 .tr-full-src { font-size: var(--fs-md); color: var(--text-2); }
 
-#help-tabs.seg-full { grid-template-columns: repeat(2, 1fr); }
+#help-tabs.seg-full { grid-template-columns: repeat(3, 1fr); }
 .foot-links { margin-top: 10px; font-size: 12px; }
 .foot-links a { color: var(--text-2); }
 
@@ -773,3 +773,10 @@ dialog.tr-full::backdrop { background: var(--bg); }
 .credits-page .credits a { font-weight: 600; }
 .back-link { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; font-size: var(--fs-sm); }
 .back-link .i { transform: rotate(90deg); width: 16px; height: 16px; }
+
+/* ===== Help › Contacts ===== */
+.contact { align-items: center; }
+.contact .num { margin-top: 2px; font-size: var(--fs-md); font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: .01em; }
+.contact .icon-btn { text-decoration: none; }
+.contact .call { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.contact .msg { color: var(--text); }
