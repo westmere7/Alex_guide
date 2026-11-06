@@ -663,29 +663,69 @@
       tipEl.hidden = false;
       textEl.focus();
     }
+    function micLabel(t) { $("#tr-mic-label").textContent = t; }
+    function note(msg) { tipEl.innerHTML = icon("i-mic") + "<span>" + esc(msg) + "</span>"; tipEl.hidden = false; }
+
+    // Ask for the microphone first and wait for "Allow". Starting the recognizer
+    // straight away makes Chrome on Android fail with "not-allowed" while its
+    // permission pop-up is still on screen.
+    var micReady = false;
+    function getMic() {
+      if (micReady || !(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) return Promise.resolve(false);
+      return navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        micReady = true;
+        return true; // permission was just granted
+      });
+    }
+    function blockedOrBroken() {
+      var p = navigator.permissions && navigator.permissions.query ? navigator.permissions.query({ name: "microphone" }) : Promise.reject();
+      p.then(function (s) {
+        if (s.state === "denied") keyboardTip("The microphone is blocked for this site. Allow it in Chrome's site settings (the icon left of the address), or:");
+        else keyboardTip("Voice input didn't start.");
+      }).catch(function () { keyboardTip("Voice input didn't start."); });
+    }
+    function startListening(attempt) {
+      rec = new SR();
+      rec.lang = LANG[from].speech; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+      var gotResult = false;
+      rec.onstart = function () { listening = true; tipEl.hidden = true; micBtn.classList.add("on"); micLabel("Listening…"); };
+      rec.onresult = function (e) {
+        gotResult = true;
+        var t = "";
+        for (var i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+        textEl.value = t.trim(); clearBtn.hidden = false;
+        clearTimeout(timer); timer = setTimeout(translate, 350);
+      };
+      rec.onerror = function (e) {
+        if (e.error === "no-speech") { note("Didn't catch that. Tap Speak and talk a little louder."); return; }
+        if (e.error === "aborted") return;
+        // the mic can still be busy for a moment right after permission: try once more
+        if ((e.error === "not-allowed" || e.error === "audio-capture") && attempt < 2) {
+          rec.onend = null; listening = false; micBtn.classList.remove("on");
+          setTimeout(function () { startListening(attempt + 1); }, 400);
+          return;
+        }
+        if (e.error === "network") { keyboardTip("Voice input needs an internet connection."); return; }
+        blockedOrBroken();
+      };
+      rec.onend = function () { listening = false; micBtn.classList.remove("on"); micLabel("Speak"); if (gotResult) translate(); };
+      try { rec.start(); }
+      catch (err) { micLabel("Speak"); note("Microphone ready. Tap Speak again and start talking."); }
+    }
     micBtn.addEventListener("click", function () {
       tipEl.hidden = true;
       if (!SR) { keyboardTip(); return; }
-      if (listening) { rec.stop(); return; }
-      {
-        rec = new SR();
-        rec.lang = LANG[from].speech; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
-        var base = "";
-        rec.onstart = function () { listening = true; micBtn.classList.add("on"); $("#tr-mic-label").textContent = "Listening…"; };
-        rec.onresult = function (e) {
-          var t = "";
-          for (var i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
-          textEl.value = (base + " " + t).trim(); clearBtn.hidden = false;
-          clearTimeout(timer); timer = setTimeout(translate, 350);
-        };
-        rec.onerror = function (e) {
-          if (e.error === "not-allowed") keyboardTip("The microphone is blocked for this site (you can allow it in your browser settings).");
-          else if (e.error === "no-speech" || e.error === "aborted") return;
-          else keyboardTip("Voice input isn't working in this browser right now.");
-        };
-        rec.onend = function () { listening = false; micBtn.classList.remove("on"); $("#tr-mic-label").textContent = "Speak"; translate(); };
-        try { rec.start(); } catch (err) { keyboardTip(); }
-      }
+      if (listening && rec) { rec.stop(); return; }
+      micLabel("Allow the mic…");
+      getMic().then(function (justGranted) {
+        micLabel("Starting…");
+        setTimeout(function () { startListening(1); }, justGranted ? 300 : 0);
+      }).catch(function (err) {
+        micLabel("Speak");
+        if (err && (err.name === "NotAllowedError" || err.name === "SecurityError")) blockedOrBroken();
+        else keyboardTip("No microphone found.");
+      });
     });
     labels();
   })();
