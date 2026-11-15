@@ -501,7 +501,7 @@ details[open] > summary .chev { transform: rotate(180deg); }
 /* ===== Tab bar ===== */
 .tabbar {
   position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
   height: calc(var(--tab-h) + env(safe-area-inset-bottom));
   padding: 6px 8px env(safe-area-inset-bottom);
   background: color-mix(in srgb, var(--surface) 85%, transparent);
@@ -521,7 +521,7 @@ details[open] > summary .chev { transform: rotate(180deg); }
 @media (min-width: 720px) {
   .tabbar {
     left: 50%; right: auto; bottom: 16px; transform: translateX(-50%);
-    width: 440px; height: var(--tab-h); padding: 6px;
+    width: 500px; height: var(--tab-h); padding: 6px;
     border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: 0 8px 30px rgba(0,0,0,.12);
   }
 }
@@ -788,3 +788,45 @@ dialog.tr-full::backdrop { background: var(--bg); }
 .tr-check.warn { color: var(--warn); }
 /* Simple map in dark mode: OpenFreeMap "fiord", toned down to the app's neutral greys */
 :root[data-theme="dark"] .map-canvas:not(.style-detailed) .leaflet-gl-layer { filter: saturate(.35) brightness(1.05); }
+
+/* ===== Read ===== */
+.read-list { display: grid; gap: 12px; }
+.read-card {
+  display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; cursor: pointer;
+  padding: 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--shadow); color: var(--text); font: inherit;
+}
+.read-card .tile { width: 44px; height: 44px; border-radius: var(--r-md); }
+.read-card .tile .i { width: 22px; height: 22px; }
+.read-card .vi { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+.read-card .t { font-size: var(--fs-lg); }
+.read-card .d { margin-top: 4px; }
+.read-meta { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: var(--fs-xs); color: var(--text-3); }
+.read-meta .done { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.read-meta .done .i { width: 14px; height: 14px; }
+.read-empty { text-align: center; padding: 40px 20px; border: 1px dashed var(--border); border-radius: var(--r-lg); color: var(--text-2); }
+.read-empty .i { width: 32px; height: 32px; color: var(--accent); margin: 0 auto 10px; display: block; }
+
+dialog.reader {
+  border: 0; padding: 0; margin: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+  background: var(--bg); color: var(--text); overflow-y: auto;
+}
+dialog.reader::backdrop { background: var(--bg); }
+.reader-bar {
+  position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end;
+  padding: calc(10px + env(safe-area-inset-top)) 12px 10px;
+  background: color-mix(in srgb, var(--bg) 85%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.reader-body { max-width: 640px; padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
+.reader-body .vi { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.reader-body h1 { font-size: clamp(28px, 7vw, 36px); line-height: 1.15; letter-spacing: -.02em; margin: 6px 0 8px; }
+.reader-body .read-meta { margin: 0 0 20px; }
+.reader-body .reader-lead { font-size: var(--fs-lg); color: var(--text-2); line-height: 1.55; margin-bottom: 8px; }
+.reader-body h2 { font-size: var(--fs-lg); font-weight: 700; margin: 26px 0 8px; }
+.reader-body p { font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+.reader-body .reader-tip { display: flex; gap: 10px; margin: 20px 0; padding: 14px 16px; border-radius: var(--r-md); background: var(--accent-bg); font-size: var(--fs-sm); line-height: 1.55; }
+.reader-body .reader-tip .i { flex: none; width: 18px; height: 18px; color: var(--accent); margin-top: 2px; }
+.reader-sources { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); }
+.reader-sources h2 { font-size: var(--fs-sm); margin: 0 0 8px; color: var(--text-2); }
+.reader-sources ul { list-style: none; display: grid; gap: 6px; font-size: var(--fs-sm); }
+.reader-done { margin-top: 24px; width: 100%; justify-content: center; }

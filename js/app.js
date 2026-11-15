@@ -4,7 +4,7 @@
   var DATA = window.SGN_DATA || {};
   var IMAGES = window.SGN_IMAGES || {};
   var TZ = "Asia/Ho_Chi_Minh";
-  var VIEWS = ["home", "move", "eat", "see", "help", "map"];
+  var VIEWS = ["home", "move", "eat", "see", "read", "help", "map"];
 
   /* ---------- helpers ---------- */
   var store = {
@@ -754,6 +754,67 @@
       });
     });
     labels();
+  })();
+
+
+  /* ---------- read: short articles on traditions ---------- */
+  (function () {
+    var list = $("#read-list"), dlgR = $("#reader"), body = $("#reader-body");
+    if (!list) return;
+    var readings = DATA.readings || [];
+    var done = store.get("sgn-guide-read", {});
+    function meta(r) {
+      return '<p class="read-meta"><span>' + esc(r.minutes || 3) + " min read</span>" +
+        (done[r.id] ? '<span class="done">' + icon("i-check") + "Read</span>" : "") + "</p>";
+    }
+    function renderList() {
+      if (!readings.length) {
+        list.innerHTML = '<div class="read-empty">' + icon("t-read") + "<p><b>The first read is on its way.</b></p><p class=\"d\">Stories about Vietnamese traditions will appear here.</p></div>";
+        return;
+      }
+      list.innerHTML = readings.map(function (r) {
+        return '<button type="button" class="read-card" data-read="' + esc(r.id) + '">' +
+          '<span class="tile">' + icon(r.icon || "t-read") + "</span>" +
+          '<span class="row-main">' + (r.vi ? '<span class="vi">' + esc(r.vi) + "</span>" : "") +
+          '<span class="t">' + esc(r.title) + '</span><span class="d">' + esc(r.teaser || "") + "</span>" + meta(r).replace(/<p /, "<span ").replace(/<\/p>$/, "</span>") + "</span></button>";
+      }).join("");
+    }
+    function openReading(id) {
+      var r = readings.filter(function (x) { return x.id === id; })[0];
+      if (!r) return;
+      body.innerHTML =
+        (r.vi ? '<p class="vi">' + esc(r.vi) + "</p>" : "") +
+        '<h1 id="reader-title">' + esc(r.title) + "</h1>" + meta(r) +
+        (r.lead ? '<p class="reader-lead">' + esc(r.lead) + "</p>" : "") +
+        (r.sections || []).map(function (sec) {
+          return (sec.h ? "<h2>" + esc(sec.h) + "</h2>" : "") +
+            (sec.p || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+            (sec.tip ? '<p class="reader-tip">' + icon("i-info") + "<span>" + esc(sec.tip) + "</span></p>" : "");
+        }).join("") +
+        ((r.sources || []).length ? '<div class="reader-sources"><h2>Sources</h2><ul>' + r.sources.map(function (src) {
+          return '<li><a href="' + esc(src.url) + '" target="_blank" rel="noopener">' + esc(src.title) + "</a></li>";
+        }).join("") + "</ul></div>" : "") +
+        '<button type="button" class="btn ' + (done[r.id] ? "btn-secondary" : "btn-primary") + ' reader-done" data-done="' + esc(r.id) + '">' +
+          icon("i-check") + (done[r.id] ? "Read · tap to unmark" : "Mark as read") + "</button>";
+      if (dlgR.showModal) dlgR.showModal(); else dlgR.setAttribute("open", "");
+      dlgR.scrollTop = 0;
+    }
+    function closeReader() { if (dlgR.close) dlgR.close(); else dlgR.removeAttribute("open"); }
+    list.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-read]");
+      if (b) openReading(b.getAttribute("data-read"));
+    });
+    body.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-done]");
+      if (!b) return;
+      var id = b.getAttribute("data-done");
+      if (done[id]) delete done[id]; else done[id] = true;
+      store.set("sgn-guide-read", done);
+      renderList();
+      closeReader();
+    });
+    $("#reader-close").addEventListener("click", closeReader);
+    renderList();
   })();
 
   /* ---------- Help sections: Tools · Phrases · Safety ---------- */

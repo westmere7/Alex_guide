@@ -552,6 +552,13 @@ window.SGN_DATA = {
     ] }
   ],
 
+  /* ---------- READ ----------
+     Short articles on Vietnamese traditions. Each one:
+     { id, title, vi, icon, teaser, minutes, lead,
+       sections: [{ h, p: ["paragraph", ...], tip }],
+       sources: [{ title, url }] } */
+  readings: [],
+
   /* ---------- DRINKS ---------- */
   drinkTypes: [
     { id: "rooftop", label: "Rooftops",   icon: "i-city" },
