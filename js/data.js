@@ -1442,6 +1442,652 @@ window.SGN_DATA = {
           "url": "https://localvietnam.com/hue/an-bang-cemetery/"
         }
       ]
+    },
+    {
+      "id": "cu-chi-tunnels",
+      "title": "The Củ Chi tunnels",
+      "vi": "Địa đạo Củ Chi",
+      "img": {
+        "key": "r-cc-23",
+        "cap": "A visitor lifts the lid of a hidden tunnel entrance, invisible under the leaf litter until it opens."
+      },
+      "teaser": "A hand-dug underground world beneath the farmland north-west of Saigon, and what it was like on both sides of it.",
+      "minutes": 15,
+      "lead": "About 70 km north-west of Saigon, under quiet rubber plantations and forest, lies a maze of hand-dug tunnels that became one of the most famous places of the Vietnam War. People lived, worked, fought and died down here, and soldiers from the US and Australia went down after them. Today it's one of the most visited sites near the city.",
+      "sections": [
+        {
+          "h": "A network under the farmland",
+          "p": [
+            "The first tunnels were dug in the late 1940s, around 1948, by the Việt Minh during the war against the French, as small hiding places for documents and weapons. From the early 1960s the National Liberation Front, often called the Viet Cong, expanded them enormously. Vietnamese sources say the network reached about 250 km by 1968, running from the edge of Saigon toward the Cambodian border. Western estimates are lower, around 120 to 200 km.",
+            "The tunnels sat in Củ Chi district, next to the area US commanders called the Iron Triangle. Underground there were living quarters, kitchens, weapons workshops, field hospitals, meeting rooms, classrooms and even a small theatre. Babies were born down here. Bến Đình was the base of the local Party committee, and Bến Dược held the regional military command. Planning for parts of the 1968 Tết Offensive is said to have taken place in underground meeting rooms."
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-3",
+              "cap": "The entrance to one of the tunnels."
+            },
+            {
+              "key": "r-cc-30",
+              "cap": "A vertical shaft dropping down to a tunnel."
+            }
+          ]
+        },
+        {
+          "h": "How they were built",
+          "p": [
+            "Everything was dug by hand, with hoes and bamboo baskets. The tens of thousands of cubic metres of earth that came out were hidden in bomb craters and ponds or spread thinly over the fields so the digging wouldn't be spotted from the air.",
+            "The local soil made it possible: an iron-rich clay that is soft enough to dig in the wet season but dries almost as hard as concrete, so most tunnels needed no lining. The network ran on several levels, roughly 3 m, 5–6 m and 8–10 m down, with the deepest out of reach of most bombs. Passages could be as small as about 80 cm across, so you crawled, bent double, in near darkness.",
+            "Air came in through tiny vents disguised as termite mounds. Entrances were small trapdoors hidden under leaves. Wells were dug underground so the water couldn't be poisoned. Cooking was the giveaway risk, so kitchens used the Hoàng Cầm stove, invented by an army cook of that name in 1952: smoke was led through long channels covered with earth and branches until it seeped out far away, thin and pale like morning mist."
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-60",
+              "cap": "A model of a tunnel cross-section in the on-site exhibition."
+            },
+            {
+              "key": "r-cc-11",
+              "cap": "A hidden air vent."
+            },
+            {
+              "key": "r-cc-39",
+              "cap": "A camouflaged entrance in the forest floor."
+            },
+            {
+              "key": "r-cc-42",
+              "cap": "Another entrance, almost invisible among the leaves."
+            },
+            {
+              "key": "r-cc-46",
+              "cap": "A cart once used to carry away the dug earth."
+            },
+            {
+              "key": "r-cc-25",
+              "cap": "Inside a tunnel."
+            }
+          ]
+        },
+        {
+          "h": "Life underground",
+          "p": [
+            "Daily life was brutally hard. The air was thin and people fainted; light came from candles or torches. It was hot, damp and crowded, with insects, scorpions and snakes, and some people stayed below for months at a time. Disease was as dangerous as fighting: malaria was the second-biggest cause of death after wounds, and a captured report noted that half of one unit had malaria at any one time and every member had intestinal parasites.",
+            "Food was simple, and cassava (tapioca root) became the symbol of the time. Visitors are still served boiled cassava dipped in sesame salt at the end of a tour."
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-14",
+              "cap": "A mannequin of a guerrilla resting in a hammock."
+            },
+            {
+              "key": "r-cc-61",
+              "cap": "A mannequin writing in a notebook, part of the on-site displays."
+            },
+            {
+              "key": "r-cc-62",
+              "cap": "Mannequins showing how fighters dressed."
+            },
+            {
+              "key": "r-cc-69",
+              "cap": "A demonstration of how sandals were made at the site."
+            }
+          ]
+        },
+        {
+          "h": "Traps and counter-tactics",
+          "p": [
+            "Around the tunnels were booby traps: concealed pits lined with sharpened bamboo spikes, mines near entrances, even snakes and scorpions. Unexploded US bombs and shells were collected and the explosives reused to make mines.",
+            "The US Army used around 3,000 dogs to sniff out entrances. One former tunnel commander, Colonel Châu Lâm, later recalled that fighters left chilli and garlic near the vents to put the dogs off, along with scraps of captured uniform, soap or aftershave so the area smelled familiar to them. That's one veteran's account, but it shows the cat-and-mouse game going on above and below ground."
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-10",
+              "cap": "Spike traps on display at the site."
+            },
+            {
+              "key": "r-cc-8",
+              "cap": "A trap mechanism on display."
+            },
+            {
+              "key": "r-cc-48",
+              "cap": "Bombs and shells fired at the area, now on display."
+            },
+            {
+              "key": "r-cc-29",
+              "cap": "Visitors at a diorama showing how unexploded bombs were reused."
+            }
+          ]
+        },
+        {
+          "h": "The other side: Crimp, Cedar Falls and the tunnel rats",
+          "p": [
+            "In January 1966, Operation Crimp sent about 8,000 troops (the US 1st Infantry Division, the 173rd Airborne Brigade and Australia's 1st Battalion, Royal Australian Regiment) into the area after B-52 bombing. They found far more than expected, including around 1.5 million pages of documents from a regional headquarters. Vietnamese accounts of the same operation give very different figures for troops and losses, a reminder that each side counted differently.",
+            "The US 25th Infantry Division then built its base at Củ Chi, close to and in places above the tunnels, and kept it from 1966 to 1970. In January 1967 Operation Cedar Falls sent about 30,000 US and South Vietnamese troops into the wider area. Villages were razed and about 6,000 residents relocated, the land was cleared with heavy Rome ploughs and defoliants, and tunnels were blasted. Within days, fighters had returned. From 1969, B-52s carpet-bombed the district. The authors of a well-known 1986 history, The Tunnels of Cu Chi, called it the most bombed, shelled, gassed, defoliated and generally devastated area in the history of warfare.",
+            "Clearing the tunnels themselves fell to volunteers who became known as tunnel rats: usually small men, often under 165 cm, who crawled in with just a torch, a pistol and a knife. Their unofficial motto was mock Latin, Non Gratum Anus Rodentum (\"not worth a rat's arse\"). Other methods included pumping in gas, water or smoke, and sealing entrances with explosives."
+          ],
+          "imgs": [
+            {
+              "key": "r-cc-99",
+              "cap": "An American tunnel rat about to enter a tunnel."
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-101",
+              "cap": "US Sergeant Ronald H. Payne, a tunnel rat, in 1967."
+            },
+            {
+              "key": "r-cc-103",
+              "cap": "US paratroopers heading into the Iron Triangle during Operation Cedar Falls, 1967."
+            },
+            {
+              "key": "r-cc-96",
+              "cap": "A soldier of the US 1st Infantry Division beside a burning camp during Operation Crimp, 1966."
+            },
+            {
+              "key": "r-cc-0",
+              "cap": "A wrecked US M41 tank, now kept at the site."
+            }
+          ]
+        },
+        {
+          "h": "The Australian story",
+          "p": [
+            "Australians were part of this from the start. During Operation Crimp, the Royal Australian Engineers' 3 Field Troop, the first RAE unit in Vietnam, did something unusual: instead of quickly blowing up the tunnels they found, as was common practice, they went down and explored them, mapping the passages over about four days using telephone wire and compasses. They recovered weapons, tens of thousands of rounds of ammunition, medical supplies and a huge amount of paperwork. Their approach influenced how allied units dealt with tunnels afterwards. Veterans still debate exactly who went in first, so \"among the first\" is fair.",
+            "The troop's commander, Captain Alexander \"Sandy\" MacGregor, received the Military Cross. He called his men \"tunnel ferrets\"; an American journalist turned that into \"tunnel rats\", and the name stuck. In 1998 he went back to Củ Chi and met men who had fought on the other side. He wrote about it in No Need for Heroes and, with Jimmy Thomson, Tunnel Rats.",
+            "The operation also cost Australian lives. Eight Australians were killed during Crimp. On 11 January 1966, Corporal Bob Bowtell of Katoomba, NSW, aged 33, was searching a tunnel filled with smoke and gas when he became wedged in a narrow trapdoor and died of asphyxiation; a mate, Private Jim Daly, tried to reach him and was ordered out. Bowtell is buried at Terendak in Malaysia, remembered at the Lawson war memorial in the Blue Mountains, and listed on the Roll of Honour at the Australian War Memorial. Former members of 3 Field Troop formed the Vietnam Tunnel Rats Association."
+          ],
+          "imgs": [
+            {
+              "key": "r-cc-95",
+              "cap": "An Australian soldier looks into a tunnel discovered during Operation Crimp, January 1966."
+            },
+            {
+              "key": "r-cc-98",
+              "cap": "An Australian soldier inside a tunnel uncovered during Operation Crimp, 1966."
+            }
+          ]
+        },
+        {
+          "h": "The human cost",
+          "p": [
+            "The numbers are painful and disputed. Vietnamese official figures for Củ Chi over 21 years of war count more than 10,000 fighters and 10,101 civilians killed, with some 28,000 homes burned and huge areas of farmland and forest destroyed. Western books give totals from about 12,000 up to the often-repeated 45,000, though that higher figure may come from the names at the regional memorial temple, which covers a much wider area. US, Australian and South Vietnamese troops also lost their lives here.",
+            "At Bến Dược, a memorial temple opened in 1995 lists more than 44,000 names of people from the Saigon–Gia Định region who died in the wars against France and the US, under a nine-storey tower."
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-72",
+              "cap": "The Bến Dược memorial temple."
+            },
+            {
+              "key": "r-cc-75",
+              "cap": "The temple grounds at Bến Dược."
+            },
+            {
+              "key": "r-cc-79",
+              "cap": "Inside the memorial temple."
+            },
+            {
+              "key": "r-cc-81",
+              "cap": "A porcelain painting in the temple."
+            }
+          ]
+        },
+        {
+          "h": "Remembering today",
+          "p": [
+            "Bến Dược was declared a national historical relic in 1979 and Bến Đình in 2004, and in 2015 the tunnels became a Special National Relic. In July 2026 Vietnam added them to its tentative list for UNESCO World Heritage. A big Vietnamese feature film set in the tunnels, Địa đạo: Mặt trời trong bóng tối (Tunnels: Sun in the Dark), broke box-office records in 2025.",
+            "Be prepared for how the story is told on site. The introductory film shown to visitors is an old wartime-style production with strongly one-sided language, and the displays celebrate the guerrillas' ingenuity. It's worth seeing as a window into how the war is remembered in Vietnam, alongside how it's remembered in Australia."
+          ]
+        },
+        {
+          "h": "Visiting the tunnels",
+          "p": [
+            "There are two sites. Bến Đình, closer to the city, is the most visited and has been renovated, with tunnels enlarged for tourists. Bến Dược, about 13–15 km further on, is quieter and has the memorial temple and a reconstructed base area. Both have widened tunnel sections.",
+            "It's about 70 km from the city: around 1.5–2 hours by car (a Grab or taxi is roughly 400,000–600,000 ₫ each way), or about an hour each way by speedboat on the Saigon River with a tour. Sites open about 7am to 5pm. In 2026, foreign visitors pay roughly 100,000–135,000 ₫, cash only; confirm on the day.",
+            "The tourist tunnels have lights and reinforced ceilings, and someone up to about 183 cm can get through crouching. At Bến Đình the first stretch has an exit after about 10 m if it gets too much. There's also a shooting range where visitors can fire wartime rifles; it's optional, and you'll hear it across the site."
+          ],
+          "maps": [
+            {
+              "key": "cu-chi",
+              "label": "Củ Chi tunnels"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-cc-4",
+              "cap": "The entrance to a tunnel open to visitors."
+            },
+            {
+              "key": "r-cc-16",
+              "cap": "Metal steps down into a visitor tunnel."
+            },
+            {
+              "key": "r-cc-26",
+              "cap": "A visitor squeezing into a tunnel."
+            },
+            {
+              "key": "r-cc-28",
+              "cap": "Visitors watching the introductory film."
+            },
+            {
+              "key": "r-cc-32",
+              "cap": "Boiled cassava, the classic snack at the tunnels."
+            },
+            {
+              "key": "r-cc-34",
+              "cap": "Cassava with sesame salt and tea: simple, and vegan."
+            }
+          ],
+          "tip": "Wear clothes you don't mind getting dirty and closed shoes, bring insect repellent and a spare shirt, and leave big bags behind. Go early, before 9am, to beat the heat and the crowds. The cassava snack is plant-based. Treat the memorial temple as a place of mourning, not a photo stop."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Củ Chi tunnels",
+          "url": "https://en.wikipedia.org/wiki/C%E1%BB%A7_Chi_tunnels"
+        },
+        {
+          "title": "Wikipedia: Operation Crimp",
+          "url": "https://en.wikipedia.org/wiki/Operation_Crimp"
+        },
+        {
+          "title": "Wikipedia: Operation Cedar Falls",
+          "url": "https://en.wikipedia.org/wiki/Operation_Cedar_Falls"
+        },
+        {
+          "title": "Wikipedia: Tunnel rat",
+          "url": "https://en.wikipedia.org/wiki/Tunnel_rat"
+        },
+        {
+          "title": "Wikipedia: Cu Chi Base Camp",
+          "url": "https://en.wikipedia.org/wiki/Cu_Chi_Base_Camp"
+        },
+        {
+          "title": "Wikipedia: Sandy MacGregor",
+          "url": "https://en.wikipedia.org/wiki/Sandy_MacGregor"
+        },
+        {
+          "title": "AWM Places of Pride: Cpl Robert Bowtell, Lawson",
+          "url": "https://placesofpride.awm.gov.au/stories/197211/264428"
+        },
+        {
+          "title": "Vietnam Tunnel Rats Association: Honour roll",
+          "url": "https://tunnelrats.com.au/our-honour-roll.php"
+        },
+        {
+          "title": "Anzac Portal: Viet Cong tunnels",
+          "url": "https://anzacportal.dva.gov.au/wars-and-missions/vietnam-war-1962-1975/events/combat/vietcong-tunnels"
+        },
+        {
+          "title": "DVIDS (US Army): Operation Crimp nets trove of documents",
+          "url": "https://www.dvidshub.net/news/461781/operation-crimp-nets-trove-documents-14-jan-1966"
+        },
+        {
+          "title": "VnExpress: Mạng nhện dưới lòng đất thép Củ Chi",
+          "url": "https://vnexpress.net/mang-nhen-duoi-long-dat-thep-cu-chi-2161369.html"
+        },
+        {
+          "title": "VnExpress: 48 giờ ở đất thép Củ Chi (2025)",
+          "url": "https://vnexpress.net/48-gio-o-dat-thep-cu-chi-4872613.html"
+        },
+        {
+          "title": "Báo Thế giới & Việt Nam: Về huyền thoại địa đạo Củ Chi (2025)",
+          "url": "https://baoquocte.vn/ve-huyen-thoai-dia-dao-cu-chi-310202.html"
+        },
+        {
+          "title": "Việt Nam News: Củ Chi tunnels seek UNESCO recognition",
+          "url": "https://vietnamnews.vn/sunday/features/887335/historic-cu-chi-tunnels-site-seeks-unesco-world-heritage-site-recognition.html"
+        },
+        {
+          "title": "Việt Nam News: The Hoàng Cầm stove",
+          "url": "https://vietnamnews.vn/sunday/1351508/a-kitchen-god-how-a-stove-helped-save-lives.html"
+        },
+        {
+          "title": "NBC News: The tunnels of Cu Chi (2003)",
+          "url": "https://www.nbcnews.com/id/wbna3072170"
+        },
+        {
+          "title": "History.com: Cu Chi tunnels",
+          "url": "https://www.history.com/articles/cu-chi-tunnels"
+        },
+        {
+          "title": "Asia Times: US Army veteran studies Vietnam War tunnels (soil)",
+          "url": "https://asiatimes.com/2020/01/us-army-veteran-studies-vietnam-war-tunnels/"
+        },
+        {
+          "title": "Wikipedia: Bến Dược Memorial Temple",
+          "url": "https://en.wikipedia.org/wiki/B%E1%BA%BFn_D%C6%B0%E1%BB%A3c_Memorial_Temple"
+        },
+        {
+          "title": "UNESCO Tentative List: Củ Chi tunnels (2026)",
+          "url": "https://whc.unesco.org/en/tentativelists/7038/"
+        },
+        {
+          "title": "VietnamPlus: The Tunnel sets box-office record",
+          "url": "https://en.vietnamplus.vn/vietnamese-war-film-the-tunnel-sets-single-day-box-office-record-post313043.vnp"
+        },
+        {
+          "title": "Jungle Boss: Cu Chi tunnels visitor guide (2026)",
+          "url": "https://junglebosstours.com/explorer/tourism-blog/cu-chi-tunnels"
+        }
+      ]
+    },
+    {
+      "id": "trang-an",
+      "title": "Tràng An: rock, river and kings",
+      "vi": "Quần thể danh thắng Tràng An",
+      "img": {
+        "key": "r-ta-6",
+        "cap": "Rowing boats glide between limestone towers at Tràng An."
+      },
+      "teaser": "Limestone towers 5 million years in the making, 30,000 years of people, Vietnam's first imperial capital, and temples hidden in caves.",
+      "minutes": 15,
+      "lead": "South of Hanoi, in Ninh Bình, steep limestone towers rise straight out of rice fields and rivers, threaded with caves you can row through. Tràng An is a place where geology, prehistory, royal history and religion all sit in the same small valleys, which is why UNESCO made it Vietnam's first site to be recognised for both its nature and its culture.",
+      "sections": [
+        {
+          "h": "A World Heritage first",
+          "p": [
+            "UNESCO inscribed the Tràng An Landscape Complex in June 2014 as Vietnam's first mixed cultural and natural World Heritage Site, the first in Southeast Asia, and still the region's only one. The protected core covers about 6,226 hectares and brings together four places: the Tràng An scenic area, Tam Cốc–Bích Động, the ancient capital of Hoa Lư and the Hoa Lư primeval forest.",
+            "It was recognised for three things at once: its spectacular scenery, its exceptional karst geology, and the long record of how people lived here and adapted as the climate and sea levels changed."
+          ]
+        },
+        {
+          "h": "How the towers were made",
+          "p": [
+            "The rock itself is old: a fairly pure limestone laid down in shallow seas in the Early Triassic, roughly 250 million years ago. The landscape you see is much younger. Over about the last five million years the limestone was lifted up and then dissolved and cut away by rain, rivers and the sea, leaving towers up to about 200 metres high.",
+            "Geologists prize Tràng An because it shows the final stages of tower-karst evolution in a humid tropical climate, with every step between fengcong (clusters of cones joined at the base) and fenglin (towers standing alone on flat plains). Its cockpit landscape of enclosed hollows ringed by peaks is considered among the best in the world. There are more than 100 caves, and the water system is fed almost entirely by rain.",
+            "The sea has come and gone several times. Along the cliffs, geologists have mapped and dated five former coastlines, marked by notches cut by waves, wave-cut platforms, beach deposits and layers of marine shells. About 8,000 to 4,000 years ago the sea flooded in and turned the area into an archipelago of islands, a little like Hạ Long Bay today. That's why it's often called \"Hạ Long Bay on land\"."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-15",
+              "cap": "Karst towers rising straight from the water."
+            },
+            {
+              "key": "r-ta-20",
+              "cap": "Towers and still water at Tràng An."
+            },
+            {
+              "key": "r-ta-243",
+              "cap": "Peaks in morning mist, seen from Múa mountain."
+            },
+            {
+              "key": "r-ta-246",
+              "cap": "A limestone valley with grazing buffalo near Tam Cốc."
+            }
+          ]
+        },
+        {
+          "h": "30,000 years of people",
+          "p": [
+            "People have lived among these towers for more than 30,000 years. Archaeologists have found 25 prehistoric sites here and excavated nine, including the caves of Hang Trống, Hang Bói and Hang Mòi. The oldest dated layers go back over 27,000 years.",
+            "For most of that time the area was inland forest. Its people hunted buffalo, gaur, deer, monkeys and porcupines, and gathered snails from the hillsides and streams: their discarded shells form layers two to three metres thick. By about 9,000 years ago they were wearing jewellery of perforated shells.",
+            "Then the sea rose. Instead of leaving, people adapted: from about 7,000 years ago they lived on oysters, cockles and sea fish, made knives and scrapers from large shells, and made some of the region's earliest pottery, around 9,000 years ago. When the sea fell back after about 5,000 years ago, they moved out of the caves to farm the plains. Researchers from Vietnam, Cambridge and Queen's University Belfast study the area to understand how early people coped with rising seas, a very modern question. They have even reconstructed the face of a person who lived here about 12,000 years ago."
+          ]
+        },
+        {
+          "h": "Hoa Lư, the first imperial capital",
+          "p": [
+            "In the 10th century, after the collapse of Chinese rule, Vietnam fell apart into the territories of twelve rival warlords. A local leader from Hoa Lư, Đinh Bộ Lĩnh, defeated them one by one, and in 968 he declared himself emperor of a united kingdom he called Đại Cồ Việt. He chose Hoa Lư as his capital because the limestone towers made natural walls; his builders only had to fill the gaps with earthen ramparts, some about 10 metres high, enclosing a citadel of around 300 hectares.",
+            "Hoa Lư stayed the capital for 42 years, under the Đinh and then the Early Lê dynasties. Đinh Bộ Lĩnh was assassinated in 979; his widow, Empress Dương Vân Nga, then married the general who succeeded him, Lê Hoàn. In 1010 the new Lý king, Lý Thái Tổ, issued his Edict on the Transfer of the Capital, complaining that Hoa Lư was too cramped among the mountains, and moved it to the plains at Đại La. Legend says a dragon rose into the sky as he arrived, so he named the new city Thăng Long, \"ascending dragon\": today's Hanoi.",
+            "Two 17th-century temples stand on the old palace grounds: the temple of King Đinh Tiên Hoàng and, about 300 metres away, the temple of King Lê Đại Hành, with statues of the king and of Empress Dương Vân Nga. Later, the Trần kings kept a retreat at Vũ Lâm in these mountains during their wars against the Mongols, and it is said that Emperor Trần Nhân Tông became a monk there."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-122",
+              "cap": "Hoa Lư, Vietnam's capital more than a thousand years ago."
+            },
+            {
+              "key": "r-ta-108",
+              "cap": "The east gate into the Hoa Lư ancient capital site."
+            },
+            {
+              "key": "r-ta-126",
+              "cap": "The main gate at Hoa Lư."
+            },
+            {
+              "key": "r-ta-118",
+              "cap": "The temple of King Lê Đại Hành."
+            },
+            {
+              "key": "r-ta-120",
+              "cap": "A gate at Hoa Lư."
+            },
+            {
+              "key": "r-ta-104",
+              "cap": "Temple buildings at the ancient capital."
+            },
+            {
+              "key": "r-ta-8",
+              "cap": "Statues in the Tứ Trụ temple honour four great generals of the Đinh dynasty."
+            }
+          ],
+          "tip": "For an art lover: in the King Đinh temple, look for the two dragon platforms, each carved from a single block of stone in the 17th century and named national treasures in 2017. One art researcher noticed that each dragon has three distinctly feminine hands, and reads them as a coded tribute to Empress Dương Vân Nga, who was married to two kings."
+        },
+        {
+          "h": "A sacred landscape",
+          "p": [
+            "Almost every cave and hollow here holds a shrine. The boat routes stop at small temples such as Đền Trình, Đền Trần and the Tứ Trụ temple. In Tam Cốc, Bích Động (\"Jade Grotto\") pagoda, founded in 1428, climbs a mountain in three levels and is known as the second most beautiful cave in the south. Thiên Tôn cave at Hoa Lư has dragons carved into the rock.",
+            "Local temples also keep Vietnam's origin story alive. The Cao Sơn temple honours one of the 100 children of Lạc Long Quân, the dragon lord, and Âu Cơ, the fairy, from whom the Vietnamese people are said to descend (50 followed their father to the sea, 50 their mother to the mountains). The Tràng An festival, held in spring around the 18th day of the third lunar month, honours a general of the ancient Hùng kings.",
+            "Nearby, Bái Đính has two faces. The old pagoda dates back to 1136. Around it, since 2003, a vast new complex has risen, one of the largest Buddhist sites in Vietnam, with a gilded bronze Buddha of about 100 tonnes, a 36-tonne bell, a 13-storey stupa about 100 metres tall, and 500 stone arhat statues along a corridor more than a kilometre long. It hosted the United Nations Day of Vesak in 2014. Pilgrims crowd it from Tết until about the end of the third lunar month."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-192",
+              "cap": "Part of the huge Bái Đính pagoda complex."
+            },
+            {
+              "key": "r-ta-201",
+              "cap": "The Tam Thế hall at Bái Đính."
+            },
+            {
+              "key": "r-ta-205",
+              "cap": "Bái Đính's stupa tower."
+            },
+            {
+              "key": "r-ta-203",
+              "cap": "The ceiling on the stupa's top floor."
+            },
+            {
+              "key": "r-ta-210",
+              "cap": "The bell tower at Bái Đính."
+            },
+            {
+              "key": "r-ta-213",
+              "cap": "The giant bell at Bái Đính, with a person for scale."
+            },
+            {
+              "key": "r-ta-9",
+              "cap": "A shrine at the water's edge on the boat route."
+            }
+          ],
+          "tip": "A little honeymoon lore: at the Thủy Đình water pavilion on the Tràng An route, local legend says that a couple who see two mallard ducks kissing will soon be married. You're one step ahead."
+        },
+        {
+          "h": "On the water",
+          "p": [
+            "The classic way to see Tràng An is in a small rowing boat, three or four people with a local rower, women and men alike. There are three routes. Route 1 loops through nine caves, including the Dark Cave, the Bright Cave and the Wine-Brewing Cave, and stops at three sacred sites. Route 2 passes four caves and the Vũ Lâm area. Route 3, added in 2018, includes Hang Mây, over a kilometre long. Some caves are so low you lie back in the boat as the rock passes centimetres overhead. A ticket was about 250,000 ₫ per person.",
+            "Nearby Tam Cốc (\"three caves\") follows a river through rice fields to the caves Hang Cả, Hang Hai and Hang Ba. Watch the rowers: some row with their feet, leaning back and pushing the oars with their soles."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-7",
+              "cap": "Boats on the Tràng An river route."
+            },
+            {
+              "key": "r-ta-11",
+              "cap": "Passing under a low cave arch."
+            },
+            {
+              "key": "r-ta-13",
+              "cap": "Inside a lit cave on the boat route."
+            },
+            {
+              "key": "r-ta-23",
+              "cap": "A boat beneath an overhanging cliff."
+            },
+            {
+              "key": "r-ta-12",
+              "cap": "Boats and karst peaks."
+            },
+            {
+              "key": "r-ta-70",
+              "cap": "A rower at Tam Cốc."
+            },
+            {
+              "key": "r-ta-69",
+              "cap": "A boatman at Tam Cốc."
+            },
+            {
+              "key": "r-ta-67",
+              "cap": "A fisherwoman at Tam Cốc."
+            },
+            {
+              "key": "r-ta-56",
+              "cap": "Water buffalo cooling off at Tam Cốc."
+            },
+            {
+              "key": "r-ta-60",
+              "cap": "Houses and banana trees at Tam Cốc."
+            }
+          ]
+        },
+        {
+          "h": "Climbing Múa mountain",
+          "p": [
+            "For the famous view, climb the roughly 500 stone steps up Ngọa Long (\"Lying Dragon\") mountain at Hang Múa, a path locals nickname the \"miniature Great Wall\". At the top are a stone dragon and a statue of Quan Âm, the goddess of mercy, and below you the whole valley of rivers and towers. Múa means \"dance\": a local legend says a Trần emperor watched his court dancers perform here."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-237",
+              "cap": "The view from the top of Múa mountain."
+            },
+            {
+              "key": "r-ta-242",
+              "cap": "The stone dragon on top of Múa mountain."
+            }
+          ]
+        },
+        {
+          "h": "Kong was here",
+          "p": [
+            "Hollywood came too. In February 2016, parts of Kong: Skull Island were filmed at Tràng An, Vân Long and Tam Cốc. The film set, a village of about 40 rattan huts, opened free to visitors in 2017. In 2019 it was taken down and replaced with a reconstructed prehistoric village, designed with advice from the Cambridge and Belfast archaeologists, a neat swap from movie myth to real history."
+          ]
+        },
+        {
+          "h": "Crafts of Ninh Bình",
+          "p": [
+            "Ninh Vân, the province's stone-carving village, has worked stone for around 400 to 500 years; its craftsmen carved Bái Đính's 500 arhats and built the extraordinary Phát Diệm Cathedral (1875–1899), a church of stone and ironwood that looks like a Vietnamese pagoda with Gothic touches. Next to Tam Cốc, Văn Lâm village has embroidered since the Trần dynasty, more than 700 years by local tradition."
+          ],
+          "tip": "For an art lover: Phát Diệm Cathedral is about an hour from Tràng An and well worth a detour. East meets West in carved stone, like Khải Định's tomb in Huế but two generations earlier."
+        },
+        {
+          "h": "Getting there and when",
+          "p": [
+            "Tràng An is about 90–100 km south of Hanoi, around two hours by road. From Huế, some north-south Reunification Express trains stop at Ninh Bình (roughly 10–12 hours); otherwise fly to Hanoi and drive. From Saigon, fly to Hanoi first.",
+            "Late November to December is cool and fairly dry, but water levels can be high late in the year and occasionally close the lowest caves. February to March is usually best for the boats, and late May to early June turns Tam Cốc's rice fields gold. It's popular, with about 2.8 million visitors in 2024, so start early. Keep an eye on the cliffs too: critically endangered Delacour's langurs have been reintroduced here and are breeding."
+          ],
+          "gallery": [
+            {
+              "key": "r-ta-248",
+              "cap": "On a boat in Ninh Bình."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Tràng An Scenic Landscape Complex",
+          "url": "https://en.wikipedia.org/wiki/Tr%C3%A0ng_An_Scenic_Landscape_Complex"
+        },
+        {
+          "title": "IUCN World Heritage Outlook: Trang An Landscape Complex",
+          "url": "https://worldheritageoutlook.iucn.org/node/1181"
+        },
+        {
+          "title": "UNEP-WCMC: Trang An Landscape Complex datasheet",
+          "url": "http://world-heritage-datasheets.unep-wcmc.org/datasheet/output/site/trang-an-landscape-complex/"
+        },
+        {
+          "title": "Vietnam National Authority of Tourism: Tràng An heritage",
+          "url": "https://vietnamtourism.vn/disan/en/index.php?catid=21"
+        },
+        {
+          "title": "Nguyen Khac Su (2021): Coastal plain exploration in the Post-Hoabinhian period",
+          "url": "https://www.vjol.info.vn/index.php/VSS/article/download/74526/63331"
+        },
+        {
+          "title": "Rabett et al. (2017): Tràng An limestone forest through the last glacial",
+          "url": "https://researchonline.ljmu.ac.uk/id/eprint/4615/"
+        },
+        {
+          "title": "Kahlert et al. (2021): Mid-Holocene coastline reconstruction, Tràng An",
+          "url": "https://pure.qub.ac.uk/en/publications/mid-holocene-coastline-reconstruction-from-geomorphological-sea-l/"
+        },
+        {
+          "title": "Wikipedia: Hoa Lư Ancient Capital",
+          "url": "https://en.wikipedia.org/wiki/Hoa_L%C6%B0_Ancient_Capital"
+        },
+        {
+          "title": "Wikipedia: Đinh Bộ Lĩnh",
+          "url": "https://en.wikipedia.org/wiki/%C4%90inh_B%E1%BB%99_L%C4%A9nh"
+        },
+        {
+          "title": "Wikipedia: Edict on the Transfer of the Capital",
+          "url": "https://en.wikipedia.org/wiki/Edict_on_the_Transfer_of_the_Capital"
+        },
+        {
+          "title": "Wikipedia: Đinh Tiên Hoàng Temple",
+          "url": "https://en.wikipedia.org/wiki/%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng_Temple"
+        },
+        {
+          "title": "Tiền Phong: The dragons with women's hands at King Đinh's temple",
+          "url": "https://tienphong.vn/van-nghe/157784/Giai-ma-hinh-rong-co-doi-tay-phu-nu-o-den-vua-Dinh.html"
+        },
+        {
+          "title": "Nhân Dân: Hành cung Vũ Lâm",
+          "url": "https://nhandan.vn/hanh-cung-vu-lam-khong-gian-van-hoa-lich-su-dac-biet-post861979.html"
+        },
+        {
+          "title": "Wikipedia (vi): Chùa Bái Đính",
+          "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_B%C3%A1i_%C4%90%C3%ADnh"
+        },
+        {
+          "title": "Thanh Niên: A day at Tràng An (2022)",
+          "url": "https://thanhnien.vn/mot-ngay-rong-choi-o-ky-quan-the-gioi-trang-an-1851507610.htm"
+        },
+        {
+          "title": "Tuổi Trẻ: A two-hour boat ride through Tràng An",
+          "url": "https://news.tuoitre.vn/a-two-hour-boat-ride-through-trang-an-landscape-complex-in-northern-vietnam-10369618.htm"
+        },
+        {
+          "title": "VnExpress International: Limestone-rich Tràng An",
+          "url": "https://e.vnexpress.net/photo/places/limestone-rich-trang-an-draws-tourists-with-ancient-allure-4207870.html"
+        },
+        {
+          "title": "VnExpress International: Ancient village to replace Kong set",
+          "url": "https://e.vnexpress.net/news/life/arts/ancient-village-to-replace-kong-skull-island-film-set-3987970.html"
+        },
+        {
+          "title": "VietNamNet: Kong set removed from Tràng An",
+          "url": "https://vietnamnet.vn/en/kong-skull-island-film-set-to-be-removed-out-of-trang-an-tourism-complex-569565.html"
+        },
+        {
+          "title": "Ninh Bình tourism: Hang Múa",
+          "url": "https://dulichninhbinh.com.vn/en/item/1781"
+        },
+        {
+          "title": "VTC News: The meaning of the name Hang Múa",
+          "url": "https://vtcnews.vn/ten-goi-hang-mua-co-y-nghia-gi-ar1045197.html"
+        },
+        {
+          "title": "VietnamPlus: Ninh Vân stone carving village",
+          "url": "https://en.vietnamplus.vn/ninh-van-where-stone-sculptures-become-soulful/239461.vnp"
+        },
+        {
+          "title": "Việt Nam News: Tràng An heritage city vision (2026)",
+          "url": "https://vietnamnews.vn/life-style/1784040/trang-an-at-the-heart-of-ninh-binh-s-heritage-city-vision.html"
+        }
+      ]
     }
   ],
 
