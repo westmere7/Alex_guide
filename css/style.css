@@ -836,3 +836,17 @@ dialog.reader::backdrop { background: var(--bg); }
 .reader-fig figcaption { margin-top: 6px; font-size: var(--fs-xs); line-height: 1.45; color: var(--text-3); }
 .reader-hero { margin: 0 0 18px; }
 .reader-hero img { aspect-ratio: 4 / 3; object-fit: cover; }
+.reader-maps { margin: -4px 0 8px; }
+.reader-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 4px 0 18px; }
+.reader-gallery .reader-fig { margin: 0; }
+.reader-gallery .reader-fig img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-sm); cursor: zoom-in; }
+.reader-gallery figcaption { font-size: 11.5px; }
+.reader-fig img { cursor: zoom-in; }
+dialog.lightbox {
+  border: 0; padding: 0; margin: 0; width: 100%; height: 100%; max-width: none; max-height: none; background: #000; color: #fff;
+}
+dialog.lightbox::backdrop { background: #000; }
+.lightbox[open] { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; padding: 56px 12px 24px; }
+.lightbox img { max-width: 100%; max-height: 78vh; object-fit: contain; }
+.lightbox p { max-width: 640px; text-align: center; font-size: var(--fs-sm); color: #d6d6d6; line-height: 1.5; padding: 0 8px; }
+.lightbox .icon-btn { position: absolute; top: calc(12px + env(safe-area-inset-top)); right: 12px; background: rgba(255,255,255,.12); color: #fff; border-color: transparent; }

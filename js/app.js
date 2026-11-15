@@ -799,6 +799,10 @@
           return (sec.h ? "<h2>" + esc(sec.h) + "</h2>" : "") +
             (sec.p || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
             (sec.imgs || (sec.img ? [sec.img] : [])).map(figure).join("") +
+            ((sec.gallery || []).length ? '<div class="reader-gallery">' + sec.gallery.map(figure).join("") + "</div>" : "") +
+            ((sec.maps || []).length ? '<div class="btn-row reader-maps">' + sec.maps.map(function (mp) {
+              return mapBtn(mp.key).replace(">" + icon("i-map") + "Map</a>", ">" + icon("i-map") + esc(mp.label) + " on map</a>");
+            }).join("") + "</div>" : "") +
             (sec.tip ? '<p class="reader-tip">' + icon("i-info") + "<span>" + esc(sec.tip) + "</span></p>" : "");
         }).join("") +
         ((r.sources || []).length ? '<div class="reader-sources"><h2>Sources</h2><ul>' + r.sources.map(function (src) {
@@ -815,6 +819,15 @@
       if (b) openReading(b.getAttribute("data-read"));
     });
     body.addEventListener("click", function (e) {
+      if (e.target.closest("[data-map-key]")) { closeReader(); return; }
+      var pic = e.target.closest(".reader-fig img");
+      if (pic) {
+        var lb = $("#lightbox");
+        $("#lb-img").src = pic.src; $("#lb-img").alt = pic.alt;
+        $("#lb-cap").textContent = pic.alt;
+        if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+        return;
+      }
       var b = e.target.closest("[data-done]");
       if (!b) return;
       var id = b.getAttribute("data-done");
@@ -824,6 +837,8 @@
       closeReader();
     });
     $("#reader-close").addEventListener("click", closeReader);
+    var lbox = $("#lightbox");
+    lbox.addEventListener("click", function () { if (lbox.close) lbox.close(); else lbox.removeAttribute("open"); });
     renderList();
   })();
 
@@ -850,7 +865,7 @@
   /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
   var COORDS = window.SGN_COORDS || {};
   var PIN_COLORS = { two: "#C2255C", art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
-    trips: "#5F3DC4", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
+    trips: "#5F3DC4", hue: "#B02525", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
   var mapLayers = (DATA.categories || []).map(function (c) { return { id: c.id, label: c.label, icon: c.icon }; })
     .concat([{ id: "eat", label: "Eat", icon: "i-bowl" }, { id: "drink", label: "Drinks", icon: "i-glass" }]);
   var catLabel = {};
@@ -999,10 +1014,16 @@
     });
   }
   function fitVisible(includeTrips) {
-    var pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt) && (includeTrips || pt.layer !== "trips"); });
+    var pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt) && (includeTrips || (pt.layer !== "trips" && pt.layer !== "hue")); });
     if (!pts.length) pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt); });
     if (pts.length < 2) { lmap.setView(pts[0] ? pts[0].ll : [LAT, LON], 15); return; }
     lmap.fitBounds(pts.map(function (pt) { return pt.ll; }), { padding: [36, 36], maxZoom: 16 });
+  }
+  function fitLayer(id) {
+    var pts = mapPoints.filter(function (pt) { return pt.ll && pt.layer === id && isVisible(pt); });
+    if (!pts.length) return;
+    if (pts.length === 1) { lmap.setView(pts[0].ll, 15); return; }
+    lmap.fitBounds(pts.map(function (pt) { return pt.ll; }), { padding: [50, 50], maxZoom: 15 });
   }
   function renderLayerChips() {
     $("#map-layers").innerHTML = mapLayers.map(function (l) {
@@ -1049,7 +1070,7 @@
       var id = b.dataset.layer, i = layersOn.indexOf(id);
       if (i >= 0) layersOn.splice(i, 1); else layersOn.push(id);
       saveMapState(); renderLayerChips(); refreshMarkers();
-      if (i < 0 && id === "trips") fitVisible(true);
+      if (i < 0 && (id === "trips" || id === "hue")) fitLayer(id);
     });
     $("#map-fit").addEventListener("click", function () { fitVisible(layersOn.indexOf("trips") >= 0); });
     $("#map-locate").addEventListener("click", locateMe);
@@ -1153,7 +1174,12 @@
     if (!fromMe && pt.layer === "home") { mapToast("Turn on your location (the target button) to get a route back to the hotel."); return; }
     var from = fromMe ? [meMarker.getLatLng().lat, meMarker.getLatLng().lng] : [LAT, LON];
     var straight = lmap.distance(from, pt.ll);
-    if (straight > 150000) { mapToast("You're too far away for a route. Try again in Saigon!"); return; }
+    if (straight > 150000) {
+      // e.g. a Huế pin while routing from the Saigon hotel: start from where you are instead
+      mapToast(fromMe ? "That's too far for a route from here. Try again once you're nearby."
+        : "Turn on your location (the target button) to get a route from where you are.");
+      return;
+    }
     var walk = straight < 2500;
     var mode = walk ? ["routed-foot", "foot", "walking"] : ["routed-car", "driving", "driving"];
     var url = "https://routing.openstreetmap.de/" + mode[0] + "/route/v1/" + mode[1] + "/" +

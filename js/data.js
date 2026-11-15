@@ -16,6 +16,7 @@ window.SGN_DATA = {
     { id: "old",   label: "History",      icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
+    { id: "hue",   label: "Huế",          icon: "i-plane" },
     { id: "trips", label: "Day trips",    icon: "i-van" }
   ],
 
@@ -377,6 +378,48 @@ window.SGN_DATA = {
       q: "Bùi Viện Walking Street"
     },
 
+    /* Huế — on this trip; see the "Huế and the royal tombs" read */
+    {
+      id: "hue-citadel", cat: "hue", img: "r-hue-citadel",
+      name: "Imperial City", vi: "Hoàng thành Huế · Đại Nội",
+      desc: "The walled palace of the Nguyễn emperors on the Perfume River, entered through the Noon Gate.",
+      time: "2–3 h", best: "Morning", cost: "~200k ₫", from: "Central Huế",
+      tip: "Buy a combined ticket if you're also visiting the tombs; it's valid for two days.",
+      q: "Imperial City Hue Ngọ Môn"
+    },
+    {
+      id: "hue-minhmang", cat: "hue", img: "r-hue-hero",
+      name: "Tomb of Minh Mạng", vi: "Lăng Minh Mạng",
+      desc: "Gates, bridges and pavilions laid out in perfect symmetry along a 700 m axis across two lakes.",
+      time: "1.5 h", best: "Early morning", cost: "~150k ₫", from: "Car ~12 km south of Huế",
+      tip: "The most peaceful of the tombs. Walk the full axis to the burial mound at the back.",
+      q: "Tomb of Minh Mang Hue"
+    },
+    {
+      id: "hue-tuduc", cat: "hue", img: "r-hue-tuduc",
+      name: "Tomb of Tự Đức", vi: "Lăng Tự Đức",
+      desc: "A poet-emperor's lakeside retreat, built as a pleasure garden he lived in for years.",
+      time: "1–1.5 h", best: "Morning", cost: "~150k ₫", from: "Car ~6 km south of Huế",
+      tip: "Find the Xung Khiêm pavilion on the lake, where he wrote poetry.",
+      q: "Tomb of Tu Duc Hue"
+    },
+    {
+      id: "hue-khaidinh", cat: "hue", img: "r-hue-kd-stairs",
+      name: "Tomb of Khải Định", vi: "Lăng Khải Định",
+      desc: "Concrete, dragons and glittering glass-and-porcelain mosaics climbing a hillside. East meets West.",
+      time: "1 h", best: "Morning", cost: "~150k ₫", from: "Car ~10 km south of Huế",
+      tip: "Lots of steps. The mosaic interior of Thiên Định palace is the highlight for an art lover.",
+      q: "Tomb of Khai Dinh Hue"
+    },
+    {
+      id: "hue-gialong", cat: "hue", img: null,
+      name: "Tomb of Gia Long", vi: "Lăng Gia Long",
+      desc: "The dynasty founder's double grave with his empress, in quiet open hills far from the crowds.",
+      time: "1 h", best: "Morning", cost: "Ticket at the gate", from: "Car ~20 km south of Huế",
+      tip: "Furthest out and least visited. Combine it with Minh Mạng on the same side of the river.",
+      q: "Tomb of Gia Long Hue"
+    },
+
     /* Day trips — realistically pick one */
     {
       id: "cu-chi", cat: "trips", img: "cu-chi",
@@ -601,6 +644,12 @@ window.SGN_DATA = {
               "key": "r-gr-tomb",
               "cap": "The tomb house at the Museum of Ethnology, with its fence of carved figures."
             }
+          ],
+          "gallery": [
+            {
+              "key": "r-gr-g1",
+              "cap": "Statues on the fence beneath the patterned roof."
+            }
           ]
         },
         {
@@ -624,7 +673,17 @@ window.SGN_DATA = {
               "cap": "A weathered guardian figure from a Jarai tomb near Kon Tum."
             }
           ],
-          "tip": "For an art lover: this is some of Vietnam's most striking folk sculpture. Look at how much feeling comes from a few deep cuts: the slump of a grieving body, a hand pressed to a cheek."
+          "tip": "For an art lover: this is some of Vietnam's most striking folk sculpture. Look at how much feeling comes from a few deep cuts: the slump of a grieving body, a hand pressed to a cheek.",
+          "gallery": [
+            {
+              "key": "r-gr-g2",
+              "cap": "Figures carved from single tree trunks."
+            },
+            {
+              "key": "r-gr-g3",
+              "cap": "Weathered figures at the corner of the fence."
+            }
+          ]
         },
         {
           "h": "Pơ thi: the farewell ceremony",
@@ -677,6 +736,284 @@ window.SGN_DATA = {
         {
           "title": "Authentik Travel: The Gia-rai funerary house",
           "url": "https://authentiktravel.com/gia-rai-funerary-house-beliefs-about-death"
+        }
+      ]
+    },
+    {
+      "id": "hue-royal-tombs",
+      "title": "Huế and the royal tombs",
+      "vi": "Cố đô Huế · Lăng tẩm",
+      "img": {
+        "key": "r-hue-hero",
+        "cap": "The Tomb of Minh Mạng: gates, bridges and pavilions laid out along one long axis across the lakes."
+      },
+      "teaser": "Vietnam's last imperial capital, where emperors designed their own tombs as landscapes for eternity.",
+      "minutes": 8,
+      "lead": "For 143 years, Huế was the seat of Vietnam's last dynasty. Its emperors left behind a walled Imperial City on the Perfume River and, in the green hills to the south, tombs they designed while they were still alive: part grave, part palace, part garden.",
+      "sections": [
+        {
+          "h": "Vietnam's last imperial capital",
+          "p": [
+            "In 1802 Nguyễn Phúc Ánh crowned himself Emperor Gia Long and made Huế, then called Phú Xuân, the capital of a newly united Vietnam. His Nguyễn dynasty would rule through 13 emperors until 1945, when the last of them, Bảo Đại, abdicated.",
+            "Gia Long had geomancers choose the site. The great walled Citadel faces the Perfume River (sông Hương), with the flat-topped Ngự Bình hill rising beyond the water like a screen. Inside the walls sits the Imperial City (Đại Nội), and at its heart the Purple Forbidden City, where only the emperor's household could go.",
+            "War was hard on it. Fighting in 1947 burned the palace core, and in the 1968 Tết Offensive only about 10 of some 160 buildings survived. What stands today is a mix of originals and careful restoration, still ongoing. The whole Complex of Huế Monuments became a UNESCO World Heritage Site in 1993."
+          ],
+          "img": {
+            "key": "r-hue-citadel",
+            "cap": "The Ngọ Môn (Noon Gate), the main entrance to the Imperial City."
+          },
+          "maps": [
+            {
+              "key": "hue-citadel",
+              "label": "Imperial City"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hue-g01",
+              "cap": "A pavilion inside the Imperial City."
+            },
+            {
+              "key": "r-hue-g02",
+              "cap": "Inside the Imperial City walls."
+            },
+            {
+              "key": "r-hue-g03",
+              "cap": "Palace halls of the Imperial City."
+            },
+            {
+              "key": "r-hue-g04",
+              "cap": "An ornate gateway in the Imperial City."
+            },
+            {
+              "key": "r-hue-g05",
+              "cap": "One of the Imperial City's painted gates."
+            },
+            {
+              "key": "r-hue-g06",
+              "cap": "A gate through the Citadel's outer walls."
+            }
+          ]
+        },
+        {
+          "h": "Tombs for living as well as dying",
+          "p": [
+            "Nguyễn emperors chose their burial sites, and often began building, long before they died. The tombs sit among the hills and pine forests along the Perfume River south of the city, and seven of them are imperial tombs.",
+            "Each is different, but most share a pattern: a ceremonial courtyard lined with stone mandarins, elephants and horses to guard and guide the emperor's spirit; a stele pavilion carved with his life story; a temple where he was worshipped; and finally the sepulchre itself. Lakes, bridges and gardens tie it all into the landscape."
+          ],
+          "img": {
+            "key": "r-hue-river",
+            "cap": "A dragon boat on the Perfume River. Boat trips are a classic way to reach the tombs."
+          },
+          "gallery": [
+            {
+              "key": "r-hue-g07",
+              "cap": "The Perfume River winds south toward the royal tombs."
+            },
+            {
+              "key": "r-hue-g08",
+              "cap": "Dragon boats on the Perfume River."
+            }
+          ]
+        },
+        {
+          "h": "Minh Mạng: perfect harmony",
+          "p": [
+            "The tomb of Minh Mạng, the second emperor, is often called the most majestic. Building began in 1840. He died in early 1841 before it was finished, and his son Thiệu Trị completed it in 1843.",
+            "Everything follows a single central axis about 700 metres long, from the Đại Hồng Gate to the wall behind the burial mound. Courtyards, halls, gates and bridges are set out in mirrored pairs on either side, and two lakes wrap around them. It sits in hills about 12 to 14 km from the city, and it is peaceful, symmetrical and best seen slowly."
+          ],
+          "img": {
+            "key": "r-hue-mm-horse",
+            "cap": "A stone horse in the salutation court, with the stele pavilion behind."
+          },
+          "maps": [
+            {
+              "key": "hue-minhmang",
+              "label": "Minh Mạng tomb"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hue-g09",
+              "cap": "A bridge across the lake toward a pavilion."
+            },
+            {
+              "key": "r-hue-g10",
+              "cap": "A weathered gateway at Minh Mạng's tomb."
+            },
+            {
+              "key": "r-hue-g11",
+              "cap": "The long ceremonial courtyard."
+            },
+            {
+              "key": "r-hue-g12",
+              "cap": "Minh Mạng's tomb across the lake on a misty day."
+            }
+          ]
+        },
+        {
+          "h": "Tự Đức: a poet's retreat",
+          "p": [
+            "Tự Đức had the longest reign of the dynasty, about 36 years. He built his tomb between 1864 and 1867 and then used it as a country retreat for the rest of his life, so it feels more like a pleasure garden than a grave.",
+            "On the lake stands the Xung Khiêm pavilion, where he wrote poetry. He even wrote his own epitaph, carved on what is said to be the largest stele of its kind in Vietnam, a stone that took four years to bring from a quarry more than 500 km away.",
+            "Paradise had a price. The forced labour and extra taxes behind it fuelled a failed coup against him in 1866. And the grave in the tomb is not where he lies: his real burial place was kept secret and has never been found."
+          ],
+          "img": {
+            "key": "r-hue-tuduc",
+            "cap": "Xung Khiêm pavilion on the lake at Tự Đức's tomb, where the emperor wrote poetry."
+          },
+          "maps": [
+            {
+              "key": "hue-tuduc",
+              "label": "Tự Đức tomb"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hue-g13",
+              "cap": "Pavilions by the lake."
+            },
+            {
+              "key": "r-hue-g14",
+              "cap": "A lakeside pavilion on stilts."
+            },
+            {
+              "key": "r-hue-g15",
+              "cap": "Inside the tomb enclosure."
+            },
+            {
+              "key": "r-hue-g16",
+              "cap": "A hall in the temple area."
+            },
+            {
+              "key": "r-hue-g17",
+              "cap": "A stone gate and pillar, softened by moss."
+            }
+          ]
+        },
+        {
+          "h": "Khải Định: East meets West",
+          "p": [
+            "The last great tomb is the most surprising. Khải Định began it in 1920 on Châu Chữ mountain, and it was finished in 1931, after his death, under his son Bảo Đại. It is the smallest of the royal tombs, but it took 11 years.",
+            "Instead of wood and tile, it is built of concrete, steel and slate, and its style mixes Vietnamese tradition with European touches: Baroque, Gothic and Neoclassical. A grand staircase climbs past dragon balustrades to a courtyard of stone mandarins, elephants and horses, then on to an unusual eight-sided stele pavilion.",
+            "The real showpiece is inside the Thiên Định palace. Its walls are covered in a glittering mosaic of glass and porcelain, nine dragons are painted across the ceiling by the royal painter Phan Văn Tánh, and a bronze statue of the emperor, cast in Marseille, sits above his grave. Some accounts say he raised taxes by 30% to pay for it, though historians dispute this."
+          ],
+          "imgs": [
+            {
+              "key": "r-hue-kd-stairs",
+              "cap": "The dragon staircase and gate at Khải Định's tomb."
+            },
+            {
+              "key": "r-hue-kd-court",
+              "cap": "Stone mandarins, an elephant and a horse stand guard in the salutation court."
+            },
+            {
+              "key": "r-hue-kd-hall",
+              "cap": "Inside Thiên Định palace: mosaics of glass and porcelain around the emperor's statue."
+            }
+          ],
+          "tip": "For an art lover: get close to the walls of Thiên Định palace. The mosaics are made from glass and porcelain pieces, so the closer you look, the more detail appears.",
+          "maps": [
+            {
+              "key": "hue-khaidinh",
+              "label": "Khải Định tomb"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hue-g18",
+              "cap": "The richly decorated façade."
+            },
+            {
+              "key": "r-hue-g19",
+              "cap": "Dragon balustrades on the staircase."
+            },
+            {
+              "key": "r-hue-g20",
+              "cap": "Ornaments inside the tomb."
+            }
+          ]
+        },
+        {
+          "h": "Gia Long and the quieter tombs",
+          "p": [
+            "The founder's tomb lies about 20 km south of Huế. Gia Long first built it for his wife, Empress Thừa Thiên, after she died in 1814, and the two are buried side by side in a double grave set in open, hilly country. It is further out and far less visited, a calm contrast to the busier tombs.",
+            "Thiệu Trị, Đồng Khánh and Dục Đức also have tombs nearby, smaller and quieter still, for anyone who falls for the place."
+          ],
+          "maps": [
+            {
+              "key": "hue-gialong",
+              "label": "Gia Long tomb"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hue-g21",
+              "cap": "The double grave of Gia Long and Empress Thừa Thiên."
+            },
+            {
+              "key": "r-hue-g22",
+              "cap": "The stele pavilion at Gia Long's tomb."
+            },
+            {
+              "key": "r-hue-g23",
+              "cap": "Gia Long's tomb seen across its lake."
+            },
+            {
+              "key": "r-hue-g24",
+              "cap": "Steps up to Gia Long's tomb."
+            },
+            {
+              "key": "r-hue-g25",
+              "cap": "Stone elephants and guardians at Gia Long's tomb, photographed in 1898."
+            }
+          ]
+        },
+        {
+          "h": "Visiting from Saigon",
+          "p": [
+            "Huế is about an hour and a half's flight from Saigon. Allow one day for the Imperial City and another for the tombs, which are best reached by car, motorbike taxi or a boat trip on the Perfume River.",
+            "In 2026, travel sites list the Imperial City at about 200,000 ₫ and each of the main tombs (Minh Mạng, Tự Đức, Khải Định) at about 150,000 ₫. Combined tickets save money: about 420,000 ₫ for the Imperial City plus two tombs, or 530,000 ₫ for the Imperial City plus three, valid for two days. Sites open roughly 7am to 5pm, a little longer in summer. These come from travel sites, not the official ticket office, so check at the counter."
+          ],
+          "tip": "Late November to early December is central Vietnam's rainy season. Bring a rain jacket and good shoes, check for flood warnings before you go, and visit the tombs early in the day. Cover shoulders and knees at temples and shrines."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Tomb of Tự Đức",
+          "url": "https://en.wikipedia.org/wiki/Tomb_of_T%E1%BB%B1_%C4%90%E1%BB%A9c"
+        },
+        {
+          "title": "Wikipedia: Tomb of Khải Định",
+          "url": "https://en.wikipedia.org/wiki/Tomb_of_Kh%E1%BA%A3i_%C4%90%E1%BB%8Bnh"
+        },
+        {
+          "title": "Wikipedia: Tomb of Gia Long",
+          "url": "https://en.wikipedia.org/wiki/Tomb_of_Gia_Long"
+        },
+        {
+          "title": "Wikipedia: Imperial City of Huế",
+          "url": "https://en.wikipedia.org/wiki/Imperial_City_of_Hu%E1%BA%BF"
+        },
+        {
+          "title": "Wikipedia: Nguyễn dynasty",
+          "url": "https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_dynasty"
+        },
+        {
+          "title": "VietnamPlus: The traditional yet poetic beauty of the Tomb of Minh Mang",
+          "url": "https://en.vietnamplus.vn/the-traditional-yet-poetic-beauty-of-the-tomb-of-minh-mang/166964.vnp"
+        },
+        {
+          "title": "Huế city: Minh Mang tomb",
+          "url": "https://hue.gov.vn/Home/Festival/Festival-Detail/tid/Minh-Mang-tomb/newsid/400A9EAE-71F9-427A-A295-A99200AA8329/cid/E4530DE2-FB59-4737-8EA1-A854010B166C"
+        },
+        {
+          "title": "Hue Top Tours: Hue entrance fees 2026",
+          "url": "https://huetoptours.com/hue-entrance-fees/"
+        },
+        {
+          "title": "Huracars: Hue entrance tickets 2026",
+          "url": "https://huracars.com/hue-entrance-tickets-2026/"
         }
       ]
     }

@@ -45,7 +45,7 @@
     (DATA.readings || []).forEach(function (r) {
       if (r.img) subjects[r.img.key] = r.title + " (photo)";
       (r.sections || []).forEach(function (sec) {
-        (sec.imgs || (sec.img ? [sec.img] : [])).forEach(function (im) { subjects[im.key] = r.title + ": " + (im.cap || "photo"); });
+        (sec.imgs || (sec.img ? [sec.img] : [])).concat(sec.gallery || []).forEach(function (im) { subjects[im.key] = r.title + ": " + (im.cap || "photo"); });
       });
     });
     document.getElementById("credits").innerHTML = Object.keys(subjects).filter(function (k) { return IMAGES[k]; }).map(function (k) {
