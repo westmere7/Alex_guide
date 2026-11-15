@@ -763,6 +763,13 @@
     if (!list) return;
     var readings = DATA.readings || [];
     var done = store.get("sgn-guide-read", {});
+    function figure(img) {
+      var im = img && IMAGES[img.key];
+      if (!im) return "";
+      // eager: lazy-loading inside the scrolling <dialog> isn't reliable on every phone
+      return '<figure class="reader-fig"><img src="' + esc(im.src) + '" alt="' + esc(img.cap || "") + '" decoding="async">' +
+        (img.cap ? "<figcaption>" + esc(img.cap) + "</figcaption>" : "") + "</figure>";
+    }
     function meta(r) {
       return '<p class="read-meta"><span>' + esc(r.minutes || 3) + " min read</span>" +
         (done[r.id] ? '<span class="done">' + icon("i-check") + "Read</span>" : "") + "</p>";
@@ -774,7 +781,8 @@
       }
       list.innerHTML = readings.map(function (r) {
         return '<button type="button" class="read-card" data-read="' + esc(r.id) + '">' +
-          '<span class="tile">' + icon(r.icon || "t-read") + "</span>" +
+          (r.img && IMAGES[r.img.key] ? '<span class="thumb read-thumb"><img src="' + esc(IMAGES[r.img.key].src) + '" alt="" loading="lazy" decoding="async"></span>'
+            : '<span class="tile">' + icon(r.icon || "t-read") + "</span>") +
           '<span class="row-main">' + (r.vi ? '<span class="vi">' + esc(r.vi) + "</span>" : "") +
           '<span class="t">' + esc(r.title) + '</span><span class="d">' + esc(r.teaser || "") + "</span>" + meta(r).replace(/<p /, "<span ").replace(/<\/p>$/, "</span>") + "</span></button>";
       }).join("");
@@ -783,12 +791,14 @@
       var r = readings.filter(function (x) { return x.id === id; })[0];
       if (!r) return;
       body.innerHTML =
+        (r.img ? figure(r.img).replace("reader-fig", "reader-fig reader-hero") : "") +
         (r.vi ? '<p class="vi">' + esc(r.vi) + "</p>" : "") +
         '<h1 id="reader-title">' + esc(r.title) + "</h1>" + meta(r) +
         (r.lead ? '<p class="reader-lead">' + esc(r.lead) + "</p>" : "") +
         (r.sections || []).map(function (sec) {
           return (sec.h ? "<h2>" + esc(sec.h) + "</h2>" : "") +
             (sec.p || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+            (sec.imgs || (sec.img ? [sec.img] : [])).map(figure).join("") +
             (sec.tip ? '<p class="reader-tip">' + icon("i-info") + "<span>" + esc(sec.tip) + "</span></p>" : "");
         }).join("") +
         ((r.sources || []).length ? '<div class="reader-sources"><h2>Sources</h2><ul>' + r.sources.map(function (src) {

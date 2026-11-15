@@ -557,7 +557,130 @@ window.SGN_DATA = {
      { id, title, vi, icon, teaser, minutes, lead,
        sections: [{ h, p: ["paragraph", ...], tip }],
        sources: [{ title, url }] } */
-  readings: [],
+  readings: [
+    {
+      "id": "nha-mo-gia-rai",
+      "title": "The tomb houses of the Gia Rai",
+      "vi": "Nhà mồ Gia Rai",
+      "img": {
+        "key": "r-gr-hero",
+        "cap": "A Gia Rai tomb house, built by Jrai Arap craftsmen from Gia Lai, at the Vietnam Museum of Ethnology in Hanoi."
+      },
+      "teaser": "Carved wooden mourners, painted roofs, and a final ceremony that sets the dead free.",
+      "minutes": 7,
+      "lead": "In the Central Highlands, the Gia Rai honour their dead with a tomb house ringed by carved wooden figures. Then, after one last great ceremony, they walk away from it for good, and let the forest take it back.",
+      "sections": [
+        {
+          "h": "Who the Gia Rai are",
+          "p": [
+            "The Gia Rai (also written Jrai or Jarai) are one of the largest peoples of Vietnam's Central Highlands, living mainly in Gia Lai province and in parts of Kon Tum and Đắk Lắk. Their language belongs to the Austronesian family and is related to Cham, so it sounds nothing like Vietnamese.",
+            "Society is matrilineal. Children take their mother's family name, and a husband moves in with his wife's family. Villages (plơi) are built of stilt houses around a tall communal house, the rông, where the village meets."
+          ]
+        },
+        {
+          "h": "The soul that stays behind",
+          "p": [
+            "For the Gia Rai, everything has a soul. When a person dies, their soul becomes a spirit (ma) that does not leave straight away. It lingers by the grave, visits home, and still needs to eat. So the family brings it food, often every day.",
+            "This in-between time lasts from one to three years: about a year for a poorer family, longer for a wealthier one. While it lasts, the family is in mourning. Traditionally they don't wear new clothes, use new things, or go travelling. The dead and the living are still tied together, and only one ceremony can untie them."
+          ]
+        },
+        {
+          "h": "The tomb house",
+          "p": [
+            "After a simple first burial, the family and village build a proper tomb house, the nhà mồ. Men gather timber, bamboo, rattan and grass and do the building, women cook for them, and neighbours lend a hand. It can take anything from a week to a month. Sources differ on whether it is finished before the farewell ceremony or as part of it.",
+            "The roof is the showpiece: wooden planks covered in woven bamboo, painted with a homemade red pigment. The patterns show the ceremony itself, with gong players, drummers and xoang dancers, alongside elephants and birds. One tomb can hold many members of the same family over the years.",
+            "Inside go the things the dead will need, and gifts from those left behind: gongs, jars, baskets, bowls, tools and bead bracelets. Today you may also find modern things, because the idea is simply to send loved ones off with what they valued.",
+            "Each Gia Rai subgroup builds its own style. The Mơthur around Ayun Pa build a round tomb like a haystack. The Hđrung around Pleiku build one tall and steep like a rông house. The Arap build a long, low tomb surrounded by many statues."
+          ],
+          "imgs": [
+            {
+              "key": "r-gr-inside",
+              "cap": "Inside a Jarai tomb near Kon Tum: offerings and belongings for the dead, including a television."
+            },
+            {
+              "key": "r-gr-tomb",
+              "cap": "The tomb house at the Museum of Ethnology, with its fence of carved figures."
+            }
+          ]
+        },
+        {
+          "h": "The statues",
+          "p": [
+            "Around the tomb stands a fence of wooden figures, the tượng nhà mồ. Each is carved from a single piece of hardwood using only an axe, chisel and knife, with no sketches. The rough, chunky cuts are part of the style: faces are bold and simple, and the carver's marks stay visible.",
+            "The figures are a portrait of life itself. There are mourners crouching with hands on their faces or propping up their chins, the image of a grieving husband or wife. There are mothers holding babies, pregnant women, embracing couples and infants. Together they tell the full circle of life, from love and birth to death and rebirth, and they keep the dead company. Animals sometimes join them for the same reason.",
+            "The statues are made for the farewell ceremony and then left behind, slowly greying and cracking in the sun and rain. That weathering isn't neglect. It is meant to happen."
+          ],
+          "imgs": [
+            {
+              "key": "r-gr-pair",
+              "cap": "Carved figures on the tomb fence. Couples and pregnant women speak of fertility and rebirth."
+            },
+            {
+              "key": "r-gr-face",
+              "cap": "A carved head, cut with axe and chisel. The tool marks are part of the look."
+            },
+            {
+              "key": "r-gr-guard",
+              "cap": "A weathered guardian figure from a Jarai tomb near Kon Tum."
+            }
+          ],
+          "tip": "For an art lover: this is some of Vietnam's most striking folk sculpture. Look at how much feeling comes from a few deep cuts: the slump of a grieving body, a hand pressed to a cheek."
+        },
+        {
+          "h": "Pơ thi: the farewell ceremony",
+          "p": [
+            "Between one and three years after a death comes pơ thi, the grave-abandonment ceremony (lễ bỏ mả). The Gia Rai consider it the most important rite of the whole life cycle. It often lasts about three days, and the whole village turns out, led by a respected elder.",
+            "There are prayers to the gods and to the dead, and rice wine poured onto the ground. Relatives keep vigil by the tomb at night. Gongs and drums play, and young men smeared with mud and wearing masks dance as spirits. There may be puppets, and a big night-time performance circles the tomb. Guests share rượu cần, rice wine sipped through long bamboo straws from a shared jar.",
+            "At the end comes a final farewell. From then on the family stops bringing food, the mourning rules are lifted, and the dead person's soul is free to join the ancestors. The tomb is left to the weather, and nobody tends it again. It's a costly event, and families may save or borrow for years to give a loved one a proper send-off."
+          ]
+        },
+        {
+          "h": "A tradition under pressure",
+          "p": [
+            "Fewer people now carve the old way. Good hardwood is scarce after years of deforestation, statues have been stolen from cemeteries to sell as 'ethnic art', and some families have switched to plaster figures. A 2020 survey still counted about 1,500 wooden statues in 177 villages of Gia Lai, and the province now runs carving contests and classes so younger people learn from master artisans such as Ksor Krôh.",
+            "Statues increasingly appear outside cemeteries too, at rông houses, parks and community tourism sites, which is where most visitors now see them."
+          ]
+        },
+        {
+          "h": "Where to see them",
+          "p": [
+            "You won't find tomb houses in Saigon. The best place is the Vietnam Museum of Ethnology in Hanoi, whose Gia Rai tomb house was built in 1998 by five Jrai Arap men from Mrông Ngọ village in Gia Lai, the traditional way. In the Highlands, Pleiku and the villages around it (such as Kép village) still have statues, and the Đắk Lắk Museum in Buôn Ma Thuột displays some too."
+          ],
+          "tip": "If you ever visit a real Gia Rai cemetery, go with a local guide. It is a sacred place: ask before taking photos, and never touch, move or take anything from a tomb."
+        }
+      ],
+      "sources": [
+        {
+          "title": "VietnamPlus: Grave-abandoning ceremony of Jarai ethnic people",
+          "url": "https://en.vietnamplus.vn/grave-abandoning-ceremony-of-jarai-ethnic-people-post207007.vnp"
+        },
+        {
+          "title": "VOV4: Nhà mồ và quan niệm về cái chết của người Gia Rai",
+          "url": "https://vov4.vov.vn/bao-ton-vh/nha-mo-va-quan-niem-ve-cai-chet-cua-nguoi-gia-rai-430891.vov4"
+        },
+        {
+          "title": "Nhân Dân: Nghệ thuật tạc tượng nhà mồ ở Tây Nguyên (2026)",
+          "url": "https://nhandan.vn/nghe-thuat-tac-tuong-nha-mo-o-tay-nguyen-post948040.html"
+        },
+        {
+          "title": "Viet Nam News: Wooden sculptures play key roles in life and death",
+          "url": "https://vietnamnews.vn/life-style/653580/wooden-sculptures-play-key-roles-in-life-and-death.html"
+        },
+        {
+          "title": "Vietnam Heritage: A grave matter",
+          "url": "https://vietnamheritage.com.vn/a-grave-matter/"
+        },
+        {
+          "title": "Lam Museum of Anthropology: Jarai sculptures",
+          "url": "https://lammuseum.wfu.edu/2025/09/jarai-sculptures/"
+        },
+        {
+          "title": "Authentik Travel: The Gia-rai funerary house",
+          "url": "https://authentiktravel.com/gia-rai-funerary-house-beliefs-about-death"
+        }
+      ]
+    }
+  ],
 
   /* ---------- DRINKS ---------- */
   drinkTypes: [

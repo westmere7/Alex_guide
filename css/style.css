@@ -830,3 +830,9 @@ dialog.reader::backdrop { background: var(--bg); }
 .reader-sources h2 { font-size: var(--fs-sm); margin: 0 0 8px; color: var(--text-2); }
 .reader-sources ul { list-style: none; display: grid; gap: 6px; font-size: var(--fs-sm); }
 .reader-done { margin-top: 24px; width: 100%; justify-content: center; }
+.read-thumb { width: 64px; height: 64px; border-radius: var(--r-md); }
+.reader-fig { margin: 18px 0 20px; }
+.reader-fig img { width: 100%; border-radius: var(--r-md); background: var(--sunken); }
+.reader-fig figcaption { margin-top: 6px; font-size: var(--fs-xs); line-height: 1.45; color: var(--text-3); }
+.reader-hero { margin: 0 0 18px; }
+.reader-hero img { aspect-ratio: 4 / 3; object-fit: cover; }

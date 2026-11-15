@@ -239,5 +239,12 @@ window.SGN_IMAGES = {
   "page": "https://www.flickr.com/photos/90955804@N04/49273691491",
   "by": "Ted's photos - Returns in December",
   "lic": "CC BY-NC-SA 2.0"
- }
+ },
+  /* Read: Gia Rai tomb houses */
+  "r-gr-hero": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Giarai_Tomb%2C_view_1_-_Vietnam_Museum_of_Ethnology_-_Hanoi%2C_Vietnam_-_DSC03420.JPG/960px-Giarai_Tomb%2C_view_1_-_Vietnam_Museum_of_Ethnology_-_Hanoi%2C_Vietnam_-_DSC03420.JPG", page: "https://commons.wikimedia.org/wiki/File:Giarai_Tomb,_view_1_-_Vietnam_Museum_of_Ethnology_-_Hanoi,_Vietnam_-_DSC03420.JPG", by: "Daderot", lic: "CC0" },
+  "r-gr-tomb": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%281%29_%2826719509259%29.jpg/960px-Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%281%29_%2826719509259%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Giarai_tomb,_Museum_of_Ethnology,_Hanoi_(1)_(26719509259).jpg", by: "Richard Mortel", lic: "CC BY 2.0" },
+  "r-gr-pair": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%284%29_%2838439443686%29.jpg/960px-Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%284%29_%2838439443686%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Giarai_tomb,_Museum_of_Ethnology,_Hanoi_(4)_(38439443686).jpg", by: "Richard Mortel", lic: "CC BY 2.0" },
+  "r-gr-face": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%286%29_%2838495094351%29.jpg/960px-Giarai_tomb%2C_Museum_of_Ethnology%2C_Hanoi_%286%29_%2838495094351%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Giarai_tomb,_Museum_of_Ethnology,_Hanoi_(6)_(38495094351).jpg", by: "Richard Mortel", lic: "CC BY 2.0" },
+  "r-gr-guard": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Jarai_tomb_%28guardian_spirit_sculpture%29.jpg/960px-Jarai_tomb_%28guardian_spirit_sculpture%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Jarai_tomb_(guardian_spirit_sculpture).jpg", by: "Rdavout", lic: "CC BY-SA 3.0" },
+  "r-gr-inside": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Jarai_tomb_%28inside_shot%29.jpg/960px-Jarai_tomb_%28inside_shot%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Jarai_tomb_(inside_shot).jpg", by: "Rdavout", lic: "CC BY-SA 3.0" }
 };
