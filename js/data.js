@@ -16,7 +16,7 @@ window.SGN_DATA = {
     { id: "old",   label: "History",      icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
-    { id: "hue",   label: "Huế",          icon: "i-plane" },
+    { id: "hue",   label: "Huế",          icon: "i-pavilion" },
     { id: "trips", label: "Day trips",    icon: "i-van" }
   ],
 
@@ -312,6 +312,15 @@ window.SGN_DATA = {
       q: "Mariamman Temple Ho Chi Minh City"
     },
 
+    {
+      id: "giac-lam", cat: "spirit", img: "r-mo-stupa1",
+      name: "Giác Lâm Pagoda", vi: "Chùa Giác Lâm",
+      desc: "One of Saigon's oldest pagodas, with a peaceful garden of monks' stupas.",
+      time: "45 min", best: "Morning", cost: "Free", from: "Car 20–30 min",
+      tip: "Dress modestly and walk quietly through the stupa garden at the back.",
+      q: "Chùa Giác Lâm Lạc Long Quân"
+    },
+
     /* Out & about */
     {
       id: "zoo", cat: "out", img: null,
@@ -418,6 +427,15 @@ window.SGN_DATA = {
       time: "1 h", best: "Morning", cost: "Ticket at the gate", from: "Car ~20 km south of Huế",
       tip: "Furthest out and least visited. Combine it with Minh Mạng on the same side of the river.",
       q: "Tomb of Gia Long Hue"
+    },
+
+    {
+      id: "hue-anbang", cat: "hue", img: "r-mo-hero",
+      name: "An Bằng cemetery", vi: "Nghĩa trang An Bằng · \"city of ghosts\"",
+      desc: "A village cemetery of towering, colourful family tombs covered in broken-porcelain mosaics.",
+      time: "1 h", best: "Morning light", cost: "Free", from: "Car, east of Huế toward the coast",
+      tip: "Treat it as a place of remembrance: don't climb or step on graves, and no drones. See the \"Graves of everyday Vietnam\" read.",
+      q: "An Bang cemetery Vinh An Phu Vang Hue"
     },
 
     /* Day trips — realistically pick one */
@@ -609,30 +627,31 @@ window.SGN_DATA = {
         "key": "r-gr-hero",
         "cap": "A Gia Rai tomb house, built by Jrai Arap craftsmen from Gia Lai, at the Vietnam Museum of Ethnology in Hanoi."
       },
-      "teaser": "Carved wooden mourners, painted roofs, and a final ceremony that sets the dead free.",
-      "minutes": 7,
-      "lead": "In the Central Highlands, the Gia Rai honour their dead with a tomb house ringed by carved wooden figures. Then, after one last great ceremony, they walk away from it for good, and let the forest take it back.",
+      "teaser": "Carved wooden mourners, painted roofs, and a final ceremony that sets the dead free. Plus how the rest of Vietnam says goodbye.",
+      "minutes": 14,
+      "lead": "In the Central Highlands, the Gia Rai honour their dead with a tomb house ringed by carved wooden figures. Then, after one last great ceremony, they walk away from it for good, and let the forest take it back. It's one of the most striking ways of saying goodbye in Vietnam, and very different from how most Vietnamese remember their dead.",
       "sections": [
         {
           "h": "Who the Gia Rai are",
           "p": [
             "The Gia Rai (also written Jrai or Jarai) are one of the largest peoples of Vietnam's Central Highlands, living mainly in Gia Lai province and in parts of Kon Tum and Đắk Lắk. Their language belongs to the Austronesian family and is related to Cham, so it sounds nothing like Vietnamese.",
-            "Society is matrilineal. Children take their mother's family name, and a husband moves in with his wife's family. Villages (plơi) are built of stilt houses around a tall communal house, the rông, where the village meets."
+            "Society is matrilineal: family lines run through the mother. Children take their mother's family name, and a husband moves in with his wife's family. Villages (plơi) are built of stilt houses around a tall communal house, the rông, where the village meets."
           ]
         },
         {
           "h": "The soul that stays behind",
           "p": [
             "For the Gia Rai, everything has a soul. When a person dies, their soul becomes a spirit (ma) that does not leave straight away. It lingers by the grave, visits home, and still needs to eat. So the family brings it food, often every day.",
-            "This in-between time lasts from one to three years: about a year for a poorer family, longer for a wealthier one. While it lasts, the family is in mourning. Traditionally they don't wear new clothes, use new things, or go travelling. The dead and the living are still tied together, and only one ceremony can untie them."
+            "Burial follows the mother's line. Members of the same maternal clan share one grave, with coffins laid side by side and later stacked. A man who dies in his wife's village is carried back to be buried in his mother's clan grave.",
+            "The in-between time lasts from one to three years, sooner for a poorer family and later for a wealthier one. While it lasts, the family is in mourning. Traditionally they don't wear new clothes, use new things, or go travelling. The dead and the living are still tied together, and only one ceremony can untie them."
           ]
         },
         {
           "h": "The tomb house",
           "p": [
-            "After a simple first burial, the family and village build a proper tomb house, the nhà mồ. Men gather timber, bamboo, rattan and grass and do the building, women cook for them, and neighbours lend a hand. It can take anything from a week to a month. Sources differ on whether it is finished before the farewell ceremony or as part of it.",
-            "The roof is the showpiece: wooden planks covered in woven bamboo, painted with a homemade red pigment. The patterns show the ceremony itself, with gong players, drummers and xoang dancers, alongside elephants and birds. One tomb can hold many members of the same family over the years.",
-            "Inside go the things the dead will need, and gifts from those left behind: gongs, jars, baskets, bowls, tools and bead bracelets. Today you may also find modern things, because the idea is simply to send loved ones off with what they valued.",
+            "When the time comes, the family and village build a proper tomb house, the nhà mồ. Men gather timber, bamboo, rattan and grass and do the building, women cook for them, and neighbours lend a hand. It can take anything from a week to a month.",
+            "The roof is the showpiece: wooden planks covered in woven bamboo, painted with a homemade red pigment. The patterns show the farewell ceremony itself, with gong players, drummers and xoang dancers, alongside elephants and birds. A single tomb can hold many members of the same clan; one village tomb is said to hold about 30.",
+            "Inside go the things the dead will need, and gifts from those left behind: gongs, jars, baskets, bowls, tools and bead bracelets, plus broken dishes, bottles and small model tools, since what is broken here is whole in the world of the dead. Today you may also find modern things, because the idea is simply to send loved ones off with what they valued.",
             "Each Gia Rai subgroup builds its own style. The Mơthur around Ayun Pa build a round tomb like a haystack. The Hđrung around Pleiku build one tall and steep like a rông house. The Arap build a long, low tomb surrounded by many statues."
           ],
           "imgs": [
@@ -655,8 +674,9 @@ window.SGN_DATA = {
         {
           "h": "The statues",
           "p": [
-            "Around the tomb stands a fence of wooden figures, the tượng nhà mồ. Each is carved from a single piece of hardwood using only an axe, chisel and knife, with no sketches. The rough, chunky cuts are part of the style: faces are bold and simple, and the carver's marks stay visible.",
-            "The figures are a portrait of life itself. There are mourners crouching with hands on their faces or propping up their chins, the image of a grieving husband or wife. There are mothers holding babies, pregnant women, embracing couples and infants. Together they tell the full circle of life, from love and birth to death and rebirth, and they keep the dead company. Animals sometimes join them for the same reason.",
+            "Around the tomb stands a fence of wooden figures, the tượng nhà mồ. Each is carved from a single piece of wood using only an axe, chisel and knife, with no sketches. The rough, chunky cuts are part of the style: faces are bold and simple, and the carver's marks stay visible.",
+            "The figures are a portrait of life itself. There are mourners crouching with hands on their faces or propping up their chins, the image of a grieving husband or wife. There are mothers holding babies (a widow waiting), pregnant women and embracing couples (fertility and birth), and drummers and gong players (death as a beginning). People call them người ở lại, \"the ones who stay\": companions so the dead are never lonely.",
+            "Carving is slow, skilled work. Before the farewell ceremony, the master artisan Ksor Krôh of Mrông Ngó village, honoured as a Meritorious Artisan in 2019, would carve day and night: one to three days for a small figure, up to a month for a large one. Good hardwood is now scarce, and statues of ordinary wood rot much faster.",
             "The statues are made for the farewell ceremony and then left behind, slowly greying and cracking in the sun and rain. That weathering isn't neglect. It is meant to happen."
           ],
           "imgs": [
@@ -673,7 +693,6 @@ window.SGN_DATA = {
               "cap": "A weathered guardian figure from a Jarai tomb near Kon Tum."
             }
           ],
-          "tip": "For an art lover: this is some of Vietnam's most striking folk sculpture. Look at how much feeling comes from a few deep cuts: the slump of a grieving body, a hand pressed to a cheek.",
           "gallery": [
             {
               "key": "r-gr-g2",
@@ -683,29 +702,112 @@ window.SGN_DATA = {
               "key": "r-gr-g3",
               "cap": "Weathered figures at the corner of the fence."
             }
-          ]
+          ],
+          "tip": "For an art lover: this is some of Vietnam's most striking folk sculpture. Look at how much feeling comes from a few deep cuts: the slump of a grieving body, a hand pressed to a cheek."
         },
         {
           "h": "Pơ thi: the farewell ceremony",
           "p": [
-            "Between one and three years after a death comes pơ thi, the grave-abandonment ceremony (lễ bỏ mả). The Gia Rai consider it the most important rite of the whole life cycle. It often lasts about three days, and the whole village turns out, led by a respected elder.",
-            "There are prayers to the gods and to the dead, and rice wine poured onto the ground. Relatives keep vigil by the tomb at night. Gongs and drums play, and young men smeared with mud and wearing masks dance as spirits. There may be puppets, and a big night-time performance circles the tomb. Guests share rượu cần, rice wine sipped through long bamboo straws from a shared jar.",
-            "At the end comes a final farewell. From then on the family stops bringing food, the mourning rules are lifted, and the dead person's soul is free to join the ancestors. The tomb is left to the weather, and nobody tends it again. It's a costly event, and families may save or borrow for years to give a loved one a proper send-off."
+            "Between one and three years after a death, and sometimes longer, comes pơ thi, the grave-abandonment ceremony (lễ bỏ mả). The Gia Rai consider it the most important rite of the whole life cycle. It is usually held in the dry season after the harvest, and lasts two or three days, moving between the family's home and the tomb.",
+            "The family first shares out the dead person's valuables (gongs, jars, bead bracelets, tools), which go to the tomb. Villagers gather beneath an old tree beside the tomb house. The gongs begin, played in set rhythms: the elders on the big gongs and the young people on the small ones. Everyone dances the xoang in a circle around the tomb.",
+            "Offerings depend on what a family can afford. A wealthy family may sacrifice a buffalo, cattle, pigs and chickens and raise a decorated ceremonial pole (cây nêu); a poorer one offers a chicken, a pig and rice wine. Afterwards the village elder shares the offerings out among the villagers.",
+            "Young men smear themselves with mud and wear masks to become Bram, spirits who come to welcome the dead person's soul to Yàng, the world of the spirits. The elder pours rượu cần, rice wine drunk through long bamboo straws, onto the grave and says farewell prayers. Then the gongs fall silent and the family goes into the tomb house to weep and say goodbye one last time. Dancing and drinking go on until dawn.",
+            "At the end, the elder speaks to the spirit directly: this house was built for you; from now on you must leave your descendants and seek your food from the spirits, because the living will no longer bring it. From that moment the family stops feeding the dead, the mourning rules are lifted, and there is no yearly anniversary. The tomb is left to the weather, and nobody tends it again."
+          ]
+        },
+        {
+          "h": "The voice of the gongs",
+          "p": [
+            "Gongs (cồng chiêng) run through every part of Highland life, and death is no exception. They open the farewell ceremony, carry it through the night, and go into the tomb as treasured belongings. Behind every gong, people say, there is a deity.",
+            "UNESCO recognised the \"Space of Gong Culture\" of the Central Highlands as world heritage in 2005, inscribed in 2008. It covers 17 ethnic communities, including the Gia Rai, and names mourning rites among the ceremonies the gongs belong to."
+          ]
+        },
+        {
+          "h": "Neighbours in the Highlands",
+          "p": [
+            "The Gia Rai are not alone. Their northern neighbours the Bahnar also hold a grave-abandonment ceremony one to three years after a death. Tomb statues are carved by the Ê Đê and M'nông too. Among the Ê Đê, relatives go into the forest to choose the trees and make an offering before cutting them. The Xơ Đăng carve statues as well, but theirs don't always stand at graves; they may stand by the communal house or in the village.",
+            "Further north, in the hills of Quảng Nam and Huế, the Cơ Tu build some of the most colourful tomb houses of all. They stand about two metres tall, with roofs painted in red, white and blue checks and roosters on the ridge. The pillars are carved with turtles, snakes and lizards, the beams are shaped like pythons, and fierce painted masks keep watch. Statues show people crying, playing gongs, dancing and sacrificing buffalo. For a respected person, the Cơ Tu hold a second funeral, the Têng Ping, and the remains rest in a boat-shaped coffin carved with buffalo heads. A wealthy family may spend five or six years preparing."
+          ],
+          "gallery": [
+            {
+              "key": "r-gr-cotu1",
+              "cap": "A Cơ Tu tomb house at the Museum of Ethnology in Hanoi."
+            },
+            {
+              "key": "r-gr-cotu2",
+              "cap": "Carved and painted details on the Cơ Tu tomb house."
+            }
+          ]
+        },
+        {
+          "h": "How the rest of Vietnam says goodbye",
+          "p": [
+            "For the majority Kinh (Viet) people, death doesn't end a relationship; it changes it. Nearly every home keeps an ancestor altar (bàn thờ gia tiên) with photos, incense and offerings. In a 2023 Pew survey, 96% of Vietnamese adults had burned incense for their ancestors in the past year, and nearly 8 in 10 said an ancestor's spirit had helped them.",
+            "A traditional funeral moves through set steps: washing and dressing the body, laying it in the coffin with a bowl of rice and chopsticks on top, setting up an altar with the spirit tablet, then days of visitors bringing incense, flowers and money while a hired band plays oboes, flutes and drums. Close family wear rough hemp tunics and white headbands; the type of headband shows how you were related, and great-grandchildren wear coloured bands instead. A procession then carries the coffin to the grave. In most places this all happens within a day or two; in Huế a funeral could traditionally last a week, until a 2026 rule capped it at 72 hours.",
+            "Many families burn vàng mã, votive paper offerings: paper money, clothes, houses, phones and even cars, sent to the dead through the smoke. Most are made in Song Hồ village in Bắc Ninh, a craft dating back to the 17th century, and Hanoi's Hàng Mã street is famous for selling them. Around 50,000 tonnes are burned across the country every year."
+          ],
+          "imgs": [
+            {
+              "key": "r-gr-altar",
+              "cap": "A traditional family ancestor altar."
+            },
+            {
+              "key": "r-gr-fun1926",
+              "cap": "Mourners at a 1926 funeral in Saigon."
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-gr-paperhouse",
+              "cap": "A paper house, made to be burned as an offering."
+            },
+            {
+              "key": "r-gr-horse",
+              "cap": "A red paper horse, an offering typical of Huế."
+            },
+            {
+              "key": "r-gr-burn",
+              "cap": "Burning votive paper."
+            },
+            {
+              "key": "r-gr-altar2",
+              "cap": "A family altar laid with offerings for the ancestors."
+            },
+            {
+              "key": "r-gr-fun1926b",
+              "cap": "The hearse in a crowded 1926 funeral procession in Saigon."
+            }
+          ]
+        },
+        {
+          "h": "The days and years after",
+          "p": [
+            "Mourning unfolds over years. Offerings are made on the third day, then every week until the 49th day, when the daily rice offerings stop. On the 100th day comes tốt khốc, \"stop weeping\": paper mourning clothes are burned and the person's portrait moves onto the ancestor altar. The first anniversary is a big occasion, and formal mourning ends around the second, going into the third year.",
+            "After that, the dead are remembered every year on their giỗ, the anniversary of the death by the lunar calendar. The extended family gathers for a feast that includes the person's favourite dishes, and a family may hold several each year. They work as reunions much like Tết.",
+            "In the north especially, families have traditionally carried out cải táng (reburial) about three years after the first burial, usually before Tết. The grave is opened, the bones are washed in herbal water and placed in a small ceramic box, then reburied in a permanent grave. Many believe the soul stays in limbo until this is done. Each spring, at Thanh Minh in early April, families tend the graves, add fresh earth and offer flowers and incense.",
+            "Things are changing fast in the cities. Hanoi now aims for 100% cremation and plans to turn city cemeteries into memorial parks, and Huế offers free cremation until 2030."
+          ]
+        },
+        {
+          "h": "Two ways of letting go",
+          "p": [
+            "Put side by side, the two traditions are almost mirror images. Both see the first years after a death as a fragile in-between time, and both mark its end with a great ceremony around the third year: reburial for the Kinh, pơ thi for the Gia Rai.",
+            "But then they go opposite ways. A Kinh family keeps caring for its dead forever, with incense every day and a feast every year, and the bond is meant never to break. A Gia Rai family carves companions for their dead, throws them the biggest party of their life, and then deliberately lets go, so the soul is free and the living can carry on. One says remember always; the other says now you are free, go."
           ]
         },
         {
           "h": "A tradition under pressure",
           "p": [
-            "Fewer people now carve the old way. Good hardwood is scarce after years of deforestation, statues have been stolen from cemeteries to sell as 'ethnic art', and some families have switched to plaster figures. A 2020 survey still counted about 1,500 wooden statues in 177 villages of Gia Lai, and the province now runs carving contests and classes so younger people learn from master artisans such as Ksor Krôh.",
+            "Fewer people now carve the old way. Good hardwood is scarce after years of deforestation, statues have been stolen from cemeteries to sell as 'ethnic art' (dozens were once dug up from a single clan's tomb in one night), and many families now build brick or concrete grave houses or use plaster figures. A 2020 survey still counted about 1,500 wooden statues in 177 villages of Gia Lai, and the province runs carving contests and classes so younger people learn from masters like Ksor Krôh, who has had to stop carving after a stroke.",
             "Statues increasingly appear outside cemeteries too, at rông houses, parks and community tourism sites, which is where most visitors now see them."
           ]
         },
         {
           "h": "Where to see them",
           "p": [
-            "You won't find tomb houses in Saigon. The best place is the Vietnam Museum of Ethnology in Hanoi, whose Gia Rai tomb house was built in 1998 by five Jrai Arap men from Mrông Ngọ village in Gia Lai, the traditional way. In the Highlands, Pleiku and the villages around it (such as Kép village) still have statues, and the Đắk Lắk Museum in Buôn Ma Thuột displays some too."
+            "You won't find tomb houses in Saigon. The best place is the outdoor garden of the Vietnam Museum of Ethnology in Hanoi, which has both a Gia Rai tomb house, built in 1998 by five Jrai Arap men from Mrông Ngó village in Gia Lai, and a Cơ Tu tomb house, made by Briu Nga of Quảng Nam and brought there in 2005. In the Highlands, Pleiku and nearby villages such as Kép still have statues, and the Đắk Lắk Museum in Buôn Ma Thuột displays some too."
           ],
-          "tip": "If you ever visit a real Gia Rai cemetery, go with a local guide. It is a sacred place: ask before taking photos, and never touch, move or take anything from a tomb."
+          "tip": "If you ever visit a real Gia Rai cemetery, go with a local guide. It is a sacred place: ask before taking photos, and never touch, move or take anything from a tomb. Elsewhere, if you pass a funeral in Vietnam, keep a respectful distance and don't photograph mourners without asking. Vietnam's tourism board also advises never to step over offerings or altars set on the ground."
         }
       ],
       "sources": [
@@ -736,6 +838,74 @@ window.SGN_DATA = {
         {
           "title": "Authentik Travel: The Gia-rai funerary house",
           "url": "https://authentiktravel.com/gia-rai-funerary-house-beliefs-about-death"
+        },
+        {
+          "title": "Nhân Dân: Dân tộc Gia-rai",
+          "url": "https://nhandan.vn/dan-toc-gia-rai-post723906.html"
+        },
+        {
+          "title": "Báo Văn Hóa: Độc đáo lễ hội Pơ thi của đồng bào Jrai (2025)",
+          "url": "https://baovanhoa.vn/dan-toc-ton-giao/doc-dao-le-hoi-po-thi-cua-dong-bao-jrai-121728.html"
+        },
+        {
+          "title": "Báo Văn Hóa: Nghệ nhân Ksor Krôh (2025)",
+          "url": "https://baovanhoa.vn/dan-toc-ton-giao/noi-niem-luu-truyen-nghe-tac-tuong-cua-nghe-nhan-ksor-kroh-159078.html"
+        },
+        {
+          "title": "Vietnam Museum of Ethnology: Giarai tomb house",
+          "url": "https://vme-en.vass.gov.vn/giarai-tomb-house/giarai-tomb-house-559660"
+        },
+        {
+          "title": "Vietnam Museum of Ethnology: Cotu tomb house",
+          "url": "https://vme-en.vass.gov.vn/cotu-tomb-house/cotu-tomb-house-559661"
+        },
+        {
+          "title": "VietNamNet: Grave statues of the Co Tu",
+          "url": "https://vietnamnet.vn/en/grave-statues-of-the-co-tu-E190625.html"
+        },
+        {
+          "title": "VietNamNet: Tượng nhà mồ ở Tây Nguyên",
+          "url": "https://vietnamnet.vn/tuong-nha-mo-o-tay-nguyen-khong-canh-ma-bay-113551.html"
+        },
+        {
+          "title": "UNESCO: Space of Gong Culture",
+          "url": "https://ich.unesco.org/en/RL/space-of-gong-culture-00120"
+        },
+        {
+          "title": "Pew Research: Ancestor veneration, funerals and afterlife beliefs (2024)",
+          "url": "https://www.pewresearch.org/religion/2024/06/17/ancestor-veneration-funerals-and-afterlife-beliefs/"
+        },
+        {
+          "title": "Wikipedia (vi): Tang lễ người Việt",
+          "url": "https://vi.wikipedia.org/wiki/Tang_l%E1%BB%85_ng%C6%B0%E1%BB%9Di_Vi%E1%BB%87t"
+        },
+        {
+          "title": "Tuổi Trẻ: New funeral time limit in Huế (2026)",
+          "url": "https://news.tuoitre.vn/new-funeral-time-limit-tests-grip-of-old-customs-in-vietnams-hue-city-103260719171410199.htm"
+        },
+        {
+          "title": "Tuổi Trẻ / AFP: Vietnam's reburials",
+          "url": "https://news.tuoitre.vn/goodbye-again-vietnams-reburials-send-souls-on-final-journey-10348802.htm"
+        },
+        {
+          "title": "Tuổi Trẻ: Hanoi to phase out inner-city burials (2026)",
+          "url": "https://news.tuoitre.vn/hanoi-plans-to-phase-out-inner-city-burials-at-cemeteries-103260515135811062.htm"
+        },
+        {
+          "title": "Việt Nam News: Burning offerings",
+          "url": "https://vietnamnews.vn/sunday/463969/burning-offerings-a-hot-topic.html"
+        },
+        {
+          "title": "VietnamPlus: Thanh Minh festival",
+          "url": "https://en.vietnamplus.vn/thanh-minh-festival-in-vietnamese-peoples-mind/251097.vnp"
+        },
+        {
+          "title": "Wikipedia: Death anniversary",
+          "url": "https://en.wikipedia.org/wiki/Death_anniversary"
+        },
+        {
+          "title": "Vietnam Tourism: Etiquette for travellers",
+          "url": "https://vietnam.travel/things-to-do/vietnamese-etiquette-travellers"
         }
       ]
     },
@@ -1014,6 +1184,262 @@ window.SGN_DATA = {
         {
           "title": "Huracars: Hue entrance tickets 2026",
           "url": "https://huracars.com/hue-entrance-tickets-2026/"
+        }
+      ]
+    },
+    {
+      "id": "graves-of-vietnam",
+      "title": "Graves of everyday Vietnam",
+      "vi": "Mộ phần · Lăng mộ",
+      "img": {
+        "key": "r-mo-hero",
+        "cap": "An Bằng near Huế, the \"city of ghosts\": a village cemetery of towering, colourful family tombs."
+      },
+      "teaser": "Graves in the rice fields, dragons and lotus flowers, and a village where the dead live in palaces.",
+      "minutes": 11,
+      "lead": "Travel through Vietnam and you'll see graves almost everywhere: in the middle of rice paddies, in orchards and front yards, crowded onto hillsides. Most Vietnamese families keep a grave they visit every year, and the shapes, colours and symbols on them say a lot about what people hope for their ancestors, and from them.",
+      "sections": [
+        {
+          "h": "Why graves sit in the fields",
+          "p": [
+            "The dead are kept close. In a 2023 survey, 84% of Vietnamese said their family has a gravesite, and most visit at least once a year. In the countryside, especially in the south, families have long buried their dead on inherited ancestral land (đất hương hỏa), setting aside a corner away from the house. That's why you'll see graves standing in the middle of rice paddies, orchards and even shrimp ponds.",
+            "In the Mekong delta, some families build entire tomb houses in the fields, lacquered red with gold leaf and decorated with dragons, phoenixes, unicorns and tortoises. Some cost over a billion đồng. The belief is simple: a fine resting place for the ancestors helps their descendants prosper."
+          ]
+        },
+        {
+          "h": "Shapes that change with the map",
+          "p": [
+            "Grave shapes follow regional tradition. From the north down to Thanh Hóa, graves are traditionally rectangular, sloping at the corners and highest in the middle. From Nghệ An down to Khánh Hòa they are round and domed. Further south they become long again.",
+            "Built graves tend to be either egg-shaped (\"goose egg\") or rectangular brick. Buddhists sometimes shape the egg into a turtle shell or a lotus leaf. Grander forms include house-shaped tombs, palanquin-shaped tombs once reserved for nobility, the lăng of emperors and great men, and the stupas (tháp) where Buddhist monks are laid to rest. Catholic graves carry a cross."
+          ],
+          "gallery": [
+            {
+              "key": "r-mo-round",
+              "cap": "A round, domed tomb, the classic shape of central Vietnam."
+            },
+            {
+              "key": "r-mo-stele",
+              "cap": "A southern grave with its stele and ornate frame."
+            }
+          ]
+        },
+        {
+          "h": "First grave, second grave",
+          "p": [
+            "Many graves are not a final resting place. Vietnamese law distinguishes a first burial (hung táng) from a second one (cát táng): in the north especially, families traditionally open the grave after about three years, wash the bones and move them into a small ceramic box (tiểu sành), which is reburied for good. That's why some graves are surprisingly small: the law allows up to 5 m² for a first or permanent grave but only 3 m² for a reburial grave."
+          ],
+          "img": {
+            "key": "r-mo-reburial",
+            "cap": "Rows of domed reburial graves in Châu Đốc, where the remains of workers who died digging the Vĩnh Tế canal were reburied."
+          }
+        },
+        {
+          "h": "Reading the decorations",
+          "p": [
+            "Most decoration carries a wish. The dragon and phoenix stand for power, nobility and sacredness, and for the family's protection and prosperity. Together with the unicorn (lân) and the tortoise they form the tứ linh, the four sacred creatures of good fortune. The lotus is the Buddhist flower of purity and rebirth, rising clean from muddy water. Clouds and waves give rhythm to the surfaces and tie the grave to nature.",
+            "You'll often see the four noble plants of the seasons too, the tứ quý: apricot blossom (mai) for purity, bamboo (trúc) for uprightness, chrysanthemum (cúc) for faithfulness and pine (tùng) for courage in hard times.",
+            "In front of the grave stands the stele (bia mộ) with the person's name and dates, and sometimes a portrait. Before it is an incense table (hương án) where the family lights incense and lays offerings."
+          ],
+          "img": {
+            "key": "r-mo-huongan",
+            "cap": "The incense table at a northern clan tomb (Lăng họ Ngọ, Bắc Giang)."
+          }
+        },
+        {
+          "h": "Feng shui for the dead",
+          "p": [
+            "Where and how a grave sits matters, because a well-placed grave is believed to protect the descendants. The classic rule is a hill or wall behind, like a screen (bình phong), and water gathering in front. The head rests on higher ground looking down toward low ground and water. On grand old tombs, the side walls end in a green dragon on the left and a white tiger on the right, the protective guardians of feng shui.",
+            "Builders often use the Lỗ Ban ruler, a special folk measuring tape whose sections are marked lucky and unlucky, so that a grave's measurements land on lucky numbers. It is folk belief rather than law, but it is very widely followed."
+          ]
+        },
+        {
+          "h": "An Bằng, the \"city of ghosts\"",
+          "p": [
+            "About 20 km east of Huế, in Vinh An commune on the way to the coast, lies one of the most extraordinary sights in Vietnam: a village cemetery of thousands of tombs that look like temples, palaces and miniature citadels.",
+            "Until around 1979 the graves here were simple. Then many villagers emigrated, mostly to the US, Canada and Australia. Today around 90% of villagers have relatives abroad, and those relatives send money home to honour their ancestors. Families began competing to build ever grander tombs, often copying the Nguyễn royal tombs and the Huế Citadel itself, in Buddhist, Taoist, Catholic, Chinese and Western styles. Some stand 10 metres tall; one villager explained that \"a taller tomb gives the ancestors a better view.\"",
+            "Many cost from several hundred million to a billion đồng, and the grandest two or three billion. Some tombs are even built for people still alive, with the birth year carved and the death year left blank. The cemetery now holds more than 5,000 tombs, and the commune has started promoting cremation and a new public cemetery."
+          ],
+          "gallery": [
+            {
+              "key": "r-mo-ab1",
+              "cap": "Family tombs crowd the sandy ground at An Bằng."
+            },
+            {
+              "key": "r-mo-ab2",
+              "cap": "Spires, roofs and gates rise above the cemetery."
+            },
+            {
+              "key": "r-mo-ab3",
+              "cap": "A stele framed by mosaic dragon pillars."
+            },
+            {
+              "key": "r-mo-ab4",
+              "cap": "Tombs styled like miniature palaces."
+            },
+            {
+              "key": "r-mo-ab5",
+              "cap": "An ornate gateway into a family tomb."
+            },
+            {
+              "key": "r-mo-ab6",
+              "cap": "Tomb after tomb, each grander than the last."
+            },
+            {
+              "key": "r-mo-ab7",
+              "cap": "A golden gate glittering with mosaic."
+            },
+            {
+              "key": "r-mo-ab8",
+              "cap": "Towers inspired by the royal tombs of Huế."
+            }
+          ]
+        },
+        {
+          "h": "Mosaics made of broken porcelain",
+          "p": [
+            "Look closely at An Bằng and you'll see that much of the colour isn't paint at all. It's khảm sành sứ: mosaic made from shards of coloured pottery, porcelain and glass, pressed into cement to form dragons, phoenixes, landscapes and flowers. It continues the decoration of Huế's palaces, pagodas and royal tombs, the same art that covers the walls of Khải Định's tomb.",
+            "The craft, part of Huế's traditional decorative trade called nghề kép, has been revived by the tomb boom. One craftsman alone has worked on nearly 300 tombs and clan halls. Some families buy brand-new porcelain just to smash it for the mosaics; one tomb used more than 19 tonnes of ceramics. The main colours each carry a meaning: red for luck and vitality, yellow for nobility and solemnity, blue for peace and permanence."
+          ],
+          "gallery": [
+            {
+              "key": "r-mo-mos1",
+              "cap": "A mosaic river landscape, pieced together from broken porcelain."
+            },
+            {
+              "key": "r-mo-mos2",
+              "cap": "Dragons and clouds in shards of coloured china."
+            },
+            {
+              "key": "r-mo-mos3",
+              "cap": "A mosaic panel of boats and waves."
+            },
+            {
+              "key": "r-mo-mos4",
+              "cap": "Detail: every colour is a fragment of a plate, bowl or bottle."
+            }
+          ],
+          "tip": "For an art lover: An Bằng is the best place in Vietnam to see broken-porcelain mosaic up close, and it's free. Go in the morning light, and look for panels where you can still spot the pattern of the original plate."
+        },
+        {
+          "h": "Stupas for monks",
+          "p": [
+            "Buddhist monks are not buried in ordinary graves but in stupas (tháp), small towers built in the grounds of their pagoda, often in a quiet garden of them. In Saigon you can see a beautiful garden of stupas at Giác Lâm Pagoda, one of the city's oldest pagodas, a short ride from the centre."
+          ],
+          "gallery": [
+            {
+              "key": "r-mo-stupa1",
+              "cap": "Stupas in the grounds of Giác Lâm Pagoda, Saigon."
+            },
+            {
+              "key": "r-mo-stupa2",
+              "cap": "A stupa decorated in gold at Giác Lâm Pagoda."
+            },
+            {
+              "key": "r-mo-stupa3",
+              "cap": "A monk's stupa at Bửu Thắng Pagoda, Saigon."
+            }
+          ],
+          "maps": [
+            {
+              "key": "giac-lam",
+              "label": "Giác Lâm Pagoda"
+            }
+          ]
+        },
+        {
+          "h": "A love story in Sa Đéc",
+          "p": [
+            "In the Mekong delta town of Sa Đéc stands the ornate tomb of Huỳnh Thủy Lê, the wealthy Chinese-Vietnamese man widely identified as the real-life lover in Marguerite Duras's novel The Lover. His family's old house in the town is open to visitors, a romantic detour for anyone exploring the delta."
+          ],
+          "img": {
+            "key": "r-mo-sadec",
+            "cap": "The tomb of Huỳnh Thủy Lê in Sa Đéc."
+          }
+        },
+        {
+          "h": "Cemeteries are changing",
+          "p": [
+            "Land is precious in the big cities, and burial customs are shifting. In Saigon, Bình Hưng Hòa, a 53-hectare cemetery with more than 70,000 graves, has been gradually cleared since 2016 to make way for schools and parks. Hanoi now aims for 100% cremation and plans to turn city cemeteries into memorial parks. Even An Bằng now encourages cremation."
+          ]
+        },
+        {
+          "h": "Visiting a cemetery",
+          "p": [
+            "An Bằng has no entrance fee. It is easy to combine with Huế's royal tombs or a trip to the coast."
+          ],
+          "maps": [
+            {
+              "key": "hue-anbang",
+              "label": "An Bằng cemetery"
+            }
+          ],
+          "tip": "Treat cemeteries as places of remembrance, not photo sets. Don't step or climb on graves or touch offerings, keep your voice down, don't fly drones, dress modestly, and ask before photographing anyone who is praying."
+        }
+      ],
+      "sources": [
+        {
+          "title": "VnExpress: Những ngôi mộ đẹp ở TP HCM (grave shapes by region)",
+          "url": "https://vnexpress.net/nhung-ngoi-mo-dep-o-tp-hcm-2039870.html"
+        },
+        {
+          "title": "VnExpress: Nhà mồ bạc tỷ ở miền Tây",
+          "url": "https://vnexpress.net/nha-mo-bac-ty-o-mien-tay-2740970.html"
+        },
+        {
+          "title": "Sài Gòn Giải Phóng: graves on family land",
+          "url": "https://www.sggp.org.vn/nghia-trang-tu-phat-tran-lan-87208.html"
+        },
+        {
+          "title": "Pew Research: Ancestor veneration and funerals (2024)",
+          "url": "https://www.pewresearch.org/religion/2024/06/17/ancestor-veneration-funerals-and-afterlife-beliefs/"
+        },
+        {
+          "title": "Đỗ Hữu Tú: decoration of tombs at An Bằng (HPU2 journal, 2026)",
+          "url": "https://sjsh.hpu2.edu.vn/index.php/journal/article/download/724/333/2477"
+        },
+        {
+          "title": "Phạm Đức Mạnh: Mạc family tombs, Hà Tiên (feng shui layout)",
+          "url": "https://hcmussh.edu.vn/static/document/12920.pdf"
+        },
+        {
+          "title": "Decree 23/2016/NĐ-CP on cemeteries (grave sizes)",
+          "url": "https://caselaw.vn/van-ban-phap-luat/116642-nghi-dinh-23-2016-nd-cp-ve-xay-dung-quan-ly-su-dung-nghia-trang-va-co-so-hoa-tang"
+        },
+        {
+          "title": "Wikipedia (vi): Cải táng",
+          "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A3i_t%C3%A1ng"
+        },
+        {
+          "title": "Wikipedia (vi): Tứ linh",
+          "url": "https://vi.wikipedia.org/wiki/T%E1%BB%A9_linh"
+        },
+        {
+          "title": "Znews: Tứ quý symbolism",
+          "url": "https://znews.vn/vi-sao-ai-cung-mong-co-tu-quy-post1677711.html"
+        },
+        {
+          "title": "Tuổi Trẻ / AFP: Vietnam's city of ghosts",
+          "url": "https://news.tuoitre.vn/news/features/20160223/vietnams-city-of-ghosts-where-the-dead-live-in-style/27840.html"
+        },
+        {
+          "title": "VietNamNet: Where tombs are built for the dead and the living",
+          "url": "https://vietnamnet.vn/en/visit-the-village-where-tombs-are-built-for-the-dead-and-the-living-E132647.html"
+        },
+        {
+          "title": "Dân Trí / DTiNews: An Bằng cemetery (2026)",
+          "url": "https://dtinews.dantri.com.vn/print/20260727100941433.htm"
+        },
+        {
+          "title": "VnExpress International: HCMC's biggest graveyard to become schools and parks",
+          "url": "https://e.vnexpress.net/news/news/schools-and-parks-proposed-to-replace-hcmc-s-biggest-graveyard-4559654.html"
+        },
+        {
+          "title": "Tuổi Trẻ: Hanoi to phase out inner-city burials (2026)",
+          "url": "https://news.tuoitre.vn/hanoi-plans-to-phase-out-inner-city-burials-at-cemeteries-103260515135811062.htm"
+        },
+        {
+          "title": "Local Vietnam: An Bằng cemetery visitor tips",
+          "url": "https://localvietnam.com/hue/an-bang-cemetery/"
         }
       ]
     }
