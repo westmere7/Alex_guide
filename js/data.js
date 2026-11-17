@@ -8,6 +8,15 @@ window.SGN_DATA = {
   /* Trip window — used only for the weather forecast, not for planning */
   trip: { start: "2026-11-27", end: "2026-12-03" },
 
+  /* ---------- CITIES (in trip order) ----------
+     Items carry city: "hanoi" | "ninhbinh" | "hue" | "saigon" (no city = saigon). */
+  cities: [
+    { id: "hanoi",    name: "Hà Nội",    gq: "Hanoi",    lat: 21.0287, lon: 105.8524, zoom: 14 },
+    { id: "ninhbinh", name: "Ninh Bình", gq: "Ninh Binh", lat: 20.2420, lon: 105.9330, zoom: 12 },
+    { id: "hue",      name: "Huế",       gq: "Hue",       lat: 16.4637, lon: 107.5909, zoom: 13, mapLat: 16.43, mapLon: 107.6, },
+    { id: "saigon",   name: "Sài Gòn",   gq: "Ho Chi Minh City",   lat: 10.7722, lon: 106.7037, zoom: 15, mapLat: 10.7707, mapLon: 106.6997, hotel: true }
+  ],
+
   /* ---------- SEE ---------- */
   categories: [
     { id: "two",   label: "For two",      icon: "i-heart" },
@@ -16,7 +25,6 @@ window.SGN_DATA = {
     { id: "old",   label: "History",      icon: "i-landmark" },
     { id: "spirit",label: "Temples",      icon: "i-temple" },
     { id: "out",   label: "Out & about",  icon: "i-sparkle" },
-    { id: "hue",   label: "Huế",          icon: "i-pavilion" },
     { id: "trips", label: "Day trips",    icon: "i-van" }
   ],
 
@@ -56,11 +64,11 @@ window.SGN_DATA = {
     },
     {
       id: "two-miumiu", cat: "two", img: null,
-      name: "Miu Miu Spa", vi: "Miu Miu 4 · Ngô Đức Kế",
-      desc: "A popular, good-value spa chain with couples' rooms. Branch 4 is round the corner from the hotel.",
-      time: "1–2 h", best: "After a long walk", cost: "~350k–1m ₫", from: "Walk 2 min",
+      name: "Miu Miu Spa", vi: "Miu Miu 1 · 4 Chu Mạnh Trinh",
+      desc: "A popular, good-value spa chain with couples' rooms. Branch 1 is the closest one still open.",
+      time: "1–2 h", best: "After a long walk", cost: "~350k–1m ₫", from: "Walk 12 min",
       tip: "Message a day ahead to book the couples' room.",
-      q: "Miu Miu Spa 4 Ngô Đức Kế"
+      q: "Miu Miu Spa 1 Chu Mạnh Trinh"
     },
     {
       id: "two-baSon", cat: "two", img: null,
@@ -101,14 +109,14 @@ window.SGN_DATA = {
       name: "Post Office & Cathedral", vi: "Bưu điện Thành phố",
       desc: "Eiffel-era vaulted post office (still working), Notre-Dame Cathedral across the square, and shady Book Street alongside.",
       time: "45 min", best: "Morning", cost: "Free", from: "Walk 15 min",
-      tip: "The cathedral is under a long restoration, so expect scaffolding. Book Street is good for postcards and a coffee.",
+      tip: "The cathedral's restoration runs into 2027. The scaffolding is coming down, but you may only see it from outside. Book Street is good for postcards and a coffee.",
       q: "Saigon Central Post Office"
     },
     {
       id: "palace", cat: "old", img: "palace",
       name: "Independence Palace", vi: "Dinh Độc Lập",
       desc: "A 1960s modernist presidential palace preserved as it was in 1975, with reception halls, a rooftop helipad and the tanks that broke through the gates.",
-      time: "1.5 h", best: "Morning", cost: "~65k ₫", from: "Walk 18 min",
+      time: "1.5 h", best: "Morning", cost: "80k ₫", from: "Walk 18 min",
       tip: "Don't miss the basement war rooms, with their maps, radios and tunnels.",
       q: "Independence Palace Ho Chi Minh"
     },
@@ -133,15 +141,15 @@ window.SGN_DATA = {
       name: "Saigon Opera House", vi: "Nhà hát Thành phố",
       desc: "A 1900 French Belle Époque theatre at the top of Đồng Khởi street.",
       time: "15 min · show 1 h", best: "Evening show", cost: "Shows paid", from: "Walk 7 min",
-      tip: "Look up the AO Show or Teh Dar, contemporary Vietnamese bamboo-circus performances. Book a day ahead.",
+      tip: "Look up the AO Show, a contemporary bamboo-circus performance about southern life (about 1 h, from ~800k ₫). Book a day ahead.",
       q: "Saigon Opera House"
     },
     {
       id: "war-remnants", cat: "old", img: "war-remnants",
       name: "War Remnants Museum", vi: "Bảo tàng Chứng tích Chiến tranh",
       desc: "A powerful, confronting record of the American War, told through photojournalism, with aircraft and tanks in the yard.",
-      time: "1.5–2 h", best: "Morning", cost: "~40k ₫", from: "Car 10 min",
-      tip: "Some galleries are very graphic. Hum Vegetarian is a few doors away for a calm lunch afterwards.",
+      time: "1.5–2 h", best: "Morning", cost: "~60k ₫", from: "Car 10 min",
+      tip: "Some galleries are very graphic. Tickets can be bought online. Hum Vegetarian is a few doors away for a calm lunch afterwards.",
       q: "War Remnants Museum"
     },
 
@@ -180,20 +188,12 @@ window.SGN_DATA = {
       q: "Galerie Quynh"
     },
     {
-      id: "craig-thomas", cat: "art", img: null,
-      name: "Craig Thomas Gallery", vi: "Craig Thomas Gallery",
-      desc: "A small gallery known for spotting emerging Vietnamese painters.",
-      time: "30 min", best: "Afternoon", cost: "Free", from: "Car 10 min",
-      tip: "Good for buying an original piece at a fair price. Ask about shipping it home.",
-      q: "Craig Thomas Gallery Saigon"
-    },
-    {
       id: "green-palm", cat: "art", img: null,
       name: "Green Palm Gallery", vi: "Green Palm Gallery",
-      desc: "Traditional and modern Vietnamese painting, including lacquer, silk and oils, with a branch in District 1.",
-      time: "30 min", best: "Any day", cost: "Free", from: "Car 5–10 min",
+      desc: "Traditional and modern Vietnamese painting, including lacquer, silk and oils, at 49 Mạc Thị Bưởi.",
+      time: "30 min", best: "Any day, 8am–7pm", cost: "Free", from: "Walk 5 min",
       tip: "A great place to see lacquer painting up close, and staff are happy to explain how it's made.",
-      q: "Green Palm Gallery District 1"
+      q: "Green Palm Gallery 49 Mạc Thị Bưởi"
     },
     {
       id: "le-cong-kieu", cat: "art", img: "a-lck",
@@ -207,7 +207,7 @@ window.SGN_DATA = {
       id: "water-puppets", cat: "art", img: "a-puppet",
       name: "Water Puppet Show", vi: "Múa rối nước Rồng Vàng",
       desc: "Vietnam's centuries-old folk art: lacquered wooden puppets glide across a pool to live traditional music.",
-      time: "45 min show", best: "Evening", cost: "Paid ticket", from: "Car 10 min",
+      time: "45 min show", best: "Evening", cost: "~350k ₫", from: "Car 10 min",
       tip: "Book a day ahead and sit near the front. The live musicians are half the show.",
       q: "Golden Dragon Water Puppet Theatre"
     },
@@ -218,16 +218,8 @@ window.SGN_DATA = {
       name: "OHQUAO The Local Edit", vi: "Hẻm 58 Phạm Ngọc Thạch",
       desc: "A concept store in an alley, stocked entirely with things designed and made in Saigon: stationery, homeware, prints and a room of local fashion labels.",
       time: "45 min", best: "Afternoon", cost: "Fixed prices", from: "Car 10 min",
-      tip: "Their own paper goods and notebooks make light, packable gifts.",
-      q: "OHQUAO The Local Edit Phạm Ngọc Thạch"
-    },
-    {
-      id: "craft-house", cat: "shop", img: null,
-      name: "The Craft House", vi: "The Craft House",
-      desc: "Work from dozens of Vietnamese artisans and small brands under one roof, including ceramics, textiles, lacquer and woven goods.",
-      time: "30–45 min", best: "Any time", cost: "Fixed prices", from: "Car 5–10 min",
-      tip: "Ask staff which makers each piece comes from. Many have a story.",
-      q: "The Craft House Saigon"
+      tip: "Their own paper goods make light, packable gifts. Check it's open on Maps first; there's also a branch in Thảo Điền.",
+      q: "OHQUAO Phạm Ngọc Thạch"
     },
     {
       id: "dinh-design", cat: "shop", img: null,
@@ -240,18 +232,10 @@ window.SGN_DATA = {
     {
       id: "ginkgo", cat: "shop", img: "s-ginkgo",
       name: "Ginkgo Concept Store", vi: "Ginkgo",
-      desc: "Fun Saigon-themed T-shirts, bags and souvenirs from a long-running local brand, a big step up from market tat.",
-      time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Walk / car, D1",
-      tip: "Good for gifts that still look good once you're home.",
-      q: "Ginkgo Concept Store Saigon"
-    },
-    {
-      id: "tia-to", cat: "shop", img: null,
-      name: "Tia To Artbook", vi: "Tía Tô Artbook",
-      desc: "Prints, notebooks and tote bags featuring work by local Saigon illustrators.",
-      time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Car 10 min",
-      tip: "Prints are flat and light, so they're easy to fly home.",
-      q: "Tia To Artbook Saigon"
+      desc: "Fun Saigon-themed T-shirts, bags and souvenirs from a long-running local brand. The new Lê Lợi flagship has a small gallery, Petit Art Space, inside.",
+      time: "20–30 min", best: "Any time", cost: "Fixed prices", from: "Walk 10 min",
+      tip: "Good for gifts that still look good once you're home. Have a look at the gallery while you're there.",
+      q: "Ginkgo Concept Store 92 Lê Lợi"
     },
     {
       id: "tan-dinh-market", cat: "shop", img: "s-tan-dinh",
@@ -292,7 +276,7 @@ window.SGN_DATA = {
       name: "Chợ Lớn: Thiên Hậu & Bình Tây", vi: "Chùa Bà Thiên Hậu · Chợ Bình Tây",
       desc: "Saigon's Chinatown: the incense-filled Thiên Hậu Temple and the huge Bình Tây market.",
       time: "2–3 h", best: "Morning", cost: "Free", from: "Car 20–30 min",
-      tip: "Look for dried fruit, tea and spices at Bình Tây. Grab a car between the two if it's hot.",
+      tip: "Look for dried fruit, tea and spices at Bình Tây. In the evening (6pm–midnight) the market street becomes the Chợ Lớn night food street.",
       q: "Thiên Hậu Temple Chợ Lớn"
     },
     {
@@ -335,15 +319,15 @@ window.SGN_DATA = {
       name: "Tao Đàn Park", vi: "Công viên Tao Đàn",
       desc: "The leafy park where Saigon wakes up, with tai chi, badminton, joggers and locals bringing caged songbirds for a morning coffee.",
       time: "45 min", best: "6–8am", cost: "Free", from: "Walk 20 min · car 5",
-      tip: "Go early. By 9am it's hot and quiet, and the best people-watching is over.",
+      tip: "Go early. By 9am it's hot and quiet. Metro works fence off the Cách Mạng Tháng Tám side, so enter from Trương Định.",
       q: "Tao Đàn Park"
     },
     {
       id: "skydeck", cat: "out", img: "skydeck",
       name: "Saigon Skydeck", vi: "Tháp Bitexco",
       desc: "An observation deck high in the lotus-bud Bitexco tower, right in the centre, with 360° views over the river and old town.",
-      time: "45 min", best: "Sunset", cost: "Paid deck", from: "Walk 2 min",
-      tip: "Alternatively, have a drink at the tower's bar a few floors higher for a similar view.",
+      time: "45 min", best: "Sunset", cost: "~240k ₫", from: "Walk 2 min",
+      tip: "Open 9:30am–9:30pm. Arrive about 30 minutes before sunset for day and night views.",
       q: "Saigon Skydeck Bitexco"
     },
     {
@@ -366,8 +350,8 @@ window.SGN_DATA = {
       id: "waterbus", cat: "out", img: "waterbus",
       name: "Sunset Waterbus", vi: "Buýt đường sông",
       desc: "A cheap river cruise past the skyline from Bạch Đằng pier, with the city lights coming on as you return.",
-      time: "1–1.5 h", best: "Sunset", cost: "Under 50k ₫", from: "Walk 5 min",
-      tip: "Timetables change, so check at the pier earlier in the day.",
+      time: "1–1.5 h", best: "Sunset", cost: "15k one way · 30k return", from: "Walk 5 min",
+      tip: "The timetable changed in 2026, so check saigonwaterbus.com or ask at the pier earlier in the day.",
       q: "Bach Dang Waterbus Station"
     },
     {
@@ -389,53 +373,418 @@ window.SGN_DATA = {
 
     /* Huế — on this trip; see the "Huế and the royal tombs" read */
     {
-      id: "hue-citadel", cat: "hue", img: "r-hue-citadel",
+      id: "hue-citadel", city: "hue", cat: "old", img: "r-hue-citadel",
       name: "Imperial City", vi: "Hoàng thành Huế · Đại Nội",
       desc: "The walled palace of the Nguyễn emperors on the Perfume River, entered through the Noon Gate.",
-      time: "2–3 h", best: "Morning", cost: "~200k ₫", from: "Central Huế",
-      tip: "Buy a combined ticket if you're also visiting the tombs; it's valid for two days.",
+      time: "2–3 h", best: "Morning", cost: "200k ₫", from: "Central Huế",
+      tip: "Doing the tombs too? The 4-site combo is 530k ₫, or 600k ₫ for every site over 5 days. Floods can close the sites at short notice, so check each morning.",
       q: "Imperial City Hue Ngọ Môn"
     },
     {
-      id: "hue-minhmang", cat: "hue", img: "r-hue-hero",
+      id: "hue-minhmang", city: "hue", cat: "old", img: "r-hue-hero",
       name: "Tomb of Minh Mạng", vi: "Lăng Minh Mạng",
       desc: "Gates, bridges and pavilions laid out in perfect symmetry along a 700 m axis across two lakes.",
-      time: "1.5 h", best: "Early morning", cost: "~150k ₫", from: "Car ~12 km south of Huế",
+      time: "1.5 h", best: "Early morning", cost: "150k ₫", from: "Car 20–30 min",
       tip: "The most peaceful of the tombs. Walk the full axis to the burial mound at the back.",
       q: "Tomb of Minh Mang Hue"
     },
     {
-      id: "hue-tuduc", cat: "hue", img: "r-hue-tuduc",
+      id: "hue-tuduc", city: "hue", cat: "old", img: "r-hue-tuduc",
       name: "Tomb of Tự Đức", vi: "Lăng Tự Đức",
       desc: "A poet-emperor's lakeside retreat, built as a pleasure garden he lived in for years.",
-      time: "1–1.5 h", best: "Morning", cost: "~150k ₫", from: "Car ~6 km south of Huế",
-      tip: "Find the Xung Khiêm pavilion on the lake, where he wrote poetry.",
+      time: "1–1.5 h", best: "Morning", cost: "150k ₫", from: "Car 20 min",
+      tip: "Find the Xung Khiêm pavilion on the lake, where he wrote poetry. Từ Hiếu Pagoda is a short walk away.",
       q: "Tomb of Tu Duc Hue"
     },
     {
-      id: "hue-khaidinh", cat: "hue", img: "r-hue-kd-stairs",
+      id: "hue-khaidinh", city: "hue", cat: "old", img: "r-hue-kd-stairs",
       name: "Tomb of Khải Định", vi: "Lăng Khải Định",
       desc: "Concrete, dragons and glittering glass-and-porcelain mosaics climbing a hillside. East meets West.",
-      time: "1 h", best: "Morning", cost: "~150k ₫", from: "Car ~10 km south of Huế",
-      tip: "Lots of steps. The mosaic interior of Thiên Định palace is the highlight for an art lover.",
+      time: "1 h", best: "Morning", cost: "150k ₫", from: "Car 20–30 min",
+      tip: "Lots of steps, slippery in rain. The mosaic interior of Thiên Định palace is the highlight for an art lover.",
       q: "Tomb of Khai Dinh Hue"
     },
     {
-      id: "hue-gialong", cat: "hue", img: null,
+      id: "hue-gialong", city: "hue", cat: "old", img: null,
       name: "Tomb of Gia Long", vi: "Lăng Gia Long",
       desc: "The dynasty founder's double grave with his empress, in quiet open hills far from the crowds.",
-      time: "1 h", best: "Morning", cost: "Ticket at the gate", from: "Car ~20 km south of Huế",
-      tip: "Furthest out and least visited. Combine it with Minh Mạng on the same side of the river.",
+      time: "1 h", best: "Morning, dry day", cost: "150k ₫", from: "Car ~40 min",
+      tip: "Furthest out and least visited; flooded roads cut it off first after heavy rain. Combine it with Minh Mạng (combo 240k ₫).",
       q: "Tomb of Gia Long Hue"
     },
 
     {
-      id: "hue-anbang", cat: "hue", img: "r-mo-hero",
+      id: "hue-anbang", city: "hue", cat: "spirit", img: "r-mo-hero",
       name: "An Bằng cemetery", vi: "Nghĩa trang An Bằng · \"city of ghosts\"",
       desc: "A village cemetery of towering, colourful family tombs covered in broken-porcelain mosaics.",
       time: "1 h", best: "Morning light", cost: "Free", from: "Car, east of Huế toward the coast",
       tip: "Treat it as a place of remembrance: don't climb or step on graves, and no drones. See the \"Graves of everyday Vietnam\" read.",
-      q: "An Bang cemetery Vinh An Phu Vang Hue"
+      q: "Nghĩa trang An Bằng Huế"
+    },
+
+    {
+      id: "hue-dragonboat", city: "hue", cat: "two", img: null,
+      name: "Perfume River boat at sunset", vi: "Thuyền rồng sông Hương",
+      desc: "A slow dragon-boat ride upriver toward Thiên Mụ Pagoda as the light fades over the water.",
+      time: "1–2 h", best: "Sunset, dry day", cost: "Private boat ~500–800k ₫", from: "Tòa Khâm pier, Lê Lợi",
+      tip: "Hire a private boat for the two of you and agree the price and route first. Boats stop when the river floods.",
+      q: "Bến thuyền Tòa Khâm Huế"
+    },
+    {
+      id: "hue-vongcanh", city: "hue", cat: "two", img: null,
+      name: "Vọng Cảnh Hill", vi: "Đồi Vọng Cảnh",
+      desc: "A pine-covered hill with the classic view of the Perfume River curving through the tomb country.",
+      time: "45 min", best: "4:30–5:30pm", cost: "Free", from: "Car 20 min",
+      tip: "Make a half-day loop with Tự Đức's tomb and the incense village. Skip it in fog.",
+      q: "Đồi Vọng Cảnh Huế"
+    },
+    {
+      id: "hue-antiquities", city: "hue", cat: "art", img: null,
+      name: "Museum of Royal Antiquities", vi: "Bảo tàng Cổ vật Cung đình Huế",
+      desc: "Nguyễn-dynasty ceramics, costume and lacquer inside the 1845 Long An Palace, itself a jewel of carved, lacquered wood.",
+      time: "1 h", best: "Any time · good when it rains", cost: "50k ₫", from: "Car 5 min from the Citadel",
+      tip: "Look up at the poem-inscribed lacquer panels; the building is as much the exhibit as the objects.",
+      q: "Bảo tàng Cổ vật Cung đình Huế"
+    },
+    {
+      id: "hue-finearts", city: "hue", cat: "art", img: null,
+      name: "Huế Museum of Fine Arts", vi: "Bảo tàng Mỹ thuật Huế",
+      desc: "Changing shows of Huế painters, with the Lê Bá Đảng and Điềm Phùng Thị art centres close by on Lê Lợi.",
+      time: "1–1.5 h", best: "Weekday morning", cost: "Check at the door", from: "South bank, Lê Lợi",
+      tip: "Ask whether the Điềm Phùng Thị Art Centre at 17 Lê Lợi is open that day; her modular sculpture is wonderful.",
+      q: "Bảo tàng Mỹ thuật Huế 15 Lê Lợi"
+    },
+    {
+      id: "hue-thuyxuan", city: "hue", cat: "art", img: null,
+      name: "Thủy Xuân incense village", vi: "Làng hương Thủy Xuân",
+      desc: "Roadside workshops where families roll and dye incense sticks into bright fans of colour.",
+      time: "45–90 min", best: "Dry morning", cost: "Free · try it ~50–100k ₫", from: "Car 15–20 min",
+      tip: "In wet weather the colourful displays shrink and work moves inside, so go on a dry spell. Ask before photographing people.",
+      q: "Làng hương Thủy Xuân Huế"
+    },
+    {
+      id: "hue-dongba", city: "hue", cat: "shop", img: null,
+      name: "Đông Ba Market", vi: "Chợ Đông Ba",
+      desc: "Huế's century-old riverside market for poem hats, sesame candy, lotus seeds and royal tea.",
+      time: "1 h", best: "Morning", cost: "Haggle gently", from: "Across Trường Tiền bridge",
+      tip: "Hold a nón bài thơ hat up to the light to see the poem hidden inside.",
+      q: "Chợ Đông Ba Huế"
+    },
+    {
+      id: "hue-andinh", city: "hue", cat: "old", img: null,
+      name: "An Định Palace", vi: "Cung An Định",
+      desc: "Emperor Khải Định's 1910s riverside residence, where French Baroque plasterwork meets Vietnamese royal motifs.",
+      time: "45–90 min", best: "Early or late light", cost: "~50k ₫", from: "Car 10 min",
+      tip: "See it alongside Khải Định's tomb: the same eclectic, East-meets-West taste.",
+      q: "Cung An Định Huế"
+    },
+    {
+      id: "hue-thanhtoan", city: "hue", cat: "old", img: null,
+      name: "Thanh Toàn tile-roofed bridge", vi: "Cầu ngói Thanh Toàn",
+      desc: "An 18th-century covered wooden bridge over a canal through the rice fields.",
+      time: "1 h", best: "Late afternoon", cost: "Free", from: "Car 20–25 min",
+      tip: "Hire bikes in the village and ride the lanes between the paddies.",
+      q: "Cầu ngói Thanh Toàn"
+    },
+    {
+      id: "hue-thienmu", city: "hue", cat: "spirit", img: null,
+      name: "Thiên Mụ Pagoda", vi: "Chùa Thiên Mụ",
+      desc: "Huế's symbol: a seven-storey tower on a hill above the Perfume River, still a working monastery.",
+      time: "45–60 min", best: "Early or late in the day", cost: "Free", from: "Car 10–15 min",
+      tip: "Cover shoulders and knees. Arrive by dragon boat on a dry day, or by road if the river is high.",
+      q: "Chùa Thiên Mụ Huế"
+    },
+    {
+      id: "hue-tuhieu", city: "hue", cat: "spirit", img: null,
+      name: "Từ Hiếu Pagoda", vi: "Chùa Từ Hiếu",
+      desc: "A pine-shaded 1843 pagoda where Thích Nhất Hạnh became a monk and spent his last years.",
+      time: "1–1.5 h", best: "Early morning bell", cost: "Free", from: "Car 15–20 min",
+      tip: "No photos inside the halls. It's next to Tự Đức's tomb, so pair the two.",
+      q: "Chùa Từ Hiếu Huế"
+    },
+
+    /* Hà Nội */
+    {
+      id: "hn-longbien", city: "hanoi", cat: "two", img: null,
+      name: "Long Biên Bridge at sunset", vi: "Cầu Long Biên",
+      desc: "A 1903 steel bridge over the Red River that still carries trains and motorbikes. Walk out together as the sun drops.",
+      time: "45 min–1 h", best: "Sunset", cost: "Free", from: "From the lake: car 10 min",
+      tip: "Stay on the pedestrian walkway at the side; the tracks are off limits.",
+      q: "Long Bien Bridge Hanoi"
+    },
+    {
+      id: "hn-codam", city: "hanoi", cat: "two", img: null,
+      name: "Tasting dinner at Cồ Đàm", vi: "Nhà hàng chay Cồ Đàm",
+      desc: "Vegetarian fine dining with an 11-course set menu that can be made fully vegan. A special-occasion night.",
+      time: "2–2.5 h", best: "Dinner, booked", cost: "Splurge (~1M ₫ each)", from: "From the lake: walk 10 min",
+      tip: "Book ahead (a deposit is needed), ask for the vegan version and mention it's your honeymoon.",
+      q: "Co Dam vegetarian restaurant 68a Tran Hung Dao"
+    },
+    {
+      id: "hn-opera", city: "hanoi", cat: "two", img: null,
+      name: "Opera House by night", vi: "Nhà hát Lớn Hà Nội",
+      desc: "A 1911 French opera house at the end of Tràng Tiền Street, beautiful when lit up in the evening.",
+      time: "15 min outside", best: "Evening", cost: "Free outside", from: "From the lake: walk 10 min",
+      tip: "One 2026 source says it may be closed for restoration, so tours and shows could be suspended. It still looks lovely from the square.",
+      q: "Hanoi Opera House"
+    },
+    {
+      id: "hn-finearts", city: "hanoi", cat: "art", img: null,
+      name: "Vietnam National Fine Arts Museum", vi: "Bảo tàng Mỹ thuật Việt Nam",
+      desc: "The national collection, from folk prints to modern lacquer and silk painting by Nguyễn Gia Trí, Tô Ngọc Vân and Bùi Xuân Phái.",
+      time: "1.5–2 h", best: "Morning · closed Mon", cost: "40k ₫", from: "Near the Temple of Literature",
+      tip: "The modern lacquer and silk galleries are upstairs; don't run out of time before you get there.",
+      q: "Vietnam National Fine Arts Museum 66 Nguyen Thai Hoc"
+    },
+    {
+      id: "hn-puppets", city: "hanoi", cat: "art", img: null,
+      name: "Thăng Long Water Puppets", vi: "Nhà hát Múa rối Thăng Long",
+      desc: "The classic water-puppet theatre by the lake, with a live traditional band. About 50 minutes.",
+      time: "50 min show", best: "Late afternoon or evening", cost: "100–200k ₫", from: "By the lake",
+      tip: "Shows run several times a day (about 4:10pm to 8pm). Book a day ahead for good seats.",
+      q: "Thang Long Water Puppet Theatre 57B Dinh Tien Hoang"
+    },
+    {
+      id: "hn-manzi", city: "hanoi", cat: "art", img: null,
+      name: "Manzi Art Space", vi: "Manzi · 14 Phan Huy Ích",
+      desc: "An independent contemporary art space with changing exhibitions, open studios and an artist residency.",
+      time: "30–45 min", best: "Afternoon · Tue–Sun", cost: "Free", from: "From the lake: car 10 min",
+      tip: "Check what's on first. Manzi's affordable art fair has run in late Nov–early Dec before.",
+      q: "Manzi Art Space 14 Phan Huy Ich"
+    },
+    {
+      id: "hn-vcca", city: "hanoi", cat: "art", img: null,
+      name: "Vincom Center for Contemporary Art", vi: "VCCA · Royal City",
+      desc: "A big contemporary art centre under the Royal City mall that hosts major group shows.",
+      time: "45 min–1 h", best: "During a show, 10am–9pm", cost: "Often free", from: "From the lake: car 30 min",
+      tip: "It sometimes sits empty between shows, so check the programme before the trip out.",
+      q: "VCCA Vincom Center for Contemporary Art Royal City"
+    },
+    {
+      id: "hn-aspace", city: "hanoi", cat: "art", img: null,
+      name: "Á Space", vi: "Á Space · Ngô Gia Tự",
+      desc: "A small independent space across the river for experimental art and open studios.",
+      time: "30–45 min", best: "During an event", cost: "Usually free", from: "From the lake: car 20 min",
+      tip: "It only opens when something is on; check its Facebook page or Hanoi Grapevine first.",
+      q: "Á Space Ngõ 59 Ngô Gia Tự Hà Nội"
+    },
+    {
+      id: "hn-battrang", city: "hanoi", cat: "art", img: null,
+      name: "Bát Tràng ceramic village", vi: "Làng gốm Bát Tràng",
+      desc: "A centuries-old pottery village with workshops, a big ceramics market and a ceramics museum.",
+      time: "Half day", best: "Morning", cost: "Free · wheel class ~50–100k ₫", from: "From the lake: car 30 min",
+      tip: "Try throwing a pot together at a workshop; some will fire and ship it.",
+      q: "Bat Trang Ceramic Village"
+    },
+    {
+      id: "hn-hanggai", city: "hanoi", cat: "shop", img: null,
+      name: "Hàng Gai silk street", vi: "Phố Hàng Gai",
+      desc: "The Old Quarter street for silk and made-to-measure tailoring.",
+      time: "30 min–1 h", best: "Early in your stay", cost: "Shirt ~800k–1.5M ₫", from: "From the lake: walk 5 min",
+      tip: "Fittings take a day or two. Buy from tailors and silk specialists, not the souvenir shops.",
+      q: "Hang Gai Street Hanoi silk"
+    },
+    {
+      id: "hn-hangma", city: "hanoi", cat: "shop", img: null,
+      name: "Hàng Mã street", vi: "Phố Hàng Mã",
+      desc: "The street of paper offerings, lanterns and festive decorations, a riot of colour.",
+      time: "20–40 min", best: "Evening", cost: "Free to browse", from: "From the lake: walk 15 min",
+      tip: "Ask before photographing shopkeepers. Bạch Mã Temple is a few minutes away.",
+      q: "Hang Ma Street Hanoi"
+    },
+    {
+      id: "hn-mausoleum", city: "hanoi", cat: "old", img: null,
+      name: "Ho Chi Minh Mausoleum & One Pillar Pagoda", vi: "Lăng Chủ tịch Hồ Chí Minh · Chùa Một Cột",
+      desc: "The mausoleum on Ba Đình Square, with the stilt house, the Presidential Palace gardens and the little One Pillar Pagoda nearby.",
+      time: "2–3 h", best: "8–11am · closed Mon & Fri", cost: "Mausoleum free · grounds ~25–40k ₫", from: "From the lake: car 10–15 min",
+      tip: "Mornings only, with a strict dress code: cover shoulders and knees, hats off, silence inside. See the mausoleum read.",
+      q: "Ho Chi Minh Mausoleum"
+    },
+    {
+      id: "hn-citadel", city: "hanoi", cat: "old", img: null,
+      name: "Imperial Citadel of Thăng Long", vi: "Hoàng thành Thăng Long",
+      desc: "UNESCO-listed heart of the old royal city: the Đoan Môn gate, the Kính Thiên platform and layers of excavated palaces.",
+      time: "1.5–2 h", best: "Morning or late afternoon", cost: "100k ₫", from: "From the lake: car 10 min",
+      tip: "Kính Thiên Palace is being rebuilt (2026–2029), so parts of the centre may be fenced off. A lantern-lit night tour (300k ₫) runs Fri and Sat at 7pm. See the Thăng Long read.",
+      q: "Imperial Citadel of Thang Long"
+    },
+    {
+      id: "hn-templeoflit", city: "hanoi", cat: "old", img: null,
+      name: "Temple of Literature", vi: "Văn Miếu – Quốc Tử Giám",
+      desc: "A Confucian temple from 1070 that housed Vietnam's first university, with walled courtyards and stelae on stone turtles.",
+      time: "1–1.5 h", best: "8am opening", cost: "70k ₫", from: "From the lake: car 10 min",
+      tip: "Cover shoulders and knees, and bring cash for the ticket office.",
+      q: "Temple of Literature Hanoi"
+    },
+    {
+      id: "hn-ethnology", city: "hanoi", cat: "old", img: null,
+      name: "Vietnam Museum of Ethnology", vi: "Bảo tàng Dân tộc học",
+      desc: "Vietnam's 54 ethnic groups, with a garden of full-size houses, including a real Gia Rai tomb house.",
+      time: "2.5–3 h", best: "Morning · closed Mon", cost: "40k ₫", from: "From the lake: car 25 min",
+      tip: "Leave an hour for the outdoor garden: you can step inside the houses. Read the nhà mồ article first.",
+      q: "Vietnam Museum of Ethnology"
+    },
+    {
+      id: "hn-hoalo", city: "hanoi", cat: "old", img: null,
+      name: "Hỏa Lò Prison", vi: "Di tích Nhà tù Hỏa Lò",
+      desc: "Part of the French colonial prison later known to American POWs as the 'Hanoi Hilton', now a museum.",
+      time: "1–1.5 h", best: "Daytime", cost: "50k ₫", from: "From the lake: walk 15 min",
+      tip: "A heavy visit on imprisonment; the audio guide gives useful context.",
+      q: "Hoa Lo Prison Hanoi"
+    },
+    {
+      id: "hn-womens", city: "hanoi", cat: "old", img: null,
+      name: "Vietnamese Women's Museum", vi: "Bảo tàng Phụ nữ Việt Nam",
+      desc: "Women's lives in family, history and fashion, with superb ethnic-minority textiles.",
+      time: "1.5 h", best: "Daytime", cost: "40k ₫", from: "From the lake: walk 10 min",
+      tip: "The textile and jewellery floor is the one for anyone into craft and design.",
+      q: "Vietnamese Women's Museum 36 Ly Thuong Kiet"
+    },
+    {
+      id: "hn-mamay", city: "hanoi", cat: "old", img: null,
+      name: "Heritage House, 87 Mã Mây", vi: "Ngôi nhà di sản 87 Mã Mây",
+      desc: "A restored merchant tube house showing how Old Quarter families lived and traded.",
+      time: "20–30 min", best: "Daytime", cost: "~30k ₫", from: "From the lake: walk 10 min",
+      tip: "Pair it with a wander along Mã Mây and Hàng Buồm.",
+      q: "Heritage House 87 Ma May Hanoi"
+    },
+    {
+      id: "hn-tranquoc", city: "hanoi", cat: "spirit", img: null,
+      name: "West Lake & Trấn Quốc Pagoda", vi: "Hồ Tây · Chùa Trấn Quốc",
+      desc: "Hanoi's oldest pagoda, with a tall red stupa on a little peninsula in the city's biggest lake.",
+      time: "1–2 h", best: "Late afternoon to sunset", cost: "Free", from: "From the lake: car 15 min",
+      tip: "Cover shoulders and knees inside. The best view is from across the water on Thanh Niên road.",
+      q: "Tran Quoc Pagoda"
+    },
+    {
+      id: "hn-hoankiem", city: "hanoi", cat: "out", img: null,
+      name: "Hoàn Kiếm Lake & Ngọc Sơn Temple", vi: "Hồ Hoàn Kiếm · Đền Ngọc Sơn",
+      desc: "The lake at the heart of the city, with Ngọc Sơn Temple on an islet across the red Thê Húc bridge.",
+      time: "1–1.5 h", best: "Early morning or evening", cost: "Temple 50k ₫", from: "Centre of the Old Quarter",
+      tip: "On weekend evenings the streets around the lake close to traffic and fill with families.",
+      q: "Ngoc Son Temple Hanoi"
+    },
+    {
+      id: "hn-oldquarter", city: "hanoi", cat: "out", img: null,
+      name: "Old Quarter & night market", vi: "Phố cổ Hà Nội",
+      desc: "The tangle of narrow trade streets north of the lake, the old '36 streets'.",
+      time: "2–4 h", best: "Morning, or Fri–Sun night", cost: "Free", from: "From the lake: walk 5 min",
+      tip: "The weekend night market runs Fri–Sun about 6–11pm from Hàng Đào up to Đồng Xuân Market.",
+      q: "Hanoi Old Quarter"
+    },
+    {
+      id: "hn-trainstreet", city: "hanoi", cat: "out", img: null,
+      name: "Train Street", vi: "Phố đường tàu · Phùng Hưng",
+      desc: "A stretch of railway where trains squeeze past homes and cafés a metre away.",
+      time: "45 min", best: "Weekday, before a train", cost: "Buy a drink", from: "From the lake: walk 15 min",
+      tip: "Access comes and goes: tours were banned in 2025 and police sometimes close it. Sit in a café, stay off the tracks, and leave if there are barriers.",
+      q: "Hanoi Train Street Phung Hung"
+    },
+    {
+      id: "hn-duonglam", city: "hanoi", cat: "trips", img: null,
+      name: "Đường Lâm ancient village", vi: "Làng cổ Đường Lâm",
+      desc: "A quiet village of laterite-brick houses, with an old communal house and Mía Pagoda.",
+      time: "Full day", best: "Morning", cost: "20k ₫ + car", from: "Car ~1.5 h",
+      tip: "Go with a driver and take it slowly; it's the calm countryside day.",
+      q: "Duong Lam Ancient Village"
+    },
+
+    /* Ninh Bình — mostly Tràng An */
+    {
+      id: "nb-hangmua", city: "ninhbinh", cat: "two", img: "r-ta-243",
+      name: "Hang Múa viewpoint at sunset", vi: "Hang Múa",
+      desc: "About 500 stone steps to a dragon-topped lookout over the Tam Cốc river bends and karst peaks.",
+      time: "1.5–2 h", best: "Sunset, or 6am", cost: "150k ₫", from: "Tam Cốc: bike 15 min",
+      tip: "Bring water, good shoes and a phone torch for the way down after sunset.",
+      q: "Hang Múa, Ninh Xuân, Ninh Bình"
+    },
+    {
+      id: "nb-ninhvan", city: "ninhbinh", cat: "art", img: null,
+      name: "Ninh Vân stone-carving village", vi: "Làng đá mỹ nghệ Ninh Vân",
+      desc: "A centuries-old working village where artisans carve Buddhas, lions and temple stonework in the open air.",
+      time: "45–90 min", best: "Weekday morning", cost: "Free", from: "Tam Cốc: car 15 min",
+      tip: "It's a real workplace: expect dust and grinders, and ask before photographing the carvers.",
+      q: "Làng đá mỹ nghệ Ninh Vân"
+    },
+    {
+      id: "nb-vanlam", city: "ninhbinh", cat: "art", img: null,
+      name: "Văn Lâm embroidery", vi: "Làng thêu ren Văn Lâm",
+      desc: "The village at the Tam Cốc boat wharf, known for hand-embroidered landscape pictures since the early 1900s.",
+      time: "30–60 min", best: "With the Tam Cốc boat", cost: "Free to browse", from: "At the Tam Cốc wharf",
+      tip: "Turn the piece over: hand stitching looks slightly uneven at the back; machine work looks perfect.",
+      q: "Làng thêu ren Văn Lâm"
+    },
+    {
+      id: "nb-hoalu", city: "ninhbinh", cat: "old", img: "r-ta-126",
+      name: "Hoa Lư ancient capital", vi: "Cố đô Hoa Lư",
+      desc: "Vietnam's capital from 968 to 1010, now two royal temples to the Đinh and Lê kings, set between river and mountain.",
+      time: "1–1.5 h", best: "After the Tràng An boat", cost: "~20k ₫ (check at gate)", from: "Tràng An: car 10 min",
+      tip: "Look for the carved stone doorsteps at the Đinh temple, which the Lê temple lacks.",
+      q: "Đền vua Đinh Tiên Hoàng Hoa Lư"
+    },
+    {
+      id: "nb-baidinh", city: "ninhbinh", cat: "spirit", img: "r-ta-192",
+      name: "Bái Đính Pagoda", vi: "Chùa Bái Đính",
+      desc: "A vast modern Buddhist complex with a corridor of 500 arhats and a huge bronze bell, plus an old cave pagoda up the hill.",
+      time: "3–4 h", best: "Weekday morning", cost: "Free · e-car 100k ₫", from: "Tràng An: car 20 min",
+      tip: "Walk on past the new halls to the old cave pagoda; it's quieter and far more atmospheric.",
+      q: "Chùa Bái Đính"
+    },
+    {
+      id: "nb-bichdong", city: "ninhbinh", cat: "spirit", img: null,
+      name: "Bích Động Pagoda", vi: "Chùa Bích Động",
+      desc: "A three-level pagoda from 1428 built into a cliff, linked by a cave passage.",
+      time: "30–45 min", best: "Late afternoon", cost: "Free–20k ₫", from: "Tam Cốc: bike 10 min",
+      tip: "Cover shoulders and knees, and take shoes off where asked.",
+      q: "Chùa Bích Động"
+    },
+    {
+      id: "nb-trangan", city: "ninhbinh", cat: "out", img: "r-ta-6",
+      name: "Tràng An boat trip", vi: "Bến thuyền Tràng An",
+      desc: "A rowed boat through flooded caves and past island temples in the UNESCO-listed Tràng An landscape.",
+      time: "2–3.5 h", best: "7–8am, weekday", cost: "300k ₫ each", from: "Ninh Bình city: car 15 min",
+      tip: "Boats seat four or five; a private boat (~1.2M ₫) is worth it for two. Route 2 passes the Kong: Skull Island scenery.",
+      q: "Bến thuyền Tràng An"
+    },
+    {
+      id: "nb-tamcoc", city: "ninhbinh", cat: "out", img: null,
+      name: "Tam Cốc boat trip", vi: "Bến thuyền Tam Cốc",
+      desc: "A gentle row along the Ngô Đồng river through three caves, often with rowers using their feet.",
+      time: "1.5–2 h", best: "First boats, or after 2pm", cost: "~250k ₫ (check at counter)", from: "Tam Cốc village",
+      tip: "Agree 'no stops' before setting off; rowers like to pull up at floating snack sellers.",
+      q: "Bến thuyền Tam Cốc"
+    },
+    {
+      id: "nb-thungnham", city: "ninhbinh", cat: "out", img: null,
+      name: "Thung Nham bird park", vi: "Vườn chim Thung Nham",
+      desc: "Caves, gardens and a lagoon where storks and herons fly in to roost at dusk.",
+      time: "2–3 h", best: "3–5pm", cost: "250k ₫", from: "Tam Cốc: car 15 min",
+      tip: "Recent reviews mention few birds and construction noise. Optional; Vân Long is the better wildlife trip.",
+      q: "Vườn chim Thung Nham"
+    },
+    {
+      id: "nb-vanlong", city: "ninhbinh", cat: "trips", img: null,
+      name: "Vân Long wetland", vi: "Khu bảo tồn Vân Long",
+      desc: "A quiet bamboo-boat glide across a karst-ringed wetland, home of the rare Delacour's langur.",
+      time: "1.5 h boat", best: "Early or late in the day", cost: "~30k ₫ + boat", from: "Tràng An: car 30 min",
+      tip: "Bring binoculars; the langurs stay high on the cliffs.",
+      q: "Khu bảo tồn Vân Long"
+    },
+    {
+      id: "nb-phatdiem", city: "ninhbinh", cat: "trips", img: null,
+      name: "Phát Diệm Cathedral", vi: "Nhà thờ Phát Diệm",
+      desc: "An 1890s stone and ironwood cathedral built to look like a giant Vietnamese pagoda.",
+      time: "2 h", best: "Weekday", cost: "Free", from: "Car 45–60 min",
+      tip: "Look at the carved ironwood columns and stone reliefs, which mix Vietnamese motifs with Christian imagery.",
+      q: "Nhà thờ Phát Diệm"
+    },
+    {
+      id: "nb-cucphuong", city: "ninhbinh", cat: "trips", img: null,
+      name: "Cúc Phương National Park", vi: "Vườn quốc gia Cúc Phương",
+      desc: "Vietnam's first national park: old-growth forest, giant trees and a primate rescue centre.",
+      time: "Full day", best: "Early start", cost: "60k ₫", from: "Car ~1 h",
+      tip: "Only worth it with a spare day and a love of forest walks.",
+      q: "Vườn quốc gia Cúc Phương"
     },
 
     /* Day trips — realistically pick one */
@@ -443,7 +792,7 @@ window.SGN_DATA = {
       id: "cu-chi", cat: "trips", img: "cu-chi",
       name: "Củ Chi Tunnels", vi: "Địa đạo Củ Chi",
       desc: "A wartime tunnel network you can crawl through, with traps and field kitchens.",
-      time: "Half day", best: "Early start", cost: "~125k ₫ + transport", from: "Car 1.5–2 h",
+      time: "Half day", best: "Early start", cost: "~90–135k ₫ + transport", from: "Car 1.5–2 h",
       tip: "Bến Đình is less crowded than Bến Dược. Wear clothes you don't mind getting dusty.",
       q: "Cu Chi Tunnels Ben Dinh"
     },
@@ -452,7 +801,7 @@ window.SGN_DATA = {
       name: "Mekong Delta", vi: "Mỹ Tho · Bến Tre",
       desc: "Sampans through coconut-palm canals, fruit orchards, coconut-candy workshops and river islands.",
       time: "Full day", best: "Early start", cost: "Tour", from: "Car ~2 h",
-      tip: "Tour lunches are often fish, so book a vegan meal in writing when you reserve.",
+      tip: "Tour lunches are often fish, so book a vegan meal in writing when you reserve. Mỹ Tho is now in Đồng Tháp province and Bến Tre in Vĩnh Long.",
       q: "Mỹ Tho"
     },
     {
@@ -487,44 +836,44 @@ window.SGN_DATA = {
     { id: "home",  label: "Near home",   icon: "i-pin" },
     { id: "east",  label: "Thảo Điền",   icon: "i-train" },
     { id: "rmit",  label: "Near RMIT",   icon: "i-grad" },
+    { id: "oldquarter", label: "Old Quarter", icon: "i-pin" },
+    { id: "westlake", label: "West Lake", icon: "i-drop" },
+    { id: "french", label: "French Quarter", icon: "i-landmark" },
+    { id: "tamcoc", label: "Tam Cốc", icon: "i-pin" },
+    { id: "trangan", label: "Tràng An", icon: "i-boat" },
+    { id: "city", label: "Ninh Bình city", icon: "i-landmark" },
+    { id: "citadel", label: "Citadel side", icon: "i-pavilion" },
+    { id: "south", label: "South bank", icon: "i-pin" },
+    { id: "pagoda", label: "Pagoda kitchens", icon: "i-temple" },
     { id: "cheap", label: "Cheap & local", icon: "i-cash" }
   ],
 
   restaurants: [
     /* Near home — District 1 / 3 */
-    { area: "home", kind: "veg", name: "Chay Tuệ", where: "D1 · Tôn Thất Đạm, ~3 min walk",
-      desc: "A well-liked local chay restaurant one street over from the hotel, with a long menu of Vietnamese vegetarian dishes.",
-      q: "Nhà hàng chay Tuệ 130 Tôn Thất Đạm" },
-    { area: "home", kind: "vegan", name: "Mãn Tự Vegan", where: "D1 · Tôn Thất Đạm, ~3 min walk",
-      desc: "A small pay-what-you-like vegan buffet near the hotel.",
-      q: "Mãn Tự Vegan 14/2 Tôn Thất Đạm" },
-    { area: "home", kind: "vegan", name: "Bon's Vegan", where: "D1 · Hàm Nghi, ~5 min walk",
-      desc: "A fully vegan spot on the boulevard by the hotel, handy for a quick meal without asking any questions.",
-      q: "Bon's Vegan 127 Hàm Nghi" },
+    { area: "home", kind: "veg", name: "Chay Tuệ", where: "Đa Kao · opposite the Jade Emperor Pagoda",
+      desc: "A well-liked chay restaurant with a long menu of Vietnamese vegetarian dishes. Pair it with the pagoda.",
+      q: "Chay Tuệ 76 Mai Thị Lựu" },
+    { area: "home", kind: "vegan", name: "Zero Plant-based", where: "D1 · 69/4 Tôn Thất Đạm, ~3 min walk",
+      desc: "A fully vegan café-restaurant tucked down an alley near the hotel: Vietnamese dishes, pastries and coffee.",
+      q: "Zero Plant-based Tôn Thất Đạm 69/4" },
+    { area: "home", kind: "vegan", name: "Bon's Vegan", where: "D1 · alley 89/8 Hàm Nghi, ~5 min walk",
+      desc: "A small, fully vegan spot for bánh mì, noodle bowls and nut milks, a short walk from the hotel.",
+      q: "Bon's Vegan Bistro 89/8 Hàm Nghi" },
     { area: "home", kind: "veg", name: "Chay Garden", where: "D3 · Võ Văn Tần · Michelin Bib Gourmand",
       desc: "Vietnamese vegetarian cooking in a garden house, recognised by the Michelin Guide.",
       q: "Chay Garden 52 Võ Văn Tần" },
-    { area: "home", kind: "veg", name: "PI Vegetarian Bistro", where: "D3 · near War Remnants",
+    { area: "home", kind: "veg", name: "PI Vegetarian Bistro", where: "Đa Kao · 187/15 Điện Biên Phủ",
       desc: "A relaxed bistro with rice bowls, tempeh salads and Vietnamese dishes.",
-      q: "PI Vegetarian Bistro Saigon" },
+      q: "PI Vegetarian Bistro 187/15 Điện Biên Phủ" },
     { area: "home", kind: "veg", name: "Hum Vegetarian", where: "D3 · next to War Remnants",
-      desc: "Calm, leafy and a bit upscale, with a mostly vegan menu.",
+      desc: "Calm, leafy and a bit upscale, with a large vegan menu. Ask which dishes are fully vegan.",
       q: "Hum Vegetarian Café & Restaurant Võ Văn Tần" },
-    { area: "home", kind: "veg", name: "Hoa Đăng", where: "D1 · Đa Kao",
-      desc: "Elegant Vietnamese vegetarian food with a big menu.",
-      q: "Hoa Đăng vegetarian restaurant" },
-    { area: "home", kind: "vegan", name: "Filthy Vegan", where: "D1 · Cô Bắc street",
+    { area: "home", kind: "options", name: "Tartine Saigon", where: "D1 · 215 Lý Tự Trọng",
+      desc: "A sourdough bakery-café with vegan sandwiches and pastries, good for breakfast.",
+      q: "Tartine Saigon 215 Lý Tự Trọng" },
+    { area: "home", kind: "vegan", name: "Filthy Vegan", where: "D1 · 86 Cô Bắc, upstairs · closed Sun",
       desc: "Indulgent vegan comfort food: burgers, loaded fries, the works.",
       q: "Filthy Vegan Cô Bắc" },
-    { area: "home", kind: "veg", name: "Tib Vegetarian", where: "D1 / D3",
-      desc: "Imperial Huế-style vegetarian dishes.",
-      q: "Tib Vegetarian Saigon" },
-    { area: "home", kind: "veg", name: "Phương Mai Chay", where: "D3 · Võ Thị Sáu",
-      desc: "A popular local vegetarian spot with a long Vietnamese menu.",
-      q: "Phương Mai Chay Võ Thị Sáu" },
-    { area: "home", kind: "vegan", name: "Vegan Delight", where: "Buffet",
-      desc: "An all-you-can-eat plant-based buffet.",
-      q: "Vegan Delight buffet chay" },
 
     /* Thảo Điền — by metro */
     { area: "east", kind: "vegan", name: "Zeroism Vegan Café", where: "Alley off Nguyễn Văn Hưởng",
@@ -536,49 +885,109 @@ window.SGN_DATA = {
     { area: "east", kind: "veg", name: "Hum Garden", img: "hum-garden", where: "Villa with garden",
       desc: "Hum's sister restaurant in a leafy villa, slower and greener than the city branch.",
       q: "Hum Garden Thảo Điền" },
-    { area: "east", kind: "veg", name: "Chay Garden Thảo Điền", where: "Nguyễn Cơ Thạch · buffet",
-      desc: "An upscale Vietnamese vegetarian buffet, good for sampling.",
-      q: "Chay Garden Thảo Điền" },
-    { area: "east", kind: "options", name: "Baba's Kitchen", where: "Nguyễn Văn Hưởng",
+    { area: "east", kind: "veg", name: "Chay Garden Thảo Điền", where: "52 Xuân Thủy",
+      desc: "The Thảo Điền branch of the Michelin-listed Chay Garden, in a garden house.",
+      q: "Chay Garden Thảo Điền 52 Xuân Thủy" },
+    { area: "east", kind: "options", name: "Baba's Kitchen", where: "35 Lê Văn Miến",
       desc: "Indian food with plenty of vegetarian dishes.",
-      q: "Baba's Kitchen Thảo Điền" },
-    { area: "east", kind: "options", name: "Tartine Saigon", where: "Ngô Tất Tố, Bình Thạnh",
-      desc: "A sourdough bakery with vegan sandwiches, pizzas and salads.",
-      q: "Tartine Saigon Thảo Điền" },
-
+      q: "Baba's Kitchen 35 Lê Văn Miến" },
+    
     /* Near RMIT — Phú Mỹ Hưng / old District 7 */
-    { area: "rmit", kind: "vegan", name: "Veganizta", where: "Tôn Dật Tiên · closed Mon",
-      desc: "A fully vegan restaurant near campus, open for lunch and dinner.",
-      q: "Veganizta Tôn Dật Tiên" },
-    { area: "rmit", kind: "vegan", name: "Liên Hoa 2", where: "Trần Xuân Soạn",
+    { area: "rmit", kind: "vegan", name: "Liên Hoa 2", where: "439 Trần Xuân Soạn",
       desc: "A clean, open-air, all-vegan Vietnamese canteen.",
-      q: "Liên Hoa 2 chay Trần Xuân Soạn" },
-    { area: "rmit", kind: "vegan", name: "Kashew Phú Mỹ Hưng", where: "Phú Mỹ Hưng",
+      q: "Liên Hoa 2 chay 439 Trần Xuân Soạn" },
+    { area: "rmit", kind: "vegan", name: "Kashew Phú Mỹ Hưng", where: "The Ascentia, 3 Nguyễn Lương Bằng",
       desc: "The south-side branch of the plant-based cheese bar.",
       q: "Kashew Cheese Phú Mỹ Hưng" },
-    { area: "rmit", kind: "veg", name: "Nhà Hàng Chay An", where: "Several D7 branches",
-      desc: "A local vegetarian chain with a few branches around Phú Mỹ Hưng.",
-      q: "Nhà hàng chay An Phú Mỹ Hưng" },
-    { area: "rmit", kind: "veg", name: "Quán Chay Phát Tâm", where: "Budget",
-      desc: "A roomy, inexpensive vegetarian spot for a quick work-day meal.",
-      q: "Quán Chay Phát Tâm quận 7" },
 
     /* Cheap & local */
-    { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "Several D1 branches",
+    { area: "cheap", kind: "vegan", name: "Bánh Mì Xanh", where: "D1 · 2B Trần Hưng Đạo",
       desc: "Fully vegan bánh mì. No pâté or butter to worry about.",
-      q: "Bánh Mì Xanh vegan" },
-    { area: "cheap", kind: "vegan", name: "Hủ Tiếu Chay Chú Quang", where: "Alley off Lãnh Binh Thăng",
-      desc: "A tiny, much-loved vegan noodle-soup spot.",
-      q: "Hủ Tiếu Chay Chú Quang" },
-    { area: "cheap", kind: "vegan", name: "SEN Vegan", where: "D1 · Phó Đức Chính",
+      q: "Bánh Mì Xanh 2B Trần Hưng Đạo" },
+    { area: "cheap", kind: "vegan", name: "SEN Vegan", where: "D1 · 171 Nguyễn Thái Học",
       desc: "Simple, good-value vegan Vietnamese set meals, around 60–80k ₫ a plate.",
-      q: "Sen Vegan House Phó Đức Chính" },
-    { area: "cheap", kind: "vegan", name: "Loving Hut", where: "Branches citywide",
-      desc: "A vegan chain with Vietnamese and fusion dishes.",
-      q: "Loving Hut vegan" },
+      q: "Sen Vegan House 171 Nguyễn Thái Học" },
     { area: "cheap", kind: "veg", name: "Any \"Quán cơm chay\"", where: "Every neighbourhood",
       desc: "Buddhist vegetarian canteens where you point at what you want, about 30–50k ₫ a plate.",
-      q: "quán cơm chay Quận 1" }
+      q: "quán cơm chay Quận 1" },
+
+    /* Hà Nội */
+    { id: "r-hn-uudam", city: "hanoi", area: "french", kind: "veg", name: "Ưu Đàm Chay", where: "55 Nguyễn Du · Michelin Bib Gourmand",
+      desc: "A stylish three-floor vegetarian restaurant with Buddhist décor; reviewers say the menu is all vegan.",
+      q: "Uu Dam Chay 55 Nguyen Du Hanoi" },
+    { id: "r-hn-codam", city: "hanoi", area: "french", kind: "veg", name: "Cồ Đàm", where: "68a Trần Hưng Đạo · book ahead",
+      desc: "Vegetarian fine dining with an 11-course set menu that can be made vegan.",
+      q: "Co Dam vegetarian restaurant 68a Tran Hung Dao" },
+    { id: "r-hn-dana", city: "hanoi", area: "oldquarter", kind: "vegan", name: "Dana Vegan House", where: "12 Đông Thái",
+      desc: "Fully vegan modern Vietnamese food in a 100-year-old rice warehouse, with a tasting menu.",
+      q: "Dana Vegan House 12 Dong Thai Hanoi" },
+    { id: "r-hn-katze", city: "hanoi", area: "oldquarter", kind: "vegan", name: "Katze", where: "26B Cầu Gỗ, down an alley",
+      desc: "A homely, fully vegan Vietnamese kitchen known for its free starters and sides.",
+      q: "Katze vegan 26B Cau Go Hanoi" },
+    { id: "r-hn-ivegan", city: "hanoi", area: "oldquarter", kind: "vegan", name: "iVegan Supershop", where: "56 Hàng Điếu",
+      desc: "A casual, good-value vegan café with a wide menu and vegan cakes.",
+      q: "iVegan Supershop 56 Hang Dieu" },
+    { id: "r-hn-social", city: "hanoi", area: "oldquarter", kind: "options", name: "The Hanoi Social Club", where: "6 Hội Vũ",
+      desc: "A café-bar in an old house with clearly marked vegan dishes like a tempeh sandwich.",
+      q: "The Hanoi Social Club 6 Hoi Vu" },
+    { id: "r-hn-kiez", city: "hanoi", area: "westlake", kind: "vegan", name: "Kiez Vegan Butcher", where: "12/2A Đặng Thai Mai · closed Mon",
+      desc: "A vegan brunch bistro making its own mock meats; try the eggs Benedict.",
+      q: "Kiez Vegan Butcher Cafe Hanoi" },
+    { id: "r-hn-lastudio", city: "hanoi", area: "westlake", kind: "vegan", name: "La Studio", where: "44, lane 31 Xuân Diệu",
+      desc: "A long-running vegan restaurant in the leafy West Lake area.",
+      q: "La Studio vegan Xuan Dieu Hanoi" },
+    { id: "r-hn-veggiecastle", city: "hanoi", area: "cheap", kind: "vegan", name: "Veggie Castle", where: "7 Yên Ninh · ~120k ₫ buffet",
+      desc: "A self-serve, all-you-can-eat vegan Vietnamese buffet.",
+      q: "Veggie Castle 7 Yen Ninh" },
+    { id: "r-hn-lovinghut", city: "hanoi", area: "cheap", kind: "vegan", name: "Loving Hut Ba Đình", where: "9a Đặng Tất alley · cash only",
+      desc: "A small, quiet vegan restaurant with a big, cheap menu.",
+      q: "Loving Hut 9a Dang Tat Hanoi" },
+    { id: "r-hn-baoan", city: "hanoi", area: "cheap", kind: "vegan", name: "Bao An Vegan", where: "66B Trần Hưng Đạo · Mon–Sat",
+      desc: "A family-run counter for vegan bánh mì, phở and rolls. Cash only.",
+      q: "Bao An Vegan 66B Tran Hung Dao" },
+
+    /* Ninh Bình */
+    { id: "r-nb-ngon", city: "ninhbinh", area: "tamcoc", kind: "vegan", name: "Ngon Vegan", where: "Tam Cốc Rd · may close Tue",
+      desc: "A stylish, fully vegan restaurant with a big menu, from tofu dishes to fresh spring rolls.",
+      q: "Ngon Vegan Restaurant Tam Coc" },
+    { id: "r-nb-ngodong", city: "ninhbinh", area: "tamcoc", kind: "vegan", name: "Ngô Đồng Vegan", where: "By the Tam Cốc entrance",
+      desc: "A family-run, fully vegan Vietnamese menu: banana-flower salad, fried lotus, dumplings.",
+      q: "Ngo Dong Vegan Restaurant Tam Coc" },
+    { id: "r-nb-theboat", city: "ninhbinh", area: "tamcoc", kind: "options", name: "The Boat", where: "Tam Cốc Rd · 9am–4:30pm",
+      desc: "A healthy café with a separate vegan menu, oat-milk coffee and smoothie bowls. Good for breakfast.",
+      q: "The Boat Healthy and Vegan Eatery Tam Coc" },
+    { id: "r-nb-hoalu", city: "ninhbinh", area: "city", kind: "vegan", name: "Chay Hoa Lư (Loving Hut)", where: "56 Lương Văn Thăng",
+      desc: "An all-vegan family restaurant with a huge menu of mushroom and mock-meat dishes at local prices.",
+      q: "Nhà Hàng Chay Hoa Lư Loving Hut Ninh Bình" },
+    { id: "r-nb-khaitam", city: "ninhbinh", area: "city", kind: "vegan", name: "Chay Khai Tâm", where: "15 Đông Phương Hồng",
+      desc: "A calm, fully vegan restaurant with a bonsai garden and an English picture menu.",
+      q: "Nhà hàng chay Khai Tâm Ninh Bình" },
+
+    /* Huế */
+    { id: "r-hue-nhatle", city: "hue", area: "citadel", kind: "vegan", name: "Nhật Lệ vegan canteen", where: "87 Nhật Lệ · 7am–2pm",
+      desc: "Cheap, all-plant-based rice and noodle plates (~20–30k ₫), the closest vegan food to the Imperial City.",
+      q: "Vegan Restaurant Nhật Lệ Huế" },
+    { id: "r-hue-baminh", city: "hue", area: "citadel", kind: "veg", name: "Quán Chay Bà Minh", where: "4 Hàn Thuyên, near Đông Ba",
+      desc: "A homely spot doing vegetarian versions of Huế classics like bún and bánh ram ít, with an English menu.",
+      q: "Quán Chay Bà Minh 4 Hàn Thuyên Huế" },
+    { id: "r-hue-tinhtam", city: "hue", area: "south", kind: "vegan", name: "Tịnh Tâm Vegan", where: "12 Chu Văn An",
+      desc: "A fully vegan restaurant for Huế rice and noodle dishes. Some reviews mention a service charge.",
+      q: "Tịnh Tâm Vegan 12 Chu Văn An Huế" },
+    { id: "r-hue-tinhgarden", city: "hue", area: "south", kind: "veg", name: "Tĩnh Garden", where: "140 Phan Bội Châu",
+      desc: "A pretty garden restaurant with a clearly labelled menu and lots of vegan dishes. Hugely popular.",
+      q: "Tĩnh Garden Vegetarian 140 Phan Bội Châu Huế" },
+    { id: "r-hue-sanmay", city: "hue", area: "south", kind: "veg", name: "Sân Mây", where: "8 Thanh Tịnh, Vỹ Dạ",
+      desc: "Old-Huế-style dining room in the riverside Vỹ Dạ quarter, with several vegan dishes. A lovely dinner.",
+      q: "Sân Mây Huế Thanh Tịnh" },
+    { id: "r-hue-mingle", city: "hue", area: "south", kind: "veg", name: "Mingle Café", where: "Lane 42 Nguyễn Công Trứ",
+      desc: "An open-air garden café with all-day vegetarian food and oat milk; tofu scramble stands in for eggs.",
+      q: "Mingle Vegetarian Cafe Restaurant Huế" },
+    { id: "r-hue-tamduc", city: "hue", area: "cheap", kind: "vegan", name: "Bánh Mì Chay Tâm Đức", where: "137 Phan Bội Châu · 6–10:30am",
+      desc: "A street cart making excellent vegan bánh mì. Mornings only.",
+      q: "Bánh mì chay Tâm Đức 137 Phan Bội Châu Huế" },
+    { id: "r-hue-lienhoa", city: "hue", area: "cheap", kind: "veg", name: "Liên Hoa", where: "3 Lê Quý Đôn",
+      desc: "A long-running, very local vegetarian canteen in a garden: cheap, busy, little English.",
+      q: "Cơm chay Liên Hoa 3 Lê Quý Đôn Huế" }
   ],
 
   /* ---------- FAIR PRICES (VND, rough 2026 ranges) ---------- */
@@ -607,7 +1016,7 @@ window.SGN_DATA = {
       { name: "Cyclo, one hour", lo: 150000, hi: 300000 }
     ] },
     { group: "Things to do", items: [
-      { name: "Museum ticket", lo: 30000, hi: 65000 },
+      { name: "Museum or heritage ticket", lo: 30000, hi: 200000 },
       { name: "Foot massage, 60 min", lo: 200000, hi: 400000 },
       { name: "Laundry, per kg", lo: 30000, hi: 50000 }
     ] }
@@ -807,7 +1216,13 @@ window.SGN_DATA = {
           "p": [
             "You won't find tomb houses in Saigon. The best place is the outdoor garden of the Vietnam Museum of Ethnology in Hanoi, which has both a Gia Rai tomb house, built in 1998 by five Jrai Arap men from Mrông Ngó village in Gia Lai, and a Cơ Tu tomb house, made by Briu Nga of Quảng Nam and brought there in 2005. In the Highlands, Pleiku and nearby villages such as Kép still have statues, and the Đắk Lắk Museum in Buôn Ma Thuột displays some too."
           ],
-          "tip": "If you ever visit a real Gia Rai cemetery, go with a local guide. It is a sacred place: ask before taking photos, and never touch, move or take anything from a tomb. Elsewhere, if you pass a funeral in Vietnam, keep a respectful distance and don't photograph mourners without asking. Vietnam's tourism board also advises never to step over offerings or altars set on the ground."
+          "tip": "If you ever visit a real Gia Rai cemetery, go with a local guide. It is a sacred place: ask before taking photos, and never touch, move or take anything from a tomb. Elsewhere, if you pass a funeral in Vietnam, keep a respectful distance and don't photograph mourners without asking. Vietnam's tourism board also advises never to step over offerings or altars set on the ground.",
+          "maps": [
+            {
+              "key": "hn-ethnology",
+              "label": "Museum of Ethnology, Hà Nội"
+            }
+          ]
         }
       ],
       "sources": [
@@ -1861,7 +2276,13 @@ window.SGN_DATA = {
               "cap": "Statues in the Tứ Trụ temple honour four great generals of the Đinh dynasty."
             }
           ],
-          "tip": "For an art lover: in the King Đinh temple, look for the two dragon platforms, each carved from a single block of stone in the 17th century and named national treasures in 2017. One art researcher noticed that each dragon has three distinctly feminine hands, and reads them as a coded tribute to Empress Dương Vân Nga, who was married to two kings."
+          "tip": "For an art lover: in the King Đinh temple, look for the two dragon platforms, each carved from a single block of stone in the 17th century and named national treasures in 2017. One art researcher noticed that each dragon has three distinctly feminine hands, and reads them as a coded tribute to Empress Dương Vân Nga, who was married to two kings.",
+          "maps": [
+            {
+              "key": "nb-hoalu",
+              "label": "Hoa Lư"
+            }
+          ]
         },
         {
           "h": "A sacred landscape",
@@ -1905,7 +2326,7 @@ window.SGN_DATA = {
         {
           "h": "On the water",
           "p": [
-            "The classic way to see Tràng An is in a small rowing boat, three or four people with a local rower, women and men alike. There are three routes. Route 1 loops through nine caves, including the Dark Cave, the Bright Cave and the Wine-Brewing Cave, and stops at three sacred sites. Route 2 passes four caves and the Vũ Lâm area. Route 3, added in 2018, includes Hang Mây, over a kilometre long. Some caves are so low you lie back in the boat as the rock passes centimetres overhead. A ticket was about 250,000 ₫ per person.",
+            "The classic way to see Tràng An is in a small rowing boat, three or four people with a local rower, women and men alike. There are three routes. Route 1 loops through nine caves, including the Dark Cave, the Bright Cave and the Wine-Brewing Cave, and stops at three sacred sites. Route 2 passes four caves and the Vũ Lâm area. Route 3, added in 2018, includes Hang Mây, over a kilometre long. Some caves are so low you lie back in the boat as the rock passes centimetres overhead. Since January 2026 a ticket is 300,000 ₫ per person, boat included. Route 3 was suspended in July 2026 after floods filled its caves, so check which routes are running.",
             "Nearby Tam Cốc (\"three caves\") follows a river through rice fields to the caves Hang Cả, Hang Hai and Hang Ba. Watch the rowers: some row with their feet, leaning back and pushing the oars with their soles."
           ],
           "gallery": [
@@ -1949,6 +2370,12 @@ window.SGN_DATA = {
               "key": "r-ta-60",
               "cap": "Houses and banana trees at Tam Cốc."
             }
+          ],
+          "maps": [
+            {
+              "key": "nb-trangan",
+              "label": "Tràng An boats"
+            }
           ]
         },
         {
@@ -1964,6 +2391,12 @@ window.SGN_DATA = {
             {
               "key": "r-ta-242",
               "cap": "The stone dragon on top of Múa mountain."
+            }
+          ],
+          "maps": [
+            {
+              "key": "nb-hangmua",
+              "label": "Hang Múa"
             }
           ]
         },
@@ -2088,6 +2521,574 @@ window.SGN_DATA = {
           "url": "https://vietnamnews.vn/life-style/1784040/trang-an-at-the-heart-of-ninh-binh-s-heritage-city-vision.html"
         }
       ]
+    },
+    {
+      "id": "hcm-mausoleum",
+      "title": "Ba Đình: the Hồ Chí Minh Mausoleum",
+      "vi": "Lăng Chủ tịch Hồ Chí Minh",
+      "img": {
+        "key": "r-hcm-01",
+        "cap": "The Hồ Chí Minh Mausoleum on Ba Đình Square."
+      },
+      "teaser": "Why a leader who asked to be cremated lies in state, how the granite tomb was built, and what to expect in the silent queue.",
+      "minutes": 12,
+      "lead": "On a vast lawn in western Hanoi stands a grey granite block where Hồ Chí Minh lies in a glass case, guarded day and night. For Vietnamese visitors it's a pilgrimage; for foreigners it's one of the most unusual experiences in the country, and a window onto how modern Vietnam tells its own story. This piece sticks to what's well documented and points out where accounts differ.",
+      "sections": [
+        {
+          "h": "The man known as Uncle Ho",
+          "p": [
+            "Hồ Chí Minh was born Nguyễn Sinh Cung on 19 May 1890 in Kim Liên, in Nghệ An province (he gave other birth years at times, but 1890 is the accepted one). He spent some 30 years abroad, in France, the Soviet Union, China and elsewhere, under many names, before returning to lead the Việt Minh independence movement.",
+            "On 2 September 1945 he read Vietnam's declaration of independence from a temporary wooden platform on this very square. He led North Vietnam until his death on 2 September 1969, aged 79. At the time, the death was announced as 3 September so it wouldn't fall on National Day; the government corrected the date in 1989.",
+            "In Vietnam he is revered as Bác Hồ, Uncle Ho, and his image is everywhere. Historians outside the country still debate how to weigh his nationalism against his communism, and parts of his record, such as the land reform of the 1950s, remain contested. Inside the mausoleum, though, there is only one story told, and visitors are expected to be respectful."
+          ]
+        },
+        {
+          "h": "A wish that wasn't followed",
+          "p": [
+            "In his will, Hồ Chí Minh asked to be cremated, with his ashes divided between the north, centre and south of the country. The Politburo decided instead to preserve his body, so that people from across Vietnam, especially the then-divided South, and visitors from abroad could pay their respects.",
+            "Soviet specialists from the institute that cared for Lenin's body, led by Professor Yuri Lopukhin, were invited to Hanoi just before he died, and the embalming was done at Military Hospital 108. During the war, the body was hidden at a secret site in the hills at Đá Chông, about 60 km west of Hanoi, while the mausoleum was planned. Between 1969 and 2014, 82 Soviet and later Russian experts helped care for it.",
+            "You may hear that the body is flown to Russia every year for upkeep. We couldn't find a reliable source for that; what is documented is that the mausoleum closes for about two months most years for maintenance. In 2026 that closure ran from 4 September to 2 November."
+          ]
+        },
+        {
+          "h": "Building the mausoleum",
+          "p": [
+            "Construction began on 2 September 1973, during the war, and the mausoleum was inaugurated on 29 August 1975. The design, by Soviet architect Garol Isakovich, draws on Lenin's tomb in Moscow but adds Vietnamese touches, such as the sloping, roof-like top. It is 21.6 metres high and 41.2 metres wide, built in three tiers of grey granite, and was engineered to withstand bombs and earthquakes.",
+            "Materials came from all over the country and beyond: stone and timber from different regions, 20,000 pieces of granite and marble from the Soviet Union, and sand and pebbles carried from as far as Hòa Bình. Across the front is the inscription 'Chủ tịch Hồ-Chí-Minh' (President Hồ Chí Minh). Inside, in gold, is his best-known line, 'Không có gì quý hơn độc lập, tự do': nothing is more precious than independence and freedom.",
+            "The gardens are part of the symbolism. More than 250 plant species were brought from every region, and 79 cycads were planted, one for each year of his life."
+          ],
+          "maps": [
+            {
+              "key": "hn-mausoleum",
+              "label": "Mausoleum"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-hcm-02",
+              "cap": "The mausoleum from across Ba Đình Square."
+            },
+            {
+              "key": "r-hcm-03",
+              "cap": "The granite façade and its inscription."
+            },
+            {
+              "key": "r-hcm-04",
+              "cap": "The three tiers of grey granite."
+            },
+            {
+              "key": "r-hcm-05",
+              "cap": "Gardeners tending the grounds."
+            }
+          ]
+        },
+        {
+          "h": "Ba Đình Square",
+          "p": [
+            "The square, about 320 by 100 metres, is the country's main ceremonial space. In French times this was the Puginier garden; it was renamed after the Ba Đình uprising of 1886–87. The lawn is divided into 210 grass squares, and military parades pass along the road in front of the mausoleum.",
+            "Honour guards in white stand at the entrance and are changed every hour. Each morning the flag is raised at 6:30am from November to March (6am in summer), and it's lowered at 9pm every evening, a short, quiet ceremony that's free to watch."
+          ],
+          "gallery": [
+            {
+              "key": "r-hcm-06",
+              "cap": "Honour guards at the entrance."
+            },
+            {
+              "key": "r-hcm-07",
+              "cap": "The guard at the main door."
+            },
+            {
+              "key": "r-hcm-08",
+              "cap": "The flagpole on Ba Đình Square."
+            },
+            {
+              "key": "r-hcm-09",
+              "cap": "A panorama of the square and its grass squares."
+            }
+          ],
+          "tip": "If you'd rather not join the morning queue, the 9pm flag-lowering is a calm way to see the square and the guards together."
+        },
+        {
+          "h": "Visiting: what to expect",
+          "p": [
+            "Entry is free, with no tickets: you simply queue. From November to March it's open about 8 to 11am (Saturdays possibly to 11:30), and it's closed every Monday and Friday. It also closes for a couple of months most years for maintenance, so check before you go. Individual visitors gather near 17 Ngọc Hà street, go through a security check, and leave large bags and big cameras at the storage counter.",
+            "Dress modestly: shoulders and knees covered, nothing see-through. Inside, you walk slowly in single file past the glass case, with hats and sunglasses off, hands by your sides and no talking. Photos are allowed outside but not in the chamber. Rules on phones vary between sources: some say they're now allowed if switched off, others that they're collected, so just switch yours off. Expect to queue for 30 to 90 minutes, and the visit inside lasts only a few minutes."
+          ],
+          "tip": "Arrive close to 8am on a weekday that isn't a Monday or Friday. Then walk on to the stilt house, the One Pillar Pagoda and the museum, which all close for lunch."
+        },
+        {
+          "h": "The palace and the stilt house",
+          "p": [
+            "Behind the mausoleum is the bright yellow Presidential Palace, built between 1900 and 1906 for the Governor-General of French Indochina. It's often credited to the architect Auguste Henri Vildieu, though some sources name Charles Lichtenfelder; the attribution isn't settled. Hồ Chí Minh is said to have declined to live in it. The palace is still used for state occasions, so visitors only see it from the gardens.",
+            "Instead he lived in a modest house in the grounds, then from 1958 until 1969 in a two-storey wooden stilt house built in the style of the ethnic minority houses of the Việt Bắc hills, beside a carp pond and a path of mango trees. A garage nearby holds his cars. The grounds cost about 25,000–40,000 ₫ (sources differ) and close for lunch."
+          ],
+          "gallery": [
+            {
+              "key": "r-hcm-10",
+              "cap": "The Presidential Palace, built for the French Governor-General."
+            },
+            {
+              "key": "r-hcm-11",
+              "cap": "The palace's yellow façade."
+            },
+            {
+              "key": "r-hcm-12",
+              "cap": "The Governor-General's palace in the early 20th century."
+            },
+            {
+              "key": "r-hcm-13",
+              "cap": "The stilt house by the carp pond."
+            },
+            {
+              "key": "r-hcm-14",
+              "cap": "The stilt house among the trees."
+            },
+            {
+              "key": "r-hcm-15",
+              "cap": "The simple study inside."
+            },
+            {
+              "key": "r-hcm-16",
+              "cap": "One of his cars in the garage."
+            }
+          ]
+        },
+        {
+          "h": "The One Pillar Pagoda",
+          "p": [
+            "A few steps away is one of Hanoi's oldest and most loved temples. The One Pillar Pagoda (Chùa Một Cột, formally Diên Hựu) was built in 1049 under the Lý emperor Lý Thái Tông. The story goes that the childless king dreamed of Quan Âm, the goddess of mercy, seated on a lotus and handing him a son. A monk advised him to build a shrine on a single pillar rising from a pond, like a lotus flower growing from the water.",
+            "The pagoda was blown up in September 1954 as French forces withdrew from Hanoi, and it was rebuilt in 1955. The little wooden shrine sits on a stone pillar about 4 metres tall. It's free to visit."
+          ],
+          "gallery": [
+            {
+              "key": "r-hcm-17",
+              "cap": "The One Pillar Pagoda rising from its pond."
+            },
+            {
+              "key": "r-hcm-18",
+              "cap": "The single stone pillar."
+            },
+            {
+              "key": "r-hcm-19",
+              "cap": "Offerings at the shrine."
+            }
+          ],
+          "tip": "Couples and families hoping for children still come to pray here, in honour of the king's dream."
+        },
+        {
+          "h": "The museum, for the art lover",
+          "p": [
+            "The Hồ Chí Minh Museum opened on 19 May 1990, the 100th anniversary of his birth, and was also designed by Garol Isakovich. It holds more than 170,000 documents, objects and films. Its upper galleries are surprising: rather than glass cases alone, they use large, symbolic, almost surreal installations to tell his life and the 20th century.",
+            "It's open Tuesday to Thursday and at weekends, about 8am to noon and 2 to 4:30pm, and costs about 40,000 ₫ for international visitors."
+          ],
+          "gallery": [
+            {
+              "key": "r-hcm-20",
+              "cap": "The museum building."
+            },
+            {
+              "key": "r-hcm-21",
+              "cap": "One of the symbolic installations inside."
+            },
+            {
+              "key": "r-hcm-22",
+              "cap": "Abstract art in the upper galleries."
+            },
+            {
+              "key": "r-hcm-23",
+              "cap": "Inside the museum."
+            }
+          ],
+          "tip": "Even if politics isn't your thing, go upstairs for the installations; they're some of the oddest museum design in Asia."
+        },
+        {
+          "h": "Plan the morning",
+          "p": [
+            "Ba Đình is about 2 km west of Hoàn Kiếm Lake, a short Grab ride. The Imperial Citadel of Thăng Long is just across the road, and the Temple of Literature about a kilometre south, so the whole area makes an easy day: mausoleum, stilt house and pagoda in the morning, then lunch, then the citadel or the Temple of Literature in the afternoon. The flag-lowering at 9pm is a fitting end if you're nearby."
+          ],
+          "maps": [
+            {
+              "key": "hn-mausoleum",
+              "label": "Mausoleum"
+            },
+            {
+              "key": "hn-citadel",
+              "label": "Imperial Citadel"
+            },
+            {
+              "key": "hn-templeoflit",
+              "label": "Temple of Literature"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Ho Chi Minh",
+          "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh"
+        },
+        {
+          "title": "Wikipedia: Ho Chi Minh Mausoleum",
+          "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Mausoleum"
+        },
+        {
+          "title": "Wikipedia (vi): Lăng Chủ tịch Hồ Chí Minh",
+          "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_Ch%E1%BB%A7_t%E1%BB%8Bch_H%E1%BB%93_Ch%C3%AD_Minh"
+        },
+        {
+          "title": "Wikipedia (vi): Quảng trường Ba Đình",
+          "url": "https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_tr%C6%B0%E1%BB%9Dng_Ba_%C4%90%C3%ACnh"
+        },
+        {
+          "title": "Wikipedia (vi): Đá Chông",
+          "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A1_Ch%C3%B4ng"
+        },
+        {
+          "title": "Tuổi Trẻ News: Mausoleum to close for maintenance from 4 September (2026)",
+          "url": "https://news.tuoitre.vn/president-ho-chi-minh-mausoleum-to-close-for-periodic-maintenance-from-september-4-10326080923215558.htm"
+        },
+        {
+          "title": "VietnamPlus: Mausoleum reopens to visitors (Nov 2026)",
+          "url": "https://www.vietnamplus.vn/lang-chu-tich-ho-chi-minh-mo-cua-tro-lai-de-don-nhan-dan-khach-quoc-te-post1146009.vnp"
+        },
+        {
+          "title": "Wikipedia: One Pillar Pagoda",
+          "url": "https://en.wikipedia.org/wiki/One_Pillar_Pagoda"
+        },
+        {
+          "title": "Wikipedia (vi): Chùa Một Cột",
+          "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_M%E1%BB%99t_C%E1%BB%99t"
+        },
+        {
+          "title": "Wikipedia: Presidential Palace, Hanoi",
+          "url": "https://en.wikipedia.org/wiki/Presidential_Palace,_Hanoi"
+        },
+        {
+          "title": "Wikipedia (vi): Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch",
+          "url": "https://vi.wikipedia.org/wiki/Khu_di_t%C3%ADch_Ch%E1%BB%A7_t%E1%BB%8Bch_H%E1%BB%93_Ch%C3%AD_Minh_t%E1%BA%A1i_Ph%E1%BB%A7_Ch%E1%BB%A7_t%E1%BB%8Bch"
+        },
+        {
+          "title": "Hồ Chí Minh Museum: visiting information",
+          "url": "https://baotanghochiminh.vn/thong-tin-ve-tham-quan.htm"
+        },
+        {
+          "title": "Wikipedia: Ho Chi Minh Museum",
+          "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_Museum"
+        },
+        {
+          "title": "VinWonders: What you can't bring into the mausoleum (2025)",
+          "url": "https://vinwonders.com/vi/bai-viet-du-lich/nhung-do-khong-duoc-mang-vao-lang-bac/"
+        }
+      ]
+    },
+    {
+      "id": "thang-long-citadel",
+      "title": "Thăng Long: the ascending dragon",
+      "vi": "Hoàng thành Thăng Long",
+      "img": {
+        "key": "r-tl-01",
+        "cap": "Đoan Môn, the main southern gate of the Imperial Citadel."
+      },
+      "teaser": "Thirteen centuries of palaces stacked in the ground, the dragons of four dynasties, a hidden war bunker, and a palace being rebuilt right now.",
+      "minutes": 13,
+      "lead": "Across the road from the mausoleum, behind an old gate in a quiet park, is the place where Hanoi began. Kings ruled from here for most of a thousand years; the French tore most of it down; the army turned it into a secret headquarters; and in 2002 archaeologists found palace after palace buried underneath. UNESCO listed it in 2010, the year Hanoi turned 1,000.",
+      "sections": [
+        {
+          "h": "From Đại La to Thăng Long",
+          "p": [
+            "The site was a seat of power long before Hanoi had its name. UNESCO dates the earliest layer to a Chinese fortress of the 7th century, and in 866 the Tang general Gao Pian built a large walled citadel here called Đại La.",
+            "In 1010 the first Lý king, Lý Thái Tổ, issued his Edict on the Transfer of the Capital from Hoa Lư, the old capital among the limestone towers of Ninh Bình (see the Tràng An article). Tradition says that when he arrived, he saw a dragon rising into the sky, so he called the city Thăng Long, 'ascending dragon'. The new citadel was built between 1010 and early 1011.",
+            "Over the centuries the city was renamed Đông Đô, Đông Quan and Đông Kinh, which Europeans turned into 'Tonkin'. In 1802 the Nguyễn emperors moved the capital to Huế, and the characters for Thăng Long were swapped for others that sound the same, so the 'long' no longer meant dragon. In 1831 Emperor Minh Mạng renamed the city Hà Nội."
+          ]
+        },
+        {
+          "h": "Demolished, occupied, and given back",
+          "p": [
+            "The Nguyễn rebuilt Hanoi's citadel from 1805, but it didn't last. French forces attacked it in 1873 and again in 1882, when the governor Hoàng Diệu took his own life rather than surrender. Hanoi was ceded to France in 1888, and the French pulled down most of the citadel for offices and barracks; the great Kính Thiên Palace was destroyed in 1886.",
+            "From 1954 to 1975 the Vietnamese army made its headquarters here, which kept the area closed for decades. The Ministry of Defence handed over the central sector in 2004, and in 2010 UNESCO inscribed it as a World Heritage Site for its almost 13 centuries as a centre of power and for the way it blends influences from China to the north and the Champa kingdom to the south. UNESCO also notes honestly that most of the buildings standing today date from the late 19th and 20th centuries."
+          ]
+        },
+        {
+          "h": "Đoan Môn and the Kính Thiên dragons",
+          "p": [
+            "You enter through Đoan Môn, the main southern gate: a U-shaped stone gatehouse 46.5 metres wide with five arches. The central arch was for the king alone. It dates from the early Lê dynasty in the 15th century, on the site of an older Lý gate. Just inside, a glass panel in the ground shows a Trần-era road, paved with reused Lý bricks, found here in 2002.",
+            "Walk north to the raised platform of Kính Thiên Palace, built in 1428 on the site of the Lý dynasty's main palace and rebuilt in 1465. The palace itself is gone, but its stone steps survive, with carved stone dragons running down the balustrades. Their dates differ between sources: the southern balustrade is dated to 1467, while the large dragons on the northern steps, each about 3.4 metres long, are often attributed to the later Lê period."
+          ],
+          "maps": [
+            {
+              "key": "hn-citadel",
+              "label": "Imperial Citadel"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-tl-02",
+              "cap": "Đoan Môn's five arches."
+            },
+            {
+              "key": "r-tl-03",
+              "cap": "Looking up at Đoan Môn."
+            },
+            {
+              "key": "r-tl-04",
+              "cap": "Đoan Môn from the south-west."
+            },
+            {
+              "key": "r-tl-05",
+              "cap": "The southern gate in the French era."
+            },
+            {
+              "key": "r-tl-06",
+              "cap": "The Kính Thiên platform and steps."
+            },
+            {
+              "key": "r-tl-07",
+              "cap": "A Lê-dynasty stone dragon on the Kính Thiên steps."
+            },
+            {
+              "key": "r-tl-08",
+              "cap": "The dragon balustrades of the Kính Thiên steps."
+            },
+            {
+              "key": "r-tl-09",
+              "cap": "Kính Thiên in the 1880s, photographed shortly before it was destroyed."
+            },
+            {
+              "key": "r-tl-10",
+              "cap": "Another 1880s view of Kính Thiên."
+            }
+          ]
+        },
+        {
+          "h": "A palace being rebuilt",
+          "p": [
+            "You'll be visiting at an unusual moment. On 29 September 2026, work began to rebuild Kính Thiên Palace, with UNESCO's World Heritage Centre represented at the ceremony. The project covers about 10,700 square metres, from the palace platform and its courtyard to the D67 area, and is due to finish in 2029.",
+            "It's a debated project. UNESCO and its advisers ICOMOS asked for clearer evidence of what the palace actually looked like, and plans for one gate were put on hold for lack of it. Supporters see a chance to restore the symbolic heart of the capital; critics worry about rebuilding without enough proof. Either way, expect fences and building work around the centre of the site."
+          ],
+          "tip": "Ask at the gate which areas are open, as the works may close parts of the Kính Thiên platform and the D67 area during your visit."
+        },
+        {
+          "h": "Palaces under the ground",
+          "p": [
+            "In December 2002, archaeologists began digging at 18 Hoàng Diệu, just west of the citadel, where a new National Assembly building was planned. What they found changed the project. Across some 19,000 square metres, the layers went down through 13 centuries: Đại La foundations, wells and drains at the bottom, then the 10th century, then the Lý and Trần dynasties, then the Lê. They found the foundations of more than 50 Lý palaces and millions of artefacts.",
+            "There was a long national debate about what to do. In 2003 the Politburo halted the project, and the building was later redesigned on a smaller footprint. The new National Assembly opened in 2014, with the remains under it protected in sand, while the main dig across the road was preserved under shelters you can walk among today."
+          ],
+          "gallery": [
+            {
+              "key": "r-tl-11",
+              "cap": "The excavation at 18 Hoàng Diệu."
+            },
+            {
+              "key": "r-tl-12",
+              "cap": "Foundations under the shelters."
+            },
+            {
+              "key": "r-tl-13",
+              "cap": "A panorama of the archaeological site."
+            },
+            {
+              "key": "r-tl-14",
+              "cap": "An ancient well uncovered in 2003."
+            }
+          ]
+        },
+        {
+          "h": "Art in clay: dragons and phoenixes",
+          "p": [
+            "For an art lover, the treasures are the roof ornaments. The finest is an 11th–12th-century terracotta 'bodhi leaf' about 77 centimetres tall, shaped and engraved by hand with a pair of phoenixes on a lotus ground inside a flame-shaped border. It probably sat on a palace roof ridge, and it is now a National Treasure, displayed in the exhibition house on site. Other National Treasures from the citadel include a Trần sword inlaid with gold and silver, and an early Lê glazed model of a roof.",
+            "You can also read the dynasties in their dragons. Lý dragons are slender and flowing, without horns. Trần dragons are more muscular and grow horns. Lê dragons have a lion-like head and sharp five-claw feet, like the ones on the Kính Thiên steps. By the Nguyễn they have stag horns and spiral tails, like those you'll see in Huế."
+          ],
+          "gallery": [
+            {
+              "key": "r-tl-15",
+              "cap": "The Lý-dynasty phoenix 'bodhi leaf', a National Treasure."
+            },
+            {
+              "key": "r-tl-16",
+              "cap": "A Lý-dynasty terracotta phoenix head."
+            },
+            {
+              "key": "r-tl-17",
+              "cap": "Glazed roof tiles excavated at the citadel."
+            }
+          ],
+          "tip": "Compare the Lê dragons on the Kính Thiên steps with the Nguyễn dragons at the Huế tombs later in your trip; you'll see 300 years of style change."
+        },
+        {
+          "h": "Hậu Lâu, Bắc Môn and the Flag Tower",
+          "p": [
+            "At the back of the site stands Hậu Lâu, nicknamed the Princess's Pavilion because palace women were said to have lived there. The heritage centre dates it to 1821 under Minh Mạng and describes it as a Daoist pavilion whose upper floor held statues of deities. The French later altered it, adding an annex with iron columns made in Paris.",
+            "To the north, Bắc Môn (the North Gate) is the last of the Nguyễn citadel's five gates still standing. Look for the two dents in its wall, believed to be made by French cannon fire from the Red River in 1882. Inside is a memorial to Hoàng Diệu and Nguyễn Tri Phương, who defended the citadel, and you can climb up to its little watchtower.",
+            "To the south, the Flag Tower, built in 1812, is about 33 metres tall, with 54 spiral steps inside an octagonal shaft. It was a lookout and signal tower, and became a symbol of the city when the national flag was raised on it in October 1954."
+          ],
+          "gallery": [
+            {
+              "key": "r-tl-18",
+              "cap": "Hậu Lâu, the 'Princess's Pavilion'."
+            },
+            {
+              "key": "r-tl-19",
+              "cap": "Bắc Môn, the North Gate."
+            },
+            {
+              "key": "r-tl-20",
+              "cap": "Cannon damage on the North Gate wall."
+            },
+            {
+              "key": "r-tl-21",
+              "cap": "The North Gate from the street."
+            },
+            {
+              "key": "r-tl-22",
+              "cap": "A citadel gate photographed by Émile Gsell in the 1870s."
+            },
+            {
+              "key": "r-tl-23",
+              "cap": "The Flag Tower, built in 1812."
+            },
+            {
+              "key": "r-tl-24",
+              "cap": "The tower's octagonal shaft."
+            },
+            {
+              "key": "r-tl-25",
+              "cap": "The Flag Tower today."
+            },
+            {
+              "key": "r-tl-26",
+              "cap": "The tower in the early 20th century."
+            }
+          ]
+        },
+        {
+          "h": "D67: the house with a bunker",
+          "p": [
+            "Among the trees is a plain single-storey building called D67. It was built in 1967 to look ordinary, but its walls are 60 centimetres thick for soundproofing, and stairs lead about 10 metres down to a bunker behind steel doors. It was the headquarters of the Central Military Commission and the General Staff, where General Võ Nguyên Giáp worked from 1968.",
+            "The meetings that decided the final offensive of 1975 were held around its long table. The rooms are kept as they were, with maps, telephones and the original furniture. A small cipher bunker nearby opened to the public for the first time in 2025."
+          ],
+          "gallery": [
+            {
+              "key": "r-tl-27",
+              "cap": "The D67 building."
+            },
+            {
+              "key": "r-tl-28",
+              "cap": "The meeting room inside D67."
+            },
+            {
+              "key": "r-tl-29",
+              "cap": "Inside the bunker beneath D67."
+            },
+            {
+              "key": "r-tl-30",
+              "cap": "A bunker corridor."
+            }
+          ]
+        },
+        {
+          "h": "Visiting",
+          "p": [
+            "The main entrance is at 19C Hoàng Diệu. The official site says it's open daily from 8am to 5pm (some guides say closed on Mondays). Tickets are 100,000 ₫ for adults, and children under 16 go free. Allow a morning or an afternoon; it pairs naturally with the mausoleum across the road and the Temple of Literature a kilometre away.",
+            "On Friday and Saturday evenings at 7pm, a 'Decoding the Imperial Citadel' night tour (about 1.5 hours, 300,000 ₫) takes you through by lantern light, with court dance and the excavation site. Check it's running during the rebuilding works."
+          ],
+          "maps": [
+            {
+              "key": "hn-citadel",
+              "label": "Imperial Citadel"
+            },
+            {
+              "key": "hn-mausoleum",
+              "label": "Mausoleum"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "UNESCO World Heritage Centre: Central Sector of the Imperial Citadel of Thang Long (archived)",
+          "url": "https://webarchive.unesco.org/web/20170129165040/http://whc.unesco.org/en/list/1328"
+        },
+        {
+          "title": "Wikipedia: Imperial Citadel of Thăng Long",
+          "url": "https://en.wikipedia.org/wiki/Imperial_Citadel_of_Th%C4%83ng_Long"
+        },
+        {
+          "title": "Wikipedia (vi): Hoàng thành Thăng Long",
+          "url": "https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Th%C4%83ng_Long"
+        },
+        {
+          "title": "Wikipedia: Thăng Long",
+          "url": "https://en.wikipedia.org/wiki/Th%C4%83ng_Long"
+        },
+        {
+          "title": "Wikipedia (vi): Điện Kính Thiên",
+          "url": "https://vi.wikipedia.org/wiki/%C4%90i%E1%BB%87n_K%C3%ADnh_Thi%C3%AAn"
+        },
+        {
+          "title": "Wikipedia (vi): Đoan Môn",
+          "url": "https://vi.wikipedia.org/wiki/%C4%90oan_M%C3%B4n"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: 18 Hoàng Diệu archaeological site",
+          "url": "https://hoangthanhthanglong.vn/en/?p=1376"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: The phoenix bodhi leaf",
+          "url": "https://hoangthanhthanglong.vn/en/the-bodhi-leaf-with-carved-phoenix-a-national-treasure-of-the-imperial-citadel-of-thang-long/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: New National Treasures",
+          "url": "https://hoangthanhthanglong.vn/en/new-national-treasures-of-the-imperial-citadel-of-thang-long/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Hậu Lâu (Tĩnh Bắc Pavilion)",
+          "url": "https://hoangthanhthanglong.vn/en/the-tinh-bac-pavilion-hau-lau-a-significant-daoist-architecture-of-the-nguyen-dynasty-19th-20th-century-within-the-thang-long-imperial-citadel-heritage-site-hanoi/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Bắc Môn",
+          "url": "https://hoangthanhthanglong.vn/en/bac-mon-a-witness-to-the-history-of-thang-long/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: The Flag Tower",
+          "url": "https://hoangthanhthanglong.vn/cot-co-ha-noi-bieu-tuong-lich-su-cua-thu-do/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Memories of Võ Nguyên Giáp at D67",
+          "url": "https://hoangthanhthanglong.vn/en/memories-of-vo-nguyen-giap-at-d67-building-and-bunker/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Reconstruction of Kính Thiên Palace begins (2026)",
+          "url": "https://hoangthanhthanglong.vn/en/reconstruction-of-kinh-thien-palace-begins-at-the-heart-of-the-thang-long-imperial-citadel/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Authenticity and the Kính Thiên reconstruction",
+          "url": "https://hoangthanhthanglong.vn/en/reconstructing-kinh-thien-palace-authenticity-in-the-world-heritage-context/"
+        },
+        {
+          "title": "Thăng Long Heritage Centre: Ticket prices",
+          "url": "https://hoangthanhthanglong.vn/gia-ve-tham-quan-hoang-thanh-thang-long/"
+        },
+        {
+          "title": "VietNamNet: Thăng Long citadel secrets after 15 years of research (2025)",
+          "url": "https://vietnamnet.vn/en/thang-long-citadel-secrets-revealed-after-15-years-of-research-2459593.html"
+        },
+        {
+          "title": "Wikipedia: National Assembly Building of Vietnam",
+          "url": "https://en.wikipedia.org/wiki/National_Assembly_Building_of_Vietnam"
+        },
+        {
+          "title": "Wikipedia: Flag Tower of Hanoi",
+          "url": "https://en.wikipedia.org/wiki/Flag_Tower_of_Hanoi"
+        },
+        {
+          "title": "Wikipedia: Vietnamese dragon",
+          "url": "https://en.wikipedia.org/wiki/Vietnamese_dragon"
+        },
+        {
+          "title": "VietnamPlus: The citadel night tour",
+          "url": "https://www.vietnamplus.vn/tour-dem-giai-ma-hoang-thanh-thang-long--hanh-trinh-trai-nghiem-dac-sac-post935874.vnp"
+        }
+      ]
     }
   ],
 
@@ -2101,48 +3102,69 @@ window.SGN_DATA = {
 
   drinks: [
     /* Rooftops */
-    { type: "rooftop", name: "EON Heli Bar", tag: "Walk 2 min", where: "Bitexco tower, top floors",
-      desc: "The highest bar you can get to in Saigon, in the tower next to the hotel.",
-      q: "EON Heli Bar Bitexco" },
-    { type: "rooftop", name: "The Summit, Caravelle", tag: "Walk 7 min", where: "Caravelle Hotel, Lam Sơn Square",
-      desc: "A relaxed hotel rooftop above the Opera House square, with a classic view down Đồng Khởi.",
-      q: "The Summit rooftop Caravelle Saigon" },
+    { type: "rooftop", name: "Saigon Saigon Rooftop Bar", tag: "Walk 7 min", where: "Caravelle Hotel, Lam Sơn Square",
+      desc: "The historic Caravelle rooftop above the Opera House square, freshly reopened after a full makeover.",
+      q: "Saigon Saigon Rooftop Bar Caravelle" },
     { type: "rooftop", name: "Chill Skybar", tag: "Dress code", where: "AB Tower, Lê Lai · car 5 min",
       desc: "Saigon's best-known open-air rooftop: loud and glamorous, with DJs later in the night.",
       q: "Chill Skybar AB Tower" },
 
     /* Cocktails */
-    { type: "cocktail", name: "Snuffbox", tag: "Speakeasy", where: "D1 · hidden entrance",
+    { type: "cocktail", name: "Snuffbox", tag: "Walk 3 min", where: "14 Tôn Thất Đạm · hidden entrance",
       desc: "Often named the city's best cocktail bar: a 1920s-style speakeasy tucked into an office building.",
-      q: "Snuffbox Saigon" },
-    { type: "cocktail", name: "Firkin Bar", tag: "Cocktails", where: "D1",
-      desc: "A small, highly rated bar for cocktails and whisky.",
-      q: "Firkin Bar Saigon" },
+      q: "Snuffbox 14 Tôn Thất Đạm" },
+    { type: "cocktail", name: "Firkin Bar", tag: "Walk 5 min", where: "20 Mạc Thị Bưởi",
+      desc: "A small bar for cocktails and whisky, named one of Vietnam's best 20 bars in 2026.",
+      q: "Firkin Bar 20 Mạc Thị Bưởi" },
 
     /* Craft beer */
-    { type: "beer", name: "7 Bridges", tag: "Walk 5 min", where: "Đông Du street",
-      desc: "A taproom close to the hotel with a long list of Vietnamese craft beers on tap.",
-      q: "7 Bridges Saigon Craft Beer Taproom Đông Du" },
-    { type: "beer", name: "Pasteur Street Brewing", tag: "Craft beer", where: "Pasteur street · walk 12 min",
-      desc: "Saigon's best-known craft brewery, using local ingredients like jasmine, passion fruit and coffee.",
-      q: "Pasteur Street Brewing Company Pasteur" },
-    { type: "beer", name: "Heart of Darkness", tag: "Craft beer", where: "Lý Tự Trọng · walk 12 min",
+    { type: "beer", name: "Pasteur Street Brewing", tag: "Walk 3 min", where: "Đồng Khởi flagship, 8 Ngô Đức Kế",
+      desc: "Saigon's best-known craft brewery, using local ingredients like jasmine, passion fruit and coffee. The original taproom is at 144/3 Pasteur.",
+      q: "Pasteur Street Brewing 8 Ngô Đức Kế" },
+    { type: "beer", name: "Heart of Darkness", tag: "Walk 12 min", where: "31D Lý Tự Trọng · 11am–midnight",
       desc: "Bold, hoppy beers in a dark, cosy taproom.",
       q: "Heart of Darkness Brewery Saigon" },
-    { type: "beer", name: "East West Brewing", tag: "Craft beer", where: "Lý Tự Trọng",
-      desc: "A big, airy beer hall with its own brewery.",
-      q: "East West Brewing Company Saigon" },
 
     /* Coffee */
-    { type: "coffee", name: "The Workshop", tag: "Walk 3 min", where: "Ngô Đức Kế street",
+    { type: "coffee", name: "The Workshop", tag: "Walk 3 min", where: "27 Ngô Đức Kế, 3rd floor",
       desc: "A loft-style specialty roastery up a staircase, with filter coffee brewed at the bar.",
       q: "The Workshop Coffee Ngô Đức Kế" },
     { type: "coffee", name: "Café Apartment", tag: "Walk 3 min", where: "42 Nguyễn Huệ",
       desc: "An old apartment block filled with tiny cafés on every floor.",
       q: "42 Nguyễn Huệ Café Apartment" },
     { type: "coffee", name: "Cộng Cà Phê", tag: "Coffee", where: "Branches across D1",
-      desc: "Retro café chain. The coconut coffee has condensed milk, so ask for it without.",
-      q: "Cộng Cà Phê Quận 1" }
+      desc: "A retro café chain with about 20 branches in the city. The coconut coffee has condensed milk, so ask for it without.",
+      q: "Cộng Cà Phê Quận 1" },
+
+    /* Hà Nội */
+    { id: "d-hn-hudson", city: "hanoi", type: "cocktail", name: "The Hudson Rooms", tag: "Asia's 50 Best", where: "Capella Hanoi, 11 Lê Phụng Hiểu",
+      desc: "An Art Deco hotel bar with spirit-forward cocktails, ranked in Asia's 50 Best Bars 2026.",
+      q: "The Hudson Rooms Capella Hanoi" },
+    { id: "d-hn-workshop14", city: "hanoi", type: "cocktail", name: "Workshop14", tag: "Asia's 50 Best", where: "West Lake · 6 alley 5 Từ Hoa",
+      desc: "Cocktails with Vietnamese ingredients in a former architect's studio.",
+      q: "Workshop14 Tu Hoa Hanoi" },
+    { id: "d-hn-pressclub", city: "hanoi", type: "cocktail", name: "Press Club", tag: "Near the Metropole", where: "Lý Thái Tổ",
+      desc: "A classic, long-established bar for a quiet cocktail. Closes at midnight.",
+      q: "Press Club Hanoi Ly Thai To" },
+    { id: "d-hn-tahien", city: "hanoi", type: "beer", name: "Tạ Hiện bia hơi corner", tag: "Cheap draught", where: "Old Quarter · Tạ Hiện",
+      desc: "A loud, crowded strip of plastic-stool beer stalls; a glass of fresh bia hơi is about 5–20k ₫.",
+      q: "Ta Hien beer street Hanoi" },
+    { id: "d-hn-giang", city: "hanoi", type: "coffee", name: "Café Giảng", tag: "Since 1946", where: "39 Nguyễn Hữu Huân",
+      desc: "Home of egg coffee, which contains yolk, so order a black phin coffee instead.",
+      q: "Cafe Giang 39 Nguyen Huu Huan" },
+    { id: "d-hn-cong", city: "hanoi", type: "coffee", name: "Cộng Cà Phê (Nhà Thờ)", tag: "Retro café", where: "By St Joseph's Cathedral",
+      desc: "The retro chain's cathedral branch. The coconut coffee has condensed milk, so ask for it without.",
+      q: "Cong Caphe Nha Tho Hanoi" },
+
+    /* Ninh Bình */
+    { id: "d-nb-theboat", city: "ninhbinh", type: "coffee", name: "The Boat", tag: "Oat-milk coffee", where: "Tam Cốc Rd · 9am–4:30pm",
+      desc: "The safest vegan coffee stop in Tam Cốc, with oat-milk and banana coffees.",
+      q: "The Boat Healthy and Vegan Eatery Tam Coc" },
+
+    /* Huế */
+    { id: "d-hue-phinholic", city: "hue", type: "coffee", name: "PhinHolic", tag: "Oat milk", where: "65 Bến Nghé",
+      desc: "A specialty café with an oat-milk menu, including a vegan version of Huế's famous salt coffee.",
+      q: "PhinHolic 65 Bến Nghé Huế" }
   ],
 
   dishes: [
@@ -2171,10 +3193,11 @@ window.SGN_DATA = {
     { group: "Clothes", icon: "i-shirt", items: [
       "Light, breathable tops & shorts",
       "Something covering shoulders & knees (temples)",
-      "Light rain jacket or poncho, just in case",
+      "Warm layer or light jacket for Hà Nội & Ninh Bình evenings",
+      "Proper rain jacket for Huế (its rainy season)",
       "Sandals that can get wet",
       "Comfy walking shoes",
-      "Thin layer for icy air-con",
+      "Thin layer for icy air-con & sleeper trains",
       "Hat & sunglasses",
       "Work outfits for RMIT"
     ]},

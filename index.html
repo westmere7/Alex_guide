@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Saigon Pocket Guide</title>
+  <title>Vietnam Pocket Guide</title>
   <meta name="description" content="A honeymoon guide to Ho Chi Minh City for Alex & Jenna: getting around, vegan food, what to see, a map and handy tools.">
   <meta name="theme-color" content="#F7F7F5">
   <meta name="color-scheme" content="light dark">
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261117">
 </head>
 <body>
 
@@ -95,7 +95,7 @@
   <div class="wrap topbar-in">
     <a class="brand" href="#home" data-nav="home">
       <span class="brand-mark"><svg class="i"><use href="#i-leaf"/></svg></span>
-      <span>Saigon Guide</span>
+      <span>Vietnam Guide</span>
     </a>
     <div class="top-actions">
     <a class="icon-btn" id="map-btn" href="#map" aria-label="Map of all places"><svg class="i"><use href="#i-map"/></svg></a>
@@ -105,6 +105,7 @@
     </button>
     </div>
   </div>
+  <div class="wrap"><nav class="citybar" id="citybar" role="tablist" aria-label="Where are you?"></nav></div>
 </header>
 
 <main class="wrap">
@@ -113,15 +114,15 @@
   <section class="view" id="home" data-view>
     <div class="hero">
       <p class="overline">For Alex &amp; Jenna</p>
-      <h1>Sài Gòn,<br><span class="accent-text">sorted.</span></h1>
-      <p class="lead">Your honeymoon guide to Saigon.</p>
+      <h1><span data-city-name>Sài Gòn</span>,<br><span class="accent-text">sorted.</span></h1>
+      <p class="lead">Your honeymoon guide to Vietnam.</p>
       <div class="pills" aria-live="polite">
-        <span class="pill"><svg class="i"><use href="#i-clock"/></svg>Saigon&nbsp;<b id="local-time">--:--</b></span>
+        <span class="pill"><svg class="i"><use href="#i-clock"/></svg>Vietnam&nbsp;<b id="local-time">--:--</b></span>
         <span class="pill"><svg class="i"><use href="#i-plane"/></svg>Melbourne&nbsp;<b id="aus-time">--:--</b><span class="pill-sub" id="aus-diff"></span></span>
       </div>
       <div class="actions">
         <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
-        <a class="btn btn-secondary" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
+        <a class="btn btn-secondary" data-city="saigon" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
       </div>
     </div>
 
@@ -129,12 +130,13 @@
       <div class="wx-mini-top">
         <svg class="i wx-mini-icon"><use href="#i-sun"/></svg>
         <b class="wx-mini-temp" id="wxm-temp">--°</b>
-        <span class="wx-mini-desc" id="wxm-desc">Saigon weather…</span>
+        <span class="wx-mini-desc" id="wxm-desc">Weather…</span>
         <svg class="i chev"><use href="#i-chevron"/></svg>
       </div>
       <div class="wx-mini-hours" id="wxm-hours"></div>
     </a>
 
+    <div data-city="saigon">
     <div class="sec-head"><h2>Home base</h2></div>
     <div class="group home">
       <div class="row">
@@ -156,6 +158,7 @@
         <li><b>Honeymoon</b>: mention it at check-in. Ask for fruit, not cake.</li>
       </ul>
     </div>
+    </div>
 
     <!-- ---------- Prep: everything for before the trip ---------- -->
     <header class="part-head" id="prep">
@@ -163,20 +166,58 @@
       <div><p class="overline">Before you fly</p><h2 class="part-title">Prep</h2></div>
     </header>
 
-    <div class="sec-head"><h2>Trip weather</h2><span class="hint-inline" id="trip-dates"></span></div>
+    <div class="sec-head"><h2>Trip weather</h2><span class="hint-inline" id="trip-dates" data-city="saigon"></span></div>
     <div class="group pad">
-      <p class="t">Typical for late Nov – early Dec</p>
-      <div class="stats">
-        <div class="stat"><span>Day / night</span><b>31° / 24°</b></div>
-        <div class="stat"><span>Rain</span><b>Mostly dry</b></div>
-        <div class="stat"><span>Sun</span><b>UV very high</b></div>
+      <p class="t">Typical in <span data-city-name>Sài Gòn</span>, late Nov – early Dec</p>
+      <div data-city="hanoi">
+        <div class="stats">
+          <div class="stat"><span>Day / night</span><b>~24° / 17°</b></div>
+          <div class="stat"><span>Rain</span><b>Mostly dry</b></div>
+          <div class="stat"><span>Sky</span><b>Often grey</b></div>
+        </div>
+        <ul class="list wx-notes">
+          <li>Winter is starting: pleasant days, cool evenings and nights.</li>
+          <li>Dry under the north-east monsoon, but skies are often hazy or grey.</li>
+          <li>Bring a light jacket or sweater for the evenings.</li>
+        </ul>
       </div>
-      <ul class="list wx-notes">
-        <li>Start of the dry season: sunny, the odd short shower.</li>
-        <li>Hottest 11am–3pm. Walk mornings and evenings.</li>
-        <li>Air-con is icy, so bring a light layer.</li>
-      </ul>
-      <div id="trip-forecast"></div>
+      <div data-city="ninhbinh">
+        <div class="stats">
+          <div class="stat"><span>Day / night</span><b>~24° / 17°</b></div>
+          <div class="stat"><span>Rain</span><b>Mostly dry</b></div>
+          <div class="stat"><span>Mornings</span><b>Misty</b></div>
+        </div>
+        <ul class="list wx-notes">
+          <li>Similar to Hà Nội: mild days and cool nights.</li>
+          <li>Mist often hangs over the karst in the morning.</li>
+          <li>Boats are cooler on the water, so bring a layer.</li>
+        </ul>
+      </div>
+      <div data-city="hue">
+        <div class="stats">
+          <div class="stat"><span>Day / night</span><b>~25° / 20°</b></div>
+          <div class="stat"><span>Rain</span><b>~20 days a month</b></div>
+          <div class="stat"><span>Floods</span><b>Possible</b></div>
+        </div>
+        <ul class="list wx-notes">
+          <li>Central Vietnam's wettest months: expect rain on many days.</li>
+          <li>Pack a rain jacket and shoes that can get wet.</li>
+          <li>Check local flood warnings before heading to the tombs.</li>
+        </ul>
+      </div>
+      <div data-city="saigon">
+        <div class="stats">
+          <div class="stat"><span>Day / night</span><b>31° / 24°</b></div>
+          <div class="stat"><span>Rain</span><b>Mostly dry</b></div>
+          <div class="stat"><span>Sun</span><b>UV very high</b></div>
+        </div>
+        <ul class="list wx-notes">
+          <li>Start of the dry season: sunny, the odd short shower.</li>
+          <li>Hottest 11am–3pm. Walk mornings and evenings.</li>
+          <li>Air-con is icy, so bring a light layer.</li>
+        </ul>
+        <div id="trip-forecast"></div>
+      </div>
     </div>
 
     <div class="sec-head">
@@ -253,9 +294,10 @@
     <header class="view-head">
       <p class="overline">Getting around</p>
       <h1>Move</h1>
-      <p class="lead">Walk the old town. Use an app for anything further.</p>
+      <p class="lead">Getting around <span data-city-name>Sài Gòn</span>, and on to the next stop.</p>
     </header>
 
+    <div data-city="saigon">
     <div class="group">
       <details class="row acc" open>
         <summary>
@@ -366,12 +408,268 @@
       <div class="row kv"><span>RMIT Saigon South</span><b>Car 30–50 min</b></div>
       <div class="row kv"><span>Airport (SGN)</span><b>Car 30–60 min</b></div>
     </div>
+    </div>
+
+    <div data-city="hanoi">
+    <div class="group">
+      <details class="row acc" open>
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-bike"/></svg></span>
+          <span class="row-main"><span class="t">Ride apps</span><span class="d">Grab, Xanh SM, Be: your default</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Grab, Xanh SM (now also branded Green SM) and Be all work here. The price is fixed up front.</p>
+          <ul class="list">
+            <li><b>Bike</b> is quickest through the Old Quarter; take a <b>car</b> in rain or the cold evenings.</li>
+            <li>From Friday 7pm to Sunday midnight the streets around Hoàn Kiếm Lake are a <b>walking street</b>. Set your pickup a block away.</li>
+            <li>Check the plate number before you get in.</li>
+          </ul>
+          <div class="stats">
+            <div class="stat"><span>Old Quarter hop, bike</span><b>15–30k ₫</b></div>
+            <div class="stat"><span>Lake → mausoleum, car</span><b>40–70k ₫</b></div>
+            <div class="stat"><span>Airport, car</span><b>300–450k ₫</b></div>
+          </div>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-walk"/></svg></span>
+          <span class="row-main"><span class="t">On foot</span><span class="d">The Old Quarter is a walking city</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>The Old Quarter is best on foot, but its pavements are parking lots, so you'll walk in the road a lot.</p>
+          <ul class="list">
+            <li>Cross the way you would in Saigon: slow, steady, no sudden stops.</li>
+            <li>Hoàn Kiếm Lake makes an easy landmark; most of the Old Quarter is within 15 minutes of it.</li>
+            <li>Evenings in late November can be cool, so bring a light layer.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-plane"/></svg></span>
+          <span class="row-main"><span class="t">Airport ↔ Old Quarter</span><span class="d">Nội Bài (HAN), ~30 km</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Grab / Xanh SM car</b>: 40–60 min to the Old Quarter (longer at rush hour or in rain), about 300–450k ₫.</li>
+            <li><b>Bus 86</b> (orange airport express): about 50k ₫, every 25–30 min, 7am–10pm, to Hà Nội railway station via the Old Quarter area.</li>
+            <li><b>Taxi</b>: use the official rank outside arrivals (Mai Linh, Xanh SM) and make sure the meter starts. Walk past anyone who approaches you inside.</li>
+            <li>If a Grab driver asks you to cancel and pay cash, decline.</li>
+          </ul>
+          <p class="hint">Nội Bài (HAN) is about 30 km north of the centre.</p>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-car"/></svg></span>
+          <span class="row-main"><span class="t">Taxis, cyclos &amp; metro</span><span class="d">Fine, with care</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>If you hail one, use <b>Mai Linh</b> (green) or <b>Xanh SM</b> (teal) and make sure the meter is on.</li>
+            <li><b>Cyclos</b> around the lake are a fun ride: agree on the price and duration first.</li>
+            <li>The <b>metro</b> exists (Lines 2A and 3) but doesn't serve the Old Quarter yet, so it isn't much use for sightseeing.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-train"/></svg></span>
+          <span class="row-main"><span class="t">Train Street</span><span class="d">Check before you go</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Trains run close past homes and cafés, but access changes often.</p>
+          <ul class="list">
+            <li>Tours there are banned and police sometimes close it; in 2026 the city also moved to cut trains on part of the line.</li>
+            <li>If cafés are open, sit inside or well back, and never stand on the tracks.</li>
+            <li>Leave if there are barriers or police asking people to go.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-van"/></svg></span>
+          <span class="row-main"><span class="t">On to Ninh Bình</span><span class="d">About 2 hours south</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Limousine van</b>: door to door from Old Quarter hotels to Tam Cốc or Tràng An, about 2–3 h, from ~180–250k ₫ each. Your hotel can book it.</li>
+            <li><b>Train</b>: about 2 h 10 min from Hà Nội station to Ninh Bình, several a day (e.g. 6am, 8am, 1pm), soft seat from ~210k ₫. Then a 15-minute Grab to Tam Cốc.</li>
+            <li><b>Private car</b>: about 2 h, from ~900k ₫ for the car.</li>
+          </ul>
+          <p class="hint">Book trains at dsvn.vn (the official site) or through 12Go / Baolau if your card is refused.</p>
+        </div>
+      </details>
+    </div>
+
+    <h3 class="label">From Hoàn Kiếm Lake to…</h3>
+    <div class="group">
+      <div class="row kv"><span>Old Quarter night market</span><b>Walk 5 min</b></div>
+      <div class="row kv"><span>Water puppets</span><b>Walk 2 min</b></div>
+      <div class="row kv"><span>Hỏa Lò Prison</span><b>Walk 15 min</b></div>
+      <div class="row kv"><span>Temple of Literature</span><b>Car 10 min</b></div>
+      <div class="row kv"><span>Mausoleum &amp; Citadel</span><b>Car 10–15 min</b></div>
+      <div class="row kv"><span>West Lake, Trấn Quốc</span><b>Car 15 min</b></div>
+      <div class="row kv"><span>Museum of Ethnology</span><b>Car 25 min</b></div>
+      <div class="row kv"><span>Bát Tràng</span><b>Car 30 min</b></div>
+      <div class="row kv"><span>Airport (HAN)</span><b>Car 40–60 min</b></div>
+    </div>
+    </div>
+
+    <div data-city="ninhbinh">
+    <div class="group">
+      <details class="row acc" open>
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-bike"/></svg></span>
+          <span class="row-main"><span class="t">Bikes, Grab &amp; taxis</span><span class="d">Cycle around Tam Cốc</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Bicycle</b> is the nicest way around Tam Cốc: about 50–100k ₫ a day from your hotel. Hang Múa and Bích Động are an easy ride.</li>
+            <li><b>Grab</b> works well in Ninh Bình city but cars are scarcer in Tam Cốc, so book a little early or ask your hotel.</li>
+            <li><b>Taxi</b> Tam Cốc ↔ city: about 80–120k ₫.</li>
+            <li>Motorbike rental (~100–150k ₫ a day) needs a valid licence and insurance cover; most travel insurance won't pay out without them.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-boat"/></svg></span>
+          <span class="row-main"><span class="t">The boat trips</span><span class="d">Tickets and timing</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Tràng An</b>: 300k ₫ each including the boat (2026). Boats take four or five people; a private boat is about 1.2M ₫. Go at 7–8am.</li>
+            <li>Route 3 has been closed since July 2026 floods; Routes 1 and 2 were running. Check at the ticket desk.</li>
+            <li><b>Tam Cốc</b>: prices vary by source (about 250k ₫ each). Agree "no stops" with your rower.</li>
+            <li>Heavy rain can cancel boats on the day. Bring a light jacket: mornings on the water are cool.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-train"/></svg></span>
+          <span class="row-main"><span class="t">On to Huế</span><span class="d">Overnight sleeper train</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Overnight train</b>: the easiest way. SE trains leave Ninh Bình about 9:30–11pm and reach Huế about 8–10am (10–11 h). Book a <b>4-berth soft sleeper</b> cabin; some trains carry private carriages (Lotus, Violette, Livitrans) at about double the fare.</li>
+            <li><b>Sleeper bus</b>: 9–10 h overnight, from ~460k ₫, but it arrives at 2–5am. Not recommended.</li>
+            <li><b>Fly</b>: drive back to Hà Nội (2 h) and fly to Huế (about 1 h 20 min).</li>
+          </ul>
+          <p class="hint">Times change; check dsvn.vn. Tickets open about 60 days ahead.</p>
+        </div>
+      </details>
+    </div>
+
+    <h3 class="label">From Tam Cốc to…</h3>
+    <div class="group">
+      <div class="row kv"><span>Văn Lâm wharf &amp; embroidery</span><b>Walk</b></div>
+      <div class="row kv"><span>Bích Động Pagoda</span><b>Bike 10 min</b></div>
+      <div class="row kv"><span>Hang Múa</span><b>Bike 15 min</b></div>
+      <div class="row kv"><span>Tràng An wharf</span><b>Car 15–20 min</b></div>
+      <div class="row kv"><span>Hoa Lư</span><b>Car 20 min</b></div>
+      <div class="row kv"><span>Bái Đính</span><b>Car 30 min</b></div>
+      <div class="row kv"><span>Ninh Bình station</span><b>Car 15 min</b></div>
+      <div class="row kv"><span>Hà Nội</span><b>Car ~2 h</b></div>
+    </div>
+    </div>
+
+    <div data-city="hue">
+    <div class="group">
+      <details class="row acc" open>
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-bike"/></svg></span>
+          <span class="row-main"><span class="t">Ride apps &amp; drivers</span><span class="d">Grab, Xanh SM, a car for the tombs</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Grab</b> and <b>Xanh SM</b> work well and are the easiest way to reach the tombs, which are 6–20 km out.</li>
+            <li>For a day of tombs, hire a <b>car with driver</b> through your hotel; it waits at each stop.</li>
+            <li>Grab also offers <b>Grab Cyclo</b> in the centre for a slow ride past the Citadel walls.</li>
+          </ul>
+          <div class="stats">
+            <div class="stat"><span>Citadel ↔ south bank</span><b>25–50k ₫</b></div>
+            <div class="stat"><span>To Tự Đức, car</span><b>80–130k ₫</b></div>
+            <div class="stat"><span>Airport, car</span><b>150–250k ₫</b></div>
+          </div>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-boat"/></svg></span>
+          <span class="row-main"><span class="t">Perfume River boats</span><span class="d">Dragon boats from Tòa Khâm pier</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li>Dragon boats leave from the <b>Tòa Khâm pier</b> on Lê Lợi: about 200k ₫ shared, 500–800k ₫ private. Agree the route and price first.</li>
+            <li>Boats stop when the river is high. Late November and December are Huế's rainy months.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-rain"/></svg></span>
+          <span class="row-main"><span class="t">Rain &amp; floods</span><span class="d">Check each morning</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Huế gets about 650 mm of rain in November and 350 mm in December; floods can close the monuments at a few hours' notice.</p>
+          <ul class="list">
+            <li>Ask your hotel each morning whether the Imperial City and tombs are open.</li>
+            <li>Warnings are posted by Vietnam's weather service (nchmf.gov.vn) under disaster warnings.</li>
+            <li>Keep indoor options for wet days: the Royal Antiquities museum and the Fine Arts museum.</li>
+            <li>Pack a proper rain jacket and shoes that can get wet.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="row acc">
+        <summary>
+          <span class="tile"><svg class="i"><use href="#i-plane"/></svg></span>
+          <span class="row-main"><span class="t">Airport &amp; on to Saigon</span><span class="d">Phú Bài (HUI), ~15 km</span></span>
+          <svg class="i chev"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="acc-body">
+          <ul class="list">
+            <li><b>Phú Bài airport (HUI)</b> is 13–15 km south, 20–30 min by Grab (~150–250k ₫).</li>
+            <li><b>Huế → Saigon</b>: fly with Vietnam Airlines, VietJet or Pacific Airlines (under 1.5 h). The train takes 20+ hours.</li>
+            <li>Huế station is on the south bank, a short ride from the Citadel.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <h3 class="label">From the Citadel to…</h3>
+    <div class="group">
+      <div class="row kv"><span>Đông Ba Market</span><b>Walk 10 min</b></div>
+      <div class="row kv"><span>Thiên Mụ Pagoda</span><b>Car 10–15 min</b></div>
+      <div class="row kv"><span>An Định Palace</span><b>Car 10 min</b></div>
+      <div class="row kv"><span>Tomb of Tự Đức</span><b>Car 20 min</b></div>
+      <div class="row kv"><span>Tomb of Khải Định</span><b>Car 20–30 min</b></div>
+      <div class="row kv"><span>Tomb of Minh Mạng</span><b>Car 20–30 min</b></div>
+      <div class="row kv"><span>An Bằng cemetery</span><b>Car 40 min</b></div>
+      <div class="row kv"><span>Airport (HUI)</span><b>Car 25 min</b></div>
+    </div>
+    </div>
+
   </section>
 
   <!-- =============================== EAT =============================== -->
   <section class="view" id="eat" data-view hidden>
     <header class="view-head">
-      <p class="overline">Plant-based in Saigon</p>
+      <p class="overline">Plant-based in <span data-city-name>Sài Gòn</span></p>
       <h1>Eat</h1>
       <p class="lead"><b>Chay</b> = vegetarian · <b>thuần chay</b> = vegan.</p>
     </header>
@@ -409,7 +707,7 @@
   <!-- =============================== SEE =============================== -->
   <section class="view" id="see" data-view hidden>
     <header class="view-head">
-      <p class="overline">Five days, well spent</p>
+      <p class="overline">Places in <span data-city-name>Sài Gòn</span></p>
       <h1>See</h1>
       <p class="lead">Tick places off as you go.</p>
     </header>
@@ -505,7 +803,7 @@
       <div class="group pad">
         <div class="wx-now">
           <svg class="i wx-big" id="wx-icon"><use href="#i-sun"/></svg>
-          <div class="wx-now-main"><p class="wx-temp"><span id="wx-temp">--</span>°</p><p class="d" id="wx-desc">Loading Saigon weather…</p></div>
+          <div class="wx-now-main"><p class="wx-temp"><span id="wx-temp">--</span>°</p><p class="d" id="wx-desc">Loading weather…</p></div>
         </div>
         <div class="stats" id="wx-stats"></div>
         <div class="stats" id="wx-sun"></div>
@@ -550,13 +848,14 @@
         <a class="icon-btn msg" href="sms:+84902800245" aria-label="Text Đức RMIT"><svg class="i"><use href="#i-message"/></svg></a>
         <a class="icon-btn call" href="tel:+84902800245" aria-label="Call Đức RMIT"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
-      <div class="row contact">
+      <div class="row contact" data-city="saigon">
         <span class="tile"><svg class="i"><use href="#i-pin"/></svg></span>
         <div class="row-main"><p class="t">Au Lac Charner Hotel</p><p class="d">Front desk, 24 hours. They can call others for you.</p><p class="num">028 3915 6666</p></div>
         <a class="icon-btn call" href="tel:+842839156666" aria-label="Call Au Lac Charner Hotel"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
     </div>
 
+    <div data-city="saigon">
     <h3 class="label">Doctors &amp; hospitals</h3>
     <div class="group">
       <div class="row contact">
@@ -575,12 +874,54 @@
         <a class="icon-btn call" href="tel:19003399" aria-label="Call Raffles Medical"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
     </div>
+    </div>
+    <div data-city="hanoi ninhbinh">
+    <h3 class="label">Doctors &amp; hospitals</h3>
+    <div class="group">
+      <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+        <div class="row-main"><p class="t">Hồng Ngọc Hospital · emergency</p><p class="d">55 Yên Ninh, near West Lake. 24/7 emergency department.</p><p class="num">1900 636 555</p></div>
+        <a class="icon-btn call" href="tel:1900636555" aria-label="Call Hồng Ngọc Hospital · emergency"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+        <div class="row-main"><p class="t">Raffles Medical Hà Nội</p><p class="d">51 Xuân Diệu, West Lake. International clinic.</p><p class="num">024 3934 0666</p></div>
+        <a class="icon-btn call" href="tel:+842439340666" aria-label="Call Raffles Medical Hà Nội"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+        <div class="row-main"><p class="t">Vinmec Times City</p><p class="d">International hospital, south-east Hà Nội.</p><p class="num">024 3974 3556</p></div>
+        <a class="icon-btn call" href="tel:+842439743556" aria-label="Call Vinmec Times City"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+    </div>
+    <p class="hint" data-city="ninhbinh">For anything serious in Ninh Bình, Hà Nội's hospitals are about 2 hours away; call 115 for an ambulance.</p>
+    </div>
+    <div data-city="hue">
+    <h3 class="label">Doctors &amp; hospitals</h3>
+    <div class="group">
+      <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+        <div class="row-main"><p class="t">Huế Central Hospital</p><p class="d">16 Lê Lợi. 24/7 emergency (ask for ext. 3132).</p><p class="num">0234 3822 325</p></div>
+        <a class="icon-btn call" href="tel:+842343822325" aria-label="Call Huế Central Hospital"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-drop"/></svg></span>
+        <div class="row-main"><p class="t">Huế International Hospital</p><p class="d">3 Ngô Quyền. 24/7 emergency.</p><p class="num">0234 3890 888</p></div>
+        <a class="icon-btn call" href="tel:+842343890888" aria-label="Call Huế International Hospital"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+    </div>
+    </div>
 
     <h3 class="label">Embassy</h3>
     <div class="group">
-      <div class="row contact">
+      <div class="row contact" data-city="hanoi ninhbinh">
         <span class="tile"><svg class="i"><use href="#i-landmark"/></svg></span>
-        <div class="row-main"><p class="t">Australian Consulate</p><p class="d">Level 20, Vincom Center, 47 Lý Tự Trọng, D1. Weekdays.</p><p class="num">028 3521 8100</p></div>
+        <div class="row-main"><p class="t">Australian Embassy</p><p class="d">8 Đào Tấn, Hà Nội. Covers the north, including Ninh Bình.</p><p class="num">024 3774 0100</p></div>
+        <a class="icon-btn call" href="tel:+842437740100" aria-label="Call Australian Embassy"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact" data-city="hue saigon">
+        <span class="tile"><svg class="i"><use href="#i-landmark"/></svg></span>
+        <div class="row-main"><p class="t">Australian Consulate</p><p class="d">Level 20, Vincom Center, 47 Lý Tự Trọng, Saigon. Covers Huế and the south.</p><p class="num">028 3521 8100</p></div>
         <a class="icon-btn call" href="tel:+842835218100" aria-label="Call Australian Consulate"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
       <div class="row contact">
@@ -592,7 +933,7 @@
 
     <h3 class="label">Getting around</h3>
     <div class="group">
-      <div class="row contact">
+      <div class="row contact" data-city="saigon">
         <span class="tile"><svg class="i"><use href="#i-car"/></svg></span>
         <div class="row-main"><p class="t">Vinasun taxi</p><p class="d">White cars. Check the number on the door matches.</p><p class="num">028 3827 2727</p></div>
         <a class="icon-btn call" href="tel:+842838272727" aria-label="Call Vinasun taxi"><svg class="i"><use href="#i-phone"/></svg></a>
@@ -603,6 +944,16 @@
         <a class="icon-btn call" href="tel:1055" aria-label="Call Mai Linh taxi"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
       <div class="row contact">
+        <span class="tile"><svg class="i"><use href="#i-car"/></svg></span>
+        <div class="row-main"><p class="t">Xanh SM (Green SM)</p><p class="d">Teal electric taxis, nationwide hotline.</p><p class="num">1555</p></div>
+        <a class="icon-btn call" href="tel:1555" aria-label="Call Xanh SM (Green SM)"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact" data-city="hanoi">
+        <span class="tile"><svg class="i"><use href="#i-grad"/></svg></span>
+        <div class="row-main"><p class="t">RMIT Hà Nội</p><p class="d">Handi Resco Building, 521 Kim Mã. General enquiries.</p><p class="num">024 3726 1460</p></div>
+        <a class="icon-btn call" href="tel:+842437261460" aria-label="Call RMIT Hà Nội"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="row contact" data-city="saigon">
         <span class="tile"><svg class="i"><use href="#i-grad"/></svg></span>
         <div class="row-main"><p class="t">RMIT Saigon South</p><p class="d">702 Nguyễn Văn Linh, District 7. General enquiries.</p><p class="num">028 3776 1369</p></div>
         <a class="icon-btn call" href="tel:+842837761369" aria-label="Call RMIT Saigon South"><svg class="i"><use href="#i-phone"/></svg></a>
@@ -820,7 +1171,7 @@
       <div class="map-fabs">
         <button class="fab" type="button" id="map-places" aria-label="Choose places"><svg class="i"><use href="#i-list"/></svg></button>
         <button class="fab" type="button" id="map-fit" aria-label="Show all visible places"><svg class="i"><use href="#i-expand"/></svg></button>
-        <button class="fab fab-home" type="button" id="map-home" aria-label="Route back to the hotel"><svg class="i"><use href="#t-home"/></svg><span>Hotel</span></button>
+        <button class="fab fab-home" data-city="saigon" type="button" id="map-home" aria-label="Route back to the hotel"><svg class="i"><use href="#t-home"/></svg><span>Hotel</span></button>
         <button class="fab fab-primary" type="button" id="map-locate" aria-label="Show my location"><svg class="i"><use href="#i-locate"/></svg></button>
       </div>
       <p class="map-toast" id="map-toast" role="status" hidden></p>
@@ -896,9 +1247,9 @@
   </div>
 </dialog>
 
-<script src="js/images.js"></script>
-<script src="js/data.js"></script>
-<script src="js/coords.js"></script>
-<script src="js/app.js"></script>
+<script src="js/images.js?v=20261117"></script>
+<script src="js/data.js?v=20261117"></script>
+<script src="js/coords.js?v=20261117"></script>
+<script src="js/app.js?v=20261117"></script>
 </body>
 </html>

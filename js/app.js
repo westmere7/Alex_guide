@@ -23,7 +23,7 @@
   }
   function icon(id) { return '<svg class="i" aria-hidden="true"><use href="#' + id + '"/></svg>'; }
   function mapUrl(q) {
-    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q + ", Ho Chi Minh City, Vietnam");
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q + ", " + ((typeof city === "function" && city().gq) || "Ho Chi Minh City") + ", Vietnam");
   }
   /* Opens the place in Google Maps, where its photo gallery and reviews live */
   function photosBtn(q, name) {
@@ -50,6 +50,42 @@
       img.addEventListener("error", function () { img.remove(); });
     });
   }
+
+  /* ---------- city: where you are right now ---------- */
+  var CITIES = DATA.cities || [];
+  var cityId = store.get("sgn-guide-city", CITIES[0] && CITIES[0].id);
+  if (!CITIES.some(function (c) { return c.id === cityId; })) cityId = CITIES[0] && CITIES[0].id;
+  function city() { return CITIES.filter(function (c) { return c.id === cityId; })[0] || CITIES[0] || {}; }
+  function cityOf(x) { return x.city || "saigon"; }
+  function inCity(x) { return cityOf(x) === cityId; }
+  function applyCity() {
+    var c = city();
+    // [data-city="a b"]: shown only in those cities. Everything else is shared.
+    $$("[data-city]").forEach(function (el) { el.hidden = el.getAttribute("data-city").split(" ").indexOf(cityId) < 0; });
+    $$("#citybar button").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.c === cityId)); });
+    $$("[data-city-name]").forEach(function (el) { el.textContent = c.name; });
+  }
+  function setCity(id) {
+    if (id === cityId || !CITIES.some(function (c) { return c.id === id; })) return;
+    cityId = id;
+    store.set("sgn-guide-city", id);
+    applyCity();
+    try { document.dispatchEvent(new CustomEvent("sgn-city")); } catch (e) {}
+  }
+  (function () {
+    var bar = $("#citybar");
+    if (!bar) return;
+    bar.innerHTML = CITIES.map(function (c, i) {
+      return '<button type="button" role="tab" data-c="' + c.id + '"><span class="cb-n">' + (i + 1) + "</span>" + esc(c.name) + "</button>";
+    }).join("");
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-c]");
+      if (!b) return;
+      setCity(b.dataset.c);
+      if (location.hash !== "#map") window.scrollTo(0, 0);
+    });
+  })();
+  applyCity();
 
   /* ---------- theme ---------- */
   var root = document.documentElement;
@@ -187,68 +223,76 @@
     renderDayTabs(); renderHours();
   });
 
-  fetch("https://api.open-meteo.com/v1/forecast?latitude=" + LAT + "&longitude=" + LON +
-    "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day" +
-    "&hourly=temperature_2m,precipitation_probability,weather_code,is_day,uv_index" +
-    "&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max" +
-    "&forecast_days=3&timezone=Asia%2FHo_Chi_Minh")
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-    .then(function (d) {
-      if (!d || !d.current || !d.hourly || !d.daily) return;
-      wxData = d;
-      var c = d.current;
-      var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
-      // compact card on Home: now + next 6 hours
-      if ($("#wxm-temp")) {
-        $("#wxm-temp").textContent = Math.round(c.temperature_2m) + "°";
-        $("#wxm-desc").textContent = wxText(c.weather_code) + " · feels " + Math.round(c.apparent_temperature) + "°";
-        $("#wx-mini .wx-mini-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
-        var start = hi >= 0 ? hi + 1 : 0, H = d.hourly;
-        $("#wxm-hours").innerHTML = H.time.slice(start, start + 6).map(function (t, n) {
-          var i = start + n, rain = H.precipitation_probability[i];
-          return '<span class="wxm-h' + (rain >= 40 ? " wet" : "") + '"><span>' + esc(t.slice(11, 13)) + "h</span>" +
-            icon(wxSymbol(H.weather_code[i], H.is_day[i])) + "<b>" + Math.round(H.temperature_2m[i]) + "°</b>" +
-            '<span class="rp">' + (rain == null ? "–" : rain + "%") + "</span></span>";
-        }).join("");
-      }
-      // Tools card
-      if (!$("#wx-temp")) return;
-      var uvNow = hi >= 0 ? d.hourly.uv_index[hi] : null;
-      $("#wx-temp").textContent = Math.round(c.temperature_2m);
-      $("#wx-desc").textContent = wxText(c.weather_code) + " · high " + Math.round(d.daily.temperature_2m_max[0]) + "°, low " + Math.round(d.daily.temperature_2m_min[0]) + "°";
-      $("#wx-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
-      $("#wx-updated").textContent = "Updated " + c.time.slice(11, 16);
-      $("#wx-stats").innerHTML =
-        stat("Feels like", Math.round(c.apparent_temperature) + "°") +
-        stat("Humidity", Math.round(c.relative_humidity_2m) + "%") +
-        stat("UV now", uvNow == null ? "–" : Math.round(uvNow) + " · " + uvLabel(uvNow));
-      $("#wx-sun").innerHTML =
-        stat("Sunrise", esc(d.daily.sunrise[0].slice(11, 16))) +
-        stat("Sunset", esc(d.daily.sunset[0].slice(11, 16))) +
-        '<div class="stat" id="wx-aqi"><span>Air quality</span><b>…</b></div>';
-      renderDayTabs(); renderHours();
-      return fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + LAT + "&longitude=" + LON +
-        "&current=us_aqi,pm2_5&timezone=Asia%2FHo_Chi_Minh");
-    })
-    .then(function (r) { return r && r.ok ? r.json() : null; })
-    .then(function (a) {
-      var cell = $("#wx-aqi");
-      if (!cell) return;
-      var v = a && a.current && a.current.us_aqi;
-      if (v == null) { cell.querySelector("b").textContent = "–"; return; }
-      var lvl = AQI.filter(function (x) { return v <= x[0]; })[0];
-      cell.querySelector("b").innerHTML = Math.round(v) + ' · <span class="aqi-' + lvl[2] + '">' + esc(lvl[1]) + "</span>";
-      var tip = $("#wx-aqi-tip");
-      tip.innerHTML = icon("i-info") + "<span>" + esc(lvl[3]) + "</span>";
-      tip.className = "wx-aqi-tip aqi-bg-" + lvl[2];
-      tip.hidden = false;
-      var md = $("#wxm-desc");
-      if (md) md.textContent += " · AQI " + Math.round(v);
-    })
-    .catch(function () {
-      var d = $("#wx-desc");
-      if (d && !wxData) d.textContent = "Couldn't load the weather. Check your connection and reopen the page.";
-    });
+  function loadWeather() {
+    var cc = city();
+    if (!cc.lat) return;
+    wxData = null; wxDay = 0;
+    if ($("#wxm-desc")) { $("#wxm-desc").textContent = cc.name + " weather…"; $("#wxm-hours").innerHTML = ""; }
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=" + cc.lat + "&longitude=" + cc.lon +
+      "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day" +
+      "&hourly=temperature_2m,precipitation_probability,weather_code,is_day,uv_index" +
+      "&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max" +
+      "&forecast_days=3&timezone=Asia%2FHo_Chi_Minh")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        if (!d || !d.current || !d.hourly || !d.daily) return;
+        wxData = d;
+        var c = d.current;
+        var hi = d.hourly.time.indexOf(c.time.slice(0, 13) + ":00");
+        // compact card on Home: now + next 6 hours
+        if ($("#wxm-temp")) {
+          $("#wxm-temp").textContent = Math.round(c.temperature_2m) + "°";
+          $("#wxm-desc").textContent = cc.name + " · " + wxText(c.weather_code) + " · feels " + Math.round(c.apparent_temperature) + "°";
+          $("#wx-mini .wx-mini-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
+          var start = hi >= 0 ? hi + 1 : 0, H = d.hourly;
+          $("#wxm-hours").innerHTML = H.time.slice(start, start + 6).map(function (t, n) {
+            var i = start + n, rain = H.precipitation_probability[i];
+            return '<span class="wxm-h' + (rain >= 40 ? " wet" : "") + '"><span>' + esc(t.slice(11, 13)) + "h</span>" +
+              icon(wxSymbol(H.weather_code[i], H.is_day[i])) + "<b>" + Math.round(H.temperature_2m[i]) + "°</b>" +
+              '<span class="rp">' + (rain == null ? "–" : rain + "%") + "</span></span>";
+          }).join("");
+        }
+        // Tools card
+        if (!$("#wx-temp")) return;
+        var uvNow = hi >= 0 ? d.hourly.uv_index[hi] : null;
+        $("#wx-temp").textContent = Math.round(c.temperature_2m);
+        $("#wx-desc").textContent = wxText(c.weather_code) + " · high " + Math.round(d.daily.temperature_2m_max[0]) + "°, low " + Math.round(d.daily.temperature_2m_min[0]) + "°";
+        $("#wx-icon use").setAttribute("href", "#" + wxSymbol(c.weather_code, c.is_day));
+        $("#wx-updated").textContent = "Updated " + c.time.slice(11, 16);
+        $("#wx-stats").innerHTML =
+          stat("Feels like", Math.round(c.apparent_temperature) + "°") +
+          stat("Humidity", Math.round(c.relative_humidity_2m) + "%") +
+          stat("UV now", uvNow == null ? "–" : Math.round(uvNow) + " · " + uvLabel(uvNow));
+        $("#wx-sun").innerHTML =
+          stat("Sunrise", esc(d.daily.sunrise[0].slice(11, 16))) +
+          stat("Sunset", esc(d.daily.sunset[0].slice(11, 16))) +
+          '<div class="stat" id="wx-aqi"><span>Air quality</span><b>…</b></div>';
+        renderDayTabs(); renderHours();
+        return fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + cc.lat + "&longitude=" + cc.lon +
+          "&current=us_aqi,pm2_5&timezone=Asia%2FHo_Chi_Minh");
+      })
+      .then(function (r) { return r && r.ok ? r.json() : null; })
+      .then(function (a) {
+        var cell = $("#wx-aqi");
+        if (!cell) return;
+        var v = a && a.current && a.current.us_aqi;
+        if (v == null) { cell.querySelector("b").textContent = "–"; return; }
+        var lvl = AQI.filter(function (x) { return v <= x[0]; })[0];
+        cell.querySelector("b").innerHTML = Math.round(v) + ' · <span class="aqi-' + lvl[2] + '">' + esc(lvl[1]) + "</span>";
+        var tip = $("#wx-aqi-tip");
+        tip.innerHTML = icon("i-info") + "<span>" + esc(lvl[3]) + "</span>";
+        tip.className = "wx-aqi-tip aqi-bg-" + lvl[2];
+        tip.hidden = false;
+        var md = $("#wxm-desc");
+        if (md) md.textContent += " · AQI " + Math.round(v);
+      })
+      .catch(function () {
+        var d = $("#wx-desc");
+        if (d && !wxData) d.textContent = "Couldn't load the weather. Check your connection and reopen the page.";
+      });
+  }
+  loadWeather();
+  document.addEventListener("sgn-city", loadWeather);
 
   /* ---------- trip forecast (only the trip days inside Open-Meteo's 16-day window) ---------- */
   (function () {
@@ -392,8 +436,15 @@
         '<div class="btn-row">' + (p.q ? photosBtn(p.q, p.name) : "") + mapBtn(p.id) + "</div>" +
       "</div></article>";
   }
+  function cityPlaces() { return places.filter(inCity); }
+  function cityCats() {
+    var cp = cityPlaces();
+    return cats.filter(function (c) { return cp.some(function (p) { return p.cat === c.id; }); });
+  }
   function renderCats() {
-    catEl.innerHTML = cats.map(function (c) {
+    var cs = cityCats();
+    if (!cs.some(function (c) { return c.id === activeCat; })) activeCat = cs[0] && cs[0].id;
+    catEl.innerHTML = cs.map(function (c) {
       return '<button type="button" role="tab" data-cat="' + c.id + '" aria-selected="' + (c.id === activeCat) + '">' +
         icon(c.icon) + esc(c.label) + "</button>";
     }).join("");
@@ -403,15 +454,16 @@
     var cat = cats.filter(function (c) { return c.id === activeCat; })[0] || {};
     listEl.innerHTML = (cat.note ? '<p class="callout">' + icon("i-info") + "<span>" + esc(cat.note) + "</span></p>" : "") +
       '<div class="places">' +
-      places.filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
+      cityPlaces().filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
     wireImages(listEl);
     linkMaps(listEl);
   }
   function updateSeen() {
-    var n = places.filter(function (p) { return seen[p.id]; }).length;
+    var cp = cityPlaces();
+    var n = cp.filter(function (p) { return seen[p.id]; }).length;
     $("#seen-count").textContent = n;
-    $("#seen-total").textContent = places.length;
-    $("#seen-bar").style.width = places.length ? (n / places.length * 100) + "%" : "0";
+    $("#seen-total").textContent = cp.length;
+    $("#seen-bar").style.width = cp.length ? (n / cp.length * 100) + "%" : "0";
   }
   catEl.addEventListener("click", function (e) {
     var b = e.target.closest("button[data-cat]");
@@ -432,6 +484,7 @@
   renderCats();
   renderSee();
   updateSeen();
+  document.addEventListener("sgn-city", function () { renderCats(); renderSee(); updateSeen(); });
 
   /* ---------- where to eat ---------- */
   var KIND = {
@@ -460,16 +513,20 @@
     var active = store.get(opts.key, groups[0].id);
     if (!groups.some(function (g) { return g.id === active; })) active = groups[0].id;
     function render() {
-      segEl.innerHTML = groups.map(function (g) {
+      var its = items.filter(inCity);
+      var gs = groups.filter(function (g) { return its.some(function (r) { return r[opts.field] === g.id; }); });
+      if (!gs.some(function (g) { return g.id === active; })) active = gs[0] ? gs[0].id : null;
+      segEl.innerHTML = gs.map(function (g) {
         return '<button type="button" role="tab" data-g="' + g.id + '" aria-selected="' + (g.id === active) + '">' +
           icon(g.icon) + esc(g.label) + "</button>";
       }).join("");
-      listEl.innerHTML = items.filter(function (r) { return r[opts.field] === active; }).map(function (r) {
+      listEl.innerHTML = its.filter(function (r) { return r[opts.field] === active; }).map(function (r) {
         return restaurantRow(opts.decorate ? opts.decorate(r) : r);
-      }).join("");
-      if (opts.count) $(opts.count).textContent = items.length + " places";
+      }).join("") || '<p class="hint" style="padding:14px 16px">Nothing listed here yet.</p>';
+      if (opts.count) $(opts.count).textContent = its.length + (its.length === 1 ? " place" : " places");
       linkMaps(listEl);
     }
+    document.addEventListener("sgn-city", render);
     segEl.addEventListener("click", function (e) {
       var b = e.target.closest("button[data-g]");
       if (!b) return;
@@ -482,7 +539,7 @@
 
   filteredList({ groups: DATA.eatAreas, items: DATA.restaurants, field: "area",
     seg: "#eat-areas", list: "#eat-list", count: "#eat-count", key: "sgn-guide-eat-area",
-    decorate: function (r) { return Object.assign({ key: "r:" + r.name }, r); } });
+    decorate: function (r) { return Object.assign({ key: r.id || ("r:" + r.name) }, r); } });
 
   var drinkTypes = {};
   (DATA.drinkTypes || []).forEach(function (t) { drinkTypes[t.id] = t; });
@@ -490,7 +547,7 @@
     seg: "#drink-types", list: "#drink-list", count: "#drink-count", key: "sgn-guide-drink-type",
     decorate: function (r) {
       var t = drinkTypes[r.type] || {};
-      return { key: "d:" + r.name, name: r.name, where: r.where, desc: r.desc, q: r.q, tag: r.tag || t.label, icon: t.icon };
+      return { key: r.id || ("d:" + r.name), name: r.name, where: r.where, desc: r.desc, q: r.q, tag: r.tag || t.label, icon: t.icon };
     } });
 
   /* ---------- dishes ---------- */
@@ -865,25 +922,25 @@
   /* ---------- map: all places + your location (Leaflet + CARTO/OSM tiles, loaded on first open) ---------- */
   var COORDS = window.SGN_COORDS || {};
   var PIN_COLORS = { two: "#C2255C", art: "#E8590C", shop: "#AE3EC9", old: "#1C7ED6", spirit: "#D6336C", out: "#0C8599",
-    trips: "#5F3DC4", hue: "#B02525", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
+    trips: "#5F3DC4", eat: "#2B8A3E", drink: "#B35900", home: "#1F2937" };
   var mapLayers = (DATA.categories || []).map(function (c) { return { id: c.id, label: c.label, icon: c.icon }; })
     .concat([{ id: "eat", label: "Eat", icon: "i-bowl" }, { id: "drink", label: "Drinks", icon: "i-glass" }]);
   var catLabel = {};
   (DATA.categories || []).forEach(function (c) { catLabel[c.id] = c.label; });
 
-  var mapPoints = [{ key: "home", layer: "home", name: "Au Lac Charner Hotel", sub: "Home base",
+  var mapPoints = [{ key: "home", layer: "home", city: "saigon", name: "Au Lac Charner Hotel", sub: "Home base",
     desc: "87-89-91 Hồ Tùng Mậu, Quận 1", q: "Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu", icon: "i-pin" }];
   (DATA.places || []).forEach(function (p) {
-    mapPoints.push({ key: p.id, layer: p.cat, name: p.name, sub: catLabel[p.cat] || "", desc: p.desc, q: p.q,
+    mapPoints.push({ key: p.id, city: cityOf(p), layer: p.cat, name: p.name, sub: catLabel[p.cat] || "", desc: p.desc, q: p.q,
       icon: (mapLayers.filter(function (l) { return l.id === p.cat; })[0] || {}).icon || "i-landmark" });
   });
   (DATA.restaurants || []).forEach(function (r) {
-    mapPoints.push({ key: "r:" + r.name, layer: "eat", name: r.name, sub: (KIND[r.kind] || KIND.veg).label + (r.where ? " · " + r.where : ""),
+    mapPoints.push({ key: r.id || ("r:" + r.name), city: cityOf(r), layer: "eat", name: r.name, sub: (KIND[r.kind] || KIND.veg).label + (r.where ? " · " + r.where : ""),
       desc: r.desc, q: r.q, icon: r.kind === "vegan" ? "i-leaf" : "i-bowl" });
   });
   (DATA.drinks || []).forEach(function (r) {
     var t = drinkTypes[r.type] || {};
-    mapPoints.push({ key: "d:" + r.name, layer: "drink", name: r.name, sub: (t.label || "Drinks") + (r.where ? " · " + r.where : ""),
+    mapPoints.push({ key: r.id || ("d:" + r.name), city: cityOf(r), layer: "drink", name: r.name, sub: (t.label || "Drinks") + (r.where ? " · " + r.where : ""),
       desc: r.desc, q: r.q, icon: t.icon || "i-glass" });
   });
   mapPoints.forEach(function (pt) { var c = COORDS[pt.key]; if (c) { pt.ll = [c[0], c[1]]; pt.approx = !!c[2]; } });
@@ -1001,8 +1058,22 @@
     });
   }
   function isVisible(pt) {
+    if (pt.city !== cityId) return false;
     return pt.layer === "home" || (layersOn.indexOf(pt.layer) >= 0 && hiddenKeys.indexOf(pt.key) < 0);
   }
+  function cityLayers() {
+    return mapLayers.filter(function (l) { return mapPoints.some(function (p) { return p.city === cityId && p.layer === l.id; }); });
+  }
+  function viewCity() {
+    var c = city();
+    if (lmap && c.lat) lmap.setView([c.mapLat || c.lat, c.mapLon || c.lon], c.zoom || 14);
+  }
+  document.addEventListener("sgn-city", function () {
+    if (!lmap) return;
+    lmap.closePopup();
+    if (typeof clearRoute === "function") clearRoute();
+    renderLayerChips(); refreshMarkers(); viewCity();
+  });
   function refreshMarkers() {
     if (!lmap) return;
     mapPoints.forEach(function (pt) {
@@ -1014,9 +1085,9 @@
     });
   }
   function fitVisible(includeTrips) {
-    var pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt) && (includeTrips || (pt.layer !== "trips" && pt.layer !== "hue")); });
+    var pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt) && (includeTrips || pt.layer !== "trips"); });
     if (!pts.length) pts = mapPoints.filter(function (pt) { return pt.ll && isVisible(pt); });
-    if (pts.length < 2) { lmap.setView(pts[0] ? pts[0].ll : [LAT, LON], 15); return; }
+    if (pts.length < 2) { if (pts[0]) lmap.setView(pts[0].ll, 15); else viewCity(); return; }
     lmap.fitBounds(pts.map(function (pt) { return pt.ll; }), { padding: [36, 36], maxZoom: 16 });
   }
   function fitLayer(id) {
@@ -1026,7 +1097,7 @@
     lmap.fitBounds(pts.map(function (pt) { return pt.ll; }), { padding: [50, 50], maxZoom: 15 });
   }
   function renderLayerChips() {
-    $("#map-layers").innerHTML = mapLayers.map(function (l) {
+    $("#map-layers").innerHTML = cityLayers().map(function (l) {
       var on = layersOn.indexOf(l.id) >= 0;
       return '<button type="button" data-layer="' + l.id + '" aria-pressed="' + on + '" style="--c:' + PIN_COLORS[l.id] + '">' +
         '<span class="dot"></span>' + esc(l.label) + "</button>";
@@ -1060,7 +1131,7 @@
         .bindPopup(popupHtml(pt), { maxWidth: 260, autoPanPadding: [20, 80] });
     });
     refreshMarkers();
-    lmap.setView([LAT - 0.0015, LON - 0.004], 15); // the hotel and the old town
+    viewCity();
     $("#map-loading").hidden = true;
 
     renderLayerChips();
@@ -1070,7 +1141,7 @@
       var id = b.dataset.layer, i = layersOn.indexOf(id);
       if (i >= 0) layersOn.splice(i, 1); else layersOn.push(id);
       saveMapState(); renderLayerChips(); refreshMarkers();
-      if (i < 0 && (id === "trips" || id === "hue")) fitLayer(id);
+      if (i < 0 && id === "trips") fitLayer(id);
     });
     $("#map-fit").addEventListener("click", function () { fitVisible(layersOn.indexOf("trips") >= 0); });
     $("#map-locate").addEventListener("click", locateMe);
@@ -1106,9 +1177,9 @@
       if (firstFix) {
         firstFix = false;
         if (wantHomeRoute) { wantHomeRoute = false; setTimeout(function () { routeTo("home"); }, 0); return; }
-        var far = lmap.distance(ll, [LAT, LON]) > 60000;
+        var cc = city(), far = lmap.distance(ll, [cc.lat, cc.lon]) > 60000;
         lmap.setView(ll, far ? 12 : Math.max(lmap.getZoom(), 16));
-        if (far) mapToast("You're a long way from Saigon. The pins will make more sense once you land!");
+        if (far) mapToast("You're a long way from " + cc.name + ". The pins will make more sense once you're there!");
       }
     }, function (err) {
       wantHomeRoute = false;
@@ -1171,6 +1242,7 @@
     var pt = mapPoints.filter(function (p) { return p.key === key; })[0];
     if (!pt || !pt.ll) return;
     var fromMe = !!(meMarker && watchId !== null);
+    if (!fromMe && cityId !== "saigon") { mapToast("Turn on your location (the target button) to get a route from where you are."); return; }
     if (!fromMe && pt.layer === "home") { mapToast("Turn on your location (the target button) to get a route back to the hotel."); return; }
     var from = fromMe ? [meMarker.getLatLng().lat, meMarker.getLatLng().lng] : [LAT, LON];
     var straight = lmap.distance(from, pt.ll);
@@ -1185,7 +1257,7 @@
     var url = "https://routing.openstreetmap.de/" + mode[0] + "/route/v1/" + mode[1] + "/" +
       from[1] + "," + from[0] + ";" + pt.ll[1] + "," + pt.ll[0] + "?overview=full&geometries=geojson";
     var gmaps = "https://www.google.com/maps/dir/?api=1&origin=" + from[0] + "," + from[1] +
-      "&destination=" + (pt.approx ? encodeURIComponent(pt.q + ", Ho Chi Minh City") : pt.ll[0] + "," + pt.ll[1]) + "&travelmode=" + mode[2];
+      "&destination=" + (pt.approx ? encodeURIComponent(pt.q + ", " + (city().gq || "Vietnam")) : pt.ll[0] + "," + pt.ll[1]) + "&travelmode=" + mode[2];
     var id = ++routeReq;
     lmap.closePopup();
     $("#map-home").classList.remove("busy");
@@ -1219,6 +1291,7 @@
   function focusKey(key) {
     var pt = mapPoints.filter(function (p) { return p.key === key; })[0], m = markers[key];
     if (!pt || !m) return;
+    if (pt.city !== cityId) setCity(pt.city);
     if (pt.layer !== "home" && layersOn.indexOf(pt.layer) < 0) { layersOn.push(pt.layer); renderLayerChips(); }
     var hi = hiddenKeys.indexOf(key);
     if (hi >= 0) hiddenKeys.splice(hi, 1);
@@ -1238,8 +1311,8 @@
   /* choose individual places */
   var sheet = $("#map-sheet");
   function renderSheet() {
-    $("#ms-body").innerHTML = mapLayers.map(function (l) {
-      var pts = mapPoints.filter(function (p) { return p.layer === l.id; });
+    $("#ms-body").innerHTML = cityLayers().map(function (l) {
+      var pts = mapPoints.filter(function (p) { return p.layer === l.id && p.city === cityId; });
       var on = layersOn.indexOf(l.id) >= 0;
       return '<section class="ms-group" style="--c:' + PIN_COLORS[l.id] + '">' +
         '<div class="ms-head"><label class="ms-layer"><input type="checkbox" data-ms-layer="' + l.id + '"' + (on ? " checked" : "") + '><span class="dot"></span>' + esc(l.label) + "</label>" +

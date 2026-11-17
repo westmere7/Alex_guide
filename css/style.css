@@ -67,6 +67,7 @@
 
   --top-h: 56px;
   --tab-h: 64px;
+  --city-h: 46px;
   --ease: cubic-bezier(.2, .7, .2, 1);
   --font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -573,7 +574,7 @@ body.on-map { padding-bottom: 0; overflow: hidden; }
 .map-view { padding: 0; animation: none; }
 .map-shell {
   position: fixed; z-index: 5; left: 0; right: 0;
-  top: calc(var(--top-h) + env(safe-area-inset-top));
+  top: calc(var(--top-h) + var(--city-h) + env(safe-area-inset-top));
   bottom: calc(var(--tab-h) + env(safe-area-inset-bottom));
   background: var(--sunken);
 }
@@ -850,3 +851,22 @@ dialog.lightbox::backdrop { background: #000; }
 .lightbox img { max-width: 100%; max-height: 78vh; object-fit: contain; }
 .lightbox p { max-width: 640px; text-align: center; font-size: var(--fs-sm); color: #d6d6d6; line-height: 1.5; padding: 0 8px; }
 .lightbox .icon-btn { position: absolute; top: calc(12px + env(safe-area-inset-top)); right: 12px; background: rgba(255,255,255,.12); color: #fff; border-color: transparent; }
+
+/* ===== City switcher ===== */
+.citybar {
+  display: flex; gap: 6px; height: var(--city-h); align-items: center; overflow-x: auto; scrollbar-width: none;
+  margin: 0 -16px; padding: 0 16px 8px;
+}
+.citybar::-webkit-scrollbar { display: none; }
+.citybar button {
+  flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 34px; padding: 0 12px; border-radius: var(--r-full); cursor: pointer; white-space: nowrap;
+  background: var(--surface); border: 1px solid var(--border); color: var(--text-2); font-size: 13px; font-weight: 600;
+}
+.citybar .cb-n {
+  width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 10.5px;
+  background: var(--sunken); color: var(--text-3);
+}
+.citybar button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.citybar button[aria-selected="true"] .cb-n { background: color-mix(in srgb, var(--accent-fg) 22%, transparent); color: var(--accent-fg); }
+.part-head { scroll-margin-top: calc(var(--top-h) + var(--city-h) + 8px); }
