@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261117">
+  <link rel="stylesheet" href="css/style.css?v=20261117b">
 </head>
 <body>
 
@@ -95,8 +95,14 @@
   <div class="wrap topbar-in">
     <a class="brand" href="#home" data-nav="home">
       <span class="brand-mark"><svg class="i"><use href="#i-leaf"/></svg></span>
-      <span>Vietnam Guide</span>
+      <span class="brand-text">Vietnam Guide</span>
     </a>
+    <div class="city-pick" id="city-pick">
+      <button class="city-btn" id="city-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="city-menu" aria-label="Where are you? Hà Nội">
+        <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span id="city-btn-name">Hà Nội</span><svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <ul class="city-menu" id="city-menu" role="listbox" aria-label="Where are you?" tabindex="-1" hidden></ul>
+    </div>
     <div class="top-actions">
     <a class="icon-btn" id="map-btn" href="#map" aria-label="Map of all places"><svg class="i"><use href="#i-map"/></svg></a>
     <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark theme">
@@ -105,7 +111,6 @@
     </button>
     </div>
   </div>
-  <div class="wrap"><nav class="citybar" id="citybar" role="tablist" aria-label="Where are you?"></nav></div>
 </header>
 
 <main class="wrap">
@@ -1247,9 +1252,9 @@
   </div>
 </dialog>
 
-<script src="js/images.js?v=20261117"></script>
-<script src="js/data.js?v=20261117"></script>
-<script src="js/coords.js?v=20261117"></script>
-<script src="js/app.js?v=20261117"></script>
+<script src="js/images.js?v=20261117b"></script>
+<script src="js/data.js?v=20261117b"></script>
+<script src="js/coords.js?v=20261117b"></script>
+<script src="js/app.js?v=20261117b"></script>
 </body>
 </html>

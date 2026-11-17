@@ -62,7 +62,8 @@
     var c = city();
     // [data-city="a b"]: shown only in those cities. Everything else is shared.
     $$("[data-city]").forEach(function (el) { el.hidden = el.getAttribute("data-city").split(" ").indexOf(cityId) < 0; });
-    $$("#citybar button").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.c === cityId)); });
+    $$("#city-menu [data-c]").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.c === cityId)); });
+    if ($("#city-btn-name")) { $("#city-btn-name").textContent = c.name; $("#city-btn").setAttribute("aria-label", "Where are you? " + c.name); }
     $$("[data-city-name]").forEach(function (el) { el.textContent = c.name; });
   }
   function setCity(id) {
@@ -72,18 +73,62 @@
     applyCity();
     try { document.dispatchEvent(new CustomEvent("sgn-city")); } catch (e) {}
   }
+  /* City dropdown in the top bar (listbox pattern: arrows, Enter, Esc) */
   (function () {
-    var bar = $("#citybar");
-    if (!bar) return;
-    bar.innerHTML = CITIES.map(function (c, i) {
-      return '<button type="button" role="tab" data-c="' + c.id + '"><span class="cb-n">' + (i + 1) + "</span>" + esc(c.name) + "</button>";
+    var btn = $("#city-btn"), menu = $("#city-menu");
+    if (!btn || !menu) return;
+    menu.innerHTML = '<li class="cm-head" role="presentation">Trip order</li>' + CITIES.map(function (c, i) {
+      return '<li role="option" id="cm-' + c.id + '" data-c="' + c.id + '"><span class="cb-n">' + (i + 1) + "</span>" +
+        esc(c.name) + icon("i-check") + "</li>";
     }).join("");
-    bar.addEventListener("click", function (e) {
-      var b = e.target.closest("button[data-c]");
-      if (!b) return;
-      setCity(b.dataset.c);
+    var opts = $$("[data-c]", menu), active = 0;
+    function setActive(n) {
+      active = (n + opts.length) % opts.length;
+      opts.forEach(function (o, k) { o.classList.toggle("active", k === active); });
+      menu.setAttribute("aria-activedescendant", opts[active].id);
+    }
+    function open() {
+      menu.hidden = false; btn.setAttribute("aria-expanded", "true");
+      var cur = 0;
+      opts.forEach(function (o, k) { if (o.dataset.c === cityId) cur = k; });
+      setActive(cur);
+      menu.focus();
+    }
+    function close(refocus) {
+      if (menu.hidden) return;
+      menu.hidden = true; btn.setAttribute("aria-expanded", "false");
+      opts.forEach(function (o) { o.classList.remove("active"); });
+      if (refocus) btn.focus();
+    }
+    function choose(id) {
+      close(true);
+      if (id === cityId) return;
+      setCity(id);
       if (location.hash !== "#map") window.scrollTo(0, 0);
+    }
+    btn.addEventListener("click", function () { if (menu.hidden) open(); else close(true); });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); open(); }
     });
+    menu.addEventListener("click", function (e) {
+      var o = e.target.closest("[data-c]");
+      if (o) choose(o.dataset.c);
+    });
+    menu.addEventListener("mousemove", function (e) {
+      var o = e.target.closest("[data-c]");
+      if (o) setActive(opts.indexOf(o));
+    });
+    menu.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); setActive(active + 1); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); setActive(active - 1); }
+      else if (e.key === "Home") { e.preventDefault(); setActive(0); }
+      else if (e.key === "End") { e.preventDefault(); setActive(opts.length - 1); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(opts[active].dataset.c); }
+      else if (e.key === "Escape") { e.preventDefault(); close(true); }
+      else if (e.key === "Tab") close(false);
+    });
+    document.addEventListener("click", function (e) { if (!e.target.closest("#city-pick")) close(false); });
+    window.addEventListener("hashchange", function () { close(false); });
   })();
   applyCity();
 
