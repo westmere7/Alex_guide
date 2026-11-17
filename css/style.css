@@ -867,7 +867,7 @@ dialog.lightbox::backdrop { background: #000; }
 .lightbox .icon-btn { position: absolute; top: calc(12px + env(safe-area-inset-top)); right: 12px; background: rgba(255,255,255,.12); color: #fff; border-color: transparent; }
 
 /* ===== City picker (top bar dropdown) ===== */
-.city-pick { display: flex; align-items: center; gap: 8px; margin: 0 auto 0 10px; min-width: 0; }
+.city-pick { display: flex; align-items: center; gap: 8px; margin-right: auto; min-width: 0; }
 .cp-label { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-2); white-space: nowrap; line-height: 1.15; }
 .cp-wrap { position: relative; min-width: 0; }
 .city-btn {
@@ -923,8 +923,6 @@ dialog.lightbox::backdrop { background: #000; }
 .city-menu li[aria-selected="true"] .cm-ok { visibility: visible; }
 .city-menu .cm-head { height: auto; padding: 6px 10px 4px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); cursor: default; }
 .city-menu .cm-head:hover { background: none; }
-@media (max-width: 420px) { .brand-text { display: none; } }
-@media (max-width: 440px) { .topbar .brand { display: none; } .city-pick { margin-left: 0; } }
 @media (max-width: 340px) { .cp-label { display: none; } }
 .part-head { scroll-margin-top: calc(var(--top-h) + 8px); }
 
