@@ -144,54 +144,6 @@ window.SGN_IMAGES = {
   "by": "Luci nguyễn",
   "lic": "CC BY-SA 4.0"
  },
- "d-pho": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Vegetarian_Pho_%285541416031%29.jpg/500px-Vegetarian_Pho_%285541416031%29.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Vegetarian_Pho_(5541416031).jpg",
-  "by": "Sistak",
-  "lic": "CC BY-SA 2.0"
- },
- "d-goi-cuon": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Tofu_Summer_rolls_-_Xin_Chao%2C_Eastbourne_2026-08-14.jpg/500px-Tofu_Summer_rolls_-_Xin_Chao%2C_Eastbourne_2026-08-14.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Tofu_Summer_rolls_-_Xin_Chao,_Eastbourne_2026-08-14.jpg",
-  "by": "Andy Li",
-  "lic": "CC0"
- },
- "d-com-chay": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg/500px-%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg",
-  "by": "Nguyenngocthanhtoan",
-  "lic": "CC BY-SA 4.0"
- },
- "d-hu-tieu": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Hu_tieu_chay.jpg/500px-Hu_tieu_chay.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Hu_tieu_chay.jpg",
-  "by": "Nguyen Thi Quynh Tram",
-  "lic": "CC BY 3.0"
- },
- "d-rau-muong": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg/500px-Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg",
-  "by": "Andy Wright",
-  "lic": "CC BY 2.0"
- },
- "d-che": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ch%C3%A8_xo%C3%A0i.jpg/500px-Ch%C3%A8_xo%C3%A0i.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A8_xo%C3%A0i.jpg",
-  "by": "Mạnh An",
-  "lic": "CC BY-SA 3.0"
- },
- "d-nuoc-mia": {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/6/63/Sugarcanejuice.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Sugarcanejuice.jpg",
-  "by": "Food Trails",
-  "lic": "CC BY-SA 2.0"
- },
- "d-coffee": {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Viet-coffee.jpg/500px-Viet-coffee.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Viet-coffee.jpg",
-  "by": "Mike Verdone",
-  "lic": "Public domain"
- },
  "a-quynh": {
   "src": "https://live.staticflickr.com/44/171761366_d8acb736b5.jpg",
   "page": "https://www.flickr.com/photos/96147277@N00/171761366",
@@ -215,18 +167,6 @@ window.SGN_IMAGES = {
   "page": "https://www.flickr.com/photos/109715245@N06/53541929602",
   "by": "paaddor",
   "lic": "CC BY-ND 2.0"
- },
- "d-banh-mi": {
-  "src": "https://live.staticflickr.com/8754/16472841203_af4b3b1125.jpg",
-  "page": "https://www.flickr.com/photos/41993463@N08/16472841203",
-  "by": "Andrea_Nguyen",
-  "lic": "CC BY 2.0"
- },
- "d-banh-xeo": {
-  "src": "https://live.staticflickr.com/3792/12762098273_a4dd7a4135.jpg",
-  "page": "https://www.flickr.com/photos/52488168@N00/12762098273",
-  "by": "h-bomb",
-  "lic": "CC BY-NC-SA 2.0"
  },
  "s-tan-dinh": {
   "src": "https://live.staticflickr.com/65535/51787409711_58f35ef6a1.jpg",
@@ -475,5 +415,59 @@ window.SGN_IMAGES = {
   "r-lk-34": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Tra_sen_-_Vietnamese_Lotus_Tea.JPG/960px-Tra_sen_-_Vietnamese_Lotus_Tea.JPG", page: "https://commons.wikimedia.org/wiki/File:Tra_sen_-_Vietnamese_Lotus_Tea.JPG", by: "VuThiAnh", lic: "Public domain" },
   "r-lk-35": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/H%E1%BB%93_Thi%E1%BB%81n_Quang_%28H%C3%A0_N%E1%BB%99i%29.jpg/960px-H%E1%BB%93_Thi%E1%BB%81n_Quang_%28H%C3%A0_N%E1%BB%99i%29.jpg", page: "https://commons.wikimedia.org/wiki/File:H%E1%BB%93_Thi%E1%BB%81n_Quang_(H%C3%A0_N%E1%BB%99i).jpg", by: "Bùi Thụy Đào Nguyên", lic: "CC BY-SA 3.0" },
   "r-lk-36": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Parc_h%E1%BB%93_B%E1%BA%A3y_M%E1%BA%ABu_%285%29.jpg/960px-Parc_h%E1%BB%93_B%E1%BA%A3y_M%E1%BA%ABu_%285%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Parc_h%E1%BB%93_B%E1%BA%A3y_M%E1%BA%ABu_(5).jpg", by: "Guerinf", lic: "CC BY-SA 4.0" },
-  "r-lk-37": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/T%C3%B4_L%E1%BB%8Bch_River%2C_Hanoi_15.jpg/960px-T%C3%B4_L%E1%BB%8Bch_River%2C_Hanoi_15.jpg", page: "https://commons.wikimedia.org/wiki/File:T%C3%B4_L%E1%BB%8Bch_River,_Hanoi_15.jpg", by: "Ltn12345", lic: "CC BY-SA 4.0" }
+  "r-lk-37": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/T%C3%B4_L%E1%BB%8Bch_River%2C_Hanoi_15.jpg/960px-T%C3%B4_L%E1%BB%8Bch_River%2C_Hanoi_15.jpg", page: "https://commons.wikimedia.org/wiki/File:T%C3%B4_L%E1%BB%8Bch_River,_Hanoi_15.jpg", by: "Ltn12345", lic: "CC BY-SA 4.0" },
+  /* Dishes to try, per city */
+  "d-hn-01": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Tofu_noodle_soup_%28Ph%E1%BB%9F_chay%29_-_Pho_Hanoi_Authentic_2024-12-01.jpg/960px-Tofu_noodle_soup_%28Ph%E1%BB%9F_chay%29_-_Pho_Hanoi_Authentic_2024-12-01.jpg", page: "https://commons.wikimedia.org/wiki/File:Tofu_noodle_soup_(Ph%E1%BB%9F_chay)_-_Pho_Hanoi_Authentic_2024-12-01.jpg", by: "Andy Li", lic: "CC0" },
+  "d-hn-02": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Bun_cha_Hanoi.jpg/960px-Bun_cha_Hanoi.jpg", page: "https://commons.wikimedia.org/wiki/File:Bun_cha_Hanoi.jpg", by: "Weetjesman", lic: "CC BY-SA 4.0" },
+  "d-hn-03": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/B%C3%A1nh_cu%E1%BB%91n_Thanh_Tr%C3%AC.jpg/960px-B%C3%A1nh_cu%E1%BB%91n_Thanh_Tr%C3%AC.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_cu%E1%BB%91n_Thanh_Tr%C3%AC.jpg", by: "Casablanca1911", lic: "Public domain" },
+  "d-hn-04": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/B%C3%BAn_ri%C3%AAu_cua_n%C6%B0%E1%BB%9Bc.jpg/960px-B%C3%BAn_ri%C3%AAu_cua_n%C6%B0%E1%BB%9Bc.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%BAn_ri%C3%AAu_cua_n%C6%B0%E1%BB%9Bc.jpg", by: "Alpha", lic: "CC BY-SA 2.0" },
+  "d-hn-05": { src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Cha_gio.jpg", page: "https://commons.wikimedia.org/wiki/File:Cha_gio.jpg", by: "amrufm", lic: "CC BY 2.0" },
+  "d-hn-06": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/B%C3%BAn_%C4%91%E1%BA%ADu_m%E1%BA%AFm_t%C3%B4m.jpg/960px-B%C3%BAn_%C4%91%E1%BA%ADu_m%E1%BA%AFm_t%C3%B4m.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%BAn_%C4%91%E1%BA%ADu_m%E1%BA%AFm_t%C3%B4m.jpg", by: "trungnguyen299", lic: "CC BY-SA 2.0" },
+  "d-hn-07": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Banh_goi_03.JPG/960px-Banh_goi_03.JPG", page: "https://commons.wikimedia.org/wiki/File:Banh_goi_03.JPG", by: "Binh Giang", lic: "Public domain" },
+  "d-hn-08": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/X%C3%B4i_x%C3%A9o.jpg/960px-X%C3%B4i_x%C3%A9o.jpg", page: "https://commons.wikimedia.org/wiki/File:X%C3%B4i_x%C3%A9o.jpg", by: "Viethavvh", lic: "CC BY-SA 4.0" },
+  "d-hn-09": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/X%C3%B4i_C%E1%BB%91m_H%C3%A0_N%E1%BB%99i%2C_Vi%E1%BB%87t_Nam.jpg/960px-X%C3%B4i_C%E1%BB%91m_H%C3%A0_N%E1%BB%99i%2C_Vi%E1%BB%87t_Nam.jpg", page: "https://commons.wikimedia.org/wiki/File:X%C3%B4i_C%E1%BB%91m_H%C3%A0_N%E1%BB%99i,_Vi%E1%BB%87t_Nam.jpg", by: "Hoang.thu02091989", lic: "CC BY-SA 4.0" },
+  "d-hn-10": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/B%C3%A1nh_%C4%91%C3%BAc_l%E1%BA%A1c.jpg/960px-B%C3%A1nh_%C4%91%C3%BAc_l%E1%BA%A1c.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_%C4%91%C3%BAc_l%E1%BA%A1c.jpg", by: "Viethavvh", lic: "CC BY-SA 3.0" },
+  "d-hn-11": { src: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Banhchay.JPG", page: "https://commons.wikimedia.org/wiki/File:Banhchay.JPG", by: "Conbo", lic: "Public domain" },
+  "d-hn-12": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%C3%94_mai_H%C3%A0ng_%C4%90%C6%B0%E1%BB%9Dng.JPG/960px-%C3%94_mai_H%C3%A0ng_%C4%90%C6%B0%E1%BB%9Dng.JPG", page: "https://commons.wikimedia.org/wiki/File:%C3%94_mai_H%C3%A0ng_%C4%90%C6%B0%E1%BB%9Dng.JPG", by: "Hoangvantoanajc", lic: "CC BY-SA 3.0" },
+  "d-hn-13": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Tra_sen_-_Vietnamese_Lotus_Tea.JPG/960px-Tra_sen_-_Vietnamese_Lotus_Tea.JPG", page: "https://commons.wikimedia.org/wiki/File:Tra_sen_-_Vietnamese_Lotus_Tea.JPG", by: "VuThiAnh", lic: "Public domain" },
+  "d-hn-14": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bia_Hoi_%28fresh_beer%29_in_Hanoi_%281344451343%29.jpg/960px-Bia_Hoi_%28fresh_beer%29_in_Hanoi_%281344451343%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Bia_Hoi_(fresh_beer)_in_Hanoi_(1344451343).jpg", by: "thalling55", lic: "CC BY 2.0" },
+  "d-nb-01": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/C%C6%A1m_ch%C3%A1y_Ninh_B%C3%ACnh.JPG/960px-C%C6%A1m_ch%C3%A1y_Ninh_B%C3%ACnh.JPG", page: "https://commons.wikimedia.org/wiki/File:C%C6%A1m_ch%C3%A1y_Ninh_B%C3%ACnh.JPG", by: "Nguyễn Thanh Quang", lic: "CC BY-SA 3.0" },
+  "d-nb-02": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Cam_L%E1%BB%99_th5n2023_%28m%C3%B3n_%C4%83n_%C4%91%E1%BB%8Ba_ph%C6%B0%C6%A1ng%2C_b%E1%BB%AFa_c%C6%A1m_chay_g%E1%BA%A7n_ch%C3%B9a_Cam_L%E1%BB%99%29_%281%29.jpg/960px-Cam_L%E1%BB%99_th5n2023_%28m%C3%B3n_%C4%83n_%C4%91%E1%BB%8Ba_ph%C6%B0%C6%A1ng%2C_b%E1%BB%AFa_c%C6%A1m_chay_g%E1%BA%A7n_ch%C3%B9a_Cam_L%E1%BB%99%29_%281%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Cam_L%E1%BB%99_th5n2023_(m%C3%B3n_%C4%83n_%C4%91%E1%BB%8Ba_ph%C6%B0%C6%A1ng,_b%E1%BB%AFa_c%C6%A1m_chay_g%E1%BA%A7n_ch%C3%B9a_Cam_L%E1%BB%99)_(1).jpg", by: "Phương Huy", lic: "CC BY-SA 4.0" },
+  "d-nb-03": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Mushroom_hotpot.jpg/960px-Mushroom_hotpot.jpg", page: "https://commons.wikimedia.org/wiki/File:Mushroom_hotpot.jpg", by: "Lishuilynn", lic: "CC BY-SA 4.0" },
+  "d-nb-04": { src: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Dau_sot_ca%2C_tofu_stuffed_with_pork%2C_in_tomato_sauce.jpg", page: "https://commons.wikimedia.org/wiki/File:Dau_sot_ca,_tofu_stuffed_with_pork,_in_tomato_sauce.jpg", by: "HungryHuy", lic: "CC BY 2.0" },
+  "d-nb-05": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg/960px-Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg", page: "https://commons.wikimedia.org/wiki/File:Rau_mu%E1%BB%91ng_x%C3%A0o_t%E1%BB%8Fi.jpg", by: "Andy Wright", lic: "CC BY 2.0" },
+  "d-nb-06": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/N%E1%BB%99m_hoa_chu%E1%BB%91i.png/960px-N%E1%BB%99m_hoa_chu%E1%BB%91i.png", page: "https://commons.wikimedia.org/wiki/File:N%E1%BB%99m_hoa_chu%E1%BB%91i.png", by: "Jicara Foodie Traveller", lic: "CC BY-SA 4.0" },
+  "d-nb-07": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Ch%E1%BA%A3_gi%C3%B2_SG_%28nem_r%C3%A1n_gi%C3%B2n%29_%E1%BB%9F_qu%C3%A1n_b%C3%BAn_ri%C3%AAu_B%C3%A0_Ti_ng26th7n2023_%287%29.jpg/960px-Ch%E1%BA%A3_gi%C3%B2_SG_%28nem_r%C3%A1n_gi%C3%B2n%29_%E1%BB%9F_qu%C3%A1n_b%C3%BAn_ri%C3%AAu_B%C3%A0_Ti_ng26th7n2023_%287%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Ch%E1%BA%A3_gi%C3%B2_SG_(nem_r%C3%A1n_gi%C3%B2n)_%E1%BB%9F_qu%C3%A1n_b%C3%BAn_ri%C3%AAu_B%C3%A0_Ti_ng26th7n2023_(7).jpg", by: "Phương Huy", lic: "CC BY-SA 4.0" },
+  "d-nb-08": { src: "https://upload.wikimedia.org/wikipedia/commons/2/26/Dong_giao_td_4.jpg", page: "https://commons.wikimedia.org/wiki/File:Dong_giao_td_4.jpg", by: "Kien1980v", lic: "Public domain" },
+  "d-nb-09": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/R%C6%B0%E1%BB%A3u_sim_v%C3%A0_tr%C3%A0_hoa_s%C6%A1n_kim_c%C3%BAc_-_%C4%90%E1%BA%B7c_s%E1%BA%A3n_Thung_Nham_Ninh_B%C3%ACnh.jpg/960px-R%C6%B0%E1%BB%A3u_sim_v%C3%A0_tr%C3%A0_hoa_s%C6%A1n_kim_c%C3%BAc_-_%C4%90%E1%BA%B7c_s%E1%BA%A3n_Thung_Nham_Ninh_B%C3%ACnh.jpg", page: "https://commons.wikimedia.org/wiki/File:R%C6%B0%E1%BB%A3u_sim_v%C3%A0_tr%C3%A0_hoa_s%C6%A1n_kim_c%C3%BAc_-_%C4%90%E1%BA%B7c_s%E1%BA%A3n_Thung_Nham_Ninh_B%C3%ACnh.jpg", by: "Ruanyancang", lic: "CC BY-SA 4.0" },
+  "d-nb-10": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Ruoukimson.JPG/960px-Ruoukimson.JPG", page: "https://commons.wikimedia.org/wiki/File:Ruoukimson.JPG", by: "Kien1980v", lic: "Public domain" },
+  "d-nb-11": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/R%C6%B0%E1%BB%A3u_c%E1%BA%A7n_M%C6%B0%E1%BB%9Dng.jpg/960px-R%C6%B0%E1%BB%A3u_c%E1%BA%A7n_M%C6%B0%E1%BB%9Dng.jpg", page: "https://commons.wikimedia.org/wiki/File:R%C6%B0%E1%BB%A3u_c%E1%BA%A7n_M%C6%B0%E1%BB%9Dng.jpg", by: "Viethavvh", lic: "CC BY-SA 3.0" },
+  "d-hue-01": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_-_Ch%E1%BB%A3_%C4%90%C3%B4ng_Ba_%282024%29_-_img_02.jpg/960px-B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_-_Ch%E1%BB%A3_%C4%90%C3%B4ng_Ba_%282024%29_-_img_02.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_-_Ch%E1%BB%A3_%C4%90%C3%B4ng_Ba_(2024)_-_img_02.jpg", by: "Chainwit.", lic: "CC BY 4.0" },
+  "d-hue-02": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Banh_beo_Thien_Mu.jpg/960px-Banh_beo_Thien_Mu.jpg", page: "https://commons.wikimedia.org/wiki/File:Banh_beo_Thien_Mu.jpg", by: "Yun Huang Yong", lic: "CC BY-SA 2.0" },
+  "d-hue-03": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/B%C3%A1nh_N%E1%BA%ADm.jpg/960px-B%C3%A1nh_N%E1%BA%ADm.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_N%E1%BA%ADm.jpg", by: "Christopher Crouzet", lic: "CC BY-SA 4.0" },
+  "d-hue-04": { src: "https://upload.wikimedia.org/wikipedia/commons/b/b8/B%C3%A1nh_b%E1%BB%99t_l%E1%BB%8Dc.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_b%E1%BB%99t_l%E1%BB%8Dc.jpg", by: "Charles Haynes", lic: "CC BY-SA 2.0" },
+  "d-hue-05": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/B%C3%A1nh_b%C3%A8o%2C_B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n%2C_B%C3%A1nh_b%E1%BB%99t_l%E1%BB%8Dc_tr%E1%BA%A7n.jpg/960px-B%C3%A1nh_b%C3%A8o%2C_B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n%2C_B%C3%A1nh_b%E1%BB%99t_l%E1%BB%8Dc_tr%E1%BA%A7n.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_b%C3%A8o,_B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n,_B%C3%A1nh_b%E1%BB%99t_l%E1%BB%8Dc_tr%E1%BA%A7n.jpg", by: "Alpha", lic: "CC BY-SA 2.0" },
+  "d-hue-06": { src: "https://upload.wikimedia.org/wikipedia/commons/3/34/Banh_Khoai_%284265580561%29.jpg", page: "https://commons.wikimedia.org/wiki/File:Banh_Khoai_(4265580561).jpg", by: "Charles Haynes", lic: "CC BY-SA 2.0" },
+  "d-hue-07": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Com_Hen_at_Hue_Vietnam.JPG/960px-Com_Hen_at_Hue_Vietnam.JPG", page: "https://commons.wikimedia.org/wiki/File:Com_Hen_at_Hue_Vietnam.JPG", by: "Tonbi ko", lic: "CC BY-SA 3.0" },
+  "d-hue-08": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/AE_li%C3%AAn_hoan%2C_Nem_l%E1%BB%A5i_%E1%BB%9F_B%C3%ACnh_T%C3%A2n%2C_ng8th2n2020_%282%29.jpg/960px-AE_li%C3%AAn_hoan%2C_Nem_l%E1%BB%A5i_%E1%BB%9F_B%C3%ACnh_T%C3%A2n%2C_ng8th2n2020_%282%29.jpg", page: "https://commons.wikimedia.org/wiki/File:AE_li%C3%AAn_hoan,_Nem_l%E1%BB%A5i_%E1%BB%9F_B%C3%ACnh_T%C3%A2n,_ng8th2n2020_(2).jpg", by: "Phương Huy", lic: "CC0" },
+  "d-hue-09": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Vietnamese_imperial_spring_rolls.jpg/960px-Vietnamese_imperial_spring_rolls.jpg", page: "https://commons.wikimedia.org/wiki/File:Vietnamese_imperial_spring_rolls.jpg", by: "Christian Haugen", lic: "CC BY 2.0" },
+  "d-hue-10": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg/960px-%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg", page: "https://commons.wikimedia.org/wiki/File:%C4%90%E1%BA%A1i_L%E1%BB%85_Quan_%C3%82m_buffet_chay_t%E1%BA%A1i_ch%C3%B9a_Ph%E1%BB%95_L%E1%BA%A1i.jpg", by: "Nguyenngocthanhtoan", lic: "CC BY-SA 4.0" },
+  "d-hue-11": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_m%C3%B3n_ch%C3%A8_Hu%E1%BA%BF_%28ch%C3%A8_h%E1%BA%A1t_sen%29_%281%29.jpg/960px-L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_m%C3%B3n_ch%C3%A8_Hu%E1%BA%BF_%28ch%C3%A8_h%E1%BA%A1t_sen%29_%281%29.jpg", page: "https://commons.wikimedia.org/wiki/File:L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_m%C3%B3n_ch%C3%A8_Hu%E1%BA%BF_(ch%C3%A8_h%E1%BA%A1t_sen)_(1).jpg", by: "Phương Huy", lic: "CC BY-SA 4.0" },
+  "d-hue-12": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Ch%C3%A8_B%E1%BA%AFp.jpg/960px-Ch%C3%A8_B%E1%BA%AFp.jpg", page: "https://commons.wikimedia.org/wiki/File:Ch%C3%A8_B%E1%BA%AFp.jpg", by: "Zxcvasdfqwer888", lic: "CC BY-SA 3.0" },
+  "d-hue-13": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Caramelo_de_mango_con_s%C3%A9samo_y_man%C3%AD_%C2%B7_Vietnam.jpg/960px-Caramelo_de_mango_con_s%C3%A9samo_y_man%C3%AD_%C2%B7_Vietnam.jpg", page: "https://commons.wikimedia.org/wiki/File:Caramelo_de_mango_con_s%C3%A9samo_y_man%C3%AD_%C2%B7_Vietnam.jpg", by: "Seba Della y Sole Bossio", lic: "CC BY 2.0" },
+  "d-hue-14": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/C%C3%A0_Ph%C3%AA_Mu%E1%BB%91i_-_The_Big_Bowl_2024-07-08.jpg/960px-C%C3%A0_Ph%C3%AA_Mu%E1%BB%91i_-_The_Big_Bowl_2024-07-08.jpg", page: "https://commons.wikimedia.org/wiki/File:C%C3%A0_Ph%C3%AA_Mu%E1%BB%91i_-_The_Big_Bowl_2024-07-08.jpg", by: "Andy Li", lic: "CC0" },
+  "d-sg-01": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg/960px-H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg", page: "https://commons.wikimedia.org/wiki/File:H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg", by: "Tonbi ko", lic: "CC BY-SA 4.0" },
+  "d-sg-02": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/B%C3%A1nh_x%C3%A8o_1.jpg/960px-B%C3%A1nh_x%C3%A8o_1.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_x%C3%A8o_1.jpg", by: "Kent Wang", lic: "CC BY-SA 2.0" },
+  "d-sg-03": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/C%C6%A1m_t%E1%BA%A5m_SG_%28c%C6%A1m_s%C6%B0%E1%BB%9Dn%29_ng27th9n2020_%281%29.jpg/960px-C%C6%A1m_t%E1%BA%A5m_SG_%28c%C6%A1m_s%C6%B0%E1%BB%9Dn%29_ng27th9n2020_%281%29.jpg", page: "https://commons.wikimedia.org/wiki/File:C%C6%A1m_t%E1%BA%A5m_SG_(c%C6%A1m_s%C6%B0%E1%BB%9Dn)_ng27th9n2020_(1).jpg", by: "Phương Huy", lic: "CC0" },
+  "d-sg-04": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/B%C3%A1nh_m%C3%AC_%C4%91%E1%BA%ADu_h%C5%A9.jpg/960px-B%C3%A1nh_m%C3%AC_%C4%91%E1%BA%ADu_h%C5%A9.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_m%C3%AC_%C4%91%E1%BA%ADu_h%C5%A9.jpg", by: "Nguyentrongphu", lic: "CC BY-SA 4.0" },
+  "d-sg-05": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/G%E1%BB%8Fi_Cu%E1%BB%91n_Chay_Vietnamese_Fresh_Vegetarian_Spring_Roll_2019-1599.jpg/960px-G%E1%BB%8Fi_Cu%E1%BB%91n_Chay_Vietnamese_Fresh_Vegetarian_Spring_Roll_2019-1599.jpg", page: "https://commons.wikimedia.org/wiki/File:G%E1%BB%8Fi_Cu%E1%BB%91n_Chay_Vietnamese_Fresh_Vegetarian_Spring_Roll_2019-1599.jpg", by: "Paul R. Burley", lic: "CC BY-SA 4.0" },
+  "d-sg-06": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Bo_Bia_Jicama_Rolls.jpg/960px-Bo_Bia_Jicama_Rolls.jpg", page: "https://commons.wikimedia.org/wiki/File:Bo_Bia_Jicama_Rolls.jpg", by: "Susan", lic: "CC BY 2.0" },
+  "d-sg-07": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/B%C3%A1nh_tr%C3%A1ng_tr%E1%BB%99n_foodstand.jpg/960px-B%C3%A1nh_tr%C3%A1ng_tr%E1%BB%99n_foodstand.jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_tr%C3%A1ng_tr%E1%BB%99n_foodstand.jpg", by: "Tri Nguyen", lic: "CC BY 2.0" },
+  "d-sg-08": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Vietblackeyedpeas.jpg/960px-Vietblackeyedpeas.jpg", page: "https://commons.wikimedia.org/wiki/File:Vietblackeyedpeas.jpg", by: "Jess Lander", lic: "CC BY 2.0" },
+  "d-sg-09": { src: "https://upload.wikimedia.org/wikipedia/commons/b/b3/B%C3%A1nh_da_l%C6%A1n_%C4%91%E1%BA%ADu_xanh_v%C3%A0_l%C3%A1_d%E1%BB%A9a..jpg", page: "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_da_l%C6%A1n_%C4%91%E1%BA%ADu_xanh_v%C3%A0_l%C3%A1_d%E1%BB%A9a..jpg", by: "Crasheerr", lic: "CC BY-SA 4.0" },
+  "d-sg-10": { src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Douhua_dessert.jpg", page: "https://commons.wikimedia.org/wiki/File:Douhua_dessert.jpg", by: "Noramyn", lic: "CC BY-SA 4.0" },
+  "d-sg-11": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/N%C6%B0%E1%BB%9Bc_m%C3%ADa_M%E1%BB%B9_Tho.jpg/960px-N%C6%B0%E1%BB%9Bc_m%C3%ADa_M%E1%BB%B9_Tho.jpg", page: "https://commons.wikimedia.org/wiki/File:N%C6%B0%E1%BB%9Bc_m%C3%ADa_M%E1%BB%B9_Tho.jpg", by: "Trung geo", lic: "CC0" },
+  "d-sg-12": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Sinh_t%E1%BB%91_b%C6%A1.jpg/960px-Sinh_t%E1%BB%91_b%C6%A1.jpg", page: "https://commons.wikimedia.org/wiki/File:Sinh_t%E1%BB%91_b%C6%A1.jpg", by: "Hoangkid", lic: "Public domain" },
+  "d-sg-13": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Fruit_du_dragon.jpg/960px-Fruit_du_dragon.jpg", page: "https://commons.wikimedia.org/wiki/File:Fruit_du_dragon.jpg", by: "Dinkum", lic: "CC0" },
+  "d-sg-14": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/C%C3%A0_Ph%C3%AA_%C4%90en_Pha_M%C3%A1y.jpg/960px-C%C3%A0_Ph%C3%AA_%C4%90en_Pha_M%C3%A1y.jpg", page: "https://commons.wikimedia.org/wiki/File:C%C3%A0_Ph%C3%AA_%C4%90en_Pha_M%C3%A1y.jpg", by: "Lê Huỳnh Bộ", lic: "CC BY-SA 4.0" }
 };
