@@ -867,10 +867,12 @@ dialog.lightbox::backdrop { background: #000; }
 .lightbox .icon-btn { position: absolute; top: calc(12px + env(safe-area-inset-top)); right: 12px; background: rgba(255,255,255,.12); color: #fff; border-color: transparent; }
 
 /* ===== City picker (top bar dropdown) ===== */
-.city-pick { position: relative; margin: 0 auto 0 10px; min-width: 0; }
+.city-pick { display: flex; align-items: center; gap: 8px; margin: 0 auto 0 10px; min-width: 0; }
+.cp-label { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-2); white-space: nowrap; line-height: 1.15; }
+.cp-wrap { position: relative; min-width: 0; }
 .city-btn {
   display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
-  height: 46px; padding: 0 12px 0 6px; border-radius: var(--r-full); cursor: pointer;
+  height: 44px; padding: 0 12px 0 5px; border-radius: var(--r-full); cursor: pointer;
   background: var(--accent); border: 0; color: var(--accent-fg);
   box-shadow: 0 3px 12px color-mix(in srgb, var(--accent) 35%, transparent);
   font-size: 16px; font-weight: 700; white-space: nowrap; text-align: left;
@@ -882,9 +884,7 @@ dialog.lightbox::backdrop { background: #000; }
   background: color-mix(in srgb, var(--accent-fg) 20%, transparent);
 }
 .city-btn .cb-ic .i { width: 19px; height: 19px; }
-.city-btn .cb-txt { display: flex; flex-direction: column; min-width: 0; line-height: 1.1; }
-.city-btn .cb-txt small { font-size: 10.5px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
-.city-btn .cb-txt span { overflow: hidden; text-overflow: ellipsis; }
+.city-btn .cb-txt { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .city-btn .chev { width: 18px; height: 18px; color: inherit; flex: none; transition: transform .2s var(--ease); }
 .city-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .city-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
@@ -924,6 +924,8 @@ dialog.lightbox::backdrop { background: #000; }
 .city-menu .cm-head { height: auto; padding: 6px 10px 4px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); cursor: default; }
 .city-menu .cm-head:hover { background: none; }
 @media (max-width: 420px) { .brand-text { display: none; } }
+@media (max-width: 440px) { .topbar .brand { display: none; } .city-pick { margin-left: 0; } }
+@media (max-width: 340px) { .cp-label { display: none; } }
 .part-head { scroll-margin-top: calc(var(--top-h) + 8px); }
 
 /* ===== Per-city theme: accent colour + cover pattern (set via <html data-place>) ===== */

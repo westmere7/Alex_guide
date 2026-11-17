@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261117d">
+  <link rel="stylesheet" href="css/style.css?v=20261117e">
 </head>
 <body>
 
@@ -102,10 +102,13 @@
       <span class="brand-text">Vietnam Guide</span>
     </a>
     <div class="city-pick" id="city-pick">
-      <button class="city-btn" id="city-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="city-menu" aria-label="Where are you? Hà Nội">
-        <span class="cb-ic"><svg class="i" aria-hidden="true"><use data-city-icon href="#i-c-hanoi"/></svg></span><span class="cb-txt"><small>You're in</small><span id="city-btn-name">Hà Nội</span></span><svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-      </button>
-      <ul class="city-menu" id="city-menu" role="listbox" aria-label="Where are you?" tabindex="-1" hidden></ul>
+      <span class="cp-label" aria-hidden="true">You're in</span>
+      <div class="cp-wrap">
+        <button class="city-btn" id="city-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="city-menu" aria-label="You're in Hà Nội. Change location">
+          <span class="cb-ic"><svg class="i" aria-hidden="true"><use data-city-icon href="#i-c-hanoi"/></svg></span><span class="cb-txt" id="city-btn-name">Hà Nội</span><svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <ul class="city-menu" id="city-menu" role="listbox" aria-label="Location" tabindex="-1" hidden></ul>
+      </div>
     </div>
     <div class="top-actions">
     <a class="icon-btn" id="map-btn" href="#map" aria-label="Map of all places"><svg class="i"><use href="#i-map"/></svg></a>
@@ -1256,9 +1259,9 @@
   </div>
 </dialog>
 
-<script src="js/images.js?v=20261117d"></script>
-<script src="js/data.js?v=20261117d"></script>
-<script src="js/coords.js?v=20261117d"></script>
-<script src="js/app.js?v=20261117d"></script>
+<script src="js/images.js?v=20261117e"></script>
+<script src="js/data.js?v=20261117e"></script>
+<script src="js/coords.js?v=20261117e"></script>
+<script src="js/app.js?v=20261117e"></script>
 </body>
 </html>

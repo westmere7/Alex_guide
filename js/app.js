@@ -63,7 +63,7 @@
     // [data-city="a b"]: shown only in those cities. Everything else is shared.
     $$("[data-city]").forEach(function (el) { el.hidden = el.getAttribute("data-city").split(" ").indexOf(cityId) < 0; });
     $$("#city-menu [data-c]").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.c === cityId)); });
-    if ($("#city-btn-name")) { $("#city-btn-name").textContent = c.name; $("#city-btn").setAttribute("aria-label", "Where are you? " + c.name); }
+    if ($("#city-btn-name")) { $("#city-btn-name").textContent = c.name; $("#city-btn").setAttribute("aria-label", "You're in " + c.name + ". Change location"); }
     $$("[data-city-name]").forEach(function (el) { el.textContent = c.name; });
     document.documentElement.setAttribute("data-place", c.id);
     $$("use[data-city-icon]").forEach(function (u) { u.setAttribute("href", "#i-c-" + c.id); });
