@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261117b">
+  <link rel="stylesheet" href="css/style.css?v=20261117d">
 </head>
 <body>
 
@@ -54,6 +54,10 @@
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"/></symbol>
   <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
   <symbol id="i-message" viewBox="0 0 24 24"><path d="M4.5 5h15a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4.5 3.5V16h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></symbol>
+  <symbol id="i-c-hanoi" viewBox="0 0 24 24"><path d="M2.5 20.5h19"/><path d="M6.5 20.5V12h11v8.5"/><path d="M10.5 20.5v-2.5a1.5 1.5 0 0 1 3 0v2.5"/><path d="M8.5 12V8.5h7V12"/><path d="M10.5 8.5 12 5l1.5 3.5"/><path d="M5.5 12h13"/></symbol>
+  <symbol id="i-c-ninhbinh" viewBox="0 0 24 24"><path d="M2.5 16.5c.6-4.5 1.8-8 3.8-8s2.6 3 3 5c.6-4.3 1.9-8.5 4.2-8.5s3.6 4.5 4.3 8c.4-1.6 1.2-2.6 2.2-2.6"/><path d="M2.5 16.5h19"/><path d="M3 20c1.4 0 1.6-1 3-1s1.6 1 3 1 1.6-1 3-1 1.6 1 3 1 1.6-1 3-1 1.6 1 3 1"/></symbol>
+  <symbol id="i-c-hue" viewBox="0 0 24 24"><path d="M2.5 9.5c3.5 0 6.5-2 9.5-5.5 3 3.5 6 5.5 9.5 5.5"/><path d="M5 9v11M19 9v11M3 20.5h18"/><path d="M7 12.5h10"/><path d="M10 20.5v-5h4v5"/></symbol>
+  <symbol id="i-c-saigon" viewBox="0 0 24 24"><path d="M5 21h14"/><path d="M9.5 21 9 9.5C9 6 10.4 3.8 12 2.5c1.6 1.3 3 3.5 3 7L14.5 21"/><path d="M7 12.5c2.5-.8 7.5-.8 10 0"/><path d="M12 15v6"/></symbol>
   <symbol id="i-pavilion" viewBox="0 0 24 24"><path d="M2.5 9.5c3.5 0 6.5-2 9.5-5.5 3 3.5 6 5.5 9.5 5.5"/><path d="M5 9v11M19 9v11M3 20.5h18"/><path d="M7 12.5h10"/><path d="M10 20.5v-5h4v5"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
   <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></symbol>
@@ -99,7 +103,7 @@
     </a>
     <div class="city-pick" id="city-pick">
       <button class="city-btn" id="city-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="city-menu" aria-label="Where are you? Hà Nội">
-        <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span id="city-btn-name">Hà Nội</span><svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+        <span class="cb-ic"><svg class="i" aria-hidden="true"><use data-city-icon href="#i-c-hanoi"/></svg></span><span class="cb-txt"><small>You're in</small><span id="city-btn-name">Hà Nội</span></span><svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
       </button>
       <ul class="city-menu" id="city-menu" role="listbox" aria-label="Where are you?" tabindex="-1" hidden></ul>
     </div>
@@ -118,16 +122,16 @@
   <!-- =============================== HOME =============================== -->
   <section class="view" id="home" data-view>
     <div class="hero">
-      <p class="overline">For Alex &amp; Jenna</p>
+      <div class="cover" aria-hidden="true"></div>
+      <p class="overline hero-stop"><svg class="i" aria-hidden="true"><use data-city-icon href="#i-c-hanoi"/></svg><span data-city-stop>Stop 1 of 4</span> · For Alex &amp; Jenna</p>
       <h1><span data-city-name>Sài Gòn</span>,<br><span class="accent-text">sorted.</span></h1>
       <p class="lead">Your honeymoon guide to Vietnam.</p>
       <div class="pills" aria-live="polite">
         <span class="pill"><svg class="i"><use href="#i-clock"/></svg>Vietnam&nbsp;<b id="local-time">--:--</b></span>
         <span class="pill"><svg class="i"><use href="#i-plane"/></svg>Melbourne&nbsp;<b id="aus-time">--:--</b><span class="pill-sub" id="aus-diff"></span></span>
       </div>
-      <div class="actions">
-        <button class="btn btn-primary" type="button" data-open-card><svg class="i"><use href="#i-leaf"/></svg>Vegan card</button>
-        <a class="btn btn-secondary" data-city="saigon" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
+      <div class="actions" data-city="saigon">
+        <a class="btn btn-secondary" data-q="Au Lac Charner Hotel, 87-89-91 Hồ Tùng Mậu" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Home base</a>
       </div>
     </div>
 
@@ -1252,9 +1256,9 @@
   </div>
 </dialog>
 
-<script src="js/images.js?v=20261117b"></script>
-<script src="js/data.js?v=20261117b"></script>
-<script src="js/coords.js?v=20261117b"></script>
-<script src="js/app.js?v=20261117b"></script>
+<script src="js/images.js?v=20261117d"></script>
+<script src="js/data.js?v=20261117d"></script>
+<script src="js/coords.js?v=20261117d"></script>
+<script src="js/app.js?v=20261117d"></script>
 </body>
 </html>

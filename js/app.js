@@ -65,6 +65,10 @@
     $$("#city-menu [data-c]").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.c === cityId)); });
     if ($("#city-btn-name")) { $("#city-btn-name").textContent = c.name; $("#city-btn").setAttribute("aria-label", "Where are you? " + c.name); }
     $$("[data-city-name]").forEach(function (el) { el.textContent = c.name; });
+    document.documentElement.setAttribute("data-place", c.id);
+    $$("use[data-city-icon]").forEach(function (u) { u.setAttribute("href", "#i-c-" + c.id); });
+    var n = CITIES.indexOf(c) + 1;
+    $$("[data-city-stop]").forEach(function (el) { el.textContent = "Stop " + n + " of " + CITIES.length; });
   }
   function setCity(id) {
     if (id === cityId || !CITIES.some(function (c) { return c.id === id; })) return;
@@ -78,10 +82,12 @@
     var btn = $("#city-btn"), menu = $("#city-menu");
     if (!btn || !menu) return;
     menu.innerHTML = '<li class="cm-head" role="presentation">Trip order</li>' + CITIES.map(function (c, i) {
-      return '<li role="option" id="cm-' + c.id + '" data-c="' + c.id + '"><span class="cb-n">' + (i + 1) + "</span>" +
-        esc(c.name) + icon("i-check") + "</li>";
+      return '<li role="option" id="cm-' + c.id + '" data-c="' + c.id + '" style="--c:var(--c-' + c.id + ');--cf:var(--c-' + c.id + '-fg)">' +
+        '<span class="cm-ic">' + icon("i-c-" + c.id) + '</span><span class="cm-t">' + esc(c.name) + "<small>Stop " + (i + 1) + "</small></span>" +
+        icon("i-check").replace('class="i"', 'class="i cm-ok"') + "</li>";
     }).join("");
     var opts = $$("[data-c]", menu), active = 0;
+    if (!store.get("sgn-guide-city-opened", false)) btn.classList.add("nudge");
     function setActive(n) {
       active = (n + opts.length) % opts.length;
       opts.forEach(function (o, k) { o.classList.toggle("active", k === active); });
@@ -89,6 +95,7 @@
     }
     function open() {
       menu.hidden = false; btn.setAttribute("aria-expanded", "true");
+      if (btn.classList.contains("nudge")) { btn.classList.remove("nudge"); store.set("sgn-guide-city-opened", true); }
       var cur = 0;
       opts.forEach(function (o, k) { if (o.dataset.c === cityId) cur = k; });
       setActive(cur);
