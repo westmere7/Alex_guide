@@ -2891,6 +2891,421 @@ window.SGN_DATA = {
       ]
     },
     {
+      "id": "ho-chi-minh",
+      "title": "Hồ Chí Minh: the man and his legacy",
+      "vi": "Chủ tịch Hồ Chí Minh",
+      "img": {
+        "key": "r-hb-01",
+        "cap": "Hồ Chí Minh in about 1946."
+      },
+      "teaser": "Kitchen hand, exile, revolutionary, president, and now a face on every banknote. A balanced look at the most important figure in modern Vietnam.",
+      "minutes": 16,
+      "lead": "You'll see his face everywhere in Vietnam: on banknotes, in classrooms, on posters, and on altars. To most Vietnamese he is Bác Hồ, 'Uncle Ho', the father of the nation's independence. Historians outside Vietnam see a more complicated figure, and many overseas Vietnamese, including in Australia, see him very differently again. This piece tells his story as it is documented, sets the official account beside outside scholarship, and flags where the facts are disputed. For the mausoleum itself, see the Ba Đình article.",
+      "sections": [
+        {
+          "h": "A scholar's son from Nghệ An",
+          "p": [
+            "He was born Nguyễn Sinh Cung in Nghệ An province in central Vietnam; the official birth date is 19 May 1890, though records he left behind give several other years between 1886 and 1899. He was born in his mother's village of Hoàng Trù and grew up partly in nearby Kim Liên, where a reconstructed family house is now a much-visited memorial.",
+            "His father, Nguyễn Sinh Sắc, was a Confucian scholar who passed the imperial exams and later became a district magistrate before being dismissed. The family lived for years in Huế, where his mother died in 1901, and as a teenager he studied at Huế's élite Quốc Học school from 1908. By then he was called Nguyễn Tất Thành."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-02",
+              "cap": "His father, the scholar-official Nguyễn Sinh Sắc."
+            },
+            {
+              "key": "r-hb-03",
+              "cap": "The gate of Hoàng Trù, his mother's village."
+            },
+            {
+              "key": "r-hb-04",
+              "cap": "The Kim Liên memorial site in Nghệ An."
+            },
+            {
+              "key": "r-hb-05",
+              "cap": "A Quốc Học class in Huế, published in 1913."
+            },
+            {
+              "key": "r-hb-06",
+              "cap": "Quốc Học school in Huế today."
+            }
+          ],
+          "tip": "In Huế you can see Quốc Học's red buildings from the street (it's still a working school), and the family's rented house at Mai Thúc Loan is a small memorial."
+        },
+        {
+          "h": "Thirty years away",
+          "p": [
+            "On 5 June 1911 he left Saigon as a kitchen hand on the French steamer Amiral Latouche-Tréville. The wharf he sailed from, the Nhà Rồng ('Dragon House'), is now a museum in his name. For the next 30 years he lived abroad under dozens of names: estimates range from about 50 to over 170.",
+            "The early years are hazy. He seems to have spent time in the United States around 1912–13 and in Britain during the First World War. A famous story says he trained as a pastry cook under the chef Escoffier at London's Carlton Hotel; there's a plaque on the site, but historians have found no documents to confirm it.",
+            "In Paris he became Nguyễn Ái Quốc, 'Nguyễn the Patriot'. In 1919 a petition under that name asking for rights for the Vietnamese was sent to the leaders at the Versailles peace conference; scholars still debate who actually wrote it. In 1920 he voted at the Congress of Tours to join the Communist International, becoming a founding member of the French Communist Party."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-07",
+              "cap": "His Paris identity card as 'Nguyễn Ái Quấc', 1919."
+            },
+            {
+              "key": "r-hb-08",
+              "cap": "Nguyễn Ái Quốc in France, about 1920."
+            },
+            {
+              "key": "r-hb-09",
+              "cap": "Speaking at the Congress of Tours, December 1920."
+            },
+            {
+              "key": "r-hb-10",
+              "cap": "A press photo at the Marseille communist congress, 1921."
+            }
+          ]
+        },
+        {
+          "h": "Moscow, China and a Hong Kong prison",
+          "p": [
+            "In 1923 he went to Moscow to work for the Communist International, then to Canton (Guangzhou), where he trained young Vietnamese revolutionaries. In early 1930 he chaired the meeting in Hong Kong that united rival groups into the Indochinese Communist Party.",
+            "In June 1931 British police in Hong Kong arrested him. A British lawyer, Frank Loseby, fought his deportation to French territory all the way to the Privy Council in London; accounts differ on whether the case ended in a ruling or a settlement. After about 20 months, ill with tuberculosis, he was smuggled out to China disguised as a scholar."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-11",
+              "cap": "In the Soviet Union, 1923."
+            },
+            {
+              "key": "r-hb-12",
+              "cap": "Delegates to the Comintern congress in Moscow, 1924."
+            },
+            {
+              "key": "r-hb-13",
+              "cap": "The Hong Kong police photo after his arrest as 'Sung Man Cho', 1931."
+            },
+            {
+              "key": "r-hb-14",
+              "cap": "A memorial plaque in Moscow recalling his Comintern years."
+            }
+          ]
+        },
+        {
+          "h": "The cave, the Americans and independence",
+          "p": [
+            "In January 1941 he crossed back into Vietnam and hid in Cốc Bó cave at Pác Bó, near the Chinese border, naming the stream outside after Lenin. From there he led the Việt Minh, a broad independence front. Jailed again by Chinese Nationalists in 1942–43, he wrote a cycle of classical Chinese poems now known as the Prison Diary; the manuscript is a national treasure. By then he was using the name Hồ Chí Minh.",
+            "In 1945 he worked with the Americans. Agents of the US Office of Strategic Services (the 'Deer Team') parachuted in to train Việt Minh fighters against the Japanese, and an American medic treated him when he fell seriously ill.",
+            "On 2 September 1945, in Ba Đình Square, he read Vietnam's Declaration of Independence. It begins by quoting the American Declaration: 'All men are created equal.' He wrote to President Truman asking for support; he never received a reply."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-15",
+              "cap": "Cốc Bó cave at Pác Bó, his hideout from 1941."
+            },
+            {
+              "key": "r-hb-16",
+              "cap": "The 'Lenin Stream' at Pác Bó."
+            },
+            {
+              "key": "r-hb-17",
+              "cap": "The handwritten Prison Diary, 1942–43."
+            },
+            {
+              "key": "r-hb-18",
+              "cap": "Pages of the Prison Diary on display."
+            },
+            {
+              "key": "r-hb-19",
+              "cap": "With Võ Nguyên Giáp and the American OSS team, 1945."
+            },
+            {
+              "key": "r-hb-20",
+              "cap": "Members of the OSS Deer Team in Hanoi, September 1945."
+            },
+            {
+              "key": "r-hb-21",
+              "cap": "Reading the Declaration of Independence at Ba Đình, 2 September 1945."
+            },
+            {
+              "key": "r-hb-22",
+              "cap": "The crowd and rostrum at Ba Đình on Independence Day."
+            }
+          ]
+        },
+        {
+          "h": "War with France",
+          "p": [
+            "Independence wasn't accepted by France. In March 1946 Hồ Chí Minh signed an accord making Vietnam a 'free state' within the French Union, then spent months in France negotiating at Fontainebleau without success. War broke out in December 1946.",
+            "It lasted eight years and ended at Điện Biên Phủ in May 1954, where General Võ Nguyên Giáp's forces defeated the French garrison. At the Geneva conference that July, Vietnam was divided at the 17th parallel, with the North under Hồ Chí Minh's government. Elections to reunify the country, due in 1956, were never held."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-23",
+              "cap": "Signing the March 1946 accord with France."
+            },
+            {
+              "key": "r-hb-24",
+              "cap": "With French minister Marius Moutet, September 1946."
+            },
+            {
+              "key": "r-hb-25",
+              "cap": "Meeting Vietnamese living in France, 1946."
+            },
+            {
+              "key": "r-hb-26",
+              "cap": "Việt Minh soldiers raise their flag at Điện Biên Phủ, May 1954 (possibly re-staged for the camera, as some sources say)."
+            },
+            {
+              "key": "r-hb-27",
+              "cap": "French prisoners after Điện Biên Phủ, 1954."
+            }
+          ]
+        },
+        {
+          "h": "The contested years",
+          "p": [
+            "Some of the hardest debates about him concern North Vietnam in the 1950s. The land reform of 1953–56 classified villagers as landlords and put many before 'people's tribunals'. How many were executed is disputed: scholarly estimates range from under a thousand to around 15,000 or more. In 1956 Hồ Chí Minh publicly acknowledged 'errors', the party leader Trường Chinh was removed, and thousands of prisoners were released. Historians still argue whether the violence was a deviation or largely planned.",
+            "In the same years a group of writers and artists who called for more freedom, the Nhân Văn–Giai Phẩm movement, was suppressed; many were rehabilitated decades later. How much Hồ Chí Minh himself directed these events, and how much real power he held after about 1959, when Lê Duẩn rose to lead the party, is debated. Some historians argue he was increasingly a figurehead during the war against the South and the United States; others say he kept real influence.",
+            "Scholars also debate whether he was first a nationalist or a communist. He once wrote that 'at first, patriotism, not yet communism' drew him to Lenin. Official Vietnamese history sees no conflict between the two."
+          ]
+        },
+        {
+          "h": "Uncle Ho",
+          "p": [
+            "The image of 'Uncle Ho' was carefully built, partly by himself: a 1948 admiring biography published under the name Trần Dân Tiên is widely attributed to him. He presented himself as a simple man who loved children, refused to live in the French governor's palace, and lived instead in a small wooden stilt house, wearing sandals cut from old tyres.",
+            "Officially, he never married and devoted his life to the nation. Researchers have found evidence that he married a Chinese woman, Tăng Tuyết Minh, in Canton in 1926; Vietnamese officials have dismissed the claim, and the subject remains sensitive."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-28",
+              "cap": "With children in the 1950s, the root of the 'Bác Hồ' image."
+            },
+            {
+              "key": "r-hb-29",
+              "cap": "Visiting young pioneers near Berlin, 1957."
+            },
+            {
+              "key": "r-hb-30",
+              "cap": "With Tito in Belgrade, 1957."
+            },
+            {
+              "key": "r-hb-31",
+              "cap": "A portrait from 1967."
+            },
+            {
+              "key": "r-hb-32",
+              "cap": "The stilt house where he lived from 1958 to 1969."
+            },
+            {
+              "key": "r-hb-33",
+              "cap": "The study inside the stilt house."
+            },
+            {
+              "key": "r-hb-34",
+              "cap": "The colonial Presidential Palace he declined to live in."
+            },
+            {
+              "key": "r-hb-35",
+              "cap": "His rubber-tyre sandals at the Nhà Rồng museum."
+            }
+          ]
+        },
+        {
+          "h": "Death, and a will rewritten",
+          "p": [
+            "Hồ Chí Minh died of heart failure on the morning of 2 September 1969, aged 79. The death was announced as the 3rd so it wouldn't fall on National Day. His handwritten will asked for cremation, with his ashes divided between the North, Centre and South; that request was left out of the version published in 1969. In 1989 the party admitted both changes, saying his body had been preserved 'taking into account the people's sentiments'. The Ba Đình article tells the story of the mausoleum."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-36",
+              "cap": "A page of his handwritten will, including the cremation wish."
+            }
+          ],
+          "maps": [
+            {
+              "key": "hn-mausoleum",
+              "label": "Mausoleum"
+            }
+          ]
+        },
+        {
+          "h": "His place in Vietnam today",
+          "p": [
+            "In 1976 Saigon was renamed Hồ Chí Minh City; the 50th anniversary was marked in July 2026. His portrait is on every Vietnamese banknote except the 100 đồng note. 'Hồ Chí Minh Thought' has been, with Marxism–Leninism, the Communist Party's official foundation since 1991, and a national campaign urges everyone to 'study and follow his thought, morality and style'. Every child learns 'Uncle Ho's five teachings' at school. His birthday, 19 May, and National Day, 2 September, are big occasions: the 80th anniversary of independence in 2025 drew huge, young crowds to Ba Đình.",
+            "For many people he is more than a leader. Altars to Bác Hồ sit in temples and homes, and some folk-religion groups worship him as a deity; a temple in Trà Vinh built to him during the war in 1970 still draws tens of thousands of visitors a year.",
+            "In Vietnam, criticising him in public is legally risky: people have been jailed for insulting posts online, which rights groups say chills free speech. Outside Vietnam views are more divided. Many Vietnamese who left after 1975, including much of the community in Australia, see him as the founder of the regime they fled; in 2016 protests led a Brisbane restaurant called 'Uncle Ho' to change its name. Almost 60,000 Australians served in the Vietnam War, and 521 died."
+          ],
+          "gallery": [
+            {
+              "key": "r-hb-37",
+              "cap": "The 2015 statue in front of Saigon's City Hall."
+            },
+            {
+              "key": "r-hb-38",
+              "cap": "Visitors at the Nguyễn Huệ statue."
+            },
+            {
+              "key": "r-hb-39",
+              "cap": "Nhà Rồng wharf in Saigon, where he left in 1911, now a museum."
+            },
+            {
+              "key": "r-hb-40",
+              "cap": "A poster outside a Hà Nội school."
+            },
+            {
+              "key": "r-hb-41",
+              "cap": "Party congress posters featuring him, 2016."
+            },
+            {
+              "key": "r-hb-42",
+              "cap": "Long Đức temple to Hồ Chí Minh in Trà Vinh, built in 1970–71."
+            },
+            {
+              "key": "r-hb-43",
+              "cap": "An altar to Bác Hồ inside a temple in Saigon."
+            },
+            {
+              "key": "r-hb-44",
+              "cap": "A statue of him with children in Hà Giang."
+            },
+            {
+              "key": "r-hb-45",
+              "cap": "A statue in Cao Bằng, near Pác Bó."
+            },
+            {
+              "key": "r-hb-46",
+              "cap": "Replica 'Hồ Chí Minh sandals' for sale in Hà Nội."
+            }
+          ]
+        },
+        {
+          "h": "Being a respectful visitor",
+          "p": [
+            "Treat his statues, portraits and altars the way you'd treat a war memorial or a church: don't climb or sit on them, and skip jokey poses or mock salutes. Photos of statues and buildings from outside are normal; Saigon's statue on Nguyễn Huệ is a popular photo spot. Keep quiet near altars, and ask before taking photos inside temples.",
+            "Don't write on or make jokes with banknotes. It's wise not to start political debates; if people raise the subject, listen. Views in Vietnam and among Vietnamese Australians can be very different, and both are deeply felt.",
+            "Places linked to him on your trip: in Hà Nội, the mausoleum, the stilt house and the Hồ Chí Minh Museum; in Huế, Quốc Học school and the family's memorial houses on Mai Thúc Loan street and in Dương Nỗ village; in Saigon, the Nhà Rồng museum (check it has reopened after its 2026 renovation) and the statue in front of City Hall."
+          ],
+          "maps": [
+            {
+              "key": "hn-mausoleum",
+              "label": "Mausoleum, Hà Nội"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Ho Chi Minh",
+          "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh"
+        },
+        {
+          "title": "Thị trường Tài chính Tiền tệ: Nguyễn Ái Quốc's birth years in French archives (2021)",
+          "url": "https://thitruongtaichinhtiente.vn/nhung-nam-sinh-cua-nguyen-ai-quoc-trong-ho-so-luu-tru-cua-phap-35665.html"
+        },
+        {
+          "title": "VietNamNet: Relic sites of his childhood in Huế",
+          "url": "https://vietnamnet.vn/en/relic-sites-associated-with-uncle-hos-childhood-in-hue-642260.html"
+        },
+        {
+          "title": "Wilson Center: The myth of the 'Wilsonian moment' (Brett Reilly, 2019)",
+          "url": "https://wilsoncenter.org/blog-post/the-myth-the-wilsonian-moment"
+        },
+        {
+          "title": "Irish Legal News: Ho Chi Minh v The King (2026)",
+          "url": "https://www.irishlegal.com/articles/ronnie-clancy-kc-ho-chi-minh-v-the-king"
+        },
+        {
+          "title": "Wikipedia: Pác Bó",
+          "url": "https://en.wikipedia.org/wiki/P%C3%A1c_B%C3%B3"
+        },
+        {
+          "title": "Wikipedia: OSS Deer Team",
+          "url": "https://en.wikipedia.org/wiki/OSS_Deer_Team"
+        },
+        {
+          "title": "Fordham Modern History Sourcebook: Declaration of Independence of the DRV (1945)",
+          "url": "https://sourcebooks.web.fordham.edu/mod/1945vietnam.asp"
+        },
+        {
+          "title": "Wikipedia: Fontainebleau Conference",
+          "url": "https://en.wikipedia.org/wiki/Fontainebleau_Conference"
+        },
+        {
+          "title": "Wikipedia: Battle of Điện Biên Phủ",
+          "url": "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu"
+        },
+        {
+          "title": "Wikipedia: Land reform in North Vietnam",
+          "url": "https://en.wikipedia.org/wiki/Land_reform_in_North_Vietnam"
+        },
+        {
+          "title": "Alec Holcombe: Mass Mobilization in the Democratic Republic of Vietnam (2020, open access)",
+          "url": "https://manifold.uhpress.hawaii.edu/projects/mass-mobilization-in-the-democratic-republic-of-vietnam-1945-1960"
+        },
+        {
+          "title": "Wikipedia: Nhân Văn–Giai Phẩm affair",
+          "url": "https://en.wikipedia.org/wiki/Nh%C3%A2n_V%C4%83n%E2%80%93Giai_Ph%E1%BA%A9m_affair"
+        },
+        {
+          "title": "SHAFR: Ho Chi Minh and the Vietnam War (teaching guide)",
+          "url": "http://www.shafr.org/ho-chi-minh-and-vietnam-war"
+        },
+        {
+          "title": "Origins (Ohio State): Review of Brocheux's biography",
+          "url": "https://origins.osu.edu/review/ho-chi-minh-biography"
+        },
+        {
+          "title": "Olga Dror: Establishing Hồ Chí Minh's cult (Journal of Asian Studies, 2016)",
+          "url": "https://www.cambridge.org/core/journals/journal-of-asian-studies/article/establishing-h-chi-minhs-cult-vietnamese-traditions-and-their-transformations/02FBEC2AD51C5F610AB2872319C7BF9A"
+        },
+        {
+          "title": "Wikipedia: Zeng Xueming (Tăng Tuyết Minh)",
+          "url": "https://en.wikipedia.org/wiki/Zeng_Xueming"
+        },
+        {
+          "title": "Vietnam Law Magazine: 45 years of President Hồ Chí Minh's testament",
+          "url": "https://vietnamlawmagazine.vn/45-years-of-president-ho-chi-minhs-testament-4550.html"
+        },
+        {
+          "title": "UPI (1989): Vietnam admits cremation request was denied",
+          "url": "https://www.upi.com/Archives/1989/08/31/Vietnam-admits-Ho-Chi-Minh-request-for-cremation-denied/1986620539200/"
+        },
+        {
+          "title": "State Bank of Vietnam: Banknotes in circulation",
+          "url": "https://sbv.gov.vn/en/money-issuance"
+        },
+        {
+          "title": "Happy Vietnam (VNA): 50 years of the city bearing his name (2026)",
+          "url": "https://happyvietnam.vnanet.vn/en/top-leader-attends-ceremony-marking-50-years-of-saigon-gia-dinh-bearing-late-presidents-name/59468.html"
+        },
+        {
+          "title": "UCLA Center for Southeast Asian Studies: Hồ Chí Minh in Vietnamese folk religion",
+          "url": "https://www.international.ucla.edu/cisa/article/11811"
+        },
+        {
+          "title": "Nhân Dân: Building and protecting the Long Đức temple during the war",
+          "url": "https://nhandan.vn/chuyen-xay-giu-den-tho-bac-ho-trong-khang-chien-post713212.html"
+        },
+        {
+          "title": "Việt Nam News: 80 years of independence parade (2025)",
+          "url": "https://vietnamnews.vn/politics-laws/1724422/viet-nam-marks-80-years-of-independence-with-rousing-ceremony-military-parade.html"
+        },
+        {
+          "title": "ISEAS: Online nationalism in Vietnam (2024)",
+          "url": "https://www.iseas.edu.sg/articles-commentaries/iseas-perspective/2024-103-understanding-the-rise-and-rise-of-online-nationalism-in-vietnam-by-dien-nguyen-an-luong-and-nguyen-khac-giang/"
+        },
+        {
+          "title": "Human Rights Watch: Vietnam case (2026)",
+          "url": "https://www.hrw.org/news/2026/07/29/vietnam-quash-conviction-of-social-media-commentator"
+        },
+        {
+          "title": "SBS: Vietnamese Australians remember the fall of Saigon",
+          "url": "https://www.sbs.com.au/language/vietnamese/en/article/wounds-still-healing-vietnamese-australians-gather-to-remember-the-fall-of-saigon/66ftrl3lb"
+        },
+        {
+          "title": "Australian War Memorial: Vietnam War 1962–75",
+          "url": "https://www.awm.gov.au/articles/event/vietnam"
+        },
+        {
+          "title": "Việt Nam News: Nhà Rồng museum closes for renovation (2026)",
+          "url": "https://vietnamnews.vn/life-style/1781061/ho-chi-minh-museum-at-nha-rong-wharf-temporarily-closes-for-renovation-set-to-reopen-by-national-day.html"
+        }
+      ]
+    },
+    {
       "id": "hcm-mausoleum",
       "title": "Ba Đình: the Hồ Chí Minh Mausoleum",
       "vi": "Lăng Chủ tịch Hồ Chí Minh",
