@@ -604,11 +604,23 @@
 
   /* ---------- dishes ---------- */
   var dishEl = $("#dishes");
-  dishEl.innerHTML = (DATA.dishes || []).map(function (d) {
-    return '<article class="dish">' + media(d.img, d.name, "i-bowl") +
-      '<div class="dish-body"><p class="t">' + esc(d.name) + '</p><p class="d">' + esc(d.desc) + "</p></div></article>";
-  }).join("");
-  wireImages(dishEl);
+  // d.cities: ["hanoi", ...]; a dish without it shows everywhere
+  function renderDishes() {
+    var list = (DATA.dishes || []).filter(function (d) { return !d.cities || d.cities.indexOf(cityId) >= 0; });
+    dishEl.innerHTML = list.map(function (d) {
+      return '<article class="dish">' + media(d.img, d.name, "i-bowl") +
+        '<div class="dish-body"><p class="t">' + esc(d.name) + "</p>" +
+        (d.en ? '<p class="dish-en">' + esc(d.en) + "</p>" : "") +
+        '<p class="d">' + esc(d.desc) + "</p>" +
+        (d.watch ? '<p class="dish-watch">' + icon("i-info") + "<span>" + esc(d.watch) + "</span></p>" : "") +
+        "</div></article>";
+    }).join("");
+    if ($("#dish-count")) $("#dish-count").textContent = list.length + (list.length === 1 ? " dish" : " dishes") + " · swipe";
+    dishEl.scrollLeft = 0;
+    wireImages(dishEl);
+  }
+  renderDishes();
+  document.addEventListener("sgn-city", renderDishes);
 
   /* ---------- currency converter ---------- */
   var rates = { AUD: 18000, USD: 26300, EUR: 30500, GBP: 35000 }; // VND per unit; replaced by live rate

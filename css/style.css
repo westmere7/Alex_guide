@@ -478,6 +478,9 @@ details[open] > summary .chev { transform: rotate(180deg); }
 .dish .media { aspect-ratio: 4 / 3; }
 .dish-body { padding: 12px 14px 14px; }
 .dish-body .t { margin-bottom: 2px; }
+.dish-en { font-size: var(--fs-xs); font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+.dish-watch { display: flex; gap: 6px; margin-top: 8px; font-size: var(--fs-xs); line-height: 1.45; color: var(--text-2); }
+.dish-watch .i { flex: none; width: 14px; height: 14px; margin-top: 2px; color: var(--warn); }
 @media (min-width: 560px) { .scroller { grid-auto-columns: 44%; } }
 
 /* ===== Converter ===== */

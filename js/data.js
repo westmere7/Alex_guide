@@ -427,7 +427,7 @@ window.SGN_DATA = {
       name: "Perfume River boat at sunset", vi: "Thuyền rồng sông Hương",
       desc: "A slow dragon-boat ride upriver toward Thiên Mụ Pagoda as the light fades over the water.",
       time: "1–2 h", best: "Sunset, dry day", cost: "Private boat ~500–800k ₫", from: "Tòa Khâm pier, Lê Lợi",
-      tip: "Hire a private boat for the two of you and agree the price and route first. Boats stop when the river floods.",
+      tip: "Agree the price and route first; boats stop when the river floods. Tipping is optional: ~20k ₫, or buy something small from the family's table.",
       q: "Bến thuyền Tòa Khâm Huế"
     },
     {
@@ -448,11 +448,11 @@ window.SGN_DATA = {
     },
     {
       id: "hue-finearts", city: "hue", cat: "art", img: null,
-      name: "Huế Museum of Fine Arts", vi: "Bảo tàng Mỹ thuật Huế",
-      desc: "Changing shows of Huế painters, with the Lê Bá Đảng and Điềm Phùng Thị art centres close by on Lê Lợi.",
-      time: "1–1.5 h", best: "Weekday morning", cost: "Check at the door", from: "South bank, Lê Lợi",
-      tip: "Ask whether the Điềm Phùng Thị Art Centre at 17 Lê Lợi is open that day; her modular sculpture is wonderful.",
-      q: "Bảo tàng Mỹ thuật Huế 15 Lê Lợi"
+      name: "Lê Bá Đảng Art Centre & Fine Arts Museum", vi: "Bảo tàng Mỹ thuật Huế · 15 Lê Lợi",
+      desc: "A riverside gallery of the Paris-based modernist Lê Bá Đảng, also used by Huế's Museum of Fine Arts for changing shows.",
+      time: "1 h", best: "Rainy day · closed Mon", cost: "~30k ₫", from: "Car 5 min",
+      tip: "Closed at lunch (11:30–1pm); a short film on the artist plays upstairs. The Điềm Phùng Thị centre at 17 Lê Lợi is next door.",
+      q: "Lebadang Art Space 15 Lê Lợi Huế"
     },
     {
       id: "hue-thuyxuan", city: "hue", cat: "art", img: null,
@@ -743,15 +743,15 @@ window.SGN_DATA = {
       name: "Tràng An boat trip", vi: "Bến thuyền Tràng An",
       desc: "A rowed boat through flooded caves and past island temples in the UNESCO-listed Tràng An landscape.",
       time: "2–3.5 h", best: "7–8am, weekday", cost: "300k ₫ each", from: "Ninh Bình city: car 15 min",
-      tip: "Boats seat four or five; a private boat (~1.2M ₫) is worth it for two. Route 2 passes the Kong: Skull Island scenery.",
+      tip: "A private boat (~1.2M ₫) is worth it for two. Tips aren't included: about 50k ₫ each, in cash to the rower at the end, is usual. Rowers here don't ask.",
       q: "Bến thuyền Tràng An"
     },
     {
       id: "nb-tamcoc", city: "ninhbinh", cat: "out", img: null,
       name: "Tam Cốc boat trip", vi: "Bến thuyền Tam Cốc",
       desc: "A gentle row along the Ngô Đồng river through three caves, often with rowers using their feet.",
-      time: "1.5–2 h", best: "First boats, or after 2pm", cost: "~250k ₫ (check at counter)", from: "Tam Cốc village",
-      tip: "Agree 'no stops' before setting off; rowers like to pull up at floating snack sellers.",
+      time: "1.5–2 h", best: "6:30–10am (water lilies)", cost: "~250k ₫ (check at counter)", from: "Tam Cốc village",
+      tip: "Tip about 50–100k ₫ per boat as you step off. Rowers aren't allowed to ask for more or sell, so decline the floating vendors' 'drink for the rower'; bring water from the pier instead.",
       q: "Bến thuyền Tam Cốc"
     },
     {
@@ -785,6 +785,308 @@ window.SGN_DATA = {
       time: "Full day", best: "Early start", cost: "60k ₫", from: "Car ~1 h",
       tip: "Only worth it with a spare day and a love of forest walks.",
       q: "Vườn quốc gia Cúc Phương"
+    },
+
+    /* Ninh Bình — more */
+    {
+      id: "nb-thungui-raft", city: "ninhbinh", cat: "two", img: null,
+      name: "Private raft at Thung Ui", vi: "Bè VIP hồ Ngọc · Thung Ui",
+      desc: "A bamboo raft just for the two of you on the quiet lake inside the newly opened Thung Ui valley.",
+      time: "Up to 3 h", best: "Late afternoon", cost: "~2M ₫ per raft", from: "Tràng An: car 20 min",
+      tip: "Far quieter than the Tràng An or Tam Cốc boats. Prices are 2026 reference rates, so confirm at the gate, and bring a layer for the evening chill.",
+      q: "Thung Ui Ninh Bình"
+    },
+    {
+      id: "nb-lilies", city: "ninhbinh", cat: "two", img: null,
+      name: "Water-lily boat at Tam Cốc", vi: "Hoa súng Tam Cốc",
+      desc: "From October to December, water lilies turn the Ngô Đồng river pink and purple, peaking in November.",
+      time: "1.5–2 h", best: "6:30–10am", cost: "Tam Cốc boat ticket", from: "Tam Cốc village",
+      tip: "The flowers open in the morning and close by dusk, so take an early boat. Agree 'no stops' with your rower.",
+      q: "Bến thuyền Tam Cốc"
+    },
+    {
+      id: "nb-huongsen", city: "ninhbinh", cat: "two", img: null,
+      name: "Herbal bath & massage for two", vi: "Hương Sen Massage",
+      desc: "A private steam, sauna and herbal-pot bath with tea and fruit, plus massages. Popular with couples.",
+      time: "1.5–2.5 h", best: "Evening after a big day", cost: "~150–420k ₫ each", from: "Ninh Bình city",
+      tip: "Ask for the private herbal-pot room for two. Open 7am to midnight.",
+      q: "Hương Sen Massage Ninh Bình"
+    },
+    {
+      id: "nb-colau", city: "ninhbinh", cat: "art", img: null,
+      name: "'Anh Hùng Cờ Lau' lake show", vi: "Show thực cảnh Anh Hùng Cờ Lau",
+      desc: "An hour-long open-air show of light, water and dance on the lake at Hoa Lư Old Quarter, telling the rise of King Đinh.",
+      time: "1 h, 8:45pm", best: "Thu–Sun nights", cost: "250–500k ₫", from: "Tràng An: car 15 min",
+      tip: "Check dates and book on the show's site or Ticketbox. Arrive 20–30 minutes early and bring a warm layer.",
+      q: "Phố cổ Hoa Lư Anh Hùng Cờ Lau"
+    },
+    {
+      id: "nb-tamcocmuseum", city: "ninhbinh", cat: "art", img: null,
+      name: "Tam Cốc Museum workshop", vi: "Bảo tàng Tam Cốc",
+      desc: "A hands-on rural-culture space where you make a rice-grain mosaic picture together, and try broom-making or milling rice.",
+      time: "2–3 h", best: "Afternoon after the boat", cost: "~US$14 each", from: "Tam Cốc: walk 5 min",
+      tip: "You take home a framed mosaic you made together: a lovely honeymoon keepsake. Book online.",
+      q: "Bảo tàng Tam Cốc Ninh Bình"
+    },
+    {
+      id: "nb-thungui", city: "ninhbinh", cat: "old", img: null,
+      name: "Thung Ui & the Heaven Altar", vi: "Đàn Kính Thiên · Thung Ui",
+      desc: "A restored 10th-century sky-worship altar in a hidden valley of the Tràng An core zone, opened to visitors in 2026.",
+      time: "2–3 h", best: "Morning", cost: "150k ₫ · 250k with boat", from: "Tràng An: car 20 min",
+      tip: "Climb to the altar terrace for the view. Bikes or electric carts get you around the valley.",
+      q: "Thung Ui Đàn Kính Thiên Ninh Bình"
+    },
+    {
+      id: "nb-phocohoalu", city: "ninhbinh", cat: "out", img: null,
+      name: "Hoa Lư Old Quarter by night", vi: "Phố cổ Hoa Lư",
+      desc: "A lantern-lit, newly built old-style town around Kỳ Lân Lake, with stone bridges, street food and folk music.",
+      time: "1.5–3 h", best: "From 6:30pm, weekdays", cost: "Free · lake boat ~100–150k ₫", from: "Tràng An: car 15 min",
+      tip: "Enjoy it as a pretty evening stroll rather than heritage, then catch the Cờ Lau show on the same lake.",
+      q: "Phố cổ Hoa Lư Ninh Bình"
+    },
+    {
+      id: "nb-bikeloop", city: "ninhbinh", cat: "out", img: null,
+      name: "Back-lanes bike loop", vi: "Đạp xe Văn Lâm – Thái Vi",
+      desc: "Flat village lanes from Tam Cốc past karsts and ponds to the old Thái Vi temple.",
+      time: "2–3 h", best: "7–10am", cost: "Bike hire ~50–100k ₫", from: "Tam Cốc: from your door",
+      tip: "Rice is long harvested in late November, so fields are bare. Stop for coconut coffee at Xanh Coffee on the way.",
+      q: "Đền Thái Vi Ninh Bình"
+    },
+    {
+      id: "nb-thaivi", city: "ninhbinh", cat: "spirit", img: null,
+      name: "Thái Vi Temple", vi: "Đền Thái Vi",
+      desc: "A small stone temple of the 13th-century Trần kings, set among paddies and karsts on the Tam Cốc back lanes.",
+      time: "20–30 min", best: "On a morning bike ride", cost: "Free", from: "Tam Cốc: bike 10 min",
+      tip: "Cover shoulders and knees. The elderly caretaker sometimes plays traditional instruments; a small tip is welcome.",
+      q: "Đền Thái Vi Ninh Bình"
+    },
+    {
+      id: "nb-amtien", city: "ninhbinh", cat: "spirit", img: null,
+      name: "Am Tiên Cave & Tuyệt Tình Cốc", vi: "Động Am Tiên · Tuyệt Tình Cốc",
+      desc: "A hidden lake valley behind King Đinh's temple, reached through a rock tunnel, with a cave pagoda up 170-odd steps.",
+      time: "1–1.5 h", best: "Early or late, weekdays", cost: "~50–100k ₫", from: "Tràng An: car 10 min",
+      tip: "Use the east entrance. The lake loop is flat; the cave stairs are steep.",
+      q: "Động Am Tiên Tuyệt Tình Cốc Ninh Bình"
+    },
+
+    /* Huế — more */
+    {
+      id: "hue-anhien", city: "hue", cat: "two", img: null,
+      name: "An Hiên garden house", vi: "Nhà vườn An Hiên",
+      desc: "A 19th-century mandarin garden house in Kim Long, with carved wood, mother-of-pearl inlay and a fruit-tree garden.",
+      time: "45 min", best: "Early morning", cost: "50k ₫", from: "Car 10 min",
+      tip: "Tea and a short history talk in English are included. Pair it with Thiên Mụ Pagoda along the river.",
+      q: "Nhà vườn An Hiên 58 Nguyễn Phúc Nguyên Huế"
+    },
+    {
+      id: "hue-riverwalk", city: "hue", cat: "two", img: null,
+      name: "Riverside walk & Trường Tiền lights", vi: "Phố đi bộ Nguyễn Đình Chiểu",
+      desc: "An evening stroll on the Perfume River promenade, with street food, music and the colour-changing lights of the 1899 Trường Tiền bridge.",
+      time: "1–2 h", best: "From dusk", cost: "Free", from: "Car 5 min",
+      tip: "The promenade runs about 4–10pm. Skip it if the river is in flood.",
+      q: "Phố đi bộ Nguyễn Đình Chiểu Huế"
+    },
+    {
+      id: "hue-cookclass", city: "hue", cat: "two", img: null,
+      name: "Vegan cooking class & meditation", vi: "Lớp nấu chay & thiền",
+      desc: "A small-group evening: market trip, cook a Huế vegan dish, meditate at a temple, then eat together.",
+      time: "3.5 h, from 5:15pm", best: "Evening, rain-proof", cost: "From ~1M ₫ each", from: "Hillside Homestay Huế",
+      tip: "Book on Airbnb Experiences ('Meditation cooking class', host Huyen); free cancellation up to a day before.",
+      q: "Hillside Homestay Huế"
+    },
+    {
+      id: "hue-sinh", city: "hue", cat: "art", img: null,
+      name: "Sình village woodblock prints", vi: "Làng tranh Sình",
+      desc: "A 400-year-old folk woodblock print tradition, coloured with natural pigments; artisans let you print and hand-colour your own.",
+      time: "1.5 h", best: "Morning, rain-proof", cost: "Workshop fee (agree first)", from: "Car 20 min",
+      tip: "Ask for artisan Kỳ Hữu Phước's house or the Mộc Huy workshop; your hotel can book it.",
+      q: "Làng tranh Sình Phú Mậu Huế"
+    },
+    {
+      id: "hue-paperflowers", city: "hue", cat: "art", img: null,
+      name: "Thanh Tiên paper flowers", vi: "Làng hoa giấy Thanh Tiên",
+      desc: "A riverside village making bright paper lotus flowers for altars; families teach you to fold one over tea.",
+      time: "1 h", best: "Morning, booked ahead", cost: "Small fee (agree first)", from: "Car 20 min",
+      tip: "Book through your hotel; walk-ins may find no one working. Agree the price before you start.",
+      q: "Làng hoa giấy Thanh Tiên Huế"
+    },
+    {
+      id: "hue-dongkhanh", city: "hue", cat: "old", img: null,
+      name: "Tomb of Đồng Khánh", vi: "Lăng Đồng Khánh",
+      desc: "A small royal tomb mixing Vietnamese and French styles, in pine country near Tự Đức. Often you'll have it to yourselves.",
+      time: "45 min", best: "Morning, dry spell", cost: "Check at the gate", from: "Car 20 min",
+      tip: "Nothing is sold on site, so bring water. Paths get slippery in rain.",
+      q: "Lăng Đồng Khánh Huế"
+    },
+    {
+      id: "hue-thieutri", city: "hue", cat: "old", img: null,
+      name: "Tomb of Thiệu Trị", vi: "Lăng Thiệu Trị",
+      desc: "A quiet, simple royal tomb among rice fields and pines, built by Tự Đức for his father.",
+      time: "45 min", best: "Afternoon light", cost: "Check at the gate", from: "Car 20 min",
+      tip: "Parts were under restoration in 2026. Combine it with Đồng Khánh.",
+      q: "Lăng Thiệu Trị Huế"
+    },
+    {
+      id: "hue-namgiao", city: "hue", cat: "old", img: null,
+      name: "Nam Giao Esplanade", vi: "Đàn Nam Giao",
+      desc: "The three-tiered open-air altar where Nguyễn emperors worshipped Heaven, in a pine park freshly restored in 2026.",
+      time: "30–45 min", best: "Late afternoon", cost: "Free or small fee", from: "Car 10 min",
+      tip: "A calm walk among the pines; the restoration was finishing in November 2026.",
+      q: "Đàn Nam Giao Huế"
+    },
+    {
+      id: "hue-hoquyen", city: "hue", cat: "old", img: null,
+      name: "Hổ Quyền tiger arena", vi: "Hổ Quyền",
+      desc: "An 1830 royal arena where elephants fought tigers for the emperor: odd, atmospheric and one of the last of its kind.",
+      time: "15–20 min", best: "Any time", cost: "Free · tip the guard", from: "Car 15 min",
+      tip: "The gate is often locked and a guard comes to open it, so ask your driver to wait.",
+      q: "Hổ Quyền Huế"
+    },
+    {
+      id: "hue-dieude", city: "hue", cat: "spirit", img: null,
+      name: "Diệu Đế Pagoda", vi: "Quốc tự Diệu Đế",
+      desc: "One of Huế's surviving 'national pagodas', founded in 1844, on the river near Đông Ba Market.",
+      time: "30 min", best: "Early evening", cost: "Free", from: "Walk 15 min",
+      tip: "Combine it with Đông Ba Market and dress modestly.",
+      q: "Chùa Diệu Đế Huế"
+    },
+    {
+      id: "hue-baovinh", city: "hue", cat: "out", img: null,
+      name: "Bao Vinh old port", vi: "Phố cổ Bao Vinh",
+      desc: "A short riverside street of old merchant houses: a tiny, untouristed 'Hội An'.",
+      time: "1 h", best: "Late afternoon", cost: "Free", from: "Car 10 min",
+      tip: "Have a drink by the water at Cà Phê Mắt Biếc. It's low-lying, so skip it after heavy rain.",
+      q: "Phố cổ Bao Vinh Huế"
+    },
+    {
+      id: "hue-tamgiang", city: "hue", cat: "trips", img: null,
+      name: "Tam Giang lagoon sunset", vi: "Phá Tam Giang · Đầm Chuồn",
+      desc: "Southeast Asia's largest lagoon system: fish-trap stakes, fishing boats and wide sunsets at Đầm Chuồn.",
+      time: "Half day", best: "4–6:30pm, clear days", cost: "Boat or tour", from: "Car 30–40 min",
+      tip: "Go only on a dry day. Lagoon eateries serve seafood, so eat vegan in town first.",
+      q: "Đầm Chuồn Huế"
+    },
+    {
+      id: "hue-phuoctich", city: "hue", cat: "trips", img: null,
+      name: "Phước Tích pottery village", vi: "Làng cổ Phước Tích",
+      desc: "A 500-year-old royal pottery village on the Ô Lâu river, with old wooden houses, kilns and pottery demonstrations.",
+      time: "Half day", best: "Dry morning", cost: "Free · demos extra", from: "Car 1 h",
+      tip: "The river floods in Nov–Dec, so check the forecast and hire a car.",
+      q: "Làng cổ Phước Tích Phong Điền"
+    },
+
+    /* Hà Nội — more */
+    {
+      id: "hn-metropole", city: "hanoi", cat: "two", img: null,
+      name: "An afternoon at the Metropole", vi: "Sofitel Legend Metropole",
+      desc: "The 1901 grand hotel where Chaplin and Paulette Goddard honeymooned. See the 'Hanoi: Traces of Time' photo show, then a drink at the Bamboo Bar.",
+      time: "1.5–2 h", best: "Late afternoon", cost: "Free to look · luxury bar", from: "From the lake: walk 8 min",
+      tip: "Smart casual. The photo show is in the Opera Wing lobby until 9 December 2026.",
+      q: "Sofitel Legend Metropole Hanoi Bamboo Bar"
+    },
+    {
+      id: "hn-omamori", city: "hanoi", cat: "two", img: null,
+      name: "Couples' massage at Omamori", vi: "Omamori Spa · 48 Ngõ Huyện",
+      desc: "A social-enterprise spa where visually impaired therapists give superb massages at fair prices.",
+      time: "1–3 h", best: "After a long walking day", cost: "Mid-range", from: "From the lake: walk 5 min",
+      tip: "Book a day ahead and ask for side-by-side treatments in a private room (a small extra).",
+      q: "Omamori Spa 48 Ngõ Huyện"
+    },
+    {
+      id: "hn-cookclass", city: "hanoi", cat: "two", img: null,
+      name: "Vegan cooking class", vi: "Lớp nấu chay · Kim's Kitchen",
+      desc: "A market walk, then cook a vegan menu together: banana-flower salad, spring rolls, bún chay and coffee.",
+      time: "4.5 h, 9am or 3pm", best: "Morning session", cost: "~US$42 each", from: "Old Quarter pickup",
+      tip: "Book the 100% vegan class and confirm 'no fish sauce, no egg'. Rose Kitchen runs a vegan class too.",
+      q: "Kim's Kitchen Hanoi vegan cooking class"
+    },
+    {
+      id: "hn-designfest", city: "hanoi", cat: "art", img: null,
+      name: "Creative Design Festival & heritage houses", vi: "Lễ hội Thiết kế Sáng tạo Hà Nội",
+      desc: "Until 28 November: lakeside installations, lacquer and craft shows, and workshops in ten Old Quarter heritage houses.",
+      time: "Day and evening", best: "Before 28 Nov · 23–24 Nov extra events", cost: "Mostly free", from: "East shore of the lake",
+      tip: "Don't miss the Lacquer Road Project and the bronze-casting and pottery workshops at Kim Ngân communal house, 42 Hàng Bạc.",
+      q: "Đình Kim Ngân 42 Hàng Bạc"
+    },
+    {
+      id: "hn-indochine", city: "hanoi", cat: "art", img: null,
+      name: "Indochine House gallery", vi: "Indochine House · 8 Tràng Thi",
+      desc: "An elegant gallery pairing modern and contemporary Vietnamese painting with East Asian antiques, with changing shows.",
+      time: "45 min", best: "Tue–Sun, 10am–5pm", cost: "Free", from: "From the lake: walk 8 min",
+      tip: "It's on the third floor. La Vegarie, with a vegan menu, is next door for lunch.",
+      q: "Indochine House 8 Tràng Thi Hà Nội"
+    },
+    {
+      id: "hn-murals", city: "hanoi", cat: "art", img: null,
+      name: "Phùng Hưng mural arches", vi: "Phố bích họa Phùng Hưng",
+      desc: "Railway arches painted with scenes of old Hà Nội: trams, street vendors, corner shops, with trains rumbling overhead.",
+      time: "30 min", best: "Morning, or lit at night", cost: "Free", from: "From the lake: walk 15 min",
+      tip: "Watch for motorbikes along the arches.",
+      q: "Phố bích họa Phùng Hưng"
+    },
+    {
+      id: "hn-complex01", city: "hanoi", cat: "art", img: null,
+      name: "Complex 01", vi: "Complex 01 · ngõ 167 Tây Sơn",
+      desc: "A converted factory of studios, cafés and pop-up exhibitions: experimental art, sound and touring shows.",
+      time: "1 h", best: "When a show is on", cost: "Free to wander", from: "From the lake: car 15–20 min",
+      tip: "Check Hanoi Grapevine for what's on. Fully vegan Sạp Chay Cô Phiêu is inside.",
+      q: "Complex 01 Tây Sơn Hà Nội"
+    },
+    {
+      id: "hn-nguyenart", city: "hanoi", cat: "art", img: null,
+      name: "Nguyễn Art Gallery", vi: "Nguyễn Art Gallery · 31A Văn Miếu",
+      desc: "Vietnamese lacquer, oils and watercolours by working artists, opposite the Temple of Literature.",
+      time: "30–45 min", best: "After the Temple of Literature", cost: "Free · works for sale", from: "From the lake: car 10 min",
+      tip: "Ask to see the lacquer, and get framing and shipping costs in writing before buying.",
+      q: "Nguyen Art Gallery 31A Văn Miếu"
+    },
+    {
+      id: "hn-dongxuan", city: "hanoi", cat: "shop", img: null,
+      name: "Đồng Xuân Market", vi: "Chợ Đồng Xuân",
+      desc: "Hà Nội's biggest covered market, an 1889 hall of fabrics and dried goods; a design-festival venue until 28 November.",
+      time: "1 h", best: "Morning", cost: "Free", from: "From the lake: walk 15 min",
+      tip: "Fabric is upstairs. Keep bags zipped. The weekend night market starts at its gate.",
+      q: "Chợ Đồng Xuân"
+    },
+    {
+      id: "hn-military", city: "hanoi", cat: "old", img: null,
+      name: "Military History Museum", vi: "Bảo tàng Lịch sử Quân sự",
+      desc: "A vast national museum opened in 2024, with aircraft, tanks and a thousand years of military history.",
+      time: "2–3 h", best: "Weekday morning", cost: "40k ₫", from: "From the lake: car 40 min",
+      tip: "Optional and far out. Displays tell the national story. Check opening days before you go.",
+      q: "Bảo tàng Lịch sử Quân sự Việt Nam Đại lộ Thăng Long"
+    },
+    {
+      id: "hn-stjoseph", city: "hanoi", cat: "spirit", img: null,
+      name: "St Joseph's Cathedral", vi: "Nhà thờ Lớn",
+      desc: "An 1886 neo-Gothic cathedral with weathered twin towers and stained glass, on a café-ringed square.",
+      time: "20–30 min", best: "Before evening Mass", cost: "Free", from: "From the lake: walk 5 min",
+      tip: "Open about 8–11am and 2–5pm. Christmas decorations go up in early December.",
+      q: "St. Joseph's Cathedral Hanoi"
+    },
+    {
+      id: "hn-bachma", city: "hanoi", cat: "spirit", img: null,
+      name: "Bạch Mã Temple", vi: "Đền Bạch Mã",
+      desc: "The Old Quarter's oldest temple, with lacquered red-and-gold altars and the white horse it's named for.",
+      time: "20 min", best: "A weekend evening", cost: "20k ₫", from: "From the lake: walk 10 min",
+      tip: "At 76 Hàng Buồm; open some weekend evenings too. Cover shoulders and knees.",
+      q: "Đền Bạch Mã 76 Hàng Buồm"
+    },
+    {
+      id: "hn-quanthanh", city: "hanoi", cat: "spirit", img: null,
+      name: "Quán Thánh Temple", vi: "Đền Quán Thánh",
+      desc: "A guardian temple facing West Lake, home to a 3.96 m bronze statue cast in 1677.",
+      time: "20–30 min", best: "Late afternoon", cost: "Small fee", from: "From the lake: car 10 min",
+      tip: "Walk on to Trấn Quốc Pagoda for sunset; Hồi vegetarian restaurant is 300 m away.",
+      q: "Đền Quán Thánh"
+    },
+    {
+      id: "hn-vanphuc", city: "hanoi", cat: "trips", img: null,
+      name: "Vạn Phúc silk village", vi: "Làng lụa Vạn Phúc",
+      desc: "A thousand-year-old silk-weaving village with clacking looms, an umbrella-canopied lane and rows of silk shops.",
+      time: "Half day", best: "Weekday morning", cost: "Free", from: "From the lake: car 30–40 min",
+      tip: "Ask to see the shop's own looms, since some sell imported silk.",
+      q: "Làng lụa Vạn Phúc Hà Đông"
     },
 
     /* Day trips — realistically pick one */
@@ -987,7 +1289,73 @@ window.SGN_DATA = {
       q: "Bánh mì chay Tâm Đức 137 Phan Bội Châu Huế" },
     { id: "r-hue-lienhoa", city: "hue", area: "cheap", kind: "veg", name: "Liên Hoa", where: "3 Lê Quý Đôn",
       desc: "A long-running, very local vegetarian canteen in a garden: cheap, busy, little English.",
-      q: "Cơm chay Liên Hoa 3 Lê Quý Đôn Huế" }
+      q: "Cơm chay Liên Hoa 3 Lê Quý Đôn Huế" },
+
+    /* Ninh Bình — more */
+    { id: "r-nb-antamcoc", city: "ninhbinh", area: "tamcoc", kind: "options", name: "An Tam Cốc", where: "By the river on Tam Cốc Rd · 8am–10pm",
+      desc: "Riverside tables with karst views and a clearly marked vegan menu.",
+      q: "An Tam Coc Restaurant & Coffee" },
+    { id: "r-nb-daisy", city: "ninhbinh", area: "tamcoc", kind: "options", name: "Daisy and Rosie", where: "84f Tam Cốc Rd · 8am–3pm",
+      desc: "A garden brunch café, mostly vegan: tofu scramble, falafel wraps, smoothie bowls, oat-milk coffee.",
+      q: "Daisy and Rosie cafe Tam Coc" },
+    { id: "r-nb-mami", city: "ninhbinh", area: "tamcoc", kind: "options", name: "Mami", where: "Văn Lâm, Tam Cốc · 9am–11pm",
+      desc: "A family-run Vietnamese kitchen with a separate vegan menu; tofu in tomato sauce is the go-to.",
+      q: "Mami Restaurant Vietnamese Cuisine Tam Coc" },
+    { id: "r-nb-saffron", city: "ninhbinh", area: "tamcoc", kind: "options", name: "Saffron Indian", where: "Văn Lâm, Tam Cốc · lunch & dinner",
+      desc: "A popular Indian kitchen that reviewers call a gem for vegans; try the Manchurian cauliflower.",
+      q: "Saffron Indian Restaurant Ninh Binh" },
+    { id: "r-nb-thungsen", city: "ninhbinh", area: "tamcoc", kind: "options", name: "Thung Sen", where: "On the lane to Thái Vi · 7:30am–11pm",
+      desc: "A lakeside garden restaurant with marked vegan dishes, an easy lunch stop on the bike loop.",
+      q: "Thung Sen Tam Coc Glamping & Restaurant" },
+    { id: "r-nb-trungtuyet", city: "ninhbinh", area: "city", kind: "options", name: "Trung Tuyết", where: "14 Hoàng Hoa Thám · 8am–9:30pm",
+      desc: "A much-loved family restaurant with a separate vegan menu, including vegan phở. Big portions.",
+      q: "Restaurant Trung Tuyết Ninh Bình" },
+
+    /* Huế — more */
+    { id: "r-hue-annhien", city: "hue", area: "south", kind: "veg", name: "An Nhiên Garden", where: "Mỹ Thượng, ~6 km east · 10am–9:30pm",
+      desc: "Vegetarian fusion in an old family garden villa: lotus rice, bao and garden fruit. A romantic splurge.",
+      q: "An Nhien Garden Vegetarian Huế" },
+    { id: "r-hue-thanhlieu", city: "hue", area: "south", kind: "veg", name: "Thanh Liễu", where: "50 Nguyễn Công Trứ · 7am–8pm",
+      desc: "A busy, cheap chay canteen for Huế bánh bèo, nậm and lọc, plus vegan hotpot.",
+      q: "Quán chay Thanh Liễu 50 Nguyễn Công Trứ Huế" },
+    { id: "r-hue-sala", city: "hue", area: "south", kind: "veg", name: "Sala Huế", where: "4 Phan Bội Châu · 6am–8pm",
+      desc: "Fully vegetarian, smart but fairly priced, with many vegan dishes and a Thai-style hotpot.",
+      q: "Sala Huế Nhà hàng Chay 4 Phan Bội Châu" },
+    { id: "r-hue-bode", city: "hue", area: "south", kind: "veg", name: "Bồ Đề", where: "11 Lê Lợi, by the river · 7am–10pm",
+      desc: "A long-running vegetarian spot with riverside tables, crispy spring rolls and jackfruit salad.",
+      q: "Nhà Hàng Cơm Chay Bồ Đề 11 Lê Lợi" },
+    { id: "r-hue-thuwheels", city: "hue", area: "south", kind: "options", name: "Cafe on Thu Wheels", where: "3 kiệt 34 Nguyễn Tri Phương",
+      desc: "A friendly family café loved by vegetarians for tofu stir-fries and smoothies. Not fully vegetarian.",
+      q: "Cafe on Thu Wheels Huế" },
+    { id: "r-hue-truongan", city: "hue", area: "cheap", kind: "veg", name: "Quán chay Trường An", where: "304 Phan Bội Châu · 7am–9pm",
+      desc: "A neighbourhood chay with a picture menu and plenty of vegetables beyond mock meat.",
+      q: "Quán ăn chay Trường An 304 Phan Bội Châu" },
+    { id: "r-hue-annhien2", city: "hue", area: "cheap", kind: "veg", name: "Chay An Nhiên", where: "Kiệt 1 Văn Cao · 7am–8pm",
+      desc: "A calm Buddhist-style canteen with fresh vegan plates and big portions, about 50k ₫ a meal.",
+      q: "Nhà hàng chay An Nhiên Văn Cao Huế" },
+
+    /* Hà Nội — more */
+    { id: "r-hn-hoi", city: "hanoi", area: "westlake", kind: "veg", name: "Hồi", where: "81 Quán Thánh · lunch & dinner",
+      desc: "A 1921 French villa with a garden and an upstairs art gallery, serving a table-served vegetarian buffet with many vegan dishes.",
+      q: "Hoi Modern Vegetarian Dining 81 Quán Thánh" },
+    { id: "r-hn-lavegarie", city: "hanoi", area: "french", kind: "veg", name: "La Vegarie", where: "4A Tràng Thi · lunch & dinner",
+      desc: "A French-Vietnamese vegetarian bistro with a separate vegan menu. An easy date night near the lake.",
+      q: "La Vegarie 4A Tràng Thi" },
+    { id: "r-hn-abracado", city: "hanoi", area: "french", kind: "vegan", name: "Abracado", where: "56 Thợ Nhuộm · 10am–4pm, closed Sat",
+      desc: "A fully vegan café for a Western break: tempeh sandwich, wraps, a carrot 'lox' bagel.",
+      q: "Abracado 56 Thợ Nhuộm" },
+    { id: "r-hn-bonbagu", city: "hanoi", area: "oldquarter", kind: "vegan", name: "Bonbagu", where: "9 Hàng Phèn · 7am–8:30pm",
+      desc: "A fully vegan bánh mì counter: mushroom-pâté baguette and pumpkin-cashew rolls. Few seats.",
+      q: "Bonbagu Vegan Baguette 9 Hàng Phèn" },
+    { id: "r-hn-huongviet", city: "hanoi", area: "oldquarter", kind: "options", name: "Hương Việt", where: "13 Hàng Cá · 8am–9pm",
+      desc: "A busy Old Quarter kitchen with clearly marked vegan phở, bún chả and bánh mì. Arrive early.",
+      q: "Hương Việt 13 Hàng Cá" },
+    { id: "r-hn-chayviahe", city: "hanoi", area: "cheap", kind: "vegan", name: "Chay vỉa hè", where: "19 Châu Long, near Trúc Bạch",
+      desc: "A fully vegan self-serve street-food spread: bún riêu, bún chả, bánh mì, cashew milk. About 30–40k ₫ a dish.",
+      q: "Chay vỉa hè 19 Châu Long" },
+    { id: "r-hn-cophieu", city: "hanoi", area: "cheap", kind: "vegan", name: "Sạp Chay Cô Phiêu", where: "Inside Complex 01, Tây Sơn",
+      desc: "A fully vegan stall for bún bò Huế, bánh mì and fresh cashew milk, about 25–40k ₫ a dish.",
+      q: "Sạp Chay Cô Phiêu Tây Sơn" }
   ],
 
   /* ---------- FAIR PRICES (VND, rough 2026 ranges) ---------- */
@@ -3089,6 +3457,373 @@ window.SGN_DATA = {
           "url": "https://www.vietnamplus.vn/tour-dem-giai-ma-hoang-thanh-thang-long--hanh-trinh-trai-nghiem-dac-sac-post935874.vnp"
         }
       ]
+    },
+    {
+      "id": "hanoi-lakes",
+      "title": "Why Hà Nội has so many lakes",
+      "vi": "Hồ Hà Nội",
+      "img": {
+        "key": "r-lk-01",
+        "cap": "Sunset over West Lake (Hồ Tây), Hà Nội's largest lake."
+      },
+      "teaser": "A wandering river, thousand-year-old dikes, a returned sword, a giant turtle and a city that filled in hundreds of ponds.",
+      "minutes": 12,
+      "lead": "Look at a map of Hà Nội and it's freckled with water: a big lake in the north, a small one at its heart, and dozens more tucked between the streets. The reason is a restless river, and the people who spent a thousand years living with it, taming it, filling it in and telling stories about it.",
+      "sections": [
+        {
+          "h": "A city inside the rivers",
+          "p": [
+            "Hà Nội sits on the floodplain of the Red River (sông Hồng), which carries so much red-brown silt from the mountains that it has built the whole delta. Rivers on flat, soft ground don't run straight: they swing in loops, cut new channels in big floods, and leave old bends behind as lakes and marshes. Geologists have traced nine major ancient meanders across today's city.",
+            "The name itself is about water. In 1831 Emperor Minh Mạng named the city Hà Nội, 河內, usually translated as 'inside the rivers'. Before the French arrived, the city was laced with lakes, ponds and creeks, and the old Tô Lịch river and the Red River together formed a moat around the royal citadel."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-02",
+              "cap": "Hà Nội in 1873, dotted with lakes and ponds."
+            },
+            {
+              "key": "r-lk-03",
+              "cap": "Sampans on the Red River at sunset, 1915 (autochrome by Léon Busy)."
+            },
+            {
+              "key": "r-lk-04",
+              "cap": "The Red River at sunset from Long Biên Bridge."
+            },
+            {
+              "key": "r-lk-05",
+              "cap": "Long Biên Bridge over the Red River."
+            }
+          ]
+        },
+        {
+          "h": "West Lake: a river bend left behind",
+          "p": [
+            "West Lake (Hồ Tây), about 500 hectares with a shoreline of some 17 km, is the clearest example. A 2002 study by Vietnamese geologists drilled into its bed and found river sand and silt at the bottom, a mixed river-and-lake layer above, and organic lake mud on top. Their conclusion: West Lake is an oxbow, a bend of the ancient Red River that the river abandoned as it shifted north-east.",
+            "Floodwater kept pouring into the old bend until people built dikes along the Red River, which the authors date to roughly a thousand years ago. The sandbank beside it later became the Yên Phụ dike. Other accounts date the lake differently, so treat the exact age as an estimate.",
+            "Legends tell it differently. In one, the dragon lord Lạc Long Quân killed a nine-tailed fox and its lair flooded into the lake. In another, a golden buffalo calf followed the sound of a bronze bell and the hollow it left filled with water. The lake has had many names, including Dâm Đàm ('misty lake'), and became Tây Hồ in 1573."
+          ],
+          "maps": [
+            {
+              "key": "hn-tranquoc",
+              "label": "West Lake & Trấn Quốc"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-06",
+              "cap": "West Lake on a December afternoon."
+            },
+            {
+              "key": "r-lk-07",
+              "cap": "Evening light on West Lake."
+            },
+            {
+              "key": "r-lk-08",
+              "cap": "Lotus stalks after the season on West Lake, as you'll see them in late autumn."
+            }
+          ]
+        },
+        {
+          "h": "Dikes, floods and a water network",
+          "p": [
+            "Living on a floodplain meant fighting the river. In 1108 the Lý king ordered the Cơ Xá dike to protect Thăng Long, and in 1248 the Trần dynasty built dikes along both banks all the way to the sea. The dikes kept floods out, but they also sealed off old channels, leaving still lakes behind them.",
+            "The danger never quite went away. In August 1971 the Red River at Hà Nội peaked at 14.13 metres, far above the top alarm level. Today the city treats its lakes as flood storage: plans call for thousands of hectares of 'regulating lakes' to soak up monsoon rain, though only a fraction exist so far."
+          ]
+        },
+        {
+          "h": "The lakes that disappeared",
+          "p": [
+            "Hà Nội used to have far more water. One Vietnamese conservationist estimates the city had 600 to 750 ponds and lakes in the early 20th century; today the old city has roughly 100 to 120 named lakes. The figures cover different areas and definitions, so take them as an order of magnitude.",
+            "Much of the loss came under the French. Hoàn Kiếm was once twice its size, split by a causeway into a northern and a southern lake; the French filled the southern lake completely. They also filled the lake's swampy north-east edge, once crossed by wooden bridges, which is why a street there is still called Cầu Gỗ, 'wooden bridge'. Elephant Lake was filled in the 1890s to make a park, and the Tô Lịch river was culverted and filled along much of its length. Later, the 20th-century city kept building over ponds as it grew.",
+            "Since then the tide has turned. Hà Nội now protects about 3,500 lakes, ponds and other water bodies across the wider city from being filled."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-09",
+              "cap": "The French 'Petit Lac' quarter around Hoàn Kiếm, 1886."
+            },
+            {
+              "key": "r-lk-10",
+              "cap": "Hà Nội in 1890."
+            },
+            {
+              "key": "r-lk-11",
+              "cap": "The 1936 plan, with many of the old lakes already filled."
+            },
+            {
+              "key": "r-lk-12",
+              "cap": "Hoàn Kiếm, the 'Petit Lac', around 1900."
+            },
+            {
+              "key": "r-lk-13",
+              "cap": "An aerial view of Hoàn Kiếm in 1930."
+            }
+          ],
+          "tip": "For an art lover: compare the 1873 map with the 1936 plan side by side. You can watch the water vanish as the French grid spreads."
+        },
+        {
+          "h": "Hoàn Kiếm: the lake of the returned sword",
+          "p": [
+            "The little lake at the heart of the city carries Vietnam's best-loved legend. After Lê Lợi drove out the Ming invaders in the 1420s, he was boating on the lake when a golden turtle rose from the water and asked for the magic sword that had won the war. He gave it back, and the lake became Hồ Hoàn Kiếm, 'Lake of the Returned Sword'. It's a legend, but every Hanoian knows it.",
+            "The red Thê Húc bridge (1865) leads to Ngọc Sơn temple on Jade Islet. At its entrance stand the Pen Tower, inscribed 'write on the blue sky', and a stone inkslab carried by three toads, a scholar's monument by Nguyễn Văn Siêu. On a tiny islet in the middle sits the Turtle Tower, started in 1886 and mixing French and Vietnamese styles; folk stories say its builder hoped to bury his father there."
+          ],
+          "maps": [
+            {
+              "key": "hn-hoankiem",
+              "label": "Hoàn Kiếm Lake"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-14",
+              "cap": "The Turtle Tower on its islet."
+            },
+            {
+              "key": "r-lk-15",
+              "cap": "The Turtle Tower, with the colonial-era Post Office behind."
+            },
+            {
+              "key": "r-lk-16",
+              "cap": "The tower in late-afternoon light."
+            },
+            {
+              "key": "r-lk-17",
+              "cap": "The red Thê Húc bridge to Ngọc Sơn temple."
+            },
+            {
+              "key": "r-lk-18",
+              "cap": "Thê Húc bridge lit up on a December night."
+            },
+            {
+              "key": "r-lk-19",
+              "cap": "Thê Húc bridge in 1884."
+            },
+            {
+              "key": "r-lk-20",
+              "cap": "The Pen Tower: 'write on the blue sky'."
+            },
+            {
+              "key": "r-lk-21",
+              "cap": "Ngọc Sơn temple on Jade Islet."
+            },
+            {
+              "key": "r-lk-22",
+              "cap": "A ceramic mural of Lê Lợi returning the sword to the golden turtle."
+            },
+            {
+              "key": "r-lk-23",
+              "cap": "Musicians playing on Thê Húc bridge."
+            }
+          ]
+        },
+        {
+          "h": "The turtle in the lake",
+          "p": [
+            "For decades the legend had a living echo: a giant softshell turtle, Cụ Rùa ('great-grandfather turtle'), surfaced now and then to crowds and headlines. Measured in 2011 at 185 cm long and 169 kg, it was found dead in January 2016. Its preserved body is on display in Ngọc Sơn temple, alongside another that died in 1967.",
+            "It belonged to the Yangtze giant softshell turtle species (Rafetus swinhoei), one of the rarest animals on Earth. As of 2025 only two individuals are known: an old male in a Chinese zoo and one wild turtle in Xuân Khanh lake on Hà Nội's western edge."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-24",
+              "cap": "The Hoàn Kiếm turtle surfacing in 2008."
+            },
+            {
+              "key": "r-lk-25",
+              "cap": "The giant turtle photographed in March 2008."
+            },
+            {
+              "key": "r-lk-26",
+              "cap": "A preserved Hoàn Kiếm turtle in Ngọc Sơn temple."
+            }
+          ]
+        },
+        {
+          "h": "Trúc Bạch and the silk palace",
+          "p": [
+            "Trúc Bạch was once part of West Lake until a causeway, now Thanh Niên road, cut it off. Its name goes back to a Trịnh lord's palace beside it, where palace women who had fallen from favour were sent to raise silkworms and weave a fine silk called 'Trúc' silk (sources differ on which lord). Today it's a quiet lake with a 1.5 km path and swan pedal boats.",
+            "It's also where US Navy pilot John McCain was shot down and captured in October 1967; a small memorial stele stands on the west shore."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-27",
+              "cap": "The lakeside path around Trúc Bạch."
+            },
+            {
+              "key": "r-lk-28",
+              "cap": "Trúc Bạch lake."
+            },
+            {
+              "key": "r-lk-29",
+              "cap": "A colonial-era aerial photo: Trúc Bạch (left) and West Lake, divided by the causeway."
+            },
+            {
+              "key": "r-lk-30",
+              "cap": "The memorial stele on Trúc Bạch's west shore."
+            }
+          ]
+        },
+        {
+          "h": "Temples on the water, and lotus tea",
+          "p": [
+            "The lakes drew temples. Trấn Quốc pagoda, founded by tradition in the 6th century on the Red River bank, was moved to a little island in West Lake in 1615 when the river ate away its old site. Nearby, Quán Thánh temple guards the city's north with a 3.96-metre bronze statue cast in 1677.",
+            "West Lake is also famous for lotus tea. In summer, families in Quảng An pack green tea into the flowers of the hundred-petal lotus to scent it, a craft now recognised as national intangible heritage. The lotus season is over by late November, but the tea is sold all year."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-31",
+              "cap": "Trấn Quốc pagoda on its island."
+            },
+            {
+              "key": "r-lk-32",
+              "cap": "Trấn Quốc's stupa tower."
+            },
+            {
+              "key": "r-lk-33",
+              "cap": "Quán Thánh temple, home of the 1677 bronze statue."
+            },
+            {
+              "key": "r-lk-34",
+              "cap": "Lotus-scented tea."
+            }
+          ]
+        },
+        {
+          "h": "Parks, and a river being brought back",
+          "p": [
+            "South of the Old Quarter, Thiền Quang and Bảy Mẫu lakes are remnants of an old marsh, reshaped when Thống Nhất Park was built by volunteers from 1958. 'Bảy Mẫu' means 'seven mẫu', an old land measure.",
+            "The Tô Lịch river, once part of the royal moat, became a concrete-lined drain for the city's wastewater. A Japanese clean-up trial in 2019 ended without official results, but in 2025 the city intercepted every sewer outlet into the river and opened a treatment plant, and parts of the river ran clear for the first time in decades."
+          ],
+          "gallery": [
+            {
+              "key": "r-lk-35",
+              "cap": "Thiền Quang lake."
+            },
+            {
+              "key": "r-lk-36",
+              "cap": "Bảy Mẫu lake in Thống Nhất Park."
+            },
+            {
+              "key": "r-lk-37",
+              "cap": "The canalised Tô Lịch River, 2022."
+            }
+          ]
+        },
+        {
+          "h": "Walking the lakes",
+          "p": [
+            "In late November the sun sets around 5:15pm, the earliest of the year. For sunset, head to West Lake's western and southern shores or the causeway by Trấn Quốc, looking out across the water; Hoàn Kiếm is best a little later, when the lights come on. From Friday evening to Sunday night the streets around Hoàn Kiếm become a walking street, full of families, music and games.",
+            "West Lake's loop is about 17 km, an easy 1.5–2 hour bike ride. Trúc Bạch's 1.5 km path is a gentle stroll with swan boats for hire. In 2026 the east side of Hoàn Kiếm is being redeveloped into a public square, so expect hoardings there. Don't swim in the lakes: there are sudden drop-offs and the water isn't clean."
+          ],
+          "maps": [
+            {
+              "key": "hn-hoankiem",
+              "label": "Hoàn Kiếm"
+            },
+            {
+              "key": "hn-tranquoc",
+              "label": "Trấn Quốc"
+            },
+            {
+              "key": "hn-longbien",
+              "label": "Long Biên Bridge"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Trần Nghi et al. (2002): Origin and geological evolution of West Lake and the Red River, Vietnam Journal of Earth Sciences",
+          "url": "https://vjs.ac.vn/index.php/jse/article/view/11411"
+        },
+        {
+          "title": "Báo Pháp Luật: The ancient Red River (Tiền Nhị Hà)",
+          "url": "https://baophapluat.vn/tien-nhi-ha-bi-an-tu-long-song-co-post514311.html"
+        },
+        {
+          "title": "Báo Pháp Luật: 2,000 years of Red River dikes",
+          "url": "https://baophapluat.vn/lich-su-2000-nam-he-thong-de-tri-thuy-song-hong-post283434.html"
+        },
+        {
+          "title": "Znews: The 1971 flood",
+          "url": "https://znews.vn/dai-hong-thuy-1971-va-viec-giai-quyet-kho-khan-cho-dong-bao-bi-lu-lut-post1497540.html"
+        },
+        {
+          "title": "VietNamNet: Hanoi's lakes getting narrowed (2012)",
+          "url": "https://vietnamnet.vn/en/hanois-lakes-getting-narrowed-environmentalists-raise-alarm-E17941.html"
+        },
+        {
+          "title": "VnEconomy: Over 3,500 water bodies in Hanoi may not be filled",
+          "url": "https://vneconomy.vn/ha-noi-hon-3-500-ho-ao-dam-khong-duoc-san-lap.htm"
+        },
+        {
+          "title": "VnExpress: The slow death of the Tô Lịch river (2019)",
+          "url": "https://vnexpress.net/song-to-lich-chet-dan-4000298.html"
+        },
+        {
+          "title": "SGGP: Using Red River water to restore the Tô Lịch (2025)",
+          "url": "https://www.sggp.org.vn/ha-noi-no-luc-hoan-thanh-du-an-dung-nuoc-song-hong-cai-tao-song-to-lich-post771087.html"
+        },
+        {
+          "title": "Znews: Little-known names of Hoàn Kiếm Lake",
+          "url": "https://znews.vn/ten-goi-it-nguoi-biet-cua-ho-guom-post1452131.html"
+        },
+        {
+          "title": "Wikipedia: Hoàn Kiếm Lake",
+          "url": "https://en.wikipedia.org/wiki/Ho%C3%A0n_Ki%E1%BA%BFm_Lake"
+        },
+        {
+          "title": "Hanoi government: Giant turtle in Hoàn Kiếm Lake dies (2016)",
+          "url": "https://hanoicapital.chinhphu.vn/giant-turtle-in-hoan-kiem-lake-dies-1101517.htm"
+        },
+        {
+          "title": "WCS Vietnam: First portable eDNA test for Rafetus (2025)",
+          "url": "https://programs.wcs.org/vietnam/en-us/News/Media-Releases/ID/24090/First-Portable-eDNA-Test.aspx"
+        },
+        {
+          "title": "Wikipedia: West Lake (Hanoi)",
+          "url": "https://en.wikipedia.org/wiki/West_Lake_(Hanoi)"
+        },
+        {
+          "title": "Znews: Legends around West Lake's names (2026)",
+          "url": "https://znews.vn/nhieu-huyen-thoai-quanh-ten-goi-ho-tay-mot-thoi-post1692132.html"
+        },
+        {
+          "title": "Nhân Dân: Trúc Bạch lake",
+          "url": "https://nhandan.vn/ho-truc-bach-post556367.html"
+        },
+        {
+          "title": "Việt Nam News: Hanoi to renovate the McCain memorial (2024)",
+          "url": "https://vietnamnews.vn/society/1659397/ha-noi-to-renovate-and-expand-john-mccain-s-memorial.html"
+        },
+        {
+          "title": "Wikipedia: Turtle Tower",
+          "url": "https://en.wikipedia.org/wiki/Turtle_Tower"
+        },
+        {
+          "title": "Báo Lào Cai: The Pen Tower and Inkslab",
+          "url": "https://baolaocai.vn/thap-but-dai-nghien-cong-trinh-kien-truc-van-hoa-doc-dao-tai-ho-guom-post380700.html"
+        },
+        {
+          "title": "Wikipedia: Trấn Quốc Pagoda",
+          "url": "https://en.wikipedia.org/wiki/Tr%E1%BA%A5n_Qu%E1%BB%91c_Pagoda"
+        },
+        {
+          "title": "Wikipedia: Quán Thánh Temple",
+          "url": "https://en.wikipedia.org/wiki/Qu%C3%A1n_Th%C3%A1nh_Temple"
+        },
+        {
+          "title": "Tạp chí Công Thương: Quảng An lotus tea recognised as national heritage",
+          "url": "https://tapchicongthuong.vn/ghi-danh-pho-ha-noi-va-nghe-uop-tra-sen-quang-an-la-di-san-van-hoa-phi-vat-the-quoc-gia-125034.htm"
+        },
+        {
+          "title": "Wikipedia: Thống Nhất Park (Lenin Park)",
+          "url": "https://en.wikipedia.org/wiki/Lenin_Park_(Hanoi)"
+        },
+        {
+          "title": "Tuổi Trẻ News: Work begins on a square east of Hoàn Kiếm Lake (2026)",
+          "url": "https://news.tuoitre.vn/hanoi-residents-move-out-as-work-begins-on-public-square-east-of-hoan-kiem-lake-103260106174649628.htm"
+        }
+      ]
     }
   ],
 
@@ -3164,7 +3899,52 @@ window.SGN_DATA = {
     /* Huế */
     { id: "d-hue-phinholic", city: "hue", type: "coffee", name: "PhinHolic", tag: "Oat milk", where: "65 Bến Nghé",
       desc: "A specialty café with an oat-milk menu, including a vegan version of Huế's famous salt coffee.",
-      q: "PhinHolic 65 Bến Nghé Huế" }
+      q: "PhinHolic 65 Bến Nghé Huế" },
+
+    /* Ninh Bình — more */
+    { id: "d-nb-xanh", city: "ninhbinh", type: "coffee", name: "Xanh Coffee", tag: "Garden café", where: "Văn Lâm, Tam Cốc · closed Sun",
+      desc: "A quiet garden off the main strip, known for its coconut coffee and smoothie bowls. Ask about the milk.",
+      q: "Xanh Coffee Tam Coc" },
+    { id: "d-nb-brick", city: "ninhbinh", type: "coffee", name: "Brick Coffee Shop", tag: "Karst view", where: "Tam Cốc · 7am–9pm",
+      desc: "A family café with upstairs seats looking out to the karsts.",
+      q: "Brick Coffee Shop Tam Coc" },
+    { id: "d-nb-starbucks", city: "ninhbinh", type: "coffee", name: "Starbucks Tràng An", tag: "Plant milk", where: "At the Tràng An boat wharf",
+      desc: "Opened in 2026 and designed to blend into the landscape; reliable oat, soy and almond milk around the boat trip.",
+      q: "Starbucks Tràng An Ninh Bình" },
+    { id: "d-nb-linhchi", city: "ninhbinh", type: "beer", name: "Linh Chi Craft Beer", tag: "Relaxed pub", where: "Tam Cốc main strip",
+      desc: "A friendly, easygoing pub with local craft beer; quiet early, livelier later.",
+      q: "Linh Chi Craft Beer Pub Tam Coc" },
+
+    /* Huế — more */
+    { id: "d-hue-tagallery", city: "hue", type: "coffee", name: "Ta Gallery", tag: "Art café", where: "44 Phạm Ngũ Lão, upstairs",
+      desc: "A café that doubles as a gallery, with paintings on every floor; free oat milk, including in salt coffee.",
+      q: "Ta Gallery Ta Cafe Bakery Huế" },
+    { id: "d-hue-ncafe", city: "hue", type: "coffee", name: "N. Café", tag: "Citadel view", where: "8 Trần Huy Liệu",
+      desc: "A family café facing the Citadel moat; ask for drinks without milk.",
+      q: "N. Cafe & Food 08 Trần Huy Liệu Huế" },
+    { id: "d-hue-trons", city: "hue", type: "cocktail", name: "trons.studio", tag: "Hidden garden bar", where: "Kiệt 21 Lê Quý Đôn",
+      desc: "A vintage café-bar in a leafy lane: coffee by day, cocktails by night, and staff happy to help with vegan drinks.",
+      q: "trons.studio Huế" },
+    { id: "d-hue-matbiec", city: "hue", type: "coffee", name: "Cà Phê Mắt Biếc", tag: "Riverside", where: "66 Bao Vinh",
+      desc: "The old house from the film Mắt Biếc, with colourful stools on the riverbank.",
+      q: "Cà Phê Mắt Biếc 66 Bao Vinh" },
+
+    /* Hà Nội — more */
+    { id: "d-hn-summit", city: "hanoi", type: "rooftop", name: "Summit Rooftop Bar", tag: "West Lake sunset", where: "20th floor, Pan Pacific, 1 Thanh Niên",
+      desc: "Hà Nội's classic sunset rooftop, with West Lake on one side and Trúc Bạch on the other.",
+      q: "Summit Rooftop Bar Pan Pacific Hanoi" },
+    { id: "d-hn-ne", city: "hanoi", type: "cocktail", name: "Nê Cocktailbar", tag: "Vietnamese flavours", where: "3B Tống Duy Tân",
+      desc: "A pioneer of Vietnamese craft cocktails; try the flaming 'Phở' cocktail. Live music at weekends.",
+      q: "Nê Cocktailbar 3B Tống Duy Tân" },
+    { id: "d-hn-haflington", city: "hanoi", type: "cocktail", name: "The Haflington", tag: "Speakeasy", where: "94 Hàng Mã, upstairs",
+      desc: "A speakeasy styled like a natural-history museum, complete with a dinosaur skeleton.",
+      q: "The Haflington 94 Hàng Mã" },
+    { id: "d-hn-dreambeans", city: "hanoi", type: "coffee", name: "Dream Beans", tag: "Oat milk", where: "79 Lý Nam Đế",
+      desc: "A three-floor specialty roastery with phin, pour-over and oat milk; quiet upstairs.",
+      q: "Dream Beans Coffee Roastery 79 Lý Nam Đế" },
+    { id: "d-hn-hiddengem", city: "hanoi", type: "coffee", name: "Hidden Gem Café", tag: "Upcycled art", where: "1 Hàng Mắm",
+      desc: "A café built from recycled materials, with oat or coconut-milk coffee.",
+      q: "Hidden Gem Cafe Hanoi 1 Hàng Mắm" }
   ],
 
   dishes: [
