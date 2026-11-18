@@ -612,8 +612,8 @@ window.SGN_DATA = {
       id: "hn-templeoflit", city: "hanoi", cat: "old", img: "p-hn-templeoflit",
       name: "Temple of Literature", vi: "Văn Miếu – Quốc Tử Giám",
       desc: "A Confucian temple from 1070 that housed Vietnam's first university, with walled courtyards and stelae on stone turtles.",
-      time: "1–1.5 h", best: "8am opening", cost: "70k ₫", from: "From the lake: car 10 min",
-      tip: "Cover shoulders and knees, and bring cash for the ticket office.",
+      time: "1–1.5 h", best: "8am opening", cost: "70k ₫ (may be free 23 Nov)", from: "From the lake: car 10 min",
+      tip: "Cover shoulders and knees; don't touch the stelae. Night tours Wed, Sat & Sun (~299k ₫). The academy marks its 950th year in Nov 2026. See the Temple of Literature read.",
       q: "Temple of Literature Hanoi"
     },
     {
@@ -3904,6 +3904,334 @@ window.SGN_DATA = {
         {
           "title": "VietnamPlus: The citadel night tour",
           "url": "https://www.vietnamplus.vn/tour-dem-giai-ma-hoang-thanh-thang-long--hanh-trinh-trai-nghiem-dac-sac-post935874.vnp"
+        }
+      ]
+    },
+    {
+      "id": "temple-of-literature",
+      "title": "The Temple of Literature: Vietnam's first university",
+      "vi": "Văn Miếu – Quốc Tử Giám",
+      "img": {
+        "key": "r-vm-01",
+        "cap": "Khuê Văn Các, the Constellation of Literature pavilion, symbol of Hà Nội."
+      },
+      "teaser": "A temple to Confucius, a royal academy, 82 stone stelae on turtles and nearly a thousand years of exams, now celebrating its 950th year.",
+      "minutes": 10,
+      "lead": "Behind a long wall in central Hà Nội is a sequence of quiet courtyards, ancient trees and gates. For centuries this was where Vietnam honoured Confucius and educated the men who would run the state. In November 2026 the academy here marks its 950th anniversary, and students still come to pray for luck before their exams.",
+      "sections": [
+        {
+          "h": "A temple, then a school",
+          "p": [
+            "In 1070 King Lý Thánh Tông founded Văn Miếu, the 'Temple of Literature', to honour Confucius, with statues of the sage and his disciples. Six years later, in 1076, his son Lý Nhân Tông opened Quốc Tử Giám, the Imperial Academy, beside it. It is often called Vietnam's first university, though it began as a royal school: its first student was a crown prince.",
+            "In 1253 the Trần kings opened it to gifted sons of ordinary families too. Confucian learning was becoming the backbone of the state: the academy trained the scholars who would sit the exams and become mandarins. Its most famous rector, the scholar Chu Văn An (1292–1370), is still honoured here today."
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-02",
+              "cap": "Văn Miếu Môn, the main gate on Quốc Tử Giám street."
+            },
+            {
+              "key": "r-vm-03",
+              "cap": "The main façade around 1900, photographed by Pierre Dieulefils."
+            },
+            {
+              "key": "r-vm-04",
+              "cap": "Mandarins in court dress at Văn Miếu, 1915 (autochrome by Léon Busy)."
+            },
+            {
+              "key": "r-vm-05",
+              "cap": "A sacrifice ceremony at the temple in the 1920s, when the French called it the 'Pagode des Corbeaux'."
+            }
+          ]
+        },
+        {
+          "h": "The exams that made mandarins",
+          "p": [
+            "Vietnam's first imperial examination was held in 1075. Over the centuries it settled into three levels: a provincial exam, a metropolitan exam in the capital, and finally a palace exam set by the king himself. Those who passed the palace exam became tiến sĩ, 'doctors', and the top three earned the titles trạng nguyên, bảng nhãn and thám hoa.",
+            "From the 1430s exams were held every three years. Between 1075 and 1919, by one count, there were 183 exams and 2,898 doctors. Vietnam was the last country in the world to run Confucian civil-service exams: the final palace exam was held in Huế in May 1919."
+          ]
+        },
+        {
+          "h": "Through the gates",
+          "p": [
+            "The temple faces south and runs along a single axis through five walled courtyards, each entered by a gate, like a scholar's progress towards wisdom. The first two courtyards are calm lawns and old trees. The Đại Trung gate between them is flanked by smaller gates named for virtue and talent, and its roof carries carp, symbols of students who succeed; legend says a carp that leaps the falls becomes a dragon.",
+            "Then comes Khuê Văn Các, the Constellation of Literature pavilion, built in 1805: a small wooden pavilion on four brick pillars, with round windows whose radiating bars represent the rays of the Khuê star, the star of literature. It is the symbol of Hà Nội, written into the city's law, and it appears on the back of the 100,000 đồng note."
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-06",
+              "cap": "The first courtyard."
+            },
+            {
+              "key": "r-vm-07",
+              "cap": "Detail of the main gate."
+            },
+            {
+              "key": "r-vm-08",
+              "cap": "Đại Trung gate, into the second courtyard."
+            },
+            {
+              "key": "r-vm-09",
+              "cap": "The second courtyard, looking towards Khuê Văn Các."
+            },
+            {
+              "key": "r-vm-10",
+              "cap": "Khuê Văn Các, built in 1805."
+            },
+            {
+              "key": "r-vm-11",
+              "cap": "Khuê Văn Các before 1945."
+            },
+            {
+              "key": "r-vm-12",
+              "cap": "A Chinese character shaped from clipped plants."
+            }
+          ]
+        },
+        {
+          "h": "The doctors on the turtles",
+          "p": [
+            "The third courtyard holds a square pond, the Well of Heavenly Clarity, and on either side the temple's great treasure: 82 stone stelae, each standing on the back of a stone turtle. Each records one palace exam held between 1442 and 1779, listing 1,304 doctors by name and home village, with the name of the scholar who wrote the text and the craftsmen who carved it.",
+            "King Lê Thánh Tông ordered the first in 1484, for the exam of 1442, and the rest were added in batches until 1780. The turtle stands for longevity and the endurance of learning. UNESCO added the stelae to its Memory of the World register in 2011, and Vietnam made them a National Treasure in 2015. One inscription is quoted everywhere in Vietnam: 'Talented people are the vital force of the nation.'"
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-13",
+              "cap": "Thiên Quang Tỉnh, the Well of Heavenly Clarity."
+            },
+            {
+              "key": "r-vm-14",
+              "cap": "The third courtyard, with the stele houses beside the pond."
+            },
+            {
+              "key": "r-vm-15",
+              "cap": "Doctors' stelae on stone turtles, 15th–18th centuries."
+            },
+            {
+              "key": "r-vm-16",
+              "cap": "The oldest stele, carved in 1484 for the exam of 1442."
+            },
+            {
+              "key": "r-vm-17",
+              "cap": "A stele with its carved pediment and turtle base."
+            },
+            {
+              "key": "r-vm-18",
+              "cap": "Stelae under their protective roofs."
+            },
+            {
+              "key": "r-vm-19",
+              "cap": "'Talented people are the vital force of the nation.'"
+            },
+            {
+              "key": "r-vm-20",
+              "cap": "Hán characters naming a laureate on the 1478 stele."
+            }
+          ],
+          "tip": "For an art lover: walk the rows and compare the stelae by age. Guides describe the earliest (15th–early 16th century) as slender, with lotus and cloud motifs and no dragons; dragons, phoenixes and mythical lions appear in the 1600s, the high point of the carving; the 18th-century stelae are the largest, with bolder script and simpler ornament."
+        },
+        {
+          "h": "Don't rub the turtles",
+          "p": [
+            "For generations, students rubbed the turtles' heads for luck before their exams, polishing the stone smooth. To protect the 500-year-old carvings, the stelae are now fenced off and touching them is not allowed; the centre's director has called the luck belief a fabrication. Students now leave written prayers at the altar instead."
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-21",
+              "cap": "A visitor touching a turtle in 2009, now prohibited."
+            }
+          ]
+        },
+        {
+          "h": "The halls of Confucius",
+          "p": [
+            "Through the Đại Thành gate, the fourth courtyard leads to the Hall of Ceremonies (Đại Bái Đường), a nine-bay hall on 40 ironwood columns, with dragons facing the sun and moon along its roof ridge. Inside, bronze cranes stand on turtles, and a board names Confucius 'teacher for all ages'.",
+            "Behind it, in the red-lacquered and gilded sanctuary, sit Confucius and his four closest disciples, among them Mencius. Notice the late Lê lattice windows and the carved wooden panels: this is some of the finest traditional joinery in Hà Nội."
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-22",
+              "cap": "Đại Thành gate, into the fourth courtyard."
+            },
+            {
+              "key": "r-vm-23",
+              "cap": "The fourth courtyard."
+            },
+            {
+              "key": "r-vm-24",
+              "cap": "Đại Bái Đường, the Hall of Ceremonies."
+            },
+            {
+              "key": "r-vm-25",
+              "cap": "A carved roof-ridge ornament."
+            },
+            {
+              "key": "r-vm-26",
+              "cap": "A carved, gilded panel above a doorway."
+            },
+            {
+              "key": "r-vm-27",
+              "cap": "A bronze crane standing on a turtle beside the altar."
+            },
+            {
+              "key": "r-vm-28",
+              "cap": "Confucius at the main altar."
+            },
+            {
+              "key": "r-vm-29",
+              "cap": "Two of the Four Companions, Mencius and Zengzi."
+            }
+          ]
+        },
+        {
+          "h": "The academy rebuilt",
+          "p": [
+            "In 1802 the Nguyễn emperors moved the national academy to their new capital, Huế, and the Hà Nội site became a regional temple. The French listed it as a historic monument in 1906, but the academy buildings at the back were destroyed in the fighting of 1946–47.",
+            "They were rebuilt in 2000 as the Thái Học courtyard, for Thăng Long's 990th anniversary. The upper hall honours three kings, Lý Thánh Tông, Lý Nhân Tông and Lê Thánh Tông, and the lower one the rector Chu Văn An. On either side stand a bell house and a drum house with a 2.65-metre 'thunder drum'. This courtyard hosted the national ceremony for the academy's 950th anniversary on 13 November 2026."
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-30",
+              "cap": "The fifth courtyard, Thái Học, rebuilt in 2000."
+            },
+            {
+              "key": "r-vm-31",
+              "cap": "The Thái Học hall."
+            },
+            {
+              "key": "r-vm-32",
+              "cap": "Bronze statue of King Lý Thánh Tông, who founded the temple."
+            },
+            {
+              "key": "r-vm-33",
+              "cap": "An altar in the Thái Học hall."
+            },
+            {
+              "key": "r-vm-34",
+              "cap": "The bronze bell."
+            },
+            {
+              "key": "r-vm-35",
+              "cap": "The great drum."
+            }
+          ]
+        },
+        {
+          "h": "Still a place of learning",
+          "p": [
+            "The temple is still alive. Students and parents come before big exams to burn incense and leave prayers. In autumn, new graduates pose in gowns and áo dài in the courtyards, so you may well see them in November. At Tết, calligraphers set up by Văn Lake across the street, writing characters for luck on red paper, and calligraphy sessions run there through the year.",
+            "Văn Lake (Hồ Văn), with its restored island pavilion, once hosted scholars' poetry gatherings; today it has exhibitions, workshops and a free reading space. Lacquer and painting galleries line Văn Miếu street nearby."
+          ],
+          "maps": [
+            {
+              "key": "hn-templeoflit",
+              "label": "Temple of Literature"
+            },
+            {
+              "key": "hn-nguyenart",
+              "label": "Nguyễn Art Gallery"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-vm-36",
+              "cap": "Graduates at the main gate in November."
+            },
+            {
+              "key": "r-vm-37",
+              "cap": "Graduation photos in a courtyard."
+            },
+            {
+              "key": "r-vm-38",
+              "cap": "A visitor in áo dài."
+            },
+            {
+              "key": "r-vm-39",
+              "cap": "A calligrapher writing on dó paper at Tết."
+            },
+            {
+              "key": "r-vm-40",
+              "cap": "Calligraphy for good fortune."
+            },
+            {
+              "key": "r-vm-41",
+              "cap": "Văn Lake, across the street, in 2010."
+            }
+          ]
+        },
+        {
+          "h": "Visiting",
+          "p": [
+            "It's open daily 8am–5pm, and tickets are 70,000 ₫ (children under 16 free). By a 2023 city rule, entry is free on Vietnam Cultural Heritage Day, 23 November, so check if you're in town that Monday. Allow 1–1.5 hours, and come at opening on a weekday for the quietest courtyards. Dress neatly, keep your voice down near the altars, and don't touch the stelae.",
+            "On Wednesday, Saturday and Sunday evenings a night tour, 'Tinh hoa đạo học', lights up the gates and courtyards, with a calligraphy class, woodblock printing and a 3D-mapping show (about 299,000 ₫; book ahead). Restoration of Khuê Văn Các and two halls was scheduled for late 2026, so you may find some scaffolding."
+          ],
+          "tip": "Pair it with the Fine Arts Museum, a few minutes' walk away on Nguyễn Thái Học, and the Mausoleum area to the north."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Văn Miếu – Quốc Tử Giám (official site)",
+          "url": "https://vanmieu.gov.vn"
+        },
+        {
+          "title": "UNESCO Memory of the World nomination: Stone stele records of royal examinations (Lê and Mạc dynasties)",
+          "url": "https://media.unesco.org/sites/default/files/webform/mow001/vietnam_stone_stele_records_royal_examinations_le_mac_dynasties.pdf"
+        },
+        {
+          "title": "UNESCO: Stone stele records of royal examinations, 1442–1779",
+          "url": "https://www.unesco.org/en/memory-world/stone-stele-records-royal-examinations-le-and-mac-dynasties-1442-1779"
+        },
+        {
+          "title": "Hà Nội government portal: Doctoral stelae become Memory of the World (2011)",
+          "url": "https://thanglong.chinhphu.vn/english/doctoral-steles-become-unescos-memory-of-the-world-110293.htm"
+        },
+        {
+          "title": "Wikipedia: Temple of Literature, Hanoi",
+          "url": "https://en.wikipedia.org/wiki/Temple_of_Literature,_Hanoi"
+        },
+        {
+          "title": "Wikipedia (vi): Văn Miếu – Quốc Tử Giám",
+          "url": "https://vi.wikipedia.org/wiki/V%C4%83n_Mi%E1%BA%BFu_%E2%80%93_Qu%E1%BB%91c_T%E1%BB%AD_Gi%C3%A1m"
+        },
+        {
+          "title": "Wikipedia: Confucian court examination system in Vietnam",
+          "url": "https://en.wikipedia.org/wiki/Confucian_court_examination_system_in_Vietnam"
+        },
+        {
+          "title": "Vietnam Law Magazine: Recruitment of mandarins in feudal Vietnam (2022)",
+          "url": "https://vietnamlawmagazine.vn/recruitment-of-mandarins-in-feudal-vietnam-48792.html"
+        },
+        {
+          "title": "Tuổi Trẻ: The end of the imperial exams (2012)",
+          "url": "https://tuoitre.vn/duong-khoa-cu-tu-day-dut-han-500717.htm"
+        },
+        {
+          "title": "VietnamPlus: National celebration of Quốc Tử Giám's 950th anniversary (Nov 2026)",
+          "url": "https://en.vietnamplus.vn/national-celebration-marks-950th-anniversary-of-quoc-tu-giam-post355406.vnp"
+        },
+        {
+          "title": "VietnamPlus: Khuê Văn Các, soul of the thousand-year capital (Nov 2026)",
+          "url": "https://www.vietnamplus.vn/khue-van-cac-hon-cot-van-hien-cua-thu-do-nghin-nam-tuoi-post1145743.vnp"
+        },
+        {
+          "title": "SGGP: Superstitious touching of turtle heads should be eliminated (2010)",
+          "url": "https://en.sggp.org.vn/superstitious-touching-of-turtleheads-should-be-eliminated-post46309.html"
+        },
+        {
+          "title": "Nhân Dân: Stone stelae that tell history (2025)",
+          "url": "https://nhandan.vn/bia-da-ke-chuyen-kinh-su-xua-post856297.html"
+        },
+        {
+          "title": "Đại Đoàn Kết: The 82 doctors' stelae recognised as a National Treasure",
+          "url": "https://daidoanket.vn/82-bia-tien-si-tai-van-mieu-quoc-tu-giam-duoc-cong-nhan-bao-vat-quoc-gia-10028390.html"
+        },
+        {
+          "title": "Thời báo Tài chính: Hà Nội raises heritage entry fees (2023)",
+          "url": "https://thoibaotaichinhvietnam.vn/tang-phi-tham-quan-nhieu-danh-lam-thang-canh-di-tich-lich-su-tai-ha-noi-140982.html"
+        },
+        {
+          "title": "Báo Lào Cai: 950th anniversary programme and restoration plans (2026)",
+          "url": "https://baolaocai.vn/chuoi-hoat-dong-ky-niem-950-nam-thanh-lap-quoc-tu-giam-post894758.html"
         }
       ]
     },
