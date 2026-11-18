@@ -949,3 +949,35 @@ dialog.lightbox::backdrop { background: #000; }
 .hero-stop { display: inline-flex; align-items: center; gap: 6px; }
 .hero-stop .i { width: 15px; height: 15px; color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .hero .cover::before { transition: none; } }
+
+/* ===== "Don't miss" picks ===== */
+.pick-badge {
+  display: inline-flex; align-items: center; gap: 5px; margin-bottom: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+}
+.pick-badge .i { width: 14px; height: 14px; }
+.place.featured { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent), var(--shadow); }
+.place.flash { animation: pick-flash 1.6s var(--ease); }
+@keyframes pick-flash { 0%, 40% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 45%, transparent); } 100% { box-shadow: var(--shadow); } }
+.picks { margin-bottom: 20px; }
+.pick-card {
+  background: var(--surface); border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border)); border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--shadow); margin-bottom: 12px;
+}
+.pick-card .media { aspect-ratio: 16 / 9; }
+.pick-body { padding: 14px 16px 16px; }
+.pick-body h3 { font-size: var(--fs-lg); font-weight: 600; margin-bottom: 4px; }
+.pick-body .btn-row .btn-sm { margin-top: 12px; }
+@media (prefers-reduced-motion: reduce) { .place.flash { animation: none; } }
+
+/* ===== Reader data tables ===== */
+.reader-table { margin: 18px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }
+.reader-table table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+.reader-table caption { text-align: left; padding: 12px 14px 4px; font-weight: 600; color: var(--text); }
+.reader-table th, .reader-table td { padding: 8px 10px; text-align: left; vertical-align: top; border-top: 1px solid var(--border); }
+.reader-table tbody th, .reader-table thead th:first-child { width: 27%; }
+.reader-table thead th { border-top: 0; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); }
+.reader-table tbody th { font-weight: 600; color: var(--text); }
+.reader-table td { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.reader-body .reader-table-note { margin: 0; padding: 8px 10px 12px; font-size: var(--fs-xs); line-height: 1.5; color: var(--text-3); border-top: 1px solid var(--border); }
+.reader-table caption { padding: 12px 10px 4px; }

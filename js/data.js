@@ -31,7 +31,7 @@ window.SGN_DATA = {
   places: [
     /* For two — honeymoon picks */
     {
-      id: "two-cruise", cat: "two", img: null,
+      id: "two-cruise", cat: "two", img: "p-two-cruise",
       name: "Sunset dinner cruise", vi: "Du thuyền sông Sài Gòn",
       desc: "Dinner on the Saigon River, past the lit-up bridges and skyline.",
       time: "2.5–3 h", best: "Sunset", cost: "~US$70+ each", from: "Near Bạch Đằng pier",
@@ -39,7 +39,7 @@ window.SGN_DATA = {
       q: "Saigon River dinner cruise"
     },
     {
-      id: "two-hum", cat: "two", img: null,
+      id: "two-hum", cat: "two", img: "p-two-hum",
       name: "Candlelit dinner at Hum", vi: "Hum Vegetarian",
       desc: "A calm, leafy dining room with a mostly vegan menu. The go-to for a special night.",
       time: "1.5 h", best: "Dinner, booked", cost: "Mid-range", from: "Car 10 min",
@@ -47,7 +47,7 @@ window.SGN_DATA = {
       q: "Hum Vegetarian Café & Restaurant Võ Văn Tần"
     },
     {
-      id: "two-rooftop", cat: "two", img: null,
+      id: "two-rooftop", cat: "two", img: "p-two-rooftop",
       name: "Social Club Rooftop", vi: "Hôtel des Arts, 24th floor",
       desc: "An elegant poolside rooftop bar high above District 3.",
       time: "1–2 h", best: "Sunset", cost: "Splurge", from: "Car 10 min",
@@ -55,7 +55,7 @@ window.SGN_DATA = {
       q: "Social Club Rooftop Bar Hotel des Arts Saigon"
     },
     {
-      id: "two-spa", cat: "two", img: null,
+      id: "two-spa", cat: "two", img: "p-two-spa",
       name: "Le Spa des Artistes", vi: "Spa · Hôtel des Arts",
       desc: "A quiet hotel spa with double rooms for a couples' massage.",
       time: "1.5–2 h", best: "Late afternoon", cost: "Splurge", from: "Car 10 min",
@@ -63,7 +63,7 @@ window.SGN_DATA = {
       q: "Le Spa des Artistes Hotel des Arts Saigon"
     },
     {
-      id: "two-miumiu", cat: "two", img: null,
+      id: "two-miumiu", cat: "two", img: "p-two-miumiu",
       name: "Miu Miu Spa", vi: "Miu Miu 1 · 4 Chu Mạnh Trinh",
       desc: "A popular, good-value spa chain with couples' rooms. Branch 1 is the closest one still open.",
       time: "1–2 h", best: "After a long walk", cost: "~350k–1m ₫", from: "Walk 12 min",
@@ -71,7 +71,7 @@ window.SGN_DATA = {
       q: "Miu Miu Spa 1 Chu Mạnh Trinh"
     },
     {
-      id: "two-baSon", cat: "two", img: null,
+      id: "two-baSon", cat: "two", img: "p-two-baSon",
       name: "Ba Son Bridge at night", vi: "Cầu Ba Son",
       desc: "Stroll the riverside park and across the cable bridge as the skyline lights up.",
       time: "45 min", best: "After dark", cost: "Free", from: "Walk 20 min",
@@ -79,7 +79,7 @@ window.SGN_DATA = {
       q: "Ba Son Bridge"
     },
     {
-      id: "two-vespa", cat: "two", img: null,
+      id: "two-vespa", cat: "two", img: "p-two-vespa",
       name: "Saigon after dark by Vespa", vi: "Vespa night tour",
       desc: "Ride pillion on vintage Vespas through backstreets, night markets and live-music bars.",
       time: "4 h", best: "Evening", cost: "Tour", from: "Hotel pickup",
@@ -87,7 +87,7 @@ window.SGN_DATA = {
       q: "Vespa Adventures Saigon"
     },
     {
-      id: "two-aodai", cat: "two", img: null,
+      id: "two-aodai", cat: "two", img: "p-two-aodai",
       name: "Áo dài photo walk", vi: "Chụp ảnh áo dài",
       desc: "Rent áo dài and take photos at the Post Office, the pink church and Book Street.",
       time: "2–3 h", best: "Early morning light", cost: "Rental + photographer", from: "Walk 15 min",
@@ -154,7 +154,7 @@ window.SGN_DATA = {
     },
 
     {
-      id: "history-museum", cat: "old", img: null,
+      id: "history-museum", cat: "old", img: "p-history-museum",
       name: "Museum of Vietnamese History", vi: "Bảo tàng Lịch sử Việt Nam",
       desc: "Thousands of years of Vietnamese history, from bronze drums to Cham sculpture, in a 1920s building at the zoo gates.",
       time: "1–1.5 h", best: "Morning", cost: "~30k ₫", from: "Car 10 min",
@@ -162,7 +162,7 @@ window.SGN_DATA = {
       q: "Museum of Vietnamese History Nguyễn Bỉnh Khiêm"
     },
     {
-      id: "women-museum", cat: "old", img: null,
+      id: "women-museum", cat: "old", img: "p-women-museum",
       name: "Southern Women's Museum", vi: "Bảo tàng Phụ nữ Nam Bộ",
       desc: "The stories of Southern Vietnamese women, from wartime roles to áo dài and everyday life.",
       time: "45 min", best: "Afternoon", cost: "Low", from: "Car 10 min",
@@ -170,7 +170,7 @@ window.SGN_DATA = {
       q: "Southern Women's Museum Võ Thị Sáu"
     },
     {
-      id: "ton-duc-thang", cat: "old", img: null,
+      id: "ton-duc-thang", cat: "old", img: "p-ton-duc-thang",
       name: "Tôn Đức Thắng Museum", vi: "Bảo tàng Tôn Đức Thắng",
       desc: "A small riverside museum on the life of Vietnam's second president, a quick stop near the hotel.",
       time: "30–45 min", best: "Any time", cost: "Low", from: "Walk 8 min",
@@ -188,7 +188,7 @@ window.SGN_DATA = {
       q: "Galerie Quynh"
     },
     {
-      id: "green-palm", cat: "art", img: null,
+      id: "green-palm", cat: "art", img: "p-green-palm",
       name: "Green Palm Gallery", vi: "Green Palm Gallery",
       desc: "Traditional and modern Vietnamese painting, including lacquer, silk and oils, at 49 Mạc Thị Bưởi.",
       time: "30 min", best: "Any day, 8am–7pm", cost: "Free", from: "Walk 5 min",
@@ -214,7 +214,7 @@ window.SGN_DATA = {
 
     /* Shopping — local design, fair prices */
     {
-      id: "ohquao", cat: "shop", img: null,
+      id: "ohquao", cat: "shop", img: "p-ohquao",
       name: "OHQUAO The Local Edit", vi: "Hẻm 58 Phạm Ngọc Thạch",
       desc: "A concept store in an alley, stocked entirely with things designed and made in Saigon: stationery, homeware, prints and a room of local fashion labels.",
       time: "45 min", best: "Afternoon", cost: "Fixed prices", from: "Car 10 min",
@@ -222,7 +222,7 @@ window.SGN_DATA = {
       q: "OHQUAO Phạm Ngọc Thạch"
     },
     {
-      id: "dinh-design", cat: "shop", img: null,
+      id: "dinh-design", cat: "shop", img: "p-dinh-design",
       name: "Dinh Design Store", vi: "Independence Palace shop",
       desc: "A well-curated design shop inside the Independence Palace grounds, selling items by local designers with a Saigon twist.",
       time: "20 min", best: "With the palace", cost: "Fixed prices", from: "Walk 18 min",
@@ -246,7 +246,7 @@ window.SGN_DATA = {
       q: "Tân Định Market"
     },
     {
-      id: "saigon-centre", cat: "shop", img: null,
+      id: "saigon-centre", cat: "shop", img: "p-saigon-centre",
       name: "Saigon Centre & Takashimaya", vi: "65 Lê Lợi",
       desc: "A big, cool, air-conditioned mall with fixed prices, international and Vietnamese brands, and a food hall downstairs.",
       time: "1 h", best: "Rainy afternoon", cost: "Fixed prices", from: "Walk 5 min",
@@ -307,7 +307,7 @@ window.SGN_DATA = {
 
     /* Out & about */
     {
-      id: "zoo", cat: "out", img: null,
+      id: "zoo", cat: "out", img: "p-zoo",
       name: "Saigon Zoo & Botanical Gardens", vi: "Thảo Cầm Viên",
       desc: "One of the world's oldest zoos, opened in 1864, with shady botanical gardens, old trees and lily ponds.",
       time: "1.5–2 h", best: "Early morning", cost: "~60k ₫", from: "Car 10 min",
@@ -405,7 +405,7 @@ window.SGN_DATA = {
       q: "Tomb of Khai Dinh Hue"
     },
     {
-      id: "hue-gialong", city: "hue", cat: "old", img: null,
+      id: "hue-gialong", city: "hue", cat: "old", img: "p-hue-gialong",
       name: "Tomb of Gia Long", vi: "Lăng Gia Long",
       desc: "The dynasty founder's double grave with his empress, in quiet open hills far from the crowds.",
       time: "1 h", best: "Morning, dry day", cost: "150k ₫", from: "Car ~40 min",
@@ -423,7 +423,7 @@ window.SGN_DATA = {
     },
 
     {
-      id: "hue-dragonboat", city: "hue", cat: "two", img: null,
+      id: "hue-dragonboat", city: "hue", cat: "two", img: "p-hue-dragonboat",
       name: "Perfume River boat at sunset", vi: "Thuyền rồng sông Hương",
       desc: "A slow dragon-boat ride upriver toward Thiên Mụ Pagoda as the light fades over the water.",
       time: "1–2 h", best: "Sunset, dry day", cost: "Private boat ~500–800k ₫", from: "Tòa Khâm pier, Lê Lợi",
@@ -431,7 +431,7 @@ window.SGN_DATA = {
       q: "Bến thuyền Tòa Khâm Huế"
     },
     {
-      id: "hue-vongcanh", city: "hue", cat: "two", img: null,
+      id: "hue-vongcanh", city: "hue", cat: "two", img: "p-hue-vongcanh",
       name: "Vọng Cảnh Hill", vi: "Đồi Vọng Cảnh",
       desc: "A pine-covered hill with the classic view of the Perfume River curving through the tomb country.",
       time: "45 min", best: "4:30–5:30pm", cost: "Free", from: "Car 20 min",
@@ -439,7 +439,7 @@ window.SGN_DATA = {
       q: "Đồi Vọng Cảnh Huế"
     },
     {
-      id: "hue-antiquities", city: "hue", cat: "art", img: null,
+      id: "hue-antiquities", city: "hue", cat: "art", img: "p-hue-antiquities",
       name: "Museum of Royal Antiquities", vi: "Bảo tàng Cổ vật Cung đình Huế",
       desc: "Nguyễn-dynasty ceramics, costume and lacquer inside the 1845 Long An Palace, itself a jewel of carved, lacquered wood.",
       time: "1 h", best: "Any time · good when it rains", cost: "50k ₫", from: "Car 5 min from the Citadel",
@@ -447,7 +447,7 @@ window.SGN_DATA = {
       q: "Bảo tàng Cổ vật Cung đình Huế"
     },
     {
-      id: "hue-finearts", city: "hue", cat: "art", img: null,
+      id: "hue-finearts", city: "hue", cat: "art", img: "p-hue-finearts",
       name: "Lê Bá Đảng Art Centre & Fine Arts Museum", vi: "Bảo tàng Mỹ thuật Huế · 15 Lê Lợi",
       desc: "A riverside gallery of the Paris-based modernist Lê Bá Đảng, also used by Huế's Museum of Fine Arts for changing shows.",
       time: "1 h", best: "Rainy day · closed Mon", cost: "~30k ₫", from: "Car 5 min",
@@ -455,7 +455,7 @@ window.SGN_DATA = {
       q: "Lebadang Art Space 15 Lê Lợi Huế"
     },
     {
-      id: "hue-thuyxuan", city: "hue", cat: "art", img: null,
+      id: "hue-thuyxuan", city: "hue", cat: "art", img: "p-hue-thuyxuan",
       name: "Thủy Xuân incense village", vi: "Làng hương Thủy Xuân",
       desc: "Roadside workshops where families roll and dye incense sticks into bright fans of colour.",
       time: "45–90 min", best: "Dry morning", cost: "Free · try it ~50–100k ₫", from: "Car 15–20 min",
@@ -463,7 +463,7 @@ window.SGN_DATA = {
       q: "Làng hương Thủy Xuân Huế"
     },
     {
-      id: "hue-dongba", city: "hue", cat: "shop", img: null,
+      id: "hue-dongba", city: "hue", cat: "shop", img: "p-hue-dongba",
       name: "Đông Ba Market", vi: "Chợ Đông Ba",
       desc: "Huế's century-old riverside market for poem hats, sesame candy, lotus seeds and royal tea.",
       time: "1 h", best: "Morning", cost: "Haggle gently", from: "Across Trường Tiền bridge",
@@ -471,7 +471,7 @@ window.SGN_DATA = {
       q: "Chợ Đông Ba Huế"
     },
     {
-      id: "hue-andinh", city: "hue", cat: "old", img: null,
+      id: "hue-andinh", city: "hue", cat: "old", img: "p-hue-andinh",
       name: "An Định Palace", vi: "Cung An Định",
       desc: "Emperor Khải Định's 1910s riverside residence, where French Baroque plasterwork meets Vietnamese royal motifs.",
       time: "45–90 min", best: "Early or late light", cost: "~50k ₫", from: "Car 10 min",
@@ -479,7 +479,7 @@ window.SGN_DATA = {
       q: "Cung An Định Huế"
     },
     {
-      id: "hue-thanhtoan", city: "hue", cat: "old", img: null,
+      id: "hue-thanhtoan", city: "hue", cat: "old", img: "p-hue-thanhtoan",
       name: "Thanh Toàn tile-roofed bridge", vi: "Cầu ngói Thanh Toàn",
       desc: "An 18th-century covered wooden bridge over a canal through the rice fields.",
       time: "1 h", best: "Late afternoon", cost: "Free", from: "Car 20–25 min",
@@ -487,7 +487,7 @@ window.SGN_DATA = {
       q: "Cầu ngói Thanh Toàn"
     },
     {
-      id: "hue-thienmu", city: "hue", cat: "spirit", img: null,
+      id: "hue-thienmu", city: "hue", cat: "spirit", img: "p-hue-thienmu",
       name: "Thiên Mụ Pagoda", vi: "Chùa Thiên Mụ",
       desc: "Huế's symbol: a seven-storey tower on a hill above the Perfume River, still a working monastery.",
       time: "45–60 min", best: "Early or late in the day", cost: "Free", from: "Car 10–15 min",
@@ -495,7 +495,7 @@ window.SGN_DATA = {
       q: "Chùa Thiên Mụ Huế"
     },
     {
-      id: "hue-tuhieu", city: "hue", cat: "spirit", img: null,
+      id: "hue-tuhieu", city: "hue", cat: "spirit", img: "p-hue-tuhieu",
       name: "Từ Hiếu Pagoda", vi: "Chùa Từ Hiếu",
       desc: "A pine-shaded 1843 pagoda where Thích Nhất Hạnh became a monk and spent his last years.",
       time: "1–1.5 h", best: "Early morning bell", cost: "Free", from: "Car 15–20 min",
@@ -505,7 +505,7 @@ window.SGN_DATA = {
 
     /* Hà Nội */
     {
-      id: "hn-longbien", city: "hanoi", cat: "two", img: null,
+      id: "hn-longbien", city: "hanoi", cat: "two", img: "p-hn-longbien",
       name: "Long Biên Bridge at sunset", vi: "Cầu Long Biên",
       desc: "A 1903 steel bridge over the Red River that still carries trains and motorbikes. Walk out together as the sun drops.",
       time: "45 min–1 h", best: "Sunset", cost: "Free", from: "From the lake: car 10 min",
@@ -513,7 +513,7 @@ window.SGN_DATA = {
       q: "Long Bien Bridge Hanoi"
     },
     {
-      id: "hn-codam", city: "hanoi", cat: "two", img: null,
+      id: "hn-codam", city: "hanoi", cat: "two", img: "p-hn-codam",
       name: "Tasting dinner at Cồ Đàm", vi: "Nhà hàng chay Cồ Đàm",
       desc: "Vegetarian fine dining with an 11-course set menu that can be made fully vegan. A special-occasion night.",
       time: "2–2.5 h", best: "Dinner, booked", cost: "Splurge (~1M ₫ each)", from: "From the lake: walk 10 min",
@@ -521,7 +521,7 @@ window.SGN_DATA = {
       q: "Co Dam vegetarian restaurant 68a Tran Hung Dao"
     },
     {
-      id: "hn-opera", city: "hanoi", cat: "two", img: null,
+      id: "hn-opera", city: "hanoi", cat: "two", img: "p-hn-opera",
       name: "Opera House by night", vi: "Nhà hát Lớn Hà Nội",
       desc: "A 1911 French opera house at the end of Tràng Tiền Street, beautiful when lit up in the evening.",
       time: "15 min outside", best: "Evening", cost: "Free outside", from: "From the lake: walk 10 min",
@@ -529,7 +529,7 @@ window.SGN_DATA = {
       q: "Hanoi Opera House"
     },
     {
-      id: "hn-finearts", city: "hanoi", cat: "art", img: null,
+      id: "hn-finearts", city: "hanoi", cat: "art", img: "p-hn-finearts",
       name: "Vietnam National Fine Arts Museum", vi: "Bảo tàng Mỹ thuật Việt Nam",
       desc: "The national collection, from folk prints to modern lacquer and silk painting by Nguyễn Gia Trí, Tô Ngọc Vân and Bùi Xuân Phái.",
       time: "1.5–2 h", best: "Morning · closed Mon", cost: "40k ₫", from: "Near the Temple of Literature",
@@ -537,7 +537,7 @@ window.SGN_DATA = {
       q: "Vietnam National Fine Arts Museum 66 Nguyen Thai Hoc"
     },
     {
-      id: "hn-puppets", city: "hanoi", cat: "art", img: null,
+      id: "hn-puppets", city: "hanoi", cat: "art", img: "p-hn-puppets",
       name: "Thăng Long Water Puppets", vi: "Nhà hát Múa rối Thăng Long",
       desc: "The classic water-puppet theatre by the lake, with a live traditional band. About 50 minutes.",
       time: "50 min show", best: "Late afternoon or evening", cost: "100–200k ₫", from: "By the lake",
@@ -545,7 +545,7 @@ window.SGN_DATA = {
       q: "Thang Long Water Puppet Theatre 57B Dinh Tien Hoang"
     },
     {
-      id: "hn-manzi", city: "hanoi", cat: "art", img: null,
+      id: "hn-manzi", city: "hanoi", cat: "art", img: "p-hn-manzi",
       name: "Manzi Art Space", vi: "Manzi · 14 Phan Huy Ích",
       desc: "An independent contemporary art space with changing exhibitions, open studios and an artist residency.",
       time: "30–45 min", best: "Afternoon · Tue–Sun", cost: "Free", from: "From the lake: car 10 min",
@@ -553,7 +553,7 @@ window.SGN_DATA = {
       q: "Manzi Art Space 14 Phan Huy Ich"
     },
     {
-      id: "hn-vcca", city: "hanoi", cat: "art", img: null,
+      id: "hn-vcca", city: "hanoi", cat: "art", img: "p-hn-vcca",
       name: "Vincom Center for Contemporary Art", vi: "VCCA · Royal City",
       desc: "A big contemporary art centre under the Royal City mall that hosts major group shows.",
       time: "45 min–1 h", best: "During a show, 10am–9pm", cost: "Often free", from: "From the lake: car 30 min",
@@ -561,7 +561,7 @@ window.SGN_DATA = {
       q: "VCCA Vincom Center for Contemporary Art Royal City"
     },
     {
-      id: "hn-aspace", city: "hanoi", cat: "art", img: null,
+      id: "hn-aspace", city: "hanoi", cat: "art", img: "p-hn-aspace",
       name: "Á Space", vi: "Á Space · Ngô Gia Tự",
       desc: "A small independent space across the river for experimental art and open studios.",
       time: "30–45 min", best: "During an event", cost: "Usually free", from: "From the lake: car 20 min",
@@ -569,7 +569,7 @@ window.SGN_DATA = {
       q: "Á Space Ngõ 59 Ngô Gia Tự Hà Nội"
     },
     {
-      id: "hn-battrang", city: "hanoi", cat: "art", img: null,
+      id: "hn-battrang", city: "hanoi", cat: "art", img: "p-hn-battrang",
       name: "Bát Tràng ceramic village", vi: "Làng gốm Bát Tràng",
       desc: "A centuries-old pottery village with workshops, a big ceramics market and a ceramics museum.",
       time: "Half day", best: "Morning", cost: "Free · wheel class ~50–100k ₫", from: "From the lake: car 30 min",
@@ -577,7 +577,7 @@ window.SGN_DATA = {
       q: "Bat Trang Ceramic Village"
     },
     {
-      id: "hn-hanggai", city: "hanoi", cat: "shop", img: null,
+      id: "hn-hanggai", city: "hanoi", cat: "shop", img: "p-hn-hanggai",
       name: "Hàng Gai silk street", vi: "Phố Hàng Gai",
       desc: "The Old Quarter street for silk and made-to-measure tailoring.",
       time: "30 min–1 h", best: "Early in your stay", cost: "Shirt ~800k–1.5M ₫", from: "From the lake: walk 5 min",
@@ -585,7 +585,7 @@ window.SGN_DATA = {
       q: "Hang Gai Street Hanoi silk"
     },
     {
-      id: "hn-hangma", city: "hanoi", cat: "shop", img: null,
+      id: "hn-hangma", city: "hanoi", cat: "shop", img: "p-hn-hangma",
       name: "Hàng Mã street", vi: "Phố Hàng Mã",
       desc: "The street of paper offerings, lanterns and festive decorations, a riot of colour.",
       time: "20–40 min", best: "Evening", cost: "Free to browse", from: "From the lake: walk 15 min",
@@ -593,7 +593,7 @@ window.SGN_DATA = {
       q: "Hang Ma Street Hanoi"
     },
     {
-      id: "hn-mausoleum", city: "hanoi", cat: "old", img: null,
+      id: "hn-mausoleum", city: "hanoi", cat: "old", img: "p-hn-mausoleum",
       name: "Ho Chi Minh Mausoleum & One Pillar Pagoda", vi: "Lăng Chủ tịch Hồ Chí Minh · Chùa Một Cột",
       desc: "The mausoleum on Ba Đình Square, with the stilt house, the Presidential Palace gardens and the little One Pillar Pagoda nearby.",
       time: "2–3 h", best: "8–11am · closed Mon & Fri", cost: "Mausoleum free · grounds ~25–40k ₫", from: "From the lake: car 10–15 min",
@@ -601,7 +601,7 @@ window.SGN_DATA = {
       q: "Ho Chi Minh Mausoleum"
     },
     {
-      id: "hn-citadel", city: "hanoi", cat: "old", img: null,
+      id: "hn-citadel", city: "hanoi", cat: "old", img: "p-hn-citadel",
       name: "Imperial Citadel of Thăng Long", vi: "Hoàng thành Thăng Long",
       desc: "UNESCO-listed heart of the old royal city: the Đoan Môn gate, the Kính Thiên platform and layers of excavated palaces.",
       time: "1.5–2 h", best: "Morning or late afternoon", cost: "100k ₫", from: "From the lake: car 10 min",
@@ -609,7 +609,7 @@ window.SGN_DATA = {
       q: "Imperial Citadel of Thang Long"
     },
     {
-      id: "hn-templeoflit", city: "hanoi", cat: "old", img: null,
+      id: "hn-templeoflit", city: "hanoi", cat: "old", img: "p-hn-templeoflit",
       name: "Temple of Literature", vi: "Văn Miếu – Quốc Tử Giám",
       desc: "A Confucian temple from 1070 that housed Vietnam's first university, with walled courtyards and stelae on stone turtles.",
       time: "1–1.5 h", best: "8am opening", cost: "70k ₫", from: "From the lake: car 10 min",
@@ -617,7 +617,7 @@ window.SGN_DATA = {
       q: "Temple of Literature Hanoi"
     },
     {
-      id: "hn-ethnology", city: "hanoi", cat: "old", img: null,
+      id: "hn-ethnology", city: "hanoi", cat: "old", img: "p-hn-ethnology",
       name: "Vietnam Museum of Ethnology", vi: "Bảo tàng Dân tộc học",
       desc: "Vietnam's 54 ethnic groups, with a garden of full-size houses, including a real Gia Rai tomb house.",
       time: "2.5–3 h", best: "Morning · closed Mon", cost: "40k ₫", from: "From the lake: car 25 min",
@@ -625,7 +625,7 @@ window.SGN_DATA = {
       q: "Vietnam Museum of Ethnology"
     },
     {
-      id: "hn-hoalo", city: "hanoi", cat: "old", img: null,
+      id: "hn-hoalo", city: "hanoi", cat: "old", img: "p-hn-hoalo",
       name: "Hỏa Lò Prison", vi: "Di tích Nhà tù Hỏa Lò",
       desc: "Part of the French colonial prison later known to American POWs as the 'Hanoi Hilton', now a museum.",
       time: "1–1.5 h", best: "Daytime", cost: "50k ₫", from: "From the lake: walk 15 min",
@@ -633,7 +633,7 @@ window.SGN_DATA = {
       q: "Hoa Lo Prison Hanoi"
     },
     {
-      id: "hn-womens", city: "hanoi", cat: "old", img: null,
+      id: "hn-womens", city: "hanoi", cat: "old", img: "p-hn-womens",
       name: "Vietnamese Women's Museum", vi: "Bảo tàng Phụ nữ Việt Nam",
       desc: "Women's lives in family, history and fashion, with superb ethnic-minority textiles.",
       time: "1.5 h", best: "Daytime", cost: "40k ₫", from: "From the lake: walk 10 min",
@@ -641,7 +641,7 @@ window.SGN_DATA = {
       q: "Vietnamese Women's Museum 36 Ly Thuong Kiet"
     },
     {
-      id: "hn-mamay", city: "hanoi", cat: "old", img: null,
+      id: "hn-mamay", city: "hanoi", cat: "old", img: "p-hn-mamay",
       name: "Heritage House, 87 Mã Mây", vi: "Ngôi nhà di sản 87 Mã Mây",
       desc: "A restored merchant tube house showing how Old Quarter families lived and traded.",
       time: "20–30 min", best: "Daytime", cost: "~30k ₫", from: "From the lake: walk 10 min",
@@ -649,7 +649,7 @@ window.SGN_DATA = {
       q: "Heritage House 87 Ma May Hanoi"
     },
     {
-      id: "hn-tranquoc", city: "hanoi", cat: "spirit", img: null,
+      id: "hn-tranquoc", city: "hanoi", cat: "spirit", img: "p-hn-tranquoc",
       name: "West Lake & Trấn Quốc Pagoda", vi: "Hồ Tây · Chùa Trấn Quốc",
       desc: "Hanoi's oldest pagoda, with a tall red stupa on a little peninsula in the city's biggest lake.",
       time: "1–2 h", best: "Late afternoon to sunset", cost: "Free", from: "From the lake: car 15 min",
@@ -657,7 +657,7 @@ window.SGN_DATA = {
       q: "Tran Quoc Pagoda"
     },
     {
-      id: "hn-hoankiem", city: "hanoi", cat: "out", img: null,
+      id: "hn-hoankiem", city: "hanoi", cat: "out", img: "p-hn-hoankiem",
       name: "Hoàn Kiếm Lake & Ngọc Sơn Temple", vi: "Hồ Hoàn Kiếm · Đền Ngọc Sơn",
       desc: "The lake at the heart of the city, with Ngọc Sơn Temple on an islet across the red Thê Húc bridge.",
       time: "1–1.5 h", best: "Early morning or evening", cost: "Temple 50k ₫", from: "Centre of the Old Quarter",
@@ -665,7 +665,7 @@ window.SGN_DATA = {
       q: "Ngoc Son Temple Hanoi"
     },
     {
-      id: "hn-oldquarter", city: "hanoi", cat: "out", img: null,
+      id: "hn-oldquarter", city: "hanoi", cat: "out", img: "p-hn-oldquarter",
       name: "Old Quarter & night market", vi: "Phố cổ Hà Nội",
       desc: "The tangle of narrow trade streets north of the lake, the old '36 streets'.",
       time: "2–4 h", best: "Morning, or Fri–Sun night", cost: "Free", from: "From the lake: walk 5 min",
@@ -673,7 +673,7 @@ window.SGN_DATA = {
       q: "Hanoi Old Quarter"
     },
     {
-      id: "hn-trainstreet", city: "hanoi", cat: "out", img: null,
+      id: "hn-trainstreet", city: "hanoi", cat: "out", img: "p-hn-trainstreet",
       name: "Train Street", vi: "Phố đường tàu · Phùng Hưng",
       desc: "A stretch of railway where trains squeeze past homes and cafés a metre away.",
       time: "45 min", best: "Weekday, before a train", cost: "Buy a drink", from: "From the lake: walk 15 min",
@@ -681,7 +681,7 @@ window.SGN_DATA = {
       q: "Hanoi Train Street Phung Hung"
     },
     {
-      id: "hn-duonglam", city: "hanoi", cat: "trips", img: null,
+      id: "hn-duonglam", city: "hanoi", cat: "trips", img: "p-hn-duonglam",
       name: "Đường Lâm ancient village", vi: "Làng cổ Đường Lâm",
       desc: "A quiet village of laterite-brick houses, with an old communal house and Mía Pagoda.",
       time: "Full day", best: "Morning", cost: "20k ₫ + car", from: "Car ~1.5 h",
@@ -699,7 +699,7 @@ window.SGN_DATA = {
       q: "Hang Múa, Ninh Xuân, Ninh Bình"
     },
     {
-      id: "nb-ninhvan", city: "ninhbinh", cat: "art", img: null,
+      id: "nb-ninhvan", city: "ninhbinh", cat: "art", img: "p-nb-ninhvan",
       name: "Ninh Vân stone-carving village", vi: "Làng đá mỹ nghệ Ninh Vân",
       desc: "A centuries-old working village where artisans carve Buddhas, lions and temple stonework in the open air.",
       time: "45–90 min", best: "Weekday morning", cost: "Free", from: "Tam Cốc: car 15 min",
@@ -707,7 +707,7 @@ window.SGN_DATA = {
       q: "Làng đá mỹ nghệ Ninh Vân"
     },
     {
-      id: "nb-vanlam", city: "ninhbinh", cat: "art", img: null,
+      id: "nb-vanlam", city: "ninhbinh", cat: "art", img: "p-nb-vanlam",
       name: "Văn Lâm embroidery", vi: "Làng thêu ren Văn Lâm",
       desc: "The village at the Tam Cốc boat wharf, known for hand-embroidered landscape pictures since the early 1900s.",
       time: "30–60 min", best: "With the Tam Cốc boat", cost: "Free to browse", from: "At the Tam Cốc wharf",
@@ -731,7 +731,7 @@ window.SGN_DATA = {
       q: "Chùa Bái Đính"
     },
     {
-      id: "nb-bichdong", city: "ninhbinh", cat: "spirit", img: null,
+      id: "nb-bichdong", city: "ninhbinh", cat: "spirit", img: "p-nb-bichdong",
       name: "Bích Động Pagoda", vi: "Chùa Bích Động",
       desc: "A three-level pagoda from 1428 built into a cliff, linked by a cave passage.",
       time: "30–45 min", best: "Late afternoon", cost: "Free–20k ₫", from: "Tam Cốc: bike 10 min",
@@ -747,7 +747,7 @@ window.SGN_DATA = {
       q: "Bến thuyền Tràng An"
     },
     {
-      id: "nb-tamcoc", city: "ninhbinh", cat: "out", img: null,
+      id: "nb-tamcoc", city: "ninhbinh", cat: "out", img: "p-nb-tamcoc",
       name: "Tam Cốc boat trip", vi: "Bến thuyền Tam Cốc",
       desc: "A gentle row along the Ngô Đồng river through three caves, often with rowers using their feet.",
       time: "1.5–2 h", best: "6:30–10am (water lilies)", cost: "~250k ₫ (check at counter)", from: "Tam Cốc village",
@@ -755,7 +755,7 @@ window.SGN_DATA = {
       q: "Bến thuyền Tam Cốc"
     },
     {
-      id: "nb-thungnham", city: "ninhbinh", cat: "out", img: null,
+      id: "nb-thungnham", city: "ninhbinh", cat: "out", img: "p-nb-thungnham",
       name: "Thung Nham bird park", vi: "Vườn chim Thung Nham",
       desc: "Caves, gardens and a lagoon where storks and herons fly in to roost at dusk.",
       time: "2–3 h", best: "3–5pm", cost: "250k ₫", from: "Tam Cốc: car 15 min",
@@ -763,7 +763,7 @@ window.SGN_DATA = {
       q: "Vườn chim Thung Nham"
     },
     {
-      id: "nb-vanlong", city: "ninhbinh", cat: "trips", img: null,
+      id: "nb-vanlong", city: "ninhbinh", cat: "trips", img: "p-nb-vanlong",
       name: "Vân Long wetland", vi: "Khu bảo tồn Vân Long",
       desc: "A quiet bamboo-boat glide across a karst-ringed wetland, home of the rare Delacour's langur.",
       time: "1.5 h boat", best: "Early or late in the day", cost: "~30k ₫ + boat", from: "Tràng An: car 30 min",
@@ -771,7 +771,7 @@ window.SGN_DATA = {
       q: "Khu bảo tồn Vân Long"
     },
     {
-      id: "nb-phatdiem", city: "ninhbinh", cat: "trips", img: null,
+      id: "nb-phatdiem", city: "ninhbinh", cat: "trips", img: "p-nb-phatdiem",
       name: "Phát Diệm Cathedral", vi: "Nhà thờ Phát Diệm",
       desc: "An 1890s stone and ironwood cathedral built to look like a giant Vietnamese pagoda.",
       time: "2 h", best: "Weekday", cost: "Free", from: "Car 45–60 min",
@@ -779,7 +779,7 @@ window.SGN_DATA = {
       q: "Nhà thờ Phát Diệm"
     },
     {
-      id: "nb-cucphuong", city: "ninhbinh", cat: "trips", img: null,
+      id: "nb-cucphuong", city: "ninhbinh", cat: "trips", img: "p-nb-cucphuong",
       name: "Cúc Phương National Park", vi: "Vườn quốc gia Cúc Phương",
       desc: "Vietnam's first national park: old-growth forest, giant trees and a primate rescue centre.",
       time: "Full day", best: "Early start", cost: "60k ₫", from: "Car ~1 h",
@@ -789,7 +789,7 @@ window.SGN_DATA = {
 
     /* Ninh Bình — more */
     {
-      id: "nb-thungui-raft", city: "ninhbinh", cat: "two", img: null,
+      id: "nb-thungui-raft", city: "ninhbinh", cat: "two", img: "p-nb-thungui-raft",
       name: "Private raft at Thung Ui", vi: "Bè VIP hồ Ngọc · Thung Ui",
       desc: "A bamboo raft just for the two of you on the quiet lake inside the newly opened Thung Ui valley.",
       time: "Up to 3 h", best: "Late afternoon", cost: "~2M ₫ per raft", from: "Tràng An: car 20 min",
@@ -797,7 +797,7 @@ window.SGN_DATA = {
       q: "Thung Ui Ninh Bình"
     },
     {
-      id: "nb-lilies", city: "ninhbinh", cat: "two", img: null,
+      id: "nb-lilies", city: "ninhbinh", cat: "two", img: "p-nb-lilies",
       name: "Water-lily boat at Tam Cốc", vi: "Hoa súng Tam Cốc",
       desc: "From October to December, water lilies turn the Ngô Đồng river pink and purple, peaking in November.",
       time: "1.5–2 h", best: "6:30–10am", cost: "Tam Cốc boat ticket", from: "Tam Cốc village",
@@ -805,7 +805,7 @@ window.SGN_DATA = {
       q: "Bến thuyền Tam Cốc"
     },
     {
-      id: "nb-huongsen", city: "ninhbinh", cat: "two", img: null,
+      id: "nb-huongsen", city: "ninhbinh", cat: "two", img: "p-nb-huongsen",
       name: "Herbal bath & massage for two", vi: "Hương Sen Massage",
       desc: "A private steam, sauna and herbal-pot bath with tea and fruit, plus massages. Popular with couples.",
       time: "1.5–2.5 h", best: "Evening after a big day", cost: "~150–420k ₫ each", from: "Ninh Bình city",
@@ -813,7 +813,7 @@ window.SGN_DATA = {
       q: "Hương Sen Massage Ninh Bình"
     },
     {
-      id: "nb-colau", city: "ninhbinh", cat: "art", img: null,
+      id: "nb-colau", city: "ninhbinh", cat: "art", img: "p-nb-colau",
       name: "'Anh Hùng Cờ Lau' lake show", vi: "Show thực cảnh Anh Hùng Cờ Lau",
       desc: "An hour-long open-air show of light, water and dance on the lake at Hoa Lư Old Quarter, telling the rise of King Đinh.",
       time: "1 h, 8:45pm", best: "Thu–Sun nights", cost: "250–500k ₫", from: "Tràng An: car 15 min",
@@ -821,7 +821,7 @@ window.SGN_DATA = {
       q: "Phố cổ Hoa Lư Anh Hùng Cờ Lau"
     },
     {
-      id: "nb-tamcocmuseum", city: "ninhbinh", cat: "art", img: null,
+      id: "nb-tamcocmuseum", city: "ninhbinh", cat: "art", img: "p-nb-tamcocmuseum",
       name: "Tam Cốc Museum workshop", vi: "Bảo tàng Tam Cốc",
       desc: "A hands-on rural-culture space where you make a rice-grain mosaic picture together, and try broom-making or milling rice.",
       time: "2–3 h", best: "Afternoon after the boat", cost: "~US$14 each", from: "Tam Cốc: walk 5 min",
@@ -829,7 +829,7 @@ window.SGN_DATA = {
       q: "Bảo tàng Tam Cốc Ninh Bình"
     },
     {
-      id: "nb-thungui", city: "ninhbinh", cat: "old", img: null,
+      id: "nb-thungui", city: "ninhbinh", cat: "old", img: "p-nb-thungui",
       name: "Thung Ui & the Heaven Altar", vi: "Đàn Kính Thiên · Thung Ui",
       desc: "A restored 10th-century sky-worship altar in a hidden valley of the Tràng An core zone, opened to visitors in 2026.",
       time: "2–3 h", best: "Morning", cost: "150k ₫ · 250k with boat", from: "Tràng An: car 20 min",
@@ -837,7 +837,7 @@ window.SGN_DATA = {
       q: "Thung Ui Đàn Kính Thiên Ninh Bình"
     },
     {
-      id: "nb-phocohoalu", city: "ninhbinh", cat: "out", img: null,
+      id: "nb-phocohoalu", city: "ninhbinh", cat: "out", img: "p-nb-phocohoalu",
       name: "Hoa Lư Old Quarter by night", vi: "Phố cổ Hoa Lư",
       desc: "A lantern-lit, newly built old-style town around Kỳ Lân Lake, with stone bridges, street food and folk music.",
       time: "1.5–3 h", best: "From 6:30pm, weekdays", cost: "Free · lake boat ~100–150k ₫", from: "Tràng An: car 15 min",
@@ -845,7 +845,7 @@ window.SGN_DATA = {
       q: "Phố cổ Hoa Lư Ninh Bình"
     },
     {
-      id: "nb-bikeloop", city: "ninhbinh", cat: "out", img: null,
+      id: "nb-bikeloop", city: "ninhbinh", cat: "out", img: "p-nb-bikeloop",
       name: "Back-lanes bike loop", vi: "Đạp xe Văn Lâm – Thái Vi",
       desc: "Flat village lanes from Tam Cốc past karsts and ponds to the old Thái Vi temple.",
       time: "2–3 h", best: "7–10am", cost: "Bike hire ~50–100k ₫", from: "Tam Cốc: from your door",
@@ -853,7 +853,7 @@ window.SGN_DATA = {
       q: "Đền Thái Vi Ninh Bình"
     },
     {
-      id: "nb-thaivi", city: "ninhbinh", cat: "spirit", img: null,
+      id: "nb-thaivi", city: "ninhbinh", cat: "spirit", img: "p-nb-thaivi",
       name: "Thái Vi Temple", vi: "Đền Thái Vi",
       desc: "A small stone temple of the 13th-century Trần kings, set among paddies and karsts on the Tam Cốc back lanes.",
       time: "20–30 min", best: "On a morning bike ride", cost: "Free", from: "Tam Cốc: bike 10 min",
@@ -861,7 +861,7 @@ window.SGN_DATA = {
       q: "Đền Thái Vi Ninh Bình"
     },
     {
-      id: "nb-amtien", city: "ninhbinh", cat: "spirit", img: null,
+      id: "nb-amtien", city: "ninhbinh", cat: "spirit", img: "p-nb-amtien",
       name: "Am Tiên Cave & Tuyệt Tình Cốc", vi: "Động Am Tiên · Tuyệt Tình Cốc",
       desc: "A hidden lake valley behind King Đinh's temple, reached through a rock tunnel, with a cave pagoda up 170-odd steps.",
       time: "1–1.5 h", best: "Early or late, weekdays", cost: "~50–100k ₫", from: "Tràng An: car 10 min",
@@ -871,7 +871,7 @@ window.SGN_DATA = {
 
     /* Huế — more */
     {
-      id: "hue-anhien", city: "hue", cat: "two", img: null,
+      id: "hue-anhien", city: "hue", cat: "two", img: "p-hue-anhien",
       name: "An Hiên garden house", vi: "Nhà vườn An Hiên",
       desc: "A 19th-century mandarin garden house in Kim Long, with carved wood, mother-of-pearl inlay and a fruit-tree garden.",
       time: "45 min", best: "Early morning", cost: "50k ₫", from: "Car 10 min",
@@ -879,7 +879,7 @@ window.SGN_DATA = {
       q: "Nhà vườn An Hiên 58 Nguyễn Phúc Nguyên Huế"
     },
     {
-      id: "hue-riverwalk", city: "hue", cat: "two", img: null,
+      id: "hue-riverwalk", city: "hue", cat: "two", img: "p-hue-riverwalk",
       name: "Riverside walk & Trường Tiền lights", vi: "Phố đi bộ Nguyễn Đình Chiểu",
       desc: "An evening stroll on the Perfume River promenade, with street food, music and the colour-changing lights of the 1899 Trường Tiền bridge.",
       time: "1–2 h", best: "From dusk", cost: "Free", from: "Car 5 min",
@@ -887,7 +887,7 @@ window.SGN_DATA = {
       q: "Phố đi bộ Nguyễn Đình Chiểu Huế"
     },
     {
-      id: "hue-cookclass", city: "hue", cat: "two", img: null,
+      id: "hue-cookclass", city: "hue", cat: "two", img: "p-hue-cookclass",
       name: "Vegan cooking class & meditation", vi: "Lớp nấu chay & thiền",
       desc: "A small-group evening: market trip, cook a Huế vegan dish, meditate at a temple, then eat together.",
       time: "3.5 h, from 5:15pm", best: "Evening, rain-proof", cost: "From ~1M ₫ each", from: "Hillside Homestay Huế",
@@ -895,7 +895,7 @@ window.SGN_DATA = {
       q: "Hillside Homestay Huế"
     },
     {
-      id: "hue-sinh", city: "hue", cat: "art", img: null,
+      id: "hue-sinh", city: "hue", cat: "art", img: "p-hue-sinh",
       name: "Sình village woodblock prints", vi: "Làng tranh Sình",
       desc: "A 400-year-old folk woodblock print tradition, coloured with natural pigments; artisans let you print and hand-colour your own.",
       time: "1.5 h", best: "Morning, rain-proof", cost: "Workshop fee (agree first)", from: "Car 20 min",
@@ -903,7 +903,7 @@ window.SGN_DATA = {
       q: "Làng tranh Sình Phú Mậu Huế"
     },
     {
-      id: "hue-paperflowers", city: "hue", cat: "art", img: null,
+      id: "hue-paperflowers", city: "hue", cat: "art", img: "p-hue-paperflowers",
       name: "Thanh Tiên paper flowers", vi: "Làng hoa giấy Thanh Tiên",
       desc: "A riverside village making bright paper lotus flowers for altars; families teach you to fold one over tea.",
       time: "1 h", best: "Morning, booked ahead", cost: "Small fee (agree first)", from: "Car 20 min",
@@ -911,7 +911,7 @@ window.SGN_DATA = {
       q: "Làng hoa giấy Thanh Tiên Huế"
     },
     {
-      id: "hue-dongkhanh", city: "hue", cat: "old", img: null,
+      id: "hue-dongkhanh", city: "hue", cat: "old", img: "p-hue-dongkhanh",
       name: "Tomb of Đồng Khánh", vi: "Lăng Đồng Khánh",
       desc: "A small royal tomb mixing Vietnamese and French styles, in pine country near Tự Đức. Often you'll have it to yourselves.",
       time: "45 min", best: "Morning, dry spell", cost: "Check at the gate", from: "Car 20 min",
@@ -919,7 +919,7 @@ window.SGN_DATA = {
       q: "Lăng Đồng Khánh Huế"
     },
     {
-      id: "hue-thieutri", city: "hue", cat: "old", img: null,
+      id: "hue-thieutri", city: "hue", cat: "old", img: "p-hue-thieutri",
       name: "Tomb of Thiệu Trị", vi: "Lăng Thiệu Trị",
       desc: "A quiet, simple royal tomb among rice fields and pines, built by Tự Đức for his father.",
       time: "45 min", best: "Afternoon light", cost: "Check at the gate", from: "Car 20 min",
@@ -927,7 +927,7 @@ window.SGN_DATA = {
       q: "Lăng Thiệu Trị Huế"
     },
     {
-      id: "hue-namgiao", city: "hue", cat: "old", img: null,
+      id: "hue-namgiao", city: "hue", cat: "old", img: "p-hue-namgiao",
       name: "Nam Giao Esplanade", vi: "Đàn Nam Giao",
       desc: "The three-tiered open-air altar where Nguyễn emperors worshipped Heaven, in a pine park freshly restored in 2026.",
       time: "30–45 min", best: "Late afternoon", cost: "Free or small fee", from: "Car 10 min",
@@ -935,7 +935,7 @@ window.SGN_DATA = {
       q: "Đàn Nam Giao Huế"
     },
     {
-      id: "hue-hoquyen", city: "hue", cat: "old", img: null,
+      id: "hue-hoquyen", city: "hue", cat: "old", img: "p-hue-hoquyen",
       name: "Hổ Quyền tiger arena", vi: "Hổ Quyền",
       desc: "An 1830 royal arena where elephants fought tigers for the emperor: odd, atmospheric and one of the last of its kind.",
       time: "15–20 min", best: "Any time", cost: "Free · tip the guard", from: "Car 15 min",
@@ -943,7 +943,7 @@ window.SGN_DATA = {
       q: "Hổ Quyền Huế"
     },
     {
-      id: "hue-dieude", city: "hue", cat: "spirit", img: null,
+      id: "hue-dieude", city: "hue", cat: "spirit", img: "p-hue-dieude",
       name: "Diệu Đế Pagoda", vi: "Quốc tự Diệu Đế",
       desc: "One of Huế's surviving 'national pagodas', founded in 1844, on the river near Đông Ba Market.",
       time: "30 min", best: "Early evening", cost: "Free", from: "Walk 15 min",
@@ -951,7 +951,7 @@ window.SGN_DATA = {
       q: "Chùa Diệu Đế Huế"
     },
     {
-      id: "hue-baovinh", city: "hue", cat: "out", img: null,
+      id: "hue-baovinh", city: "hue", cat: "out", img: "p-hue-baovinh",
       name: "Bao Vinh old port", vi: "Phố cổ Bao Vinh",
       desc: "A short riverside street of old merchant houses: a tiny, untouristed 'Hội An'.",
       time: "1 h", best: "Late afternoon", cost: "Free", from: "Car 10 min",
@@ -959,7 +959,7 @@ window.SGN_DATA = {
       q: "Phố cổ Bao Vinh Huế"
     },
     {
-      id: "hue-tamgiang", city: "hue", cat: "trips", img: null,
+      id: "hue-tamgiang", city: "hue", cat: "trips", img: "p-hue-tamgiang",
       name: "Tam Giang lagoon sunset", vi: "Phá Tam Giang · Đầm Chuồn",
       desc: "Southeast Asia's largest lagoon system: fish-trap stakes, fishing boats and wide sunsets at Đầm Chuồn.",
       time: "Half day", best: "4–6:30pm, clear days", cost: "Boat or tour", from: "Car 30–40 min",
@@ -967,7 +967,7 @@ window.SGN_DATA = {
       q: "Đầm Chuồn Huế"
     },
     {
-      id: "hue-phuoctich", city: "hue", cat: "trips", img: null,
+      id: "hue-phuoctich", city: "hue", cat: "trips", img: "p-hue-phuoctich",
       name: "Phước Tích pottery village", vi: "Làng cổ Phước Tích",
       desc: "A 500-year-old royal pottery village on the Ô Lâu river, with old wooden houses, kilns and pottery demonstrations.",
       time: "Half day", best: "Dry morning", cost: "Free · demos extra", from: "Car 1 h",
@@ -977,7 +977,7 @@ window.SGN_DATA = {
 
     /* Hà Nội — more */
     {
-      id: "hn-metropole", city: "hanoi", cat: "two", img: null,
+      id: "hn-metropole", city: "hanoi", cat: "two", img: "p-hn-metropole",
       name: "An afternoon at the Metropole", vi: "Sofitel Legend Metropole",
       desc: "The 1901 grand hotel where Chaplin and Paulette Goddard honeymooned. See the 'Hanoi: Traces of Time' photo show, then a drink at the Bamboo Bar.",
       time: "1.5–2 h", best: "Late afternoon", cost: "Free to look · luxury bar", from: "From the lake: walk 8 min",
@@ -985,7 +985,7 @@ window.SGN_DATA = {
       q: "Sofitel Legend Metropole Hanoi Bamboo Bar"
     },
     {
-      id: "hn-omamori", city: "hanoi", cat: "two", img: null,
+      id: "hn-omamori", city: "hanoi", cat: "two", img: "p-hn-omamori",
       name: "Couples' massage at Omamori", vi: "Omamori Spa · 48 Ngõ Huyện",
       desc: "A social-enterprise spa where visually impaired therapists give superb massages at fair prices.",
       time: "1–3 h", best: "After a long walking day", cost: "Mid-range", from: "From the lake: walk 5 min",
@@ -993,7 +993,7 @@ window.SGN_DATA = {
       q: "Omamori Spa 48 Ngõ Huyện"
     },
     {
-      id: "hn-cookclass", city: "hanoi", cat: "two", img: null,
+      id: "hn-cookclass", city: "hanoi", cat: "two", img: "p-hn-cookclass",
       name: "Vegan cooking class", vi: "Lớp nấu chay · Kim's Kitchen",
       desc: "A market walk, then cook a vegan menu together: banana-flower salad, spring rolls, bún chay and coffee.",
       time: "4.5 h, 9am or 3pm", best: "Morning session", cost: "~US$42 each", from: "Old Quarter pickup",
@@ -1001,7 +1001,7 @@ window.SGN_DATA = {
       q: "Kim's Kitchen Hanoi vegan cooking class"
     },
     {
-      id: "hn-designfest", city: "hanoi", cat: "art", img: null,
+      id: "hn-designfest", city: "hanoi", cat: "art", img: "p-hn-designfest",
       name: "Creative Design Festival & heritage houses", vi: "Lễ hội Thiết kế Sáng tạo Hà Nội",
       desc: "Until 28 November: lakeside installations, lacquer and craft shows, and workshops in ten Old Quarter heritage houses.",
       time: "Day and evening", best: "Before 28 Nov · 23–24 Nov extra events", cost: "Mostly free", from: "East shore of the lake",
@@ -1009,7 +1009,7 @@ window.SGN_DATA = {
       q: "Đình Kim Ngân 42 Hàng Bạc"
     },
     {
-      id: "hn-indochine", city: "hanoi", cat: "art", img: null,
+      id: "hn-indochine", city: "hanoi", cat: "art", img: "p-hn-indochine",
       name: "Indochine House gallery", vi: "Indochine House · 8 Tràng Thi",
       desc: "An elegant gallery pairing modern and contemporary Vietnamese painting with East Asian antiques, with changing shows.",
       time: "45 min", best: "Tue–Sun, 10am–5pm", cost: "Free", from: "From the lake: walk 8 min",
@@ -1017,7 +1017,7 @@ window.SGN_DATA = {
       q: "Indochine House 8 Tràng Thi Hà Nội"
     },
     {
-      id: "hn-murals", city: "hanoi", cat: "art", img: null,
+      id: "hn-murals", city: "hanoi", cat: "art", img: "p-hn-murals",
       name: "Phùng Hưng mural arches", vi: "Phố bích họa Phùng Hưng",
       desc: "Railway arches painted with scenes of old Hà Nội: trams, street vendors, corner shops, with trains rumbling overhead.",
       time: "30 min", best: "Morning, or lit at night", cost: "Free", from: "From the lake: walk 15 min",
@@ -1025,7 +1025,7 @@ window.SGN_DATA = {
       q: "Phố bích họa Phùng Hưng"
     },
     {
-      id: "hn-complex01", city: "hanoi", cat: "art", img: null,
+      id: "hn-complex01", city: "hanoi", cat: "art", img: "p-hn-complex01",
       name: "Complex 01", vi: "Complex 01 · ngõ 167 Tây Sơn",
       desc: "A converted factory of studios, cafés and pop-up exhibitions: experimental art, sound and touring shows.",
       time: "1 h", best: "When a show is on", cost: "Free to wander", from: "From the lake: car 15–20 min",
@@ -1033,7 +1033,7 @@ window.SGN_DATA = {
       q: "Complex 01 Tây Sơn Hà Nội"
     },
     {
-      id: "hn-nguyenart", city: "hanoi", cat: "art", img: null,
+      id: "hn-nguyenart", city: "hanoi", cat: "art", img: "p-hn-nguyenart",
       name: "Nguyễn Art Gallery", vi: "Nguyễn Art Gallery · 31A Văn Miếu",
       desc: "Vietnamese lacquer, oils and watercolours by working artists, opposite the Temple of Literature.",
       time: "30–45 min", best: "After the Temple of Literature", cost: "Free · works for sale", from: "From the lake: car 10 min",
@@ -1041,7 +1041,7 @@ window.SGN_DATA = {
       q: "Nguyen Art Gallery 31A Văn Miếu"
     },
     {
-      id: "hn-dongxuan", city: "hanoi", cat: "shop", img: null,
+      id: "hn-dongxuan", city: "hanoi", cat: "shop", img: "p-hn-dongxuan",
       name: "Đồng Xuân Market", vi: "Chợ Đồng Xuân",
       desc: "Hà Nội's biggest covered market, an 1889 hall of fabrics and dried goods; a design-festival venue until 28 November.",
       time: "1 h", best: "Morning", cost: "Free", from: "From the lake: walk 15 min",
@@ -1049,15 +1049,15 @@ window.SGN_DATA = {
       q: "Chợ Đồng Xuân"
     },
     {
-      id: "hn-military", city: "hanoi", cat: "old", img: null,
-      name: "Military History Museum", vi: "Bảo tàng Lịch sử Quân sự",
-      desc: "A vast national museum opened in 2024, with aircraft, tanks and a thousand years of military history.",
-      time: "2–3 h", best: "Weekday morning", cost: "40k ₫", from: "From the lake: car 40 min",
-      tip: "Optional and far out. Displays tell the national story. Check opening days before you go.",
+      id: "hn-military", city: "hanoi", cat: "old", img: "p-hn-military", featured: true,
+      name: "Vietnam Military History Museum", vi: "Bảo tàng Lịch sử Quân sự Việt Nam",
+      desc: "The vast new national military museum (opened November 2024): four floors from ancient battles to 1975, and courtyards full of aircraft, tanks and B-52 wreckage.",
+      time: "3–4 h", best: "8am · closed Mon & Fri", cost: "40k ₫", from: "From the lake: car 30–50 min",
+      tip: "Closed Mondays and Fridays, and 11:30am–1pm daily; there's no café inside, so lunch at Vincom Mega Mall opposite. Look for MiG-21 No. 5121, tank 843 and the Điện Biên Phủ 3D show. Exhibits tell the official national story.",
       q: "Bảo tàng Lịch sử Quân sự Việt Nam Đại lộ Thăng Long"
     },
     {
-      id: "hn-stjoseph", city: "hanoi", cat: "spirit", img: null,
+      id: "hn-stjoseph", city: "hanoi", cat: "spirit", img: "p-hn-stjoseph",
       name: "St Joseph's Cathedral", vi: "Nhà thờ Lớn",
       desc: "An 1886 neo-Gothic cathedral with weathered twin towers and stained glass, on a café-ringed square.",
       time: "20–30 min", best: "Before evening Mass", cost: "Free", from: "From the lake: walk 5 min",
@@ -1065,7 +1065,7 @@ window.SGN_DATA = {
       q: "St. Joseph's Cathedral Hanoi"
     },
     {
-      id: "hn-bachma", city: "hanoi", cat: "spirit", img: null,
+      id: "hn-bachma", city: "hanoi", cat: "spirit", img: "p-hn-bachma",
       name: "Bạch Mã Temple", vi: "Đền Bạch Mã",
       desc: "The Old Quarter's oldest temple, with lacquered red-and-gold altars and the white horse it's named for.",
       time: "20 min", best: "A weekend evening", cost: "20k ₫", from: "From the lake: walk 10 min",
@@ -1073,7 +1073,7 @@ window.SGN_DATA = {
       q: "Đền Bạch Mã 76 Hàng Buồm"
     },
     {
-      id: "hn-quanthanh", city: "hanoi", cat: "spirit", img: null,
+      id: "hn-quanthanh", city: "hanoi", cat: "spirit", img: "p-hn-quanthanh",
       name: "Quán Thánh Temple", vi: "Đền Quán Thánh",
       desc: "A guardian temple facing West Lake, home to a 3.96 m bronze statue cast in 1677.",
       time: "20–30 min", best: "Late afternoon", cost: "Small fee", from: "From the lake: car 10 min",
@@ -1081,12 +1081,46 @@ window.SGN_DATA = {
       q: "Đền Quán Thánh"
     },
     {
-      id: "hn-vanphuc", city: "hanoi", cat: "trips", img: null,
+      id: "hn-vanphuc", city: "hanoi", cat: "trips", img: "p-hn-vanphuc",
       name: "Vạn Phúc silk village", vi: "Làng lụa Vạn Phúc",
       desc: "A thousand-year-old silk-weaving village with clacking looms, an umbrella-canopied lane and rows of silk shops.",
       time: "Half day", best: "Weekday morning", cost: "Free", from: "From the lake: car 30–40 min",
       tip: "Ask to see the shop's own looms, since some sell imported silk.",
       q: "Làng lụa Vạn Phúc Hà Đông"
+    },
+
+    /* Hà Nội — more */
+    {
+      id: "hn-huutiep", city: "hanoi", cat: "old", img: "r-lb-25",
+      name: "B-52 wreck in Hữu Tiệp lake", vi: "Hồ Hữu Tiệp",
+      desc: "The twisted undercarriage of a B-52 shot down on 27 December 1972, still sitting in a small lake among houses.",
+      time: "15 min", best: "Daytime", cost: "Free", from: "From the lake: car 10 min",
+      tip: "In a lane off Hoàng Hoa Thám; 5 minutes' walk from the B-52 Victory Museum. The plaque gives the Vietnamese account. See the Linebacker II read.",
+      q: "Hồ Hữu Tiệp B52 Hà Nội"
+    },
+    {
+      id: "hn-b52museum", city: "hanoi", cat: "old", img: "r-lb-29",
+      name: "B-52 Victory Museum", vi: "Bảo tàng Chiến thắng B-52",
+      desc: "A yard piled with B-52 wreckage, plus a MiG-21, SA-2 missiles and radar, telling the Vietnamese story of December 1972.",
+      time: "45 min", best: "Morning · closed Mon & Fri", cost: "Free", from: "From the lake: car 10 min",
+      tip: "At 157 Đội Cấn, open about 8–11:30am and 1:30–4:30pm. Combine it with Hữu Tiệp lake and the Mausoleum area.",
+      q: "Bảo tàng Chiến thắng B-52 157 Đội Cấn"
+    },
+    {
+      id: "hn-airdefence", city: "hanoi", cat: "old", img: "r-lb-16",
+      name: "Air Defence – Air Force Museum", vi: "Bảo tàng Phòng không – Không quân",
+      desc: "SA-2 missiles, MiG fighters and anti-aircraft guns from the air war over the North.",
+      time: "1 h", best: "Morning · closed Mon", cost: "~10–30k ₫", from: "From the lake: car 15 min",
+      tip: "At 173C Trường Chinh. Hours vary between sources, so check before you go.",
+      q: "Bảo tàng Phòng không Không quân 173C Trường Chinh"
+    },
+    {
+      id: "hn-khamthien", city: "hanoi", cat: "old", img: "r-lb-19",
+      name: "Khâm Thiên memorial", vi: "Đài tưởng niệm Khâm Thiên",
+      desc: "A memorial of a mother holding her dead child, on the street where 287 people were killed in the bombing of 26 December 1972.",
+      time: "10 min", best: "Any time", cost: "Free", from: "From the lake: car 10 min",
+      tip: "At 47 Khâm Thiên. Incense is offered here every 26 December. Be quiet and respectful.",
+      q: "Đài tưởng niệm Khâm Thiên 47 Khâm Thiên"
     },
 
     /* Day trips — realistically pick one */
@@ -3870,6 +3904,526 @@ window.SGN_DATA = {
         {
           "title": "VietnamPlus: The citadel night tour",
           "url": "https://www.vietnamplus.vn/tour-dem-giai-ma-hoang-thanh-thang-long--hanh-trinh-trai-nghiem-dac-sac-post935874.vnp"
+        }
+      ]
+    },
+    {
+      "id": "linebacker-ii",
+      "title": "Linebacker II: twelve nights in December 1972",
+      "vi": "Hà Nội – Điện Biên Phủ trên không",
+      "img": {
+        "key": "r-lb-01",
+        "cap": "B-52D bombers waiting to take off from Andersen Air Force Base, Guam, December 1972."
+      },
+      "teaser": "The 'Christmas bombing' of Hà Nội, or 'Điện Biên Phủ in the air': why it happened, what each side says it cost, and where you can still see it in the city.",
+      "minutes": 15,
+      "lead": "For twelve nights in December 1972 the United States sent B-52 bombers against Hà Nội and Hải Phòng, the heaviest bombing of the war. Americans call it Operation Linebacker II or the Christmas bombing; Vietnamese call it 'Hà Nội – Điện Biên Phủ trên không', Điện Biên Phủ in the air. The two sides' records disagree sharply on almost every number, so this article sets them side by side and says where each figure comes from. You can still see the wreckage around Hà Nội today.",
+      "sections": [
+        {
+          "h": "Why December 1972",
+          "p": [
+            "By October 1972 the US envoy Henry Kissinger and Hà Nội's negotiator Lê Đức Thọ had a draft peace agreement in Paris. South Vietnam's President Nguyễn Văn Thiệu rejected it: he would not accept North Vietnamese troops remaining in the South. The US then tabled dozens of changes, and in mid-December the talks broke down.",
+            "On 14 December President Nixon ordered B-52 strikes on the Hà Nội–Hải Phòng area. His aims faced two ways. Publicly the bombing was meant to force Hà Nội back to the table; privately, in a letter to Thiệu on 17 December, Nixon wrote that the US would sign 'preferably with your cooperation but, if necessary, alone'. He also feared that the new Congress, sitting from January, would cut off war funding.",
+            "It followed an earlier campaign, Linebacker I (May–October 1972), launched against North Vietnam's Easter Offensive, which dropped about 155,000 tons and mined Hải Phòng harbour. That bombing had been halted north of the 20th parallel in October when peace seemed close."
+          ],
+          "gallery": [
+            {
+              "key": "r-lb-02",
+              "cap": "Lê Đức Thọ and Henry Kissinger in Paris, January 1973."
+            },
+            {
+              "key": "r-lb-03",
+              "cap": "Long Biên Bridge cut by laser-guided bombs during Linebacker I, May 1972."
+            }
+          ]
+        },
+        {
+          "h": "Australia steps back",
+          "p": [
+            "Australia's war was already ending. The last members of the Australian Army Training Team left South Vietnam on 18 December 1972, the very day Linebacker II began; a small embassy guard stayed on. Gough Whitlam had been elected prime minister on 2 December.",
+            "Whitlam wrote to Nixon questioning 'most earnestly' whether the bombing would bring Hà Nội back to talks. Ministers went further: Jim Cairns called it 'the most brutal, indiscriminate slaughter of women and children in living memory', and Clyde Cameron called the US leaders 'maniacs'. Maritime unions banned American ships in Australian ports. Nixon and Kissinger were furious; Kissinger called Whitlam's letter a 'cheap little manoeuvre', and Whitlam wasn't received at the White House until July 1973."
+          ]
+        },
+        {
+          "h": "Twelve nights",
+          "p": [
+            "The US had 207 B-52s in the region, at Andersen Air Force Base on Guam and U-Tapao in Thailand, supported by F-111s, F-4 Phantoms, Navy A-6s and A-7s, electronic jammers and 'Wild Weasel' missile hunters. Vietnamese sources count 193 B-52s and over a thousand tactical aircraft.",
+            "The first three nights used identical routes, heights and a sharp turn after bombing that crews came to call 'the murder point'. On 20 December six B-52s were shot down, the worst night. Planners then varied routes and timings, and from 26 December sent bombers in from several directions at once. Bombing paused on Christmas Day and resumed on the 26th with the biggest raid of all, 120 B-52s. The US stopped on 29 December; Vietnamese accounts count 'twelve days and nights' to the 30th.",
+            "Targets included rail yards at Yên Viên, Gia Lâm and Kinh Nỗ, power stations, airfields, missile sites, radio transmitters and Hải Phòng's fuel stores. The US Air Force later estimated it knocked out about 80% of North Vietnam's electricity supply."
+          ],
+          "table": {
+            "caption": "Night by night: B-52 sorties and losses (US records)",
+            "head": [
+              "Date",
+              "B-52 sorties",
+              "B-52s lost",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "18 Dec",
+                "129",
+                "3",
+                "First night; US claims a tail-gunner MiG kill"
+              ],
+              [
+                "19 Dec",
+                "93",
+                "0",
+                ""
+              ],
+              [
+                "20 Dec",
+                "99",
+                "6",
+                "Worst night of the campaign"
+              ],
+              [
+                "21 Dec",
+                "30",
+                "2",
+                "Only Thailand-based B-52Ds from here"
+              ],
+              [
+                "22 Dec",
+                "30",
+                "0",
+                "Hải Phòng fuel stores; Bạch Mai hit overnight 21–22"
+              ],
+              [
+                "23 Dec",
+                "30",
+                "0",
+                ""
+              ],
+              [
+                "24 Dec",
+                "30",
+                "0",
+                "Thái Nguyên and Kép"
+              ],
+              [
+                "25 Dec",
+                "—",
+                "—",
+                "Christmas pause"
+              ],
+              [
+                "26 Dec",
+                "120",
+                "2",
+                "Biggest raid; Khâm Thiên street hit"
+              ],
+              [
+                "27 Dec",
+                "60",
+                "2",
+                "Hữu Tiệp lake wreck; Phạm Tuân claim"
+              ],
+              [
+                "28 Dec",
+                "60",
+                "0",
+                ""
+              ],
+              [
+                "29 Dec",
+                "60",
+                "0",
+                "Last night"
+              ],
+              [
+                "Total",
+                "741 sent, 729 completed",
+                "15",
+                ""
+              ]
+            ],
+            "note": "Source: US Air Force histories (McCarthy & Allison 1979; Boyne 1997). Vietnamese sources count 663 B-52 sorties and give different losses (see below)."
+          },
+          "gallery": [
+            {
+              "key": "r-lb-04",
+              "cap": "B-52G bombers at Andersen AFB, Guam, 15 December 1972."
+            },
+            {
+              "key": "r-lb-05",
+              "cap": "Around 150 B-52s parked at Andersen AFB in late 1972."
+            },
+            {
+              "key": "r-lb-06",
+              "cap": "B-52 crews being briefed for Linebacker II."
+            },
+            {
+              "key": "r-lb-07",
+              "cap": "Loading bombs onto a B-52, 1972."
+            },
+            {
+              "key": "r-lb-08",
+              "cap": "B-52Ds taking off from U-Tapao, Thailand, December 1972."
+            },
+            {
+              "key": "r-lb-09",
+              "cap": "A B-52D landing at U-Tapao."
+            },
+            {
+              "key": "r-lb-10",
+              "cap": "A B-52G returning to Guam during the campaign."
+            },
+            {
+              "key": "r-lb-11",
+              "cap": "An F-111A crew in Thailand, 1972."
+            },
+            {
+              "key": "r-lb-12",
+              "cap": "US Navy A-7E Corsairs dropping bombs, 1972–73."
+            },
+            {
+              "key": "r-lb-13",
+              "cap": "A missile-hunting 'Wild Weasel' group refuelling in flight, 1972."
+            }
+          ]
+        },
+        {
+          "h": "The defence",
+          "p": [
+            "Hà Nội was one of the most heavily defended cities in the world, ringed with Soviet-made SA-2 (S-75 Dvina) missiles, anti-aircraft guns and MiG fighters. How many missiles were fired is disputed: US accounts say around 1,000–1,240, while Vietnamese and some Western historians give about 266–334. One US veteran says the defenders 'literally ran out' of missiles near the end; Vietnamese accounts don't say so.",
+            "Vietnam credits two MiG-21 pilots with shooting down B-52s. Phạm Tuân, flying MiG-21 No. 5121 on 27 December, later became the first Asian in space; US records attribute that night's loss to a missile instead. Vũ Xuân Thiều was killed on 28 December, and some Vietnamese accounts say he rammed a B-52; US records list no B-52 lost that day. American B-52 tail gunners claimed two MiGs, the only bomber gunner kills of the war."
+          ],
+          "gallery": [
+            {
+              "key": "r-lb-14",
+              "cap": "An SA-2 missile in flight near Hà Nội."
+            },
+            {
+              "key": "r-lb-15",
+              "cap": "MiG-21 No. 5121, credited in Vietnam with downing a B-52 on 27 December 1972."
+            },
+            {
+              "key": "r-lb-16",
+              "cap": "An SA-2 missile system at the Air Defence – Air Force Museum."
+            }
+          ]
+        },
+        {
+          "h": "What it cost, by each side's count",
+          "p": [
+            "The figures below come from US Air Force histories and Western historians on one side, and Vietnamese government and state media on the other. They differ by up to five times, partly because they measure different things (for example, aircraft that crashed in Laos or Thailand after being hit) and partly because both sides had reasons to count generously."
+          ],
+          "table": {
+            "caption": "Side by side",
+            "head": [
+              "",
+              "US / Western records",
+              "Vietnamese official"
+            ],
+            "rows": [
+              [
+                "B-52 sorties",
+                "729–741",
+                "663"
+              ],
+              [
+                "Bombs dropped",
+                "~20,000 tons (15,237 by B-52s)",
+                "over 100,000 tons"
+              ],
+              [
+                "Missiles fired",
+                "~1,000–1,240",
+                "266–334"
+              ],
+              [
+                "B-52s lost",
+                "15 (some estimates up to 27)",
+                "34"
+              ],
+              [
+                "All aircraft lost",
+                "~27",
+                "81"
+              ],
+              [
+                "MiGs lost",
+                "6–8 claimed",
+                "3"
+              ],
+              [
+                "US airmen",
+                "43 killed or missing, ~41 captured",
+                "'hundreds' killed or captured"
+              ],
+              [
+                "Civilians killed",
+                "—",
+                "1,624 (1,318 Hà Nội, 306 Hải Phòng); later figures up to 2,368 in Hà Nội"
+              ]
+            ],
+            "note": "Sources: McCarthy & Allison (1979), Boyne (Air Force Magazine, 1997), Michel (2002), Morocco (1985); Vietnamese government portal (2022), Đại Đoàn Kết (2017), VOV (2007)."
+          },
+          "gallery": [
+            {
+              "key": "r-lb-17",
+              "cap": "Soviet military advisers beside B-52 wreckage near Hà Nội, 23 December 1972."
+            },
+            {
+              "key": "r-lb-18",
+              "cap": "US bomb-damage photo of Bạch Mai airfield, 21 December 1972."
+            }
+          ]
+        },
+        {
+          "h": "Khâm Thiên and Bạch Mai",
+          "p": [
+            "Two places became symbols of the civilian toll. Just before 11pm on 26 December, bombs fell along Khâm Thiên, a crowded street of homes and shops near the main railway. Official commemorations give 287 killed, including 55 children and 94 women, and 290 injured; hundreds of houses were destroyed and about 2,000 damaged. A memorial of a mother holding her dead child stands at No. 47, where a victim was found at the foot of the stairs.",
+            "Bạch Mai, the country's largest hospital, was hit on 19 December and heavily on the night of 21–22 December; Vietnamese sources say 28 doctors and nurses were killed while more than 300 patients sheltered underground. The US military said the area housed anti-aircraft positions; the hospital sits about a kilometre from Bạch Mai airfield, a military target. Vietnamese and many outside sources reject the US claim. The hospital was rebuilt with help from private American donations."
+          ],
+          "gallery": [
+            {
+              "key": "r-lb-19",
+              "cap": "The Khâm Thiên memorial during the December commemorations."
+            }
+          ]
+        },
+        {
+          "h": "The world reacts",
+          "p": [
+            "The bombing drew condemnation around the world. Swedish Prime Minister Olof Palme compared it to Guernica and other atrocities; the US called that a 'gross insult' and froze relations with Sweden for over a year. Pope Paul VI called peace in Vietnam 'a passion of the whole world'. Moscow and Beijing denounced it, and in the US critics called it 'war by tantrum'.",
+            "The singer Joan Baez was in Hà Nội with a peace delegation, carrying Christmas mail for American prisoners, and spent the raids in hotel bomb shelters; her recordings became the song 'Where Are You Now, My Son?'."
+          ]
+        },
+        {
+          "h": "Paris, and the prisoners come home",
+          "p": [
+            "Nixon halted the bombing on 30 December. Talks resumed on 8 January 1973, the agreement was initialled on 23 January and signed in Paris on 27 January. Between February and April, 591 American prisoners of war were flown home in Operation Homecoming, the first of them from Gia Lâm airport in Hà Nội aboard a C-141 later nicknamed the 'Hanoi Taxi'."
+          ],
+          "gallery": [
+            {
+              "key": "r-lb-20",
+              "cap": "US Secretary of State William Rogers signs the Paris Peace Accords, 27 January 1973."
+            },
+            {
+              "key": "r-lb-21",
+              "cap": "The signatures of William Rogers and Nguyễn Duy Trinh on the agreement."
+            },
+            {
+              "key": "r-lb-22",
+              "cap": "American prisoners being handed over at Gia Lâm airfield, Hà Nội, 1973."
+            },
+            {
+              "key": "r-lb-23",
+              "cap": "Released prisoners cheer as their aircraft takes off, February 1973."
+            },
+            {
+              "key": "r-lb-24",
+              "cap": "Released prisoners aboard the 'Hanoi Taxi', March 1973."
+            }
+          ]
+        },
+        {
+          "h": "Did it work?",
+          "p": [
+            "Historians still disagree. The US Air Force view, and that of many veterans, is that the bombing forced Hà Nội back to the table and showed what air power could do. Others point out that the January agreement was very close to October's draft: one US official remarked that 'we bombed the North Vietnamese into accepting our concessions'. Some argue the real target was Thiệu, persuaded to sign by the bombing and by private promises of future US support.",
+            "Hà Nội's official history calls it 'one of the most glorious feats of the 20th century', a victory that shattered the myth of American air power and forced the US to sign. Some historians note that Vietnamese leaders also took the damage seriously; party leader Lê Duẩn later said it had 'completely obliterated our economic foundation'. The anniversary is marked every December, with incense at the Khâm Thiên memorial on 26 December."
+          ]
+        },
+        {
+          "h": "Where to see it in Hà Nội",
+          "p": [
+            "Hữu Tiệp lake, in a lane off Hoàng Hoa Thám in Ba Đình, still holds the twisted undercarriage of a B-52 shot down on 27 December, sitting in the water among houses; it's free, and the plaque gives the Vietnamese account. A few minutes away, the B-52 Victory Museum (157 Đội Cấn, free, closed Mondays and Fridays) has a mountain of wreckage, a MiG-21 and SA-2 missiles in its yard.",
+            "The new Vietnam Military History Museum on Thăng Long Avenue displays MiG-21 No. 5121 and more B-52 wreckage; the Air Defence – Air Force Museum on Trường Chinh has missiles and fighters. The Khâm Thiên memorial is on the street itself, and Hỏa Lò prison, the 'Hanoi Hilton', has a section on the American prisoners, told from the official Vietnamese point of view."
+          ],
+          "maps": [
+            {
+              "key": "hn-huutiep",
+              "label": "Hữu Tiệp lake"
+            },
+            {
+              "key": "hn-b52museum",
+              "label": "B-52 Victory Museum"
+            },
+            {
+              "key": "hn-military",
+              "label": "Military History Museum"
+            },
+            {
+              "key": "hn-airdefence",
+              "label": "Air Defence Museum"
+            },
+            {
+              "key": "hn-khamthien",
+              "label": "Khâm Thiên memorial"
+            },
+            {
+              "key": "hn-hoalo",
+              "label": "Hỏa Lò"
+            }
+          ],
+          "gallery": [
+            {
+              "key": "r-lb-25",
+              "cap": "The B-52 wreck in Hữu Tiệp lake after its 2021–23 restoration."
+            },
+            {
+              "key": "r-lb-26",
+              "cap": "The wreck among the houses of Ngọc Hà."
+            },
+            {
+              "key": "r-lb-27",
+              "cap": "Hữu Tiệp lake in 2012."
+            },
+            {
+              "key": "r-lb-28",
+              "cap": "The plaque at Hữu Tiệp lake, giving the Vietnamese account."
+            },
+            {
+              "key": "r-lb-29",
+              "cap": "B-52 wreckage at the B-52 Victory Museum."
+            },
+            {
+              "key": "r-lb-30",
+              "cap": "B-52 engines in the museum yard."
+            },
+            {
+              "key": "r-lb-31",
+              "cap": "SA-2 missiles at the B-52 Victory Museum, 2025."
+            },
+            {
+              "key": "r-lb-32",
+              "cap": "An SA-2 missile on its launcher."
+            },
+            {
+              "key": "r-lb-33",
+              "cap": "A MiG-21 at the B-52 Victory Museum."
+            },
+            {
+              "key": "r-lb-34",
+              "cap": "The B-52 Victory Museum in 2006."
+            },
+            {
+              "key": "r-lb-35",
+              "cap": "B-52 tail wreckage at the new Military History Museum."
+            },
+            {
+              "key": "r-lb-36",
+              "cap": "MiG-21 No. 5121 on display in 2025."
+            },
+            {
+              "key": "r-lb-37",
+              "cap": "A US reconnaissance photo of the Hỏa Lò prison area, 28 December 1972."
+            }
+          ],
+          "tip": "Hữu Tiệp lake and the B-52 Victory Museum are a 5-minute walk apart, and close to the Mausoleum. Both museums close on Mondays and Fridays."
+        }
+      ],
+      "sources": [
+        {
+          "title": "US Office of the Historian: Ending the Vietnam War, 1969–1973",
+          "url": "https://history.state.gov/milestones/1969-1976/ending-vietnam"
+        },
+        {
+          "title": "FRUS 1969–76, vol. IX, doc. 189: Nixon to Thiệu, 17 Dec 1972",
+          "url": "https://history.state.gov/historicaldocuments/frus1969-76v09/d189"
+        },
+        {
+          "title": "Wikipedia: Operation Linebacker II",
+          "url": "https://en.wikipedia.org/wiki/Operation_Linebacker_II"
+        },
+        {
+          "title": "Wikipedia (vi): Chiến dịch Linebacker II",
+          "url": "https://vi.wikipedia.org/wiki/Chi%E1%BA%BFn_d%E1%BB%8Bch_Linebacker_II"
+        },
+        {
+          "title": "Wikipedia: Operation Linebacker",
+          "url": "https://en.wikipedia.org/wiki/Operation_Linebacker"
+        },
+        {
+          "title": "Walter Boyne: Linebacker II (Air Force Magazine, 1997)",
+          "url": "https://www.airandspaceforces.com/article/1197linebacker/"
+        },
+        {
+          "title": "Robert Harder: The 11-day war (HistoryNet)",
+          "url": "https://www.historynet.com/the-11-day-war.htm"
+        },
+        {
+          "title": "Stephen Ambrose: The Christmas Bombing (HistoryNet)",
+          "url": "https://historynet.com/the-christmas-bombing/"
+        },
+        {
+          "title": "Vietnam Government Portal: Điện Biên Phủ in the air, major facts and figures (2022)",
+          "url": "https://en.baochinhphu.vn/dien-bien-phu-in-the-air-major-facts-and-figures-111221218202010651.htm"
+        },
+        {
+          "title": "Vietnam Government Portal: Hà Nội marks the 50th anniversary (2022)",
+          "url": "https://en.baochinhphu.vn/ha-noi-marks-50th-anniversary-of-dien-bien-phu-in-the-air-victory-11122122615444661.htm"
+        },
+        {
+          "title": "Đại Đoàn Kết: Remembering Hà Nội residents killed in 1972 (2017)",
+          "url": "https://daidoanket.vn/dang-huong-tuong-nho-dong-bao-thu-do-bi-bom-my-sat-hai-nam-1972-10092330.html"
+        },
+        {
+          "title": "VOV: The Christmas bombings of Hanoi in retrospect (2007)",
+          "url": "https://english.vov.vn/en/society/the-christmas-bombings-of-hanoi-in-retrospect-20548.vov"
+        },
+        {
+          "title": "Việt Nam News: Monument honours victims of the bombing (Khâm Thiên)",
+          "url": "https://vietnamnews.vn/life-style/420165/monument-honours-victims-of-american-bombing.html"
+        },
+        {
+          "title": "Nhân Dân: 50 years since the B-52 bombing of Bạch Mai Hospital (2022)",
+          "url": "https://nhandan.vn/le-ky-niem-50-nam-phao-dai-bay-b52-oanh-tac-benh-vien-bach-mai-post731017.html"
+        },
+        {
+          "title": "Wikipedia: Bạch Mai Hospital",
+          "url": "https://en.wikipedia.org/wiki/B%E1%BA%A1ch_Mai_Hospital"
+        },
+        {
+          "title": "Wikipedia: Phạm Tuân",
+          "url": "https://en.wikipedia.org/wiki/Ph%E1%BA%A1m_Tu%C3%A2n"
+        },
+        {
+          "title": "QĐND: Pilot Vũ Xuân Thiều, 28 December 1972",
+          "url": "https://en.qdnd.vn/military/war-files/december-28-1972-pilot-vu-xuan-thieu-records-achievements-548028"
+        },
+        {
+          "title": "US Studies Centre: Whitlam v Nixon (James Curran, 2012)",
+          "url": "https://www.ussc.edu.au/whitlam-v-nixon"
+        },
+        {
+          "title": "Australian War Memorial: Australian Army Training Team Vietnam",
+          "url": "https://www.awm.gov.au/articles/blog/australian-army-training-team-vietnam"
+        },
+        {
+          "title": "ANU Archives: Maritime unions' opposition to the war",
+          "url": "https://archives.anu.edu.au/exhibitions/struggle-solidarity-and-unity-150-years-maritime-unions-australia/opposition-war"
+        },
+        {
+          "title": "Wikipedia: Olof Palme",
+          "url": "https://en.wikipedia.org/wiki/Olof_Palme"
+        },
+        {
+          "title": "Vatican: Angelus of Pope Paul VI, 24 December 1972",
+          "url": "https://www.vatican.va/content/paul-vi/it/angelus/1972/documents/hf_p-vi_ang_19721224.html"
+        },
+        {
+          "title": "Rolling Stone: Joan Baez in Hanoi",
+          "url": "https://www.rollingstone.com/politics/politics-news/joan-baez-in-hanoi-12-days-under-the-bombs-112429/"
+        },
+        {
+          "title": "Wikipedia: Operation Homecoming",
+          "url": "https://en.wikipedia.org/wiki/Operation_Homecoming"
+        },
+        {
+          "title": "ADST oral histories: The Christmas bombings, 1972",
+          "url": "https://adst.org/2016/11/bombing-north-vietnam-accepting-concessions-christmas-bombings-1972/"
+        },
+        {
+          "title": "Wikipedia: B-52 Victory Museum, Hanoi",
+          "url": "https://en.wikipedia.org/wiki/B-52_Victory_Museum,_Hanoi"
+        },
+        {
+          "title": "Mekong ASEAN: The Hữu Tiệp B-52 after restoration (2023)",
+          "url": "https://mekongasean.vn/aposho-may-bay-b-52apos-tai-ha-noi-sau-hon-mot-nam-cai-tao-1350.html"
         }
       ]
     },

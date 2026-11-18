@@ -471,9 +471,10 @@
   }
   function placeCard(p) {
     var done = !!seen[p.id];
-    return '<article class="place' + (done ? " done" : "") + '" data-id="' + esc(p.id) + '">' +
+    return '<article class="place' + (done ? " done" : "") + (p.featured ? " featured" : "") + '" data-id="' + esc(p.id) + '">' +
       media(p.img, p.name, (cats.filter(function (c) { return c.id === p.cat; })[0] || {}).icon || "i-landmark") +
       '<div class="place-body">' +
+        (p.featured ? '<p class="pick-badge">' + icon("i-sparkle") + "Don’t miss</p>" : "") +
         '<div class="place-head"><div class="row-main"><h3>' + esc(p.name) + '</h3><p class="vi">' + esc(p.vi) + "</p></div>" +
           '<label class="check" title="Mark as visited"><input type="checkbox" aria-label="Visited ' + esc(p.name) + '"' + (done ? " checked" : "") + '><span class="box">' + icon("i-check") + "</span></label>" +
         "</div>" +
@@ -506,7 +507,8 @@
     var cat = cats.filter(function (c) { return c.id === activeCat; })[0] || {};
     listEl.innerHTML = (cat.note ? '<p class="callout">' + icon("i-info") + "<span>" + esc(cat.note) + "</span></p>" : "") +
       '<div class="places">' +
-      cityPlaces().filter(function (p) { return p.cat === activeCat; }).map(placeCard).join("") + "</div>";
+      cityPlaces().filter(function (p) { return p.cat === activeCat; })
+        .sort(function (x, y) { return (y.featured ? 1 : 0) - (x.featured ? 1 : 0); }).map(placeCard).join("") + "</div>";
     wireImages(listEl);
     linkMaps(listEl);
   }
@@ -536,7 +538,38 @@
   renderCats();
   renderSee();
   updateSeen();
-  document.addEventListener("sgn-city", function () { renderCats(); renderSee(); updateSeen(); });
+  document.addEventListener("sgn-city", function () { renderCats(); renderSee(); updateSeen(); renderPicks(); });
+
+  /* "Don't miss" picks for the current city, shown on Home */
+  var picksEl = $("#picks");
+  function renderPicks() {
+    if (!picksEl) return;
+    var list = cityPlaces().filter(function (p) { return p.featured; });
+    picksEl.hidden = !list.length;
+    picksEl.innerHTML = list.length ? '<div class="sec-head"><h2>Don&rsquo;t miss in ' + esc(city().name) + "</h2></div>" +
+      list.map(function (p) {
+        return '<article class="pick-card">' + media(p.img, p.name, "i-sparkle") +
+          '<div class="pick-body"><p class="pick-badge">' + icon("i-sparkle") + "Don’t miss</p>" +
+          "<h3>" + esc(p.name) + "</h3><p class=\"d\">" + esc(p.desc) + "</p>" +
+          '<ul class="meta"><li>' + icon("i-clock") + "<span>" + esc(p.time) + "</span></li><li>" + icon("i-ticket") + "<span>" + esc(p.cost) + "</span></li></ul>" +
+          '<div class="btn-row"><button class="btn btn-primary btn-sm" type="button" data-pick="' + esc(p.id) + '">Read more' + icon("i-arrow").replace('class="i"', 'class="i i-trail"') + "</button>" + mapBtn(p.id) + "</div></div></article>";
+      }).join("") : "";
+    wireImages(picksEl);
+  }
+  if (picksEl) picksEl.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-pick]");
+    if (!b) return;
+    var p = places.filter(function (x) { return x.id === b.dataset.pick; })[0];
+    if (!p) return;
+    activeCat = p.cat; store.set("sgn-guide-cat", activeCat);
+    renderCats(); renderSee();
+    location.hash = "#see";
+    setTimeout(function () {
+      var card = $('.place[data-id="' + p.id + '"]', listEl);
+      if (card) { card.scrollIntoView({ block: "start", behavior: "smooth" }); card.classList.add("flash"); setTimeout(function () { card.classList.remove("flash"); }, 1600); }
+    }, 80);
+  });
+  renderPicks();
 
   /* ---------- where to eat ---------- */
   var KIND = {
@@ -920,6 +953,12 @@
           return (sec.h ? "<h2>" + esc(sec.h) + "</h2>" : "") +
             (sec.p || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
             (sec.imgs || (sec.img ? [sec.img] : [])).map(figure).join("") +
+            (sec.tables || (sec.table ? [sec.table] : [])).map(function (t) {
+              return '<div class="reader-table"><table>' + (t.caption ? "<caption>" + esc(t.caption) + "</caption>" : "") +
+                "<thead><tr>" + t.head.map(function (h) { return '<th scope="col">' + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+                t.rows.map(function (r) { return "<tr>" + r.map(function (c, i) { return i ? "<td>" + esc(c) + "</td>" : '<th scope="row">' + esc(c) + "</th>"; }).join("") + "</tr>"; }).join("") +
+                "</tbody></table>" + (t.note ? '<p class="reader-table-note">' + esc(t.note) + "</p>" : "") + "</div>";
+            }).join("") +
             ((sec.gallery || []).length ? '<div class="reader-gallery">' + sec.gallery.map(figure).join("") + "</div>" : "") +
             ((sec.maps || []).length ? '<div class="btn-row reader-maps">' + sec.maps.map(function (mp) {
               return mapBtn(mp.key).replace(">" + icon("i-map") + "Map</a>", ">" + icon("i-map") + esc(mp.label) + " on map</a>");
